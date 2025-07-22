@@ -1,0 +1,102 @@
+import { getCurrentInstance, onBeforeUnmount, ref, shallowRef, unref } from 'vue'
+import type { Ref } from 'vue'
+import { useRafThrottle } from 'dom-util'
+import { addResizeListener, removeResizeListener } from '@uts/resize.ts'
+import { isDefined } from '@uts/staple.ts'
+
+const domSymbol = Symbol('watermark-dom')
+
+export function useWatermarkHook(
+  appendEl: Ref<HTMLElement | null> = ref(document.body) as Ref<HTMLElement>,
+) {
+  const rafThrottle = useRafThrottle(function () {
+    const el = unref(appendEl)
+    if (!el) return
+    const { clientHeight: height, clientWidth: width } = el
+    updateWatermark({ height, width })
+  })
+  const id = domSymbol.toString()
+  const watermarkEl = shallowRef<HTMLElement>()
+
+  const clear = () => {
+    const domId = unref(watermarkEl)
+    watermarkEl.value = undefined
+    const el = unref(appendEl)
+    if (!el) return
+    domId && el.removeChild(domId)
+    removeResizeListener(el, rafThrottle)
+  }
+
+  function createBase64(str: string) {
+    const can = document.createElement('canvas')
+    const width = 300
+    const height = 240
+    Object.assign(can, { width, height })
+
+    const cans = can.getContext('2d')
+    if (cans) {
+      cans.rotate((-20 * Math.PI) / 120)
+      cans.font = '15px Vedana'
+      cans.fillStyle = 'rgba(0, 0, 0, 0.15)'
+      cans.textAlign = 'left'
+      cans.textBaseline = 'middle'
+      cans.fillText(str, width / 20, height)
+    }
+    return can.toDataURL('image/png')
+  }
+
+  function updateWatermark(
+    options: {
+      width?: number
+      height?: number
+      watermark?: string
+    } = {},
+  ) {
+    const el = unref(watermarkEl)
+    if (!el) return
+    if (isDefined(options.width)) {
+      el.style.width = `${options.width}px`
+    }
+    if (isDefined(options.height)) {
+      el.style.height = `${options.height}px`
+    }
+    if (isDefined(options.watermark)) {
+      el.style.background = `url(${createBase64(options.watermark)}) left top repeat`
+    }
+  }
+
+  const createWatermark = (watermark: string) => {
+    if (unref(watermarkEl)) {
+      updateWatermark({ watermark })
+      return id
+    }
+    const div = document.createElement('div')
+    watermarkEl.value = div
+    div.id = id
+    div.style.pointerEvents = 'none'
+    div.style.top = '0px'
+    div.style.left = '0px'
+    div.style.position = 'absolute'
+    div.style.zIndex = '100000'
+    const el = unref(appendEl)
+    if (!el) return id
+    const { clientHeight: height, clientWidth: width } = el
+    updateWatermark({ watermark, width, height })
+    el.appendChild(div)
+    return id
+  }
+
+  function setWatermark(watermark: string) {
+    createWatermark(watermark)
+    addResizeListener(document.documentElement, rafThrottle)
+    const instance = getCurrentInstance()
+    if (instance) {
+      onBeforeUnmount(() => {
+        clear()
+      })
+    }
+  }
+
+  return { setWatermark, clear }
+}
+export default useWatermarkHook

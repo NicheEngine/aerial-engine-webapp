@@ -1,0 +1,22 @@
+{
+  "api": {
+    "prefix": "/api",
+    "target": "http://127.0.0.1:8081"
+  },
+  "open": {
+    "prefix": "/open_v1",
+    "target": "http://127.0.0.1:8081"
+  },
+  "open_v1": {
+    "prefix": "/open_v1",
+    "target": "http://127.0.0.1:8081"
+  },
+  "open_v2": {
+    "prefix": "/open_v1",
+    "target": "http://127.0.0.1:8081"
+  },
+  "server": {
+    "prefix": "/server",
+    "target": "http://127.0.0.1:8081"
+  }
+}
