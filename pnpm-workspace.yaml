@@ -17,9 +17,6 @@ catalog:
   '@changesets/changelog-github': ^0.5.1
   '@changesets/cli': ^2.29.5
   '@changesets/git': ^3.0.4
-  '@clack/prompts': ^0.10.1
-  '@commitlint/cli': ^19.8.1
-  '@commitlint/config-conventional': ^19.8.1
   '@ctrl/tinycolor': ^4.1.0
   '@eslint/js': ^9.30.1
   '@faker-js/faker': ^9.9.0
@@ -30,7 +27,6 @@ catalog:
   '@intlify/unplugin-vue-i18n': ^6.0.8
   '@jspm/generator': ^2.6.2
   '@manypkg/get-packages': ^3.0.0
-  '@nolebase/vitepress-plugin-git-changelog': ^2.18.0
   '@playwright/test': ^1.53.2
   '@pnpm/workspace.read-manifest': ^1000.2.0
   '@stylistic/stylelint-plugin': ^3.1.3
@@ -56,7 +52,6 @@ catalog:
   '@typescript-eslint/eslint-plugin': ^8.35.1
   '@typescript-eslint/parser': ^8.35.1
   '@vee-validate/zod': ^4.15.1
-  '@vite-pwa/vitepress': ^1.0.0
   '@vitejs/plugin-vue': ^5.2.4
   '@vitejs/plugin-vue-jsx': ^4.2.0
   '@vue/reactivity': ^3.5.17
@@ -76,19 +71,15 @@ catalog:
   circular-dependency-scanner: ^2.3.0
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
-  commitlint-plugin-function-rules: ^4.0.2
   consola: ^3.4.2
   cross-env: ^7.0.3
   cspell: ^8.19.4
   cssnano: ^7.0.7
-  cz-git: ^1.11.2
-  czg: ^1.11.1
   dayjs: ^1.11.13
   defu: ^6.1.4
   depcheck: ^1.4.7
   dotenv: ^16.6.1
   echarts: ^5.6.0
-  element-plus: ^2.10.2
   eslint: ^9.30.1
   eslint-config-turbo: ^2.5.4
   eslint-plugin-command: ^3.3.1
@@ -122,8 +113,6 @@ catalog:
   lodash.isequal: ^4.5.0
   lodash.set: ^4.3.2
   lucide-vue-next: ^0.507.0
-  medium-zoom: ^1.1.0
-  naive-ui: ^2.42.0
   nitropack: ^2.11.13
   nprogress: ^0.2.0
   ora: ^8.2.0
@@ -167,7 +156,6 @@ catalog:
   turbo: ^2.5.4
   typescript: ^5.8.3
   unbuild: ^3.5.0
-  unplugin-element-plus: ^0.10.0
   vee-validate: ^4.15.1
   vite: ^6.3.5
   vite-plugin-compression: ^0.5.1
@@ -176,8 +164,6 @@ catalog:
   vite-plugin-lazy-import: ^1.0.7
   vite-plugin-pwa: ^1.0.1
   vite-plugin-vue-devtools: ^7.7.7
-  vitepress: ^1.6.3
-  vitepress-plugin-group-icons: ^1.6.1
   vitest: ^3.2.4
   vue: ^3.5.17
   vue-eslint-parser: ^10.2.0

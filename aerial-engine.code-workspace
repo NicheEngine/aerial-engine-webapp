@@ -9,22 +9,6 @@
       "path": "apps/web-antd",
     },
     {
-      "name": "@vben/web-ele",
-      "path": "apps/web-ele",
-    },
-    {
-      "name": "@vben/web-naive",
-      "path": "apps/web-naive",
-    },
-    {
-      "name": "@vben/docs",
-      "path": "docs",
-    },
-    {
-      "name": "@vben/commitlint-config",
-      "path": "internal/lint-configs/commitlint-config",
-    },
-    {
       "name": "@vben/eslint-config",
       "path": "internal/lint-configs/eslint-config",
     },
@@ -159,10 +143,6 @@
     {
       "name": "@vben/playground",
       "path": "playground",
-    },
-    {
-      "name": "@vben/turbo-run",
-      "path": "scripts/turbo-run",
     },
     {
       "name": "@vben/vsh",

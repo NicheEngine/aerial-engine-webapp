@@ -25,7 +25,6 @@
     "@changesets/cli": "catalog:",
     "@playwright/test": "catalog:",
     "@types/node": "catalog:",
-    "@vben/commitlint-config": "workspace:*",
     "@vben/eslint-config": "workspace:*",
     "@vben/prettier-config": "workspace:*",
     "@vben/stylelint-config": "workspace:*",
