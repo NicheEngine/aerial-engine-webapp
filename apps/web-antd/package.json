@@ -1,0 +1,37 @@
+{
+  "name": "@aerial-engine/web-antd",
+  "version": "5.5.8",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm vite build --mode production",
+    "build:analyze": "pnpm vite build --mode analyze",
+    "dev": "pnpm vite --mode development",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+  },
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "dependencies": {
+    "@aerial-engine/access": "workspace:*",
+    "@aerial-engine/common-ui": "workspace:*",
+    "@aerial-engine/constants": "workspace:*",
+    "@aerial-engine/hooks": "workspace:*",
+    "@aerial-engine/icons": "workspace:*",
+    "@aerial-engine/layouts": "workspace:*",
+    "@aerial-engine/locales": "workspace:*",
+    "@aerial-engine/plugins": "workspace:*",
+    "@aerial-engine/preferences": "workspace:*",
+    "@aerial-engine/request": "workspace:*",
+    "@aerial-engine/stores": "workspace:*",
+    "@aerial-engine/styles": "workspace:*",
+    "@aerial-engine/types": "workspace:*",
+    "@aerial-engine/utils": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "ant-design-vue": "catalog:",
+    "dayjs": "catalog:",
+    "pinia": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  }
+}

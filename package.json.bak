@@ -1,6 +1,23 @@
 {
   "name": "vben-admin-monorepo",
-  "version": "1.0.0",
+  "version": "5.5.8",
+  "private": true,
+  "keywords": [
+    "monorepo",
+    "turbo",
+    "vben",
+    "vben admin",
+    "vben pro",
+    "vue",
+    "vue admin",
+    "vue vben admin",
+    "vue vben admin pro",
+    "vue3"
+  ],
+  "homepage": "https://github.com/vbenjs/vue-vben-admin",
+  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "repository": "vbenjs/vue-vben-admin.git",
+  "license": "MIT",
   "author": {
     "name": "vben",
     "email": "ann.vben@gmail.com",

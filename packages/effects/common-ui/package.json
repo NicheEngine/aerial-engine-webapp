@@ -1,0 +1,46 @@
+{
+  "name": "@aerial-engine/common-ui",
+  "version": "5.5.8",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./es/tippy": {
+      "types": "./src/components/tippy/index.ts",
+      "default": "./src/components/tippy/index.ts"
+    },
+    "./es/loading": {
+      "types": "./src/components/loading/index.ts",
+      "default": "./src/components/loading/index.ts"
+    }
+  },
+  "dependencies": {
+    "@aerial-engine-core/form-ui": "workspace:*",
+    "@aerial-engine-core/popup-ui": "workspace:*",
+    "@aerial-engine-core/preferences": "workspace:*",
+    "@aerial-engine-core/shadcn-ui": "workspace:*",
+    "@aerial-engine-core/shared": "workspace:*",
+    "@aerial-engine/constants": "workspace:*",
+    "@aerial-engine/hooks": "workspace:*",
+    "@aerial-engine/icons": "workspace:*",
+    "@aerial-engine/locales": "workspace:*",
+    "@aerial-engine/types": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "@vueuse/integrations": "catalog:",
+    "json-bigint": "catalog:",
+    "qrcode": "catalog:",
+    "tippy.js": "catalog:",
+    "vue": "catalog:",
+    "vue-json-viewer": "catalog:",
+    "vue-router": "catalog:",
+    "vue-tippy": "catalog:"
+  },
+  "devDependencies": {
+    "@types/qrcode": "catalog:"
+  }
+}

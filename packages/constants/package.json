@@ -1,0 +1,17 @@
+{
+  "name": "@aerial-engine/constants",
+  "version": "5.5.8",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@aerial-engine-core/shared": "workspace:*"
+  }
+}

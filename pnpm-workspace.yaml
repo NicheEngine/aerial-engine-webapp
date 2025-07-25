@@ -1,16 +1,16 @@
 packages:
-  - aerial-engine-configures/*
-  - aerial-engine-configures/lint-configs/*
-  - aerial-engine-packages/*
-  - aerial-engine-packages/@core/base/*
-  - aerial-engine-packages/@core/ui-kit/*
-  - aerial-engine-packages/@core/forward/*
-  - aerial-engine-packages/@core/*
-  - aerial-engine-packages/effects/*
-  - aerial-engine-packages/business/*
-  - aerial-engine-apps/*
-  - aerial-engine-scripts/*
-  - aerial-engine-example
+  - internal/*
+  - internal/lint-configs/*
+  - packages/*
+  - packages/@core/base/*
+  - packages/@core/ui-kit/*
+  - packages/@core/forward/*
+  - packages/@core/*
+  - packages/effects/*
+  - packages/business/*
+  - apps/*
+  - scripts/*
+  - playground
 
 catalog:
   '@ast-grep/napi': ^0.37.0

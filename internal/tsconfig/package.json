@@ -1,0 +1,16 @@
+{
+  "name": "@aerial-engine/tsconfig",
+  "version": "5.5.8",
+  "type": "module",
+  "files": [
+    "base.json",
+    "library.json",
+    "node.json",
+    "web-app.json",
+    "web.json"
+  ],
+  "dependencies": {
+    "@aerial-engine/types": "workspace:*",
+    "vite": "catalog:"
+  }
+}
