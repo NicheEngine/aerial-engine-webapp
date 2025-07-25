@@ -53,7 +53,7 @@ function getResponse() {
         @click="
           downloadFileFromImageUrl({
             source:
-              'https://unpkg.com/@aerial-enginejs/static-source@0.1.7/source/logo-v1.webp',
+              'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
             fileName: 'vben-logo.png',
           })
         "
