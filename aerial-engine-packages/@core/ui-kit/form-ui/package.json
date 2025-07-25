@@ -1,0 +1,44 @@
+{
+  "name": "@aerial-engine-core/form-ui",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm unbuild",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "default": "./dist/index.mjs"
+      }
+    }
+  },
+  "dependencies": {
+    "@aerial-engine-core/composables": "workspace:*",
+    "@aerial-engine-core/icons": "workspace:*",
+    "@aerial-engine-core/shadcn-ui": "workspace:*",
+    "@aerial-engine-core/shared": "workspace:*",
+    "@aerial-engine-core/typings": "workspace:*",
+    "@vee-validate/zod": "catalog:",
+    "@vueuse/core": "catalog:",
+    "vee-validate": "catalog:",
+    "vue": "catalog:",
+    "zod": "catalog:",
+    "zod-defaults": "catalog:"
+  }
+}

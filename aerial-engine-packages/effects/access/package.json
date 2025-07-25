@@ -1,0 +1,21 @@
+{
+  "name": "@aerial-engine/access",
+  "version": "1.0.0",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@aerial-engine/preferences": "workspace:*",
+    "@aerial-engine/stores": "workspace:*",
+    "@aerial-engine/types": "workspace:*",
+    "@aerial-engine/utils": "workspace:*",
+    "vue": "catalog:"
+  }
+}
