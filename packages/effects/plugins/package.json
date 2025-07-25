@@ -1,14 +1,6 @@
 {
-  "name": "@vben/plugins",
+  "name": "@aerial-engine/plugins",
   "version": "5.5.8",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/effects/plugins"
-  },
-  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -28,15 +20,15 @@
     }
   },
   "dependencies": {
-    "@vben-core/form-ui": "workspace:*",
-    "@vben-core/shadcn-ui": "workspace:*",
-    "@vben-core/shared": "workspace:*",
-    "@vben/hooks": "workspace:*",
-    "@vben/icons": "workspace:*",
-    "@vben/locales": "workspace:*",
-    "@vben/preferences": "workspace:*",
-    "@vben/types": "workspace:*",
-    "@vben/utils": "workspace:*",
+    "@aerial-engine-core/form-ui": "workspace:*",
+    "@aerial-engine-core/shadcn-ui": "workspace:*",
+    "@aerial-engine-core/shared": "workspace:*",
+    "@aerial-engine/hooks": "workspace:*",
+    "@aerial-engine/icons": "workspace:*",
+    "@aerial-engine/locales": "workspace:*",
+    "@aerial-engine/preferences": "workspace:*",
+    "@aerial-engine/types": "workspace:*",
+    "@aerial-engine/utils": "workspace:*",
     "@vueuse/core": "catalog:",
     "@vueuse/motion": "catalog:",
     "echarts": "catalog:",

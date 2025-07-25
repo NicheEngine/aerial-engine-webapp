@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Page } from '@vben/common-ui';
+import { Page } from '@aerial-engine/common-ui';
 
 import { Button, Card, message } from 'ant-design-vue';
 

@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { computed, useSlots } from 'vue';
 
-import { useRefresh } from '@vben/hooks';
-import { RotateCw } from '@vben/icons';
-import { preferences, usePreferences } from '@vben/preferences';
-import { useAccessStore } from '@vben/stores';
+import { useRefresh } from '@aerial-engine/hooks';
+import { RotateCw } from '@aerial-engine/icons';
+import { preferences, usePreferences } from '@aerial-engine/preferences';
+import { useAccessStore } from '@aerial-engine/stores';
 
-import { VbenFullScreen, VbenIconButton } from '@vben-core/shadcn-ui';
+import { VbenFullScreen, VbenIconButton } from '@aerial-engine-core/shadcn-ui';
 
 import {
   GlobalSearch,

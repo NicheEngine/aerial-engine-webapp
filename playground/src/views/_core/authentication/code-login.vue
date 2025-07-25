@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
-import type { Recordable } from '@vben/types';
+import type { VbenFormSchema } from '@aerial-engine/common-ui';
+import type { Recordable } from '@aerial-engine/types';
 
 import { computed, ref, useTemplateRef } from 'vue';
 
-import { AuthenticationCodeLogin, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { AuthenticationCodeLogin, z } from '@aerial-engine/common-ui';
+import { $t } from '@aerial-engine/locales';
 
 import { message } from 'ant-design-vue';
 

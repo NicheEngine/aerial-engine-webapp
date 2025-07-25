@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { VbenSpinner } from '@vben-core/shadcn-ui';
-import { cn } from '@vben-core/shared/utils';
+import { VbenSpinner } from '@aerial-engine-core/shadcn-ui';
+import { cn } from '@aerial-engine-core/shared/utils';
 
 interface SpinnerProps {
   class?: string;

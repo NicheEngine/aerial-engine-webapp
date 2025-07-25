@@ -1,14 +1,6 @@
 {
-  "name": "@vben/styles",
+  "name": "@aerial-engine/styles",
   "version": "5.5.8",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/styles"
-  },
-  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
@@ -29,6 +21,6 @@
     }
   },
   "dependencies": {
-    "@vben-core/design": "workspace:*"
+    "@aerial-engine-core/design": "workspace:*"
   }
 }

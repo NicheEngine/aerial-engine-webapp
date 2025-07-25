@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Page, SliderTranslateCaptcha } from '@vben/common-ui';
+import { Page, SliderTranslateCaptcha } from '@aerial-engine/common-ui';
 
 import { Card, message } from 'ant-design-vue';
 
@@ -16,7 +16,7 @@ function handleSuccess() {
     <Card class="mb-5" title="基本示例">
       <div class="flex items-center justify-center p-4">
         <SliderTranslateCaptcha
-          src="https://unpkg.com/@vbenjs/static-source@0.1.7/source/pro-avatar.webp"
+          src="https://unpkg.com/@aerial-enginejs/static-source@0.1.7/source/pro-avatar.webp"
           :canvas-width="420"
           :canvas-height="420"
           @success="handleSuccess"

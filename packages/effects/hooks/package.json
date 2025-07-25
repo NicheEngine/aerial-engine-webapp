@@ -1,14 +1,6 @@
 {
-  "name": "@vben/hooks",
+  "name": "@aerial-engine/hooks",
   "version": "5.5.8",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/effects/hooks"
-  },
-  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -20,11 +12,11 @@
     }
   },
   "dependencies": {
-    "@vben-core/composables": "workspace:*",
-    "@vben/preferences": "workspace:*",
-    "@vben/stores": "workspace:*",
-    "@vben/types": "workspace:*",
-    "@vben/utils": "workspace:*",
+    "@aerial-engine-core/composables": "workspace:*",
+    "@aerial-engine/preferences": "workspace:*",
+    "@aerial-engine/stores": "workspace:*",
+    "@aerial-engine/types": "workspace:*",
+    "@aerial-engine/utils": "workspace:*",
     "@vueuse/core": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:",

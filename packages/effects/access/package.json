@@ -1,14 +1,6 @@
 {
-  "name": "@vben/access",
+  "name": "@aerial-engine/access",
   "version": "5.5.8",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/effects/permissions"
-  },
-  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -20,10 +12,10 @@
     }
   },
   "dependencies": {
-    "@vben/preferences": "workspace:*",
-    "@vben/stores": "workspace:*",
-    "@vben/types": "workspace:*",
-    "@vben/utils": "workspace:*",
+    "@aerial-engine/preferences": "workspace:*",
+    "@aerial-engine/stores": "workspace:*",
+    "@aerial-engine/types": "workspace:*",
+    "@aerial-engine/utils": "workspace:*",
     "vue": "catalog:"
   }
 }

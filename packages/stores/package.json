@@ -1,5 +1,5 @@
 {
-  "name": "@vben/stores",
+  "name": "@aerial-engine/stores",
   "version": "5.5.8",
   "homepage": "https://github.com/vbenjs/vue-vben-admin",
   "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
@@ -20,9 +20,9 @@
     }
   },
   "dependencies": {
-    "@vben-core/preferences": "workspace:*",
-    "@vben-core/shared": "workspace:*",
-    "@vben-core/typings": "workspace:*",
+    "@aerial-engine-core/preferences": "workspace:*",
+    "@aerial-engine-core/shared": "workspace:*",
+    "@aerial-engine-core/typings": "workspace:*",
     "pinia": "catalog:",
     "pinia-plugin-persistedstate": "catalog:",
     "secure-ls": "catalog:",

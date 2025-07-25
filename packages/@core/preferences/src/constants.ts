@@ -1,4 +1,4 @@
-import type { BuiltinThemeType } from '@vben-core/typings';
+import type { BuiltinThemeType } from '@aerial-engine-core/typings';
 
 interface BuiltinThemePreset {
   color: string;

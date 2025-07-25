@@ -1,11 +1,11 @@
-import type { MenuRecordRaw } from '@vben/types';
+import type { MenuRecordRaw } from '@aerial-engine/types';
 
 import { computed, onBeforeMount, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { preferences, usePreferences } from '@vben/preferences';
-import { useAccessStore } from '@vben/stores';
-import { findRootMenuByPath } from '@vben/utils';
+import { preferences, usePreferences } from '@aerial-engine/preferences';
+import { useAccessStore } from '@aerial-engine/stores';
+import { findRootMenuByPath } from '@aerial-engine/utils';
 
 import { useNavigation } from './use-navigation';
 

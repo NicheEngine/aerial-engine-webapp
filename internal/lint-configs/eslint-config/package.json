@@ -1,15 +1,6 @@
 {
-  "name": "@vben/eslint-config",
+  "name": "@aerial-engine/eslint-config",
   "version": "5.0.0",
-  "private": true,
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "internal/lint-configs/eslint-config"
-  },
-  "license": "MIT",
   "type": "module",
   "scripts": {
     "stub": "pnpm unbuild --stub"

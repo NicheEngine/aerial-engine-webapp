@@ -1,14 +1,6 @@
 {
-  "name": "@vben-core/icons",
+  "name": "@aerial-engine-core/icons",
   "version": "5.5.8",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/@vben-core/base/icons"
-  },
-  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "pnpm unbuild"

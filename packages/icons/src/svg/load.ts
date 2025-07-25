@@ -1,6 +1,6 @@
-import type { IconifyIconStructure } from '@vben-core/icons';
+import type { IconifyIconStructure } from '@aerial-engine-core/icons';
 
-import { addIcon } from '@vben-core/icons';
+import { addIcon } from '@aerial-engine-core/icons';
 
 let loaded = false;
 if (!loaded) {

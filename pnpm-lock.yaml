@@ -505,25 +505,25 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 22.16.0
-      '@vben/eslint-config':
+      '@aerial-engine/eslint-config':
         specifier: workspace:*
         version: link:internal/lint-configs/eslint-config
-      '@vben/prettier-config':
+      '@aerial-engine/prettier-config':
         specifier: workspace:*
         version: link:internal/lint-configs/prettier-config
-      '@vben/stylelint-config':
+      '@aerial-engine/stylelint-config':
         specifier: workspace:*
         version: link:internal/lint-configs/stylelint-config
-      '@vben/tailwind-config':
+      '@aerial-engine/tailwind-config':
         specifier: workspace:*
         version: link:internal/tailwind-config
-      '@vben/tsconfig':
+      '@aerial-engine/tsconfig':
         specifier: workspace:*
         version: link:internal/tsconfig
-      '@vben/vite-config':
+      '@aerial-engine/vite-config':
         specifier: workspace:*
         version: link:internal/vite-config
-      '@vben/vsh':
+      '@aerial-engine/vsh':
         specifier: workspace:*
         version: link:scripts/vsh
       '@vitejs/plugin-vue':
@@ -605,46 +605,46 @@ importers:
 
   apps/web-antd:
     dependencies:
-      '@vben/access':
+      '@aerial-engine/access':
         specifier: workspace:*
         version: link:../../packages/effects/access
-      '@vben/common-ui':
+      '@aerial-engine/common-ui':
         specifier: workspace:*
         version: link:../../packages/effects/common-ui
-      '@vben/constants':
+      '@aerial-engine/constants':
         specifier: workspace:*
         version: link:../../packages/constants
-      '@vben/hooks':
+      '@aerial-engine/hooks':
         specifier: workspace:*
         version: link:../../packages/effects/hooks
-      '@vben/icons':
+      '@aerial-engine/icons':
         specifier: workspace:*
         version: link:../../packages/icons
-      '@vben/layouts':
+      '@aerial-engine/layouts':
         specifier: workspace:*
         version: link:../../packages/effects/layouts
-      '@vben/locales':
+      '@aerial-engine/locales':
         specifier: workspace:*
         version: link:../../packages/locales
-      '@vben/plugins':
+      '@aerial-engine/plugins':
         specifier: workspace:*
         version: link:../../packages/effects/plugins
-      '@vben/preferences':
+      '@aerial-engine/preferences':
         specifier: workspace:*
         version: link:../../packages/preferences
-      '@vben/request':
+      '@aerial-engine/request':
         specifier: workspace:*
         version: link:../../packages/effects/request
-      '@vben/stores':
+      '@aerial-engine/stores':
         specifier: workspace:*
         version: link:../../packages/stores
-      '@vben/styles':
+      '@aerial-engine/styles':
         specifier: workspace:*
         version: link:../../packages/styles
-      '@vben/types':
+      '@aerial-engine/types':
         specifier: workspace:*
         version: link:../../packages/types
-      '@vben/utils':
+      '@aerial-engine/utils':
         specifier: workspace:*
         version: link:../../packages/utils
       '@vueuse/core':
@@ -878,7 +878,7 @@ importers:
 
   internal/tsconfig:
     dependencies:
-      '@vben/types':
+      '@aerial-engine/types':
         specifier: workspace:*
         version: link:../../packages/types
       vite:
@@ -927,7 +927,7 @@ importers:
       '@types/html-minifier-terser':
         specifier: 'catalog:'
         version: 7.0.2
-      '@vben/node-utils':
+      '@aerial-engine/node-utils':
         specifier: workspace:*
         version: link:../node-utils
       '@vitejs/plugin-vue':
@@ -1050,7 +1050,7 @@ importers:
 
   packages/@core/composables:
     dependencies:
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../base/shared
       '@vueuse/core':
@@ -1072,10 +1072,10 @@ importers:
 
   packages/@core/preferences:
     dependencies:
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../base/shared
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../base/typings
       '@vueuse/core':
@@ -1087,19 +1087,19 @@ importers:
 
   packages/@core/ui-kit/form-ui:
     dependencies:
-      '@vben-core/composables':
+      '@aerial-engine-core/composables':
         specifier: workspace:*
         version: link:../../composables
-      '@vben-core/icons':
+      '@aerial-engine-core/icons':
         specifier: workspace:*
         version: link:../../base/icons
-      '@vben-core/shadcn-ui':
+      '@aerial-engine-core/shadcn-ui':
         specifier: workspace:*
         version: link:../shadcn-ui
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../../base/shared
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../../base/typings
       '@vee-validate/zod':
@@ -1123,19 +1123,19 @@ importers:
 
   packages/@core/ui-kit/layout-ui:
     dependencies:
-      '@vben-core/composables':
+      '@aerial-engine-core/composables':
         specifier: workspace:*
         version: link:../../composables
-      '@vben-core/icons':
+      '@aerial-engine-core/icons':
         specifier: workspace:*
         version: link:../../base/icons
-      '@vben-core/shadcn-ui':
+      '@aerial-engine-core/shadcn-ui':
         specifier: workspace:*
         version: link:../shadcn-ui
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../../base/shared
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../../base/typings
       '@vueuse/core':
@@ -1147,19 +1147,19 @@ importers:
 
   packages/@core/ui-kit/menu-ui:
     dependencies:
-      '@vben-core/composables':
+      '@aerial-engine-core/composables':
         specifier: workspace:*
         version: link:../../composables
-      '@vben-core/icons':
+      '@aerial-engine-core/icons':
         specifier: workspace:*
         version: link:../../base/icons
-      '@vben-core/shadcn-ui':
+      '@aerial-engine-core/shadcn-ui':
         specifier: workspace:*
         version: link:../shadcn-ui
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../../base/shared
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../../base/typings
       '@vueuse/core':
@@ -1171,19 +1171,19 @@ importers:
 
   packages/@core/ui-kit/popup-ui:
     dependencies:
-      '@vben-core/composables':
+      '@aerial-engine-core/composables':
         specifier: workspace:*
         version: link:../../composables
-      '@vben-core/icons':
+      '@aerial-engine-core/icons':
         specifier: workspace:*
         version: link:../../base/icons
-      '@vben-core/shadcn-ui':
+      '@aerial-engine-core/shadcn-ui':
         specifier: workspace:*
         version: link:../shadcn-ui
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../../base/shared
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../../base/typings
       '@vueuse/core':
@@ -1195,16 +1195,16 @@ importers:
 
   packages/@core/ui-kit/shadcn-ui:
     dependencies:
-      '@vben-core/composables':
+      '@aerial-engine-core/composables':
         specifier: workspace:*
         version: link:../../composables
-      '@vben-core/icons':
+      '@aerial-engine-core/icons':
         specifier: workspace:*
         version: link:../../base/icons
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../../base/shared
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../../base/typings
       '@vueuse/core':
@@ -1228,16 +1228,16 @@ importers:
 
   packages/@core/ui-kit/tabs-ui:
     dependencies:
-      '@vben-core/composables':
+      '@aerial-engine-core/composables':
         specifier: workspace:*
         version: link:../../composables
-      '@vben-core/icons':
+      '@aerial-engine-core/icons':
         specifier: workspace:*
         version: link:../../base/icons
-      '@vben-core/shadcn-ui':
+      '@aerial-engine-core/shadcn-ui':
         specifier: workspace:*
         version: link:../shadcn-ui
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../../base/typings
       '@vueuse/core':
@@ -1249,22 +1249,22 @@ importers:
 
   packages/constants:
     dependencies:
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../@core/base/shared
 
   packages/effects/access:
     dependencies:
-      '@vben/preferences':
+      '@aerial-engine/preferences':
         specifier: workspace:*
         version: link:../../preferences
-      '@vben/stores':
+      '@aerial-engine/stores':
         specifier: workspace:*
         version: link:../../stores
-      '@vben/types':
+      '@aerial-engine/types':
         specifier: workspace:*
         version: link:../../types
-      '@vben/utils':
+      '@aerial-engine/utils':
         specifier: workspace:*
         version: link:../../utils
       vue:
@@ -1273,34 +1273,34 @@ importers:
 
   packages/effects/common-ui:
     dependencies:
-      '@vben-core/form-ui':
+      '@aerial-engine-core/form-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/form-ui
-      '@vben-core/popup-ui':
+      '@aerial-engine-core/popup-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/popup-ui
-      '@vben-core/preferences':
+      '@aerial-engine-core/preferences':
         specifier: workspace:*
         version: link:../../@core/preferences
-      '@vben-core/shadcn-ui':
+      '@aerial-engine-core/shadcn-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/shadcn-ui
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../../@core/base/shared
-      '@vben/constants':
+      '@aerial-engine/constants':
         specifier: workspace:*
         version: link:../../constants
-      '@vben/hooks':
+      '@aerial-engine/hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@vben/icons':
+      '@aerial-engine/icons':
         specifier: workspace:*
         version: link:../../icons
-      '@vben/locales':
+      '@aerial-engine/locales':
         specifier: workspace:*
         version: link:../../locales
-      '@vben/types':
+      '@aerial-engine/types':
         specifier: workspace:*
         version: link:../../types
       '@vueuse/core':
@@ -1337,19 +1337,19 @@ importers:
 
   packages/effects/hooks:
     dependencies:
-      '@vben-core/composables':
+      '@aerial-engine-core/composables':
         specifier: workspace:*
         version: link:../../@core/composables
-      '@vben/preferences':
+      '@aerial-engine/preferences':
         specifier: workspace:*
         version: link:../../preferences
-      '@vben/stores':
+      '@aerial-engine/stores':
         specifier: workspace:*
         version: link:../../stores
-      '@vben/types':
+      '@aerial-engine/types':
         specifier: workspace:*
         version: link:../../types
-      '@vben/utils':
+      '@aerial-engine/utils':
         specifier: workspace:*
         version: link:../../utils
       '@vueuse/core':
@@ -1367,52 +1367,52 @@ importers:
 
   packages/effects/layouts:
     dependencies:
-      '@vben-core/composables':
+      '@aerial-engine-core/composables':
         specifier: workspace:*
         version: link:../../@core/composables
-      '@vben-core/form-ui':
+      '@aerial-engine-core/form-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/form-ui
-      '@vben-core/layout-ui':
+      '@aerial-engine-core/layout-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/layout-ui
-      '@vben-core/menu-ui':
+      '@aerial-engine-core/menu-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/menu-ui
-      '@vben-core/popup-ui':
+      '@aerial-engine-core/popup-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/popup-ui
-      '@vben-core/shadcn-ui':
+      '@aerial-engine-core/shadcn-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/shadcn-ui
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../../@core/base/shared
-      '@vben-core/tabs-ui':
+      '@aerial-engine-core/tabs-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/tabs-ui
-      '@vben/constants':
+      '@aerial-engine/constants':
         specifier: workspace:*
         version: link:../../constants
-      '@vben/hooks':
+      '@aerial-engine/hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@vben/icons':
+      '@aerial-engine/icons':
         specifier: workspace:*
         version: link:../../icons
-      '@vben/locales':
+      '@aerial-engine/locales':
         specifier: workspace:*
         version: link:../../locales
-      '@vben/preferences':
+      '@aerial-engine/preferences':
         specifier: workspace:*
         version: link:../../preferences
-      '@vben/stores':
+      '@aerial-engine/stores':
         specifier: workspace:*
         version: link:../../stores
-      '@vben/types':
+      '@aerial-engine/types':
         specifier: workspace:*
         version: link:../../types
-      '@vben/utils':
+      '@aerial-engine/utils':
         specifier: workspace:*
         version: link:../../utils
       '@vueuse/core':
@@ -1427,31 +1427,31 @@ importers:
 
   packages/effects/plugins:
     dependencies:
-      '@vben-core/form-ui':
+      '@aerial-engine-core/form-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/form-ui
-      '@vben-core/shadcn-ui':
+      '@aerial-engine-core/shadcn-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/shadcn-ui
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../../@core/base/shared
-      '@vben/hooks':
+      '@aerial-engine/hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@vben/icons':
+      '@aerial-engine/icons':
         specifier: workspace:*
         version: link:../../icons
-      '@vben/locales':
+      '@aerial-engine/locales':
         specifier: workspace:*
         version: link:../../locales
-      '@vben/preferences':
+      '@aerial-engine/preferences':
         specifier: workspace:*
         version: link:../../preferences
-      '@vben/types':
+      '@aerial-engine/types':
         specifier: workspace:*
         version: link:../../types
-      '@vben/utils':
+      '@aerial-engine/utils':
         specifier: workspace:*
         version: link:../../utils
       '@vueuse/core':
@@ -1475,10 +1475,10 @@ importers:
 
   packages/effects/request:
     dependencies:
-      '@vben/locales':
+      '@aerial-engine/locales':
         specifier: workspace:*
         version: link:../../locales
-      '@vben/utils':
+      '@aerial-engine/utils':
         specifier: workspace:*
         version: link:../../utils
       axios:
@@ -1497,7 +1497,7 @@ importers:
 
   packages/icons:
     dependencies:
-      '@vben-core/icons':
+      '@aerial-engine-core/icons':
         specifier: workspace:*
         version: link:../@core/base/icons
 
@@ -1506,7 +1506,7 @@ importers:
       '@intlify/core-base':
         specifier: 'catalog:'
         version: 11.1.7
-      '@vben-core/composables':
+      '@aerial-engine-core/composables':
         specifier: workspace:*
         version: link:../@core/composables
       vue:
@@ -1518,22 +1518,22 @@ importers:
 
   packages/preferences:
     dependencies:
-      '@vben-core/preferences':
+      '@aerial-engine-core/preferences':
         specifier: workspace:*
         version: link:../@core/preferences
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../@core/base/typings
 
   packages/stores:
     dependencies:
-      '@vben-core/preferences':
+      '@aerial-engine-core/preferences':
         specifier: workspace:*
         version: link:../@core/preferences
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../@core/base/shared
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../@core/base/typings
       pinia:
@@ -1554,13 +1554,13 @@ importers:
 
   packages/styles:
     dependencies:
-      '@vben-core/design':
+      '@aerial-engine-core/design':
         specifier: workspace:*
         version: link:../@core/base/design
 
   packages/types:
     dependencies:
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../@core/base/typings
       vue:
@@ -1572,10 +1572,10 @@ importers:
 
   packages/utils:
     dependencies:
-      '@vben-core/shared':
+      '@aerial-engine-core/shared':
         specifier: workspace:*
         version: link:../@core/base/shared
-      '@vben-core/typings':
+      '@aerial-engine-core/typings':
         specifier: workspace:*
         version: link:../@core/base/typings
       vue-router:
@@ -1587,49 +1587,49 @@ importers:
       '@tanstack/vue-query':
         specifier: 'catalog:'
         version: 5.81.5(vue@3.5.17(typescript@5.8.3))
-      '@vben-core/menu-ui':
+      '@aerial-engine-core/menu-ui':
         specifier: workspace:*
         version: link:../packages/@core/ui-kit/menu-ui
-      '@vben/access':
+      '@aerial-engine/access':
         specifier: workspace:*
         version: link:../packages/effects/access
-      '@vben/common-ui':
+      '@aerial-engine/common-ui':
         specifier: workspace:*
         version: link:../packages/effects/common-ui
-      '@vben/constants':
+      '@aerial-engine/constants':
         specifier: workspace:*
         version: link:../packages/constants
-      '@vben/hooks':
+      '@aerial-engine/hooks':
         specifier: workspace:*
         version: link:../packages/effects/hooks
-      '@vben/icons':
+      '@aerial-engine/icons':
         specifier: workspace:*
         version: link:../packages/icons
-      '@vben/layouts':
+      '@aerial-engine/layouts':
         specifier: workspace:*
         version: link:../packages/effects/layouts
-      '@vben/locales':
+      '@aerial-engine/locales':
         specifier: workspace:*
         version: link:../packages/locales
-      '@vben/plugins':
+      '@aerial-engine/plugins':
         specifier: workspace:*
         version: link:../packages/effects/plugins
-      '@vben/preferences':
+      '@aerial-engine/preferences':
         specifier: workspace:*
         version: link:../packages/preferences
-      '@vben/request':
+      '@aerial-engine/request':
         specifier: workspace:*
         version: link:../packages/effects/request
-      '@vben/stores':
+      '@aerial-engine/stores':
         specifier: workspace:*
         version: link:../packages/stores
-      '@vben/styles':
+      '@aerial-engine/styles':
         specifier: workspace:*
         version: link:../packages/styles
-      '@vben/types':
+      '@aerial-engine/types':
         specifier: workspace:*
         version: link:../packages/types
-      '@vben/utils':
+      '@aerial-engine/utils':
         specifier: workspace:*
         version: link:../packages/utils
       '@vueuse/core':
@@ -1660,7 +1660,7 @@ importers:
 
   scripts/vsh:
     dependencies:
-      '@vben/node-utils':
+      '@aerial-engine/node-utils':
         specifier: workspace:*
         version: link:../../internal/node-utils
       cac:

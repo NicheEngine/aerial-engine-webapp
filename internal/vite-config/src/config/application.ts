@@ -4,7 +4,7 @@ import type { DefineApplicationOptions } from '../typing';
 
 import path, { relative } from 'node:path';
 
-import { findMonorepoRoot } from '@vben/node-utils';
+import { findMonorepoRoot } from '@aerial-engine/node-utils';
 
 import { NodePackageImporter } from 'sass';
 import { defineConfig, loadEnv, mergeConfig } from 'vite';
@@ -110,7 +110,7 @@ function createCssOptions(injectGlobalScss = true): CSSOptions {
               const relativePath = relative(root, filepath);
               // apps下的包注入全局样式
               if (relativePath.startsWith(`apps${path.sep}`)) {
-                return `@use "@vben/styles/global" as *;\n${content}`;
+                return `@use "@aerial-engine/styles/global" as *;\n${content}`;
               }
               return content;
             },

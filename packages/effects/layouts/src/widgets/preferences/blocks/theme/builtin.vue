@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { BuiltinThemePreset } from '@vben/preferences';
-import type { BuiltinThemeType } from '@vben/types';
+import type { BuiltinThemePreset } from '@aerial-engine/preferences';
+import type { BuiltinThemeType } from '@aerial-engine/types';
 
 import { computed, ref, watch } from 'vue';
 
-import { UserRoundPen } from '@vben/icons';
-import { $t } from '@vben/locales';
-import { BUILT_IN_THEME_PRESETS } from '@vben/preferences';
-import { convertToHsl, TinyColor } from '@vben/utils';
+import { UserRoundPen } from '@aerial-engine/icons';
+import { $t } from '@aerial-engine/locales';
+import { BUILT_IN_THEME_PRESETS } from '@aerial-engine/preferences';
+import { convertToHsl, TinyColor } from '@aerial-engine/utils';
 
 import { useThrottleFn } from '@vueuse/core';
 

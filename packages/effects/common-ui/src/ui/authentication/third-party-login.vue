@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { MdiGithub, MdiGoogle, MdiQqchat, MdiWechat } from '@vben/icons';
-import { $t } from '@vben/locales';
+import { MdiGithub, MdiGoogle, MdiQqchat, MdiWechat } from '@aerial-engine/icons';
+import { $t } from '@aerial-engine/locales';
 
-import { VbenIconButton } from '@vben-core/shadcn-ui';
+import { VbenIconButton } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'ThirdPartyLogin',

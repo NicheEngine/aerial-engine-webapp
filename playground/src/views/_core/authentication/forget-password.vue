@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
+import type { VbenFormSchema } from '@aerial-engine/common-ui';
 
 import { computed, ref } from 'vue';
 
-import { AuthenticationForgetPassword, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { AuthenticationForgetPassword, z } from '@aerial-engine/common-ui';
+import { $t } from '@aerial-engine/locales';
 
 defineOptions({ name: 'ForgetPassword' });
 

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { JsonViewerAction, JsonViewerValue } from '@vben/common-ui';
+import type { JsonViewerAction, JsonViewerValue } from '@aerial-engine/common-ui';
 
-import { JsonViewer, Page } from '@vben/common-ui';
+import { JsonViewer, Page } from '@aerial-engine/common-ui';
 
 import { Card, message } from 'ant-design-vue';
 

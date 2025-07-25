@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue';
 
-import { LockKeyhole } from '@vben/icons';
-import { $t, useI18n } from '@vben/locales';
-import { storeToRefs, useAccessStore } from '@vben/stores';
+import { LockKeyhole } from '@aerial-engine/icons';
+import { $t, useI18n } from '@aerial-engine/locales';
+import { storeToRefs, useAccessStore } from '@aerial-engine/stores';
 
-import { useScrollLock } from '@vben-core/composables';
-import { useVbenForm, z } from '@vben-core/form-ui';
-import { VbenAvatar, VbenButton } from '@vben-core/shadcn-ui';
+import { useScrollLock } from '@aerial-engine-core/composables';
+import { useVbenForm, z } from '@aerial-engine-core/form-ui';
+import { VbenAvatar, VbenButton } from '@aerial-engine-core/shadcn-ui';
 
 import { useDateFormat, useNow } from '@vueuse/core';
 

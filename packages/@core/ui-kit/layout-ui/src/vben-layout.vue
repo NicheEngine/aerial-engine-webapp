@@ -9,10 +9,10 @@ import {
   SCROLL_FIXED_CLASS,
   useLayoutFooterStyle,
   useLayoutHeaderStyle,
-} from '@vben-core/composables';
-import { Menu } from '@vben-core/icons';
-import { VbenIconButton } from '@vben-core/shadcn-ui';
-import { ELEMENT_ID_MAIN_CONTENT } from '@vben-core/shared/constants';
+} from '@aerial-engine-core/composables';
+import { Menu } from '@aerial-engine-core/icons';
+import { VbenIconButton } from '@aerial-engine-core/shadcn-ui';
+import { ELEMENT_ID_MAIN_CONTENT } from '@aerial-engine-core/shared/constants';
 
 import { useMouse, useScroll, useThrottleFn } from '@vueuse/core';
 

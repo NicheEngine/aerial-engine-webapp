@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
-import type { BasicOption } from '@vben/types';
+import type { VbenFormSchema } from '@aerial-engine/common-ui';
+import type { BasicOption } from '@aerial-engine/types';
 
 import { computed, markRaw } from 'vue';
 
-import { AuthenticationLogin, SliderCaptcha, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { AuthenticationLogin, SliderCaptcha, z } from '@aerial-engine/common-ui';
+import { $t } from '@aerial-engine/locales';
 
 import { useAuthStore } from '#/store';
 

@@ -5,8 +5,8 @@ import type { ValueType, VbenButtonGroupProps } from './button';
 
 import { computed, ref, watch } from 'vue';
 
-import { Circle, CircleCheckBig, LoaderCircle } from '@vben-core/icons';
-import { cn, isFunction } from '@vben-core/shared/utils';
+import { Circle, CircleCheckBig, LoaderCircle } from '@aerial-engine-core/icons';
+import { cn, isFunction } from '@aerial-engine-core/shared/utils';
 
 import { objectOmit } from '@vueuse/core';
 

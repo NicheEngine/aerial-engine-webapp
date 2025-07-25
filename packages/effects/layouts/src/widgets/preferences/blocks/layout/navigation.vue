@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { SelectOption } from '@vben/types';
+import type { SelectOption } from '@aerial-engine/types';
 
-import { $t } from '@vben/locales';
+import { $t } from '@aerial-engine/locales';
 
 import SwitchItem from '../switch-item.vue';
 import ToggleItem from '../toggle-item.vue';

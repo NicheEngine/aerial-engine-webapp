@@ -10,7 +10,7 @@
   },
   "framework": "vite",
   "aliases": {
-    "components": "@vben-core/shadcn-ui/components",
-    "utils": "@vben-core/shared/utils"
+    "components": "@aerial-engine-core/shadcn-ui/components",
+    "utils": "@aerial-engine-core/shared/utils"
   }
 }

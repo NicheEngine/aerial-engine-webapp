@@ -5,7 +5,7 @@ import {
   findMonorepoRoot,
   getPackages,
   readPackageJSON,
-} from '@vben/node-utils';
+} from '@aerial-engine/node-utils';
 
 import { readWorkspaceManifest } from '@pnpm/workspace.read-manifest';
 

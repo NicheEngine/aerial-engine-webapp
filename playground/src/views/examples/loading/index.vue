@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Loading, Page, Spinner } from '@vben/common-ui';
-import { IconifyIcon } from '@vben/icons';
+import { Loading, Page, Spinner } from '@aerial-engine/common-ui';
+import { IconifyIcon } from '@aerial-engine/icons';
 
 import { refAutoReset } from '@vueuse/core';
 import { Button, Card, Spin } from 'ant-design-vue';

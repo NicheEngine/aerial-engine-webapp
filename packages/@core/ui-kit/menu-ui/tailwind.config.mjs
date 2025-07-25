@@ -1,1 +1,1 @@
-export { default } from '@vben/tailwind-config';
+export { default } from '@aerial-engine/tailwind-config';

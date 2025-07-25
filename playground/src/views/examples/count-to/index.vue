@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { CountToProps, TransitionPresets } from '@vben/common-ui';
+import type { CountToProps, TransitionPresets } from '@aerial-engine/common-ui';
 
 import { reactive } from 'vue';
 
-import { CountTo, Page, TransitionPresetsKeys } from '@vben/common-ui';
-import { IconifyIcon } from '@vben/icons';
+import { CountTo, Page, TransitionPresetsKeys } from '@aerial-engine/common-ui';
+import { IconifyIcon } from '@aerial-engine/icons';
 
 import {
   Button,

@@ -1,5 +1,5 @@
 {
-  "name": "@vben/utils",
+  "name": "@aerial-engine/utils",
   "version": "5.5.8",
   "homepage": "https://github.com/vbenjs/vue-vben-admin",
   "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
@@ -20,8 +20,8 @@
     }
   },
   "dependencies": {
-    "@vben-core/shared": "workspace:*",
-    "@vben-core/typings": "workspace:*",
+    "@aerial-engine-core/shared": "workspace:*",
+    "@aerial-engine-core/typings": "workspace:*",
     "vue-router": "catalog:"
   }
 }

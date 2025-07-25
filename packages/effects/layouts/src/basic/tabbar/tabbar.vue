@@ -2,11 +2,11 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { useContentMaximize, useTabs } from '@vben/hooks';
-import { preferences } from '@vben/preferences';
-import { useTabbarStore } from '@vben/stores';
+import { useContentMaximize, useTabs } from '@aerial-engine/hooks';
+import { preferences } from '@aerial-engine/preferences';
+import { useTabbarStore } from '@aerial-engine/stores';
 
-import { TabsToolMore, TabsToolScreen, TabsView } from '@vben-core/tabs-ui';
+import { TabsToolMore, TabsToolScreen, TabsView } from '@aerial-engine-core/tabs-ui';
 
 import { useTabbar } from './use-tabbar';
 

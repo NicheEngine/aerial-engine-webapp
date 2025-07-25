@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { Recordable } from '@vben/types';
+import type { Recordable } from '@aerial-engine/types';
 
 import { computed, reactive } from 'vue';
 
-import { $t } from '@vben/locales';
+import { $t } from '@aerial-engine/locales';
 
-import { useVbenForm, z } from '@vben-core/form-ui';
-import { useVbenModal } from '@vben-core/popup-ui';
-import { VbenAvatar, VbenButton } from '@vben-core/shadcn-ui';
+import { useVbenForm, z } from '@aerial-engine-core/form-ui';
+import { useVbenModal } from '@aerial-engine-core/popup-ui';
+import { VbenAvatar, VbenButton } from '@aerial-engine-core/shadcn-ui';
 
 interface Props {
   avatar?: string;

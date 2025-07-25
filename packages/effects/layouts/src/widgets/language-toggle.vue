@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { SupportedLanguagesType } from '@vben/locales';
+import type { SupportedLanguagesType } from '@aerial-engine/locales';
 
-import { SUPPORT_LANGUAGES } from '@vben/constants';
-import { Languages } from '@vben/icons';
-import { loadLocaleMessages } from '@vben/locales';
-import { preferences, updatePreferences } from '@vben/preferences';
+import { SUPPORT_LANGUAGES } from '@aerial-engine/constants';
+import { Languages } from '@aerial-engine/icons';
+import { loadLocaleMessages } from '@aerial-engine/locales';
+import { preferences, updatePreferences } from '@aerial-engine/preferences';
 
-import { VbenDropdownRadioMenu, VbenIconButton } from '@vben-core/shadcn-ui';
+import { VbenDropdownRadioMenu, VbenIconButton } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'LanguageToggle',

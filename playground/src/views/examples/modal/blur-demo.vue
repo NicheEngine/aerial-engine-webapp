@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 
-import { useVbenModal } from '@vben/common-ui';
+import { useVbenModal } from '@aerial-engine/common-ui';
 
 import { Slider } from 'ant-design-vue';
 

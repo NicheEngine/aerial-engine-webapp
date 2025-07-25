@@ -10,7 +10,7 @@ import {
   ref,
 } from 'vue';
 
-import { useStore } from '@vben-core/shared/store';
+import { useStore } from '@aerial-engine-core/shared/store';
 
 import { ModalApi } from './modal-api';
 import VbenModal from './modal.vue';

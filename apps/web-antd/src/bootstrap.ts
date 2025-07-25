@@ -1,11 +1,11 @@
 import { createApp, watchEffect } from 'vue';
 
-import { registerAccessDirective } from '@vben/access';
-import { registerLoadingDirective } from '@vben/common-ui/es/loading';
-import { preferences } from '@vben/preferences';
-import { initStores } from '@vben/stores';
-import '@vben/styles';
-import '@vben/styles/antd';
+import { registerAccessDirective } from '@aerial-engine/access';
+import { registerLoadingDirective } from '@aerial-engine/common-ui/es/loading';
+import { preferences } from '@aerial-engine/preferences';
+import { initStores } from '@aerial-engine/stores';
+import '@aerial-engine/styles';
+import '@aerial-engine/styles/antd';
 
 import { useTitle } from '@vueuse/core';
 
@@ -50,14 +50,14 @@ async function bootstrap(namespace: string) {
   registerAccessDirective(app);
 
   // 初始化 tippy
-  const { initTippy } = await import('@vben/common-ui/es/tippy');
+  const { initTippy } = await import('@aerial-engine/common-ui/es/tippy');
   initTippy(app);
 
   // 配置路由及路由守卫
   app.use(router);
 
   // 配置Motion插件
-  const { MotionPlugin } = await import('@vben/plugins/motion');
+  const { MotionPlugin } = await import('@aerial-engine/plugins/motion');
   app.use(MotionPlugin);
 
   // 动态更新标题

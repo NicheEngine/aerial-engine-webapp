@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { h, ref } from 'vue';
 
-import { IconPicker, Page } from '@vben/common-ui';
+import { IconPicker, Page } from '@aerial-engine/common-ui';
 import {
   MdiGithub,
   MdiGoogle,
@@ -16,7 +16,7 @@ import {
   SvgCakeIcon,
   SvgCardIcon,
   SvgDownloadIcon,
-} from '@vben/icons';
+} from '@aerial-engine/icons';
 
 import { Card, Input } from 'ant-design-vue';
 

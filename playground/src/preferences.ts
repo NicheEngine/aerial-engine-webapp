@@ -1,4 +1,4 @@
-import { defineOverridesPreferences } from '@vben/preferences';
+import { defineOverridesPreferences } from '@aerial-engine/preferences';
 
 /**
  * @description 项目配置文件

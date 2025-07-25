@@ -2,8 +2,8 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { Page } from '@vben/common-ui';
-import { useTabs } from '@vben/hooks';
+import { Page } from '@aerial-engine/common-ui';
+import { useTabs } from '@aerial-engine/hooks';
 
 import { Button, Card, Input } from 'ant-design-vue';
 

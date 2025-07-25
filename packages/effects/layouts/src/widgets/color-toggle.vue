@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { BuiltinThemeType } from '@vben/types';
+import type { BuiltinThemeType } from '@aerial-engine/types';
 
-import { Palette } from '@vben/icons';
+import { Palette } from '@aerial-engine/icons';
 import {
   COLOR_PRESETS,
   preferences,
   updatePreferences,
-} from '@vben/preferences';
+} from '@aerial-engine/preferences';
 
-import { VbenIconButton } from '@vben-core/shadcn-ui';
+import { VbenIconButton } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'AuthenticationColorToggle',

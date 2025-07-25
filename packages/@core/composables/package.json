@@ -1,14 +1,6 @@
 {
-  "name": "@vben-core/composables",
+  "name": "@aerial-engine-core/composables",
   "version": "5.5.8",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/@core/composables"
-  },
-  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "pnpm unbuild"
@@ -35,7 +27,7 @@
     }
   },
   "dependencies": {
-    "@vben-core/shared": "workspace:*",
+    "@aerial-engine-core/shared": "workspace:*",
     "@vueuse/core": "catalog:",
     "radix-vue": "catalog:",
     "sortablejs": "catalog:",

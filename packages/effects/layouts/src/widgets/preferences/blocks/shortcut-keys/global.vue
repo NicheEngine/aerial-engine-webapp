@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { $t } from '@vben/locales';
-import { isWindowsOs } from '@vben/utils';
+import { $t } from '@aerial-engine/locales';
+import { isWindowsOs } from '@aerial-engine/utils';
 
 import SwitchItem from '../switch-item.vue';
 

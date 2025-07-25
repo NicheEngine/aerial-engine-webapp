@@ -5,8 +5,8 @@ import {
   FormLabel,
   VbenHelpTooltip,
   VbenRenderContent,
-} from '@vben-core/shadcn-ui';
-import { cn } from '@vben-core/shared/utils';
+} from '@aerial-engine-core/shadcn-ui';
+import { cn } from '@aerial-engine-core/shared/utils';
 
 interface Props {
   class?: string;

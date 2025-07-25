@@ -8,7 +8,7 @@ import {
   Page,
   prompt,
   useVbenModal,
-} from '@vben/common-ui';
+} from '@aerial-engine/common-ui';
 
 import { Button, Card, Flex, message } from 'ant-design-vue';
 

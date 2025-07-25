@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { SelectOption } from '@vben/types';
+import type { SelectOption } from '@aerial-engine/types';
 
 import { useSlots } from 'vue';
 
-import { CircleHelp } from '@vben/icons';
+import { CircleHelp } from '@aerial-engine/icons';
 
 import {
   Select,
@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
   VbenTooltip,
-} from '@vben-core/shadcn-ui';
+} from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceSelectItem',

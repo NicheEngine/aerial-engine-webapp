@@ -11,7 +11,7 @@ import {
   outputJSON,
   prettierFormat,
   toPosixPath,
-} from '@vben/node-utils';
+} from '@aerial-engine/node-utils';
 
 const CODE_WORKSPACE_FILE = join('aerial-engine.code-workspace');
 

@@ -1,7 +1,7 @@
 import type { ModalApiOptions, ModalState } from './modal';
 
-import { Store } from '@vben-core/shared/store';
-import { bindMethods, isFunction } from '@vben-core/shared/utils';
+import { Store } from '@aerial-engine-core/shared/store';
+import { bindMethods, isFunction } from '@aerial-engine-core/shared/utils';
 
 export class ModalApi {
   // 共享数据

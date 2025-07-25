@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { EllipsisText, Page } from '@vben/common-ui';
+import { EllipsisText, Page } from '@aerial-engine/common-ui';
 
 import { Card } from 'ant-design-vue';
 

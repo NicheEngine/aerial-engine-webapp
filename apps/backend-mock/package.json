@@ -1,9 +1,7 @@
 {
-  "name": "@vben/backend-mock",
+  "name": "@aerial-engine/backend-mock",
   "version": "0.0.1",
   "description": "",
-  "private": true,
-  "license": "MIT",
   "author": "",
   "scripts": {
     "build": "nitro build",

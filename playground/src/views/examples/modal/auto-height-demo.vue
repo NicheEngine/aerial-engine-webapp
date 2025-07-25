@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useVbenModal } from '@vben/common-ui';
+import { useVbenModal } from '@aerial-engine/common-ui';
 
 import { Button, message } from 'ant-design-vue';
 

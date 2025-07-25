@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { Page } from '@vben/common-ui';
+import { Page } from '@aerial-engine/common-ui';
 
 import { Button, Card, Switch } from 'ant-design-vue';
 

@@ -3,7 +3,7 @@ import type { UploadFile } from 'ant-design-vue';
 
 import { h, ref, toRaw } from 'vue';
 
-import { Page } from '@vben/common-ui';
+import { Page } from '@aerial-engine/common-ui';
 
 import { useDebounceFn } from '@vueuse/core';
 import { Button, Card, message, Spin, Tag } from 'ant-design-vue';
@@ -400,7 +400,7 @@ function handleSetFormValue() {
         name: 'example.png',
         status: 'done',
         uid: '-1',
-        url: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
+        url: 'https://unpkg.com/@aerial-enginejs/static-source@0.1.7/source/logo-v1.webp',
       },
     ],
     mentions: '@afc163',

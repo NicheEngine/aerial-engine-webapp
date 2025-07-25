@@ -1,14 +1,6 @@
 {
-  "name": "@vben/icons",
+  "name": "@aerial-engine/icons",
   "version": "5.5.8",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/icons"
-  },
-  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
@@ -17,6 +9,6 @@
     }
   },
   "dependencies": {
-    "@vben-core/icons": "workspace:*"
+    "@aerial-engine-core/icons": "workspace:*"
   }
 }

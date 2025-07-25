@@ -1,13 +1,13 @@
 import type { RouteLocationNormalizedGeneric } from 'vue-router';
 
-import type { TabDefinition } from '@vben/types';
+import type { TabDefinition } from '@aerial-engine/types';
 
-import type { IContextMenuItem } from '@vben-core/tabs-ui';
+import type { IContextMenuItem } from '@aerial-engine-core/tabs-ui';
 
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-import { useContentMaximize, useTabs } from '@vben/hooks';
+import { useContentMaximize, useTabs } from '@aerial-engine/hooks';
 import {
   ArrowLeftToLine,
   ArrowRightLeft,
@@ -20,10 +20,10 @@ import {
   PinOff,
   RotateCw,
   X,
-} from '@vben/icons';
-import { $t, useI18n } from '@vben/locales';
-import { getTabKey, useAccessStore, useTabbarStore } from '@vben/stores';
-import { filterTree } from '@vben/utils';
+} from '@aerial-engine/icons';
+import { $t, useI18n } from '@aerial-engine/locales';
+import { getTabKey, useAccessStore, useTabbarStore } from '@aerial-engine/stores';
+import { filterTree } from '@aerial-engine/utils';
 
 export function useTabbar() {
   const router = useRouter();

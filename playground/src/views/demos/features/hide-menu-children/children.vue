@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { Fallback, VbenButton } from '@vben/common-ui';
-import { useTabs } from '@vben/hooks';
-import { X } from '@vben/icons';
+import { Fallback, VbenButton } from '@aerial-engine/common-ui';
+import { useTabs } from '@aerial-engine/hooks';
+import { X } from '@aerial-engine/icons';
 
 const { closeCurrentTab } = useTabs();
 </script>

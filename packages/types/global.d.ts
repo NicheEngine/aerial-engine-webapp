@@ -1,4 +1,4 @@
-import type { RouteMeta as IRouteMeta } from '@vben-core/typings';
+import type { RouteMeta as IRouteMeta } from '@aerial-engine-core/typings';
 
 import 'vue-router';
 

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { Recordable } from '@vben/types';
+import type { Recordable } from '@aerial-engine/types';
 
-import type { VbenFormSchema } from '@vben-core/form-ui';
+import type { VbenFormSchema } from '@aerial-engine-core/form-ui';
 
 import type { AuthenticationProps } from './types';
 
 import { computed, onMounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { $t } from '@vben/locales';
+import { $t } from '@aerial-engine/locales';
 
-import { useVbenForm } from '@vben-core/form-ui';
-import { VbenButton, VbenCheckbox } from '@vben-core/shadcn-ui';
+import { useVbenForm } from '@aerial-engine-core/form-ui';
+import { VbenButton, VbenCheckbox } from '@aerial-engine-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 import ThirdPartyLogin from './third-party-login.vue';

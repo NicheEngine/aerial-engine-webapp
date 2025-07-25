@@ -1,21 +1,21 @@
 <script lang="ts" setup>
-import type { NotificationItem } from '@vben/layouts';
+import type { NotificationItem } from '@aerial-engine/layouts';
 
 import { computed, ref, watch } from 'vue';
 
-import { AuthenticationLoginExpiredModal } from '@vben/common-ui';
-import { VBEN_DOC_URL, VBEN_GITHUB_URL } from '@vben/constants';
-import { useWatermark } from '@vben/hooks';
-import { BookOpenText, CircleHelp, MdiGithub } from '@vben/icons';
+import { AuthenticationLoginExpiredModal } from '@aerial-engine/common-ui';
+import { VBEN_DOC_URL, VBEN_GITHUB_URL } from '@aerial-engine/constants';
+import { useWatermark } from '@aerial-engine/hooks';
+import { BookOpenText, CircleHelp, MdiGithub } from '@aerial-engine/icons';
 import {
   BasicLayout,
   LockScreen,
   Notification,
   UserDropdown,
-} from '@vben/layouts';
-import { preferences } from '@vben/preferences';
-import { useAccessStore, useUserStore } from '@vben/stores';
-import { openWindow } from '@vben/utils';
+} from '@aerial-engine/layouts';
+import { preferences } from '@aerial-engine/preferences';
+import { useAccessStore, useUserStore } from '@aerial-engine/stores';
+import { openWindow } from '@aerial-engine/utils';
 
 import { $t } from '#/locales';
 import { useAuthStore } from '#/store';

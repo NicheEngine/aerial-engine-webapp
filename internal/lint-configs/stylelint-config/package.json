@@ -1,15 +1,7 @@
 {
-  "name": "@vben/stylelint-config",
+  "name": "@aerial-engine/stylelint-config",
   "version": "5.5.8",
   "private": true,
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "internal/lint-configs/stylelint-config"
-  },
-  "license": "MIT",
   "type": "module",
   "files": [
     "dist"

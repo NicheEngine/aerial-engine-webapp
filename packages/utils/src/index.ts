@@ -1,4 +1,4 @@
 export * from './helpers';
-export * from '@vben-core/shared/cache';
-export * from '@vben-core/shared/color';
-export * from '@vben-core/shared/utils';
+export * from '@aerial-engine-core/shared/cache';
+export * from '@aerial-engine-core/shared/color';
+export * from '@aerial-engine-core/shared/utils';

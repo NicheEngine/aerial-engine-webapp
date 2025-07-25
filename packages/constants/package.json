@@ -1,14 +1,6 @@
 {
-  "name": "@vben/constants",
+  "name": "@aerial-engine/constants",
   "version": "5.5.8",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/constants"
-  },
-  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -20,6 +12,6 @@
     }
   },
   "dependencies": {
-    "@vben-core/shared": "workspace:*"
+    "@aerial-engine-core/shared": "workspace:*"
   }
 }
