@@ -1,15 +1,6 @@
 {
-  "name": "@vben/tsconfig",
+  "name": "@aerial-engine/tsconfig",
   "version": "5.5.8",
-  "private": true,
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "internal/tsconfig"
-  },
-  "license": "MIT",
   "type": "module",
   "files": [
     "base.json",
@@ -19,7 +10,7 @@
     "web.json"
   ],
   "dependencies": {
-    "@vben/types": "workspace:*",
+    "@aerial-engine/types": "workspace:*",
     "vite": "catalog:"
   }
 }

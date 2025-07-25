@@ -1,1 +1,1 @@
-import '@vben-core/design';
+import '@aerial-engine-core/design';
