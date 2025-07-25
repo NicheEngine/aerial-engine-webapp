@@ -12,7 +12,7 @@ export const overridesPreferences = defineOverridesPreferences({
     authPageLayout: 'panel-right',
     layout: 'header-mixed-nav',
     enableCheckUpdates: false,
-    enablePreferences: true,
+    enablePreferences: false,
   },
   header: {
     menuAlign: 'center',
