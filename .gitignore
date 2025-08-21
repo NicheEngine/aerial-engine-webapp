@@ -21,7 +21,7 @@ dev-dist
 yarn.lock
 package-lock.json
 .VSCodeCounter
-**/backend-mock/data
+apps/mock-server/data
 
 # local env files
 .env.local

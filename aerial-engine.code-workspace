@@ -1,12 +1,16 @@
 {
   "folders": [
     {
-      "name": "@aerial-engine/backend-mock",
-      "path": "apps/backend-mock",
+      "name": "@aerial-engine/mock-server",
+      "path": "apps/mock-server",
     },
     {
-      "name": "@aerial-engine/web-antd",
-      "path": "apps/web-antd",
+      "name": "@aerial-engine/webapp",
+      "path": "apps/webapp",
+    },
+    {
+      "name": "@aerial-engine/example",
+      "path": "apps/example",
     },
     {
       "name": "@aerial-engine/eslint-config",
@@ -139,10 +143,6 @@
     {
       "name": "@aerial-engine/utils",
       "path": "packages/utils",
-    },
-    {
-      "name": "@aerial-engine/playground",
-      "path": "playground",
     },
     {
       "name": "@aerial-engine/vsh",

@@ -19,7 +19,7 @@ const DEFAULT_CONFIG = {
   ],
   // 需要忽略的包
   ignorePackages: [
-    '@aerial-engine/backend-mock',
+    '@aerial-engine/mock-server',
     '@aerial-engine/eslint-config',
     '@aerial-engine/node-utils',
     '@aerial-engine/prettier-config',

@@ -1,4 +1,4 @@
-# @aerial-engine/backend-mock
+# @aerial-engine/mock-server
 
 ## Description
 

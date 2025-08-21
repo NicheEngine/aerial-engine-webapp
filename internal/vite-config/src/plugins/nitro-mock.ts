@@ -10,7 +10,7 @@ import { build, createDevServer, createNitro, prepare } from 'nitropack';
 const hmrKeyRe = /^runtimeConfig\.|routeRules\./;
 
 export const viteNitroMockPlugin = ({
-  mockServerPackage = '@aerial-engine/backend-mock',
+  mockServerPackage = '@aerial-engine/mock-server',
   port = 5320,
   verbose = true,
 }: NitroMockPluginOptions = {}): PluginOption => {
