@@ -679,7 +679,7 @@ importers:
         specifier: 'catalog:'
         version: 1.0.4
 
-  apps/web-antd:
+  apps/webapp:
     dependencies:
       '@aerial-engine/access':
         specifier: workspace:*

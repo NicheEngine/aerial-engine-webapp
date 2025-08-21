@@ -1,5 +1,5 @@
 {
-  "name": "@aerial-engine/web-antd",
+  "name": "@aerial-engine/webapp",
   "version": "5.5.8",
   "type": "module",
   "scripts": {
