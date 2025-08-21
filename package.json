@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev:antd": "pnpm -F @aerial-engine/web-antd run dev",
-    "dev:play": "pnpm -F @aerial-engine/playground run dev",
+    "dev:play": "pnpm -F @aerial-engine/example run dev",
     "format": "vsh lint --format",
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build",
     "build:analyze": "turbo build:analyze",
@@ -21,10 +21,6 @@
     "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "catalog:",
-    "@changesets/cli": "catalog:",
-    "@playwright/test": "catalog:",
-    "@types/node": "catalog:",
     "@aerial-engine/eslint-config": "workspace:*",
     "@aerial-engine/prettier-config": "workspace:*",
     "@aerial-engine/stylelint-config": "workspace:*",
@@ -32,6 +28,10 @@
     "@aerial-engine/tsconfig": "workspace:*",
     "@aerial-engine/vite-config": "workspace:*",
     "@aerial-engine/vsh": "workspace:*",
+    "@changesets/changelog-github": "catalog:",
+    "@changesets/cli": "catalog:",
+    "@playwright/test": "catalog:",
+    "@types/node": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
     "@vue/test-utils": "catalog:",
@@ -56,7 +56,7 @@
     "node": ">=20.10.0",
     "pnpm": ">=9.12.0"
   },
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.15.0",
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
