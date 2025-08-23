@@ -2,7 +2,10 @@ import type { Locale } from 'ant-design-vue/es/locale';
 
 import type { App } from 'vue';
 
-import type { LocaleSetupOptions, SupportedLanguagesType } from '@aerial-engine/locales';
+import type {
+  LocaleSetupOptions,
+  SupportedLanguagesType,
+} from '@aerial-engine/locales';
 
 import { ref } from 'vue';
 

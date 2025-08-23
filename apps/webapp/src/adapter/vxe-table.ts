@@ -2,7 +2,10 @@ import type { VxeTableGridOptions } from '@aerial-engine/plugins/vxe-table';
 
 import { h } from 'vue';
 
-import { setupVbenVxeTable, useVbenVxeGrid } from '@aerial-engine/plugins/vxe-table';
+import {
+  setupVbenVxeTable,
+  useVbenVxeGrid,
+} from '@aerial-engine/plugins/vxe-table';
 
 import { Button, Image } from 'ant-design-vue';
 

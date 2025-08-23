@@ -14,7 +14,11 @@ import {
   UserDropdown,
 } from '@aerial-engine/layouts';
 import { preferences } from '@aerial-engine/preferences';
-import { useAccessStore, useTabbarStore, useUserStore } from '@aerial-engine/stores';
+import {
+  useAccessStore,
+  useTabbarStore,
+  useUserStore,
+} from '@aerial-engine/stores';
 import { openWindow } from '@aerial-engine/utils';
 
 import { $t } from '#/locales';

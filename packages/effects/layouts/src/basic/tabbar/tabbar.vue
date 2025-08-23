@@ -6,7 +6,11 @@ import { useContentMaximize, useTabs } from '@aerial-engine/hooks';
 import { preferences } from '@aerial-engine/preferences';
 import { useTabbarStore } from '@aerial-engine/stores';
 
-import { TabsToolMore, TabsToolScreen, TabsView } from '@aerial-engine-core/tabs-ui';
+import {
+  TabsToolMore,
+  TabsToolScreen,
+  TabsView,
+} from '@aerial-engine-core/tabs-ui';
 
 import { useTabbar } from './use-tabbar';
 

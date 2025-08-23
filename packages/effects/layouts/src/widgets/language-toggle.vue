@@ -6,7 +6,10 @@ import { Languages } from '@aerial-engine/icons';
 import { loadLocaleMessages } from '@aerial-engine/locales';
 import { preferences, updatePreferences } from '@aerial-engine/preferences';
 
-import { VbenDropdownRadioMenu, VbenIconButton } from '@aerial-engine-core/shadcn-ui';
+import {
+  VbenDropdownRadioMenu,
+  VbenIconButton,
+} from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'LanguageToggle',

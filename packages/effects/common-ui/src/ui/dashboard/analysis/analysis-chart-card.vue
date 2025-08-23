@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { Card, CardContent, CardHeader, CardTitle } from '@aerial-engine-core/shadcn-ui';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@aerial-engine-core/shadcn-ui';
 
 interface Props {
   title: string;

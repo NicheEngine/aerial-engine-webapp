@@ -23,17 +23,17 @@ const COMMAND_DESCRIPTIONS = {
  */
 async function main(): Promise<void> {
   try {
-    const vsh = cac('vsh');
+    const scan = cac('scan');
 
     // Register commands
-    defineLintCommand(vsh);
-    definePubLintCommand(vsh);
-    defineCodeWorkspaceCommand(vsh);
-    defineCheckCircularCommand(vsh);
-    defineDepcheckCommand(vsh);
+    defineLintCommand(scan);
+    definePubLintCommand(scan);
+    defineCodeWorkspaceCommand(scan);
+    defineCheckCircularCommand(scan);
+    defineDepcheckCommand(scan);
 
     // Handle invalid commands
-    vsh.on('command:*', ([cmd]) => {
+    scan.on('command:*', ([cmd]) => {
       consola.error(
         colors.red(`Invalid command: ${cmd}`),
         '\n',
@@ -47,12 +47,12 @@ async function main(): Promise<void> {
     });
 
     // Set up CLI
-    vsh.usage('vsh <command> [options]');
-    vsh.help();
-    vsh.version(version);
+    scan.usage('scan <command> [options]');
+    scan.help();
+    scan.version(version);
 
     // Parse arguments
-    vsh.parse();
+    scan.parse();
   } catch (error) {
     consola.error(
       colors.red('An unexpected error occurred:'),

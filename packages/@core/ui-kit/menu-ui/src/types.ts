@@ -1,6 +1,9 @@
 import type { Component, Ref } from 'vue';
 
-import type { MenuRecordBadgeRaw, ThemeModeType } from '@aerial-engine-core/typings';
+import type {
+  MenuRecordBadgeRaw,
+  ThemeModeType,
+} from '@aerial-engine-core/typings';
 
 interface MenuProps {
   /**

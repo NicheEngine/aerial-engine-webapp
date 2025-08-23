@@ -5,7 +5,10 @@ import { useSlots } from 'vue';
 
 import { CircleHelp } from '@aerial-engine/icons';
 
-import { VbenCheckButtonGroup, VbenTooltip } from '@aerial-engine-core/shadcn-ui';
+import {
+  VbenCheckButtonGroup,
+  VbenTooltip,
+} from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceCheckboxItem',

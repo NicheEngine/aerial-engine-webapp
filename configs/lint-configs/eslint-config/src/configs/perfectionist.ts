@@ -4,7 +4,6 @@ import { interopDefault } from '../util';
 
 export async function perfectionist(): Promise<Linter.Config[]> {
   const perfectionistPlugin = await interopDefault(
-    // @ts-expect-error - no types
     import('eslint-plugin-perfectionist'),
   );
 
@@ -41,13 +40,13 @@ export async function perfectionist(): Promise<Linter.Config[]> {
               'vben-type',
               'vben-core-type',
               ['parent-type', 'sibling-type', 'index-type'],
-              ['configs-type'],
+              ['internal-type'],
               'builtin',
               'vue',
               'vben',
               'vben-core',
               'external',
-              'configs',
+              'internal',
               ['parent', 'sibling', 'index'],
               'side-effect',
               'side-effect-style',

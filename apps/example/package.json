@@ -16,7 +16,6 @@
     "#/*": "./src/*"
   },
   "dependencies": {
-    "@tanstack/vue-query": "catalog:",
     "@aerial-engine-core/menu-ui": "workspace:*",
     "@aerial-engine/access": "workspace:*",
     "@aerial-engine/common-ui": "workspace:*",
@@ -32,6 +31,7 @@
     "@aerial-engine/styles": "workspace:*",
     "@aerial-engine/types": "workspace:*",
     "@aerial-engine/utils": "workspace:*",
+    "@tanstack/vue-query": "catalog:",
     "@vueuse/core": "catalog:",
     "ant-design-vue": "catalog:",
     "dayjs": "catalog:",

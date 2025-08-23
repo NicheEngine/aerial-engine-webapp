@@ -5,7 +5,11 @@ import type {
 
 import type { ComponentType } from './component';
 
-import { setupVbenForm, useVbenForm as useForm, z } from '@aerial-engine/common-ui';
+import {
+  setupVbenForm,
+  useVbenForm as useForm,
+  z,
+} from '@aerial-engine/common-ui';
 import { $t } from '@aerial-engine/locales';
 
 async function initSetupVbenForm() {

@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { MdiGithub, MdiGoogle, MdiQqchat, MdiWechat } from '@aerial-engine/icons';
+import {
+  MdiGithub,
+  MdiGoogle,
+  MdiQqchat,
+  MdiWechat,
+} from '@aerial-engine/icons';
 import { $t } from '@aerial-engine/locales';
 
 import { VbenIconButton } from '@aerial-engine-core/shadcn-ui';

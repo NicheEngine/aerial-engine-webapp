@@ -32,10 +32,10 @@
     "vite-plugin-vue-devtools": "catalog:"
   },
   "devDependencies": {
+    "@aerial-engine/node-utils": "workspace:*",
     "@pnpm/workspace.read-manifest": "catalog:",
     "@types/archiver": "catalog:",
     "@types/html-minifier-terser": "catalog:",
-    "@aerial-engine/node-utils": "workspace:*",
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
     "dayjs": "catalog:",

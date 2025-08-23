@@ -27,7 +27,7 @@ const DEFAULT_CONFIG = {
     '@aerial-engine/tailwind-config',
     '@aerial-engine/tsconfig',
     '@aerial-engine/vite-config',
-    '@aerial-engine/vsh',
+    '@aerial-engine/scan',
   ],
   // 需要忽略的文件模式
   ignorePatterns: ['dist', 'node_modules', 'public'],

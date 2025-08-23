@@ -22,7 +22,11 @@ import {
   X,
 } from '@aerial-engine/icons';
 import { $t, useI18n } from '@aerial-engine/locales';
-import { getTabKey, useAccessStore, useTabbarStore } from '@aerial-engine/stores';
+import {
+  getTabKey,
+  useAccessStore,
+  useTabbarStore,
+} from '@aerial-engine/stores';
 import { filterTree } from '@aerial-engine/utils';
 
 export function useTabbar() {

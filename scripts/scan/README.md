@@ -1,6 +1,6 @@
-# @aerial-engine/vsh
+# @aerial-engine/scan
 
-一个 Shell 脚本工具集合，用于 Vue Vben Admin 项目的开发和管理。
+一个 Shell 脚本工具集合，用于 aerial-engine 项目的开发和管理。
 
 ## 功能特性
 
@@ -14,13 +14,13 @@
 
 ```bash
 # 使用 pnpm 安装
-pnpm add -D @aerial-engine/vsh
+pnpm add -D @aerial-engine/scan
 
 # 或者使用 npm
-npm install -D @aerial-engine/vsh
+npm install -D @aerial-engine/scan
 
 # 或者使用 yarn
-yarn add -D @aerial-engine/vsh
+yarn add -D @aerial-engine/scan
 ```
 
 ## 使用方法
@@ -29,10 +29,10 @@ yarn add -D @aerial-engine/vsh
 
 ```bash
 # 全局安装
-pnpm add -g @aerial-engine/vsh
+pnpm add -g @aerial-engine/scan
 
-# 使用 vsh 命令
-vsh [command]
+# 使用 scan 命令
+scan [command]
 ```
 
 ### 本地使用
@@ -41,16 +41,16 @@ vsh [command]
 # 在 package.json 中添加脚本
 {
   "scripts": {
-    "vsh": "vsh"
+    "scan": "scan"
   }
 }
 
 # 运行命令
-pnpm vsh [command]
+pnpm scan [command]
 ```
 
 ## 命令列表
 
-- `vsh check-deps`: 检查项目依赖
-- `vsh scan-circular`: 扫描循环依赖
-- `vsh publish-check`: 检查包发布配置
+- `scan check-deps`: 检查项目依赖
+- `scan scan-circular`: 扫描循环依赖
+- `scan publish-check`: 检查包发布配置

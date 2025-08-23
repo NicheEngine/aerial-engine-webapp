@@ -145,8 +145,8 @@
       "path": "packages/utils"
     },
     {
-      "name": "@aerial-engine/vsh",
-      "path": "scripts/vsh"
+      "name": "@aerial-engine/scan",
+      "path": "scripts/scan"
     }
   ]
 }

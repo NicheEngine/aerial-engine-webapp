@@ -9,7 +9,10 @@ import type { Ref } from 'vue';
 
 import type { ClassType, DeepPartial } from '@aerial-engine/types';
 
-import type { BaseFormComponentType, VbenFormProps } from '@aerial-engine-core/form-ui';
+import type {
+  BaseFormComponentType,
+  VbenFormProps,
+} from '@aerial-engine-core/form-ui';
 
 import type { VxeGridApi } from './api';
 

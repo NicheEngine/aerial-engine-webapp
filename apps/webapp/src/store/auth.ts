@@ -5,7 +5,11 @@ import { useRouter } from 'vue-router';
 
 import { LOGIN_PATH } from '@aerial-engine/constants';
 import { preferences } from '@aerial-engine/preferences';
-import { resetAllStores, useAccessStore, useUserStore } from '@aerial-engine/stores';
+import {
+  resetAllStores,
+  useAccessStore,
+  useUserStore,
+} from '@aerial-engine/stores';
 
 import { notification } from 'ant-design-vue';
 import { defineStore } from 'pinia';

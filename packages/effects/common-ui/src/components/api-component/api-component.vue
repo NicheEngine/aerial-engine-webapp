@@ -7,7 +7,12 @@ import { computed, nextTick, ref, unref, useAttrs, watch } from 'vue';
 
 import { LoaderCircle } from '@aerial-engine/icons';
 
-import { cloneDeep, get, isEqual, isFunction } from '@aerial-engine-core/shared/utils';
+import {
+  cloneDeep,
+  get,
+  isEqual,
+  isFunction,
+} from '@aerial-engine-core/shared/utils';
 
 import { objectOmit } from '@vueuse/core';
 

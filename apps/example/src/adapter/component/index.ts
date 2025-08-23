@@ -10,7 +10,11 @@ import type { Recordable } from '@aerial-engine/types';
 
 import { defineAsyncComponent, defineComponent, h, ref } from 'vue';
 
-import { ApiComponent, globalShareState, IconPicker } from '@aerial-engine/common-ui';
+import {
+  ApiComponent,
+  globalShareState,
+  IconPicker,
+} from '@aerial-engine/common-ui';
 import { $t } from '@aerial-engine/locales';
 
 import { notification } from 'ant-design-vue';

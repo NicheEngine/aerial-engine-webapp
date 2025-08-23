@@ -1,5 +1,5 @@
 {
-  "name": "@aerial-engine/vsh",
+  "name": "@aerial-engine/scan",
   "version": "5.5.8",
   "private": true,
   "type": "module",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "bin": {
-    "vsh": "./bin/vsh.mjs"
+    "scan": "bin/scan.mjs"
   },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",

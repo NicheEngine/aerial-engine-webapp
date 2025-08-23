@@ -45,10 +45,7 @@ export async function node(): Promise<Linter.Config[]> {
       },
     },
     {
-      files: [
-        'scripts/**/*.?([cm])[jt]s?(x)',
-        'configs/**/*.?([cm])[jt]s?(x)',
-      ],
+      files: ['scripts/**/*.?([cm])[jt]s?(x)', 'configs/**/*.?([cm])[jt]s?(x)'],
       rules: {
         'n/prefer-global/process': 'off',
       },

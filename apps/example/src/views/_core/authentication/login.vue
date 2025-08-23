@@ -4,7 +4,11 @@ import type { BasicOption, Recordable } from '@aerial-engine/types';
 
 import { computed, markRaw, useTemplateRef } from 'vue';
 
-import { AuthenticationLogin, SliderCaptcha, z } from '@aerial-engine/common-ui';
+import {
+  AuthenticationLogin,
+  SliderCaptcha,
+  z,
+} from '@aerial-engine/common-ui';
 import { $t } from '@aerial-engine/locales';
 
 import { useAuthStore } from '#/store';

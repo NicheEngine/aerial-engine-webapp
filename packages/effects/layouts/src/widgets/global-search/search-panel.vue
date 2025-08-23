@@ -6,7 +6,11 @@ import { useRouter } from 'vue-router';
 
 import { SearchX, X } from '@aerial-engine/icons';
 import { $t } from '@aerial-engine/locales';
-import { mapTree, traverseTreeValues, uniqueByField } from '@aerial-engine/utils';
+import {
+  mapTree,
+  traverseTreeValues,
+  uniqueByField,
+} from '@aerial-engine/utils';
 
 import { VbenIcon, VbenScrollbar } from '@aerial-engine-core/shadcn-ui';
 import { isHttpUrl } from '@aerial-engine-core/shared/utils';

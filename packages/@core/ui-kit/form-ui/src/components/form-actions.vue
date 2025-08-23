@@ -3,7 +3,11 @@ import { computed, toRaw, unref, watch } from 'vue';
 
 import { useSimpleLocale } from '@aerial-engine-core/composables';
 import { VbenExpandableArrow } from '@aerial-engine-core/shadcn-ui';
-import { cn, isFunction, triggerWindowResize } from '@aerial-engine-core/shared/utils';
+import {
+  cn,
+  isFunction,
+  triggerWindowResize,
+} from '@aerial-engine-core/shared/utils';
 
 import { COMPONENT_MAP } from '../config';
 import { injectFormProps } from '../use-form-context';

@@ -1,7 +1,10 @@
 /**
  * 该文件可自行根据业务逻辑进行调整
  */
-import type { AxiosResponseHeaders, RequestClientOptions } from '@aerial-engine/request';
+import type {
+  AxiosResponseHeaders,
+  RequestClientOptions,
+} from '@aerial-engine/request';
 
 import { useAppConfig } from '@aerial-engine/hooks';
 import { preferences } from '@aerial-engine/preferences';
