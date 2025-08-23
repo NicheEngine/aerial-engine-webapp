@@ -135,7 +135,7 @@ function sortTsconfig(): Linter.Config {
     files: [
       '**/tsconfig.json',
       '**/tsconfig.*.json',
-      'internal/tsconfig/*.json',
+      'configs/tsconfig/*.json',
     ],
     rules: {
       'jsonc/sort-keys': [

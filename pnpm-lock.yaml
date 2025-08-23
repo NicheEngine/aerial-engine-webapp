@@ -495,22 +495,22 @@ importers:
     devDependencies:
       '@aerial-engine/eslint-config':
         specifier: workspace:*
-        version: link:internal/lint-configs/eslint-config
+        version: link:configs/lint-configs/eslint-config
       '@aerial-engine/prettier-config':
         specifier: workspace:*
-        version: link:internal/lint-configs/prettier-config
+        version: link:configs/lint-configs/prettier-config
       '@aerial-engine/stylelint-config':
         specifier: workspace:*
-        version: link:internal/lint-configs/stylelint-config
+        version: link:configs/lint-configs/stylelint-config
       '@aerial-engine/tailwind-config':
         specifier: workspace:*
-        version: link:internal/tailwind-config
+        version: link:configs/tailwind-config
       '@aerial-engine/tsconfig':
         specifier: workspace:*
-        version: link:internal/tsconfig
+        version: link:configs/tsconfig
       '@aerial-engine/vite-config':
         specifier: workspace:*
-        version: link:internal/vite-config
+        version: link:configs/vite-config
       '@aerial-engine/vsh':
         specifier: workspace:*
         version: link:scripts/vsh
@@ -742,7 +742,7 @@ importers:
         specifier: 'catalog:'
         version: 4.5.1(vue@3.5.17(typescript@5.8.3))
 
-  internal/lint-configs/eslint-config:
+  configs/lint-configs/eslint-config:
     dependencies:
       eslint-config-turbo:
         specifier: 'catalog:'
@@ -815,7 +815,7 @@ importers:
         specifier: 'catalog:'
         version: 10.2.0(eslint@9.30.1(jiti@2.4.2))
 
-  internal/lint-configs/prettier-config:
+  configs/lint-configs/prettier-config:
     dependencies:
       prettier:
         specifier: 'catalog:'
@@ -824,7 +824,7 @@ importers:
         specifier: 'catalog:'
         version: 0.6.13(prettier@3.6.2)
 
-  internal/lint-configs/stylelint-config:
+  configs/lint-configs/stylelint-config:
     dependencies:
       '@stylistic/stylelint-plugin':
         specifier: 'catalog:'
@@ -870,7 +870,7 @@ importers:
         specifier: 'catalog:'
         version: 5.0.3(prettier@3.6.2)(stylelint@16.21.0(typescript@5.8.3))
 
-  internal/node-utils:
+  configs/node-utils:
     dependencies:
       '@changesets/git':
         specifier: 'catalog:'
@@ -906,7 +906,7 @@ importers:
         specifier: 'catalog:'
         version: 6.0.1
 
-  internal/tailwind-config:
+  configs/tailwind-config:
     dependencies:
       '@iconify/json':
         specifier: 'catalog:'
@@ -952,7 +952,7 @@ importers:
         specifier: 'catalog:'
         version: 14.0.3
 
-  internal/tsconfig:
+  configs/tsconfig:
     dependencies:
       '@aerial-engine/types':
         specifier: workspace:*
@@ -961,7 +961,7 @@ importers:
         specifier: 'catalog:'
         version: 6.3.5(@types/node@22.16.0)(jiti@2.4.2)(less@4.3.0)(sass@1.89.2)(terser@5.39.0)(yaml@2.8.0)
 
-  internal/vite-config:
+  configs/vite-config:
     dependencies:
       '@intlify/unplugin-vue-i18n':
         specifier: 'catalog:'
@@ -1662,7 +1662,7 @@ importers:
     dependencies:
       '@aerial-engine/node-utils':
         specifier: workspace:*
-        version: link:../../internal/node-utils
+        version: link:../../configs/node-utils
       cac:
         specifier: 'catalog:'
         version: 6.7.14

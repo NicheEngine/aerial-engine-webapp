@@ -13,7 +13,7 @@ import {
   toPosixPath,
 } from '@aerial-engine/node-utils';
 
-const CODE_WORKSPACE_FILE = join('aerial-engine.code-workspace');
+const CODE_WORKSPACE_FILE = join('aerial-engine-workspace.json');
 
 interface CodeWorkspaceCommandOptions {
   autoCommit?: boolean;
@@ -26,7 +26,7 @@ async function createCodeWorkspace({
 }: CodeWorkspaceCommandOptions) {
   const { packages, rootDir } = await getPackages();
 
-  let folders = packages.map((pkg) => {
+  let folders = packages.map((pkg: any) => {
     const { dir, packageJson } = pkg;
     return {
       name: packageJson.name,
