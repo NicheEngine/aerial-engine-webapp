@@ -7,7 +7,7 @@ declare module 'vue-router' {
   interface RouteMeta extends IRouteMeta {}
 }
 
-export interface VbenAdminProAppConfigRaw {
+export interface EngineAppConfigRaw {
   VITE_GLOB_API_URL: string;
 }
 
@@ -17,6 +17,6 @@ export interface ApplicationConfig {
 
 declare global {
   interface Window {
-    _VBEN_ADMIN_PRO_APP_CONF_: VbenAdminProAppConfigRaw;
+    _ENGINE_APP_CONF_: EngineAppConfigRaw;
   }
 }
