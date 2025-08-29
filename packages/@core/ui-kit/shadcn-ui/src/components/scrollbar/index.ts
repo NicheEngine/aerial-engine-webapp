@@ -1,1 +1,1 @@
-export { default as VbenScrollbar } from './scrollbar.vue';
+export { default as EngineScrollbar } from './scrollbar.vue';

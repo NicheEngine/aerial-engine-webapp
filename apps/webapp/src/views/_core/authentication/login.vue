@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@aerial-engine/common-ui';
+import type { EngineFormSchema } from '@aerial-engine/common-ui';
 import type { BasicOption } from '@aerial-engine/types';
 
 import { computed, markRaw } from 'vue';
@@ -20,7 +20,7 @@ const authStore = useAuthStore();
 const MOCK_USER_OPTIONS: BasicOption[] = [
   {
     label: 'Super',
-    value: 'vben',
+    value: 'engine',
   },
   {
     label: 'Admin',
@@ -32,10 +32,10 @@ const MOCK_USER_OPTIONS: BasicOption[] = [
   },
 ];
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): EngineFormSchema[] => {
   return [
     {
-      component: 'VbenSelect',
+      component: 'EngineSelect',
       componentProps: {
         options: MOCK_USER_OPTIONS,
         placeholder: $t('authentication.selectAccount'),
@@ -46,10 +46,10 @@ const formSchema = computed((): VbenFormSchema[] => {
         .string()
         .min(1, { message: $t('authentication.selectAccount') })
         .optional()
-        .default('vben'),
+        .default('engine'),
     },
     {
-      component: 'VbenInput',
+      component: 'EngineInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
       },
@@ -74,7 +74,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
     },
     {
-      component: 'VbenInputPassword',
+      component: 'EngineInputPassword',
       componentProps: {
         placeholder: $t('authentication.password'),
       },

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { VbenSpinner } from '@aerial-engine-core/shadcn-ui';
+import { EngineSpinner } from '@aerial-engine-core/shadcn-ui';
 import { cn } from '@aerial-engine-core/shared/utils';
 
 interface SpinnerProps {
@@ -20,7 +20,7 @@ const props = defineProps<SpinnerProps>();
 <template>
   <div :class="cn('relative min-h-20', props.class)">
     <slot></slot>
-    <VbenSpinner
+    <EngineSpinner
       :min-loading-time="props.minLoadingTime"
       :spinning="props.spinning"
     />

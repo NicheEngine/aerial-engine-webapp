@@ -8,8 +8,8 @@ import { h } from 'vue';
 import { IconifyIcon } from '@aerial-engine/icons';
 import { $te } from '@aerial-engine/locales';
 import {
-  setupVbenVxeTable,
-  useVbenVxeGrid as useGrid,
+  setupEngineVxeTable,
+  useEngineVxeGrid as useGrid,
 } from '@aerial-engine/plugins/vxe-table';
 import { get, isFunction, isString } from '@aerial-engine/utils';
 
@@ -18,9 +18,9 @@ import { Button, Image, Popconfirm, Switch, Tag } from 'ant-design-vue';
 
 import { $t } from '#/locales';
 
-import { useVbenForm } from './form';
+import { useEngineForm } from './form';
 
-setupVbenVxeTable({
+setupEngineVxeTable({
   configVxeTable: (vxeUI) => {
     vxeUI.setConfig({
       grid: {
@@ -280,10 +280,10 @@ setupVbenVxeTable({
     // 这里可以自行扩展 vxe-table 的全局配置，比如自定义格式化
     // vxeUI.formats.add
   },
-  useVbenForm,
+  useEngineForm,
 });
 
-export const useVbenVxeGrid = <T extends Record<string, any>>(
+export const useEngineVxeGrid = <T extends Record<string, any>>(
   ...rest: Parameters<typeof useGrid<T, ComponentType>>
 ) => useGrid<T, ComponentType>(...rest);
 

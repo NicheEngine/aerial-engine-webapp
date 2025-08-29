@@ -4,7 +4,7 @@ import type {
   VxeTableGridOptions,
 } from '#/adapter/vxe-table';
 
-import { Page, useVbenDrawer } from '@aerial-engine/common-ui';
+import { Page, useEngineDrawer } from '@aerial-engine/common-ui';
 import { IconifyIcon, Plus } from '@aerial-engine/icons';
 import { $t } from '@aerial-engine/locales';
 
@@ -12,18 +12,18 @@ import { MenuBadge } from '@aerial-engine-core/menu-ui';
 
 import { Button, message } from 'ant-design-vue';
 
-import { useVbenVxeGrid } from '#/adapter/vxe-table';
+import { useEngineVxeGrid } from '#/adapter/vxe-table';
 import { deleteMenu, getMenuList, SystemMenuApi } from '#/api/system/menu';
 
 import { useColumns } from './data';
 import Form from './modules/form.vue';
 
-const [FormDrawer, formDrawerApi] = useVbenDrawer({
+const [FormDrawer, formDrawerApi] = useEngineDrawer({
   connectedComponent: Form,
   destroyOnClose: true,
 });
 
-const [Grid, gridApi] = useVbenVxeGrid({
+const [Grid, gridApi] = useEngineVxeGrid({
   gridOptions: {
     columns: useColumns(onActionClick),
     height: 'auto',

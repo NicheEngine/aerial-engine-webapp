@@ -3,7 +3,7 @@ import type { CSSProperties } from 'vue';
 
 import { computed, useTemplateRef } from 'vue';
 
-import { VbenSpineText } from '@aerial-engine-core/shadcn-ui';
+import { EngineSpineText } from '@aerial-engine-core/shadcn-ui';
 
 const props = defineProps<{
   contentStyle: CSSProperties;
@@ -39,9 +39,9 @@ defineExpose({
     class="absolute top-0 flex size-full select-none items-center justify-center text-xs"
   >
     <slot name="text">
-      <VbenSpineText class="flex h-full items-center">
+      <EngineSpineText class="flex h-full items-center">
         {{ isPassing ? successText : text }}
-      </VbenSpineText>
+      </EngineSpineText>
     </slot>
   </div>
 </template>

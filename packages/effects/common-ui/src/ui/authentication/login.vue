@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Recordable } from '@aerial-engine/types';
 
-import type { VbenFormSchema } from '@aerial-engine-core/form-ui';
+import type { EngineFormSchema } from '@aerial-engine-core/form-ui';
 
 import type { AuthenticationProps } from './types';
 
@@ -10,14 +10,14 @@ import { useRouter } from 'vue-router';
 
 import { $t } from '@aerial-engine/locales';
 
-import { useVbenForm } from '@aerial-engine-core/form-ui';
-import { VbenButton, VbenCheckbox } from '@aerial-engine-core/shadcn-ui';
+import { useEngineForm } from '@aerial-engine-core/form-ui';
+import { EngineButton, EngineCheckbox } from '@aerial-engine-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 import ThirdPartyLogin from './third-party-login.vue';
 
 interface Props extends AuthenticationProps {
-  formSchema?: VbenFormSchema[];
+  formSchema?: EngineFormSchema[];
 }
 
 defineOptions({
@@ -46,7 +46,7 @@ const emit = defineEmits<{
   submit: [Recordable<any>];
 }>();
 
-const [Form, formApi] = useVbenForm(
+const [Form, formApi] = useEngineForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -115,24 +115,24 @@ defineExpose({
       class="mb-6 flex justify-between"
     >
       <div class="flex-center">
-        <VbenCheckbox
+        <EngineCheckbox
           v-if="showRememberMe"
           v-model:checked="rememberMe"
           name="rememberMe"
         >
           {{ $t('authentication.rememberMe') }}
-        </VbenCheckbox>
+        </EngineCheckbox>
       </div>
 
       <span
         v-if="showForgetPassword"
-        class="vben-link text-sm font-normal"
+        class="engine-link text-sm font-normal"
         @click="handleGo(forgetPasswordPath)"
       >
         {{ $t('authentication.forgetPassword') }}
       </span>
     </div>
-    <VbenButton
+    <EngineButton
       :class="{
         'cursor-wait': loading,
       }"
@@ -142,28 +142,28 @@ defineExpose({
       @click="handleSubmit"
     >
       {{ submitButtonText || $t('common.login') }}
-    </VbenButton>
+    </EngineButton>
 
     <div
       v-if="showCodeLogin || showQrcodeLogin"
       class="mb-2 mt-4 flex items-center justify-between"
     >
-      <VbenButton
+      <EngineButton
         v-if="showCodeLogin"
         class="w-1/2"
         variant="outline"
         @click="handleGo(codeLoginPath)"
       >
         {{ $t('authentication.mobileLogin') }}
-      </VbenButton>
-      <VbenButton
+      </EngineButton>
+      <EngineButton
         v-if="showQrcodeLogin"
         class="ml-4 w-1/2"
         variant="outline"
         @click="handleGo(qrCodeLoginPath)"
       >
         {{ $t('authentication.qrcodeLogin') }}
-      </VbenButton>
+      </EngineButton>
     </div>
 
     <!-- 第三方登录 -->
@@ -175,7 +175,7 @@ defineExpose({
       <div v-if="showRegister" class="mt-3 text-center text-sm">
         {{ $t('authentication.accountTip') }}
         <span
-          class="vben-link text-sm font-normal"
+          class="engine-link text-sm font-normal"
           @click="handleGo(registerPath)"
         >
           {{ $t('authentication.createAccount') }}

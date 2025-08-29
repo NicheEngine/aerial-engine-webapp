@@ -11,12 +11,12 @@ import type { ClassType, DeepPartial } from '@aerial-engine/types';
 
 import type {
   BaseFormComponentType,
-  VbenFormProps,
+  EngineFormProps,
 } from '@aerial-engine-core/form-ui';
 
 import type { VxeGridApi } from './api';
 
-import { useVbenForm } from '@aerial-engine-core/form-ui';
+import { useEngineForm } from '@aerial-engine-core/form-ui';
 
 export interface VxePaginationInfo {
   currentPage: number;
@@ -70,7 +70,7 @@ export interface VxeGridProps<
   /**
    * 表单配置
    */
-  formOptions?: VbenFormProps<D>;
+  formOptions?: EngineFormProps<D>;
   /**
    * 显示搜索表单
    */
@@ -92,5 +92,5 @@ export type ExtendedVxeGridApi<
 
 export interface SetupVxeTable {
   configVxeTable: (ui: VxeUIExport) => void;
-  useVbenForm: typeof useVbenForm;
+  useEngineForm: typeof useEngineForm;
 }

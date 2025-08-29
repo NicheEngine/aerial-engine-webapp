@@ -5,7 +5,7 @@ import type {
   ThemeModeType,
 } from '@aerial-engine-core/typings';
 
-interface VbenLayoutProps {
+interface EngineLayoutProps {
   /**
    * 内容区域定宽
    * @default 'wide'
@@ -172,4 +172,4 @@ interface VbenLayoutProps {
    */
   zIndex?: number;
 }
-export type { VbenLayoutProps };
+export type { EngineLayoutProps };

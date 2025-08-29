@@ -23,13 +23,13 @@ export async function perfectionist(): Promise<Linter.Config[]> {
           {
             customGroups: {
               type: {
-                'vben-core-type': ['^@aerial-engine-core/.+'],
-                'vben-type': ['^@aerial-engine/.+'],
+                'engine-core-type': ['^@aerial-engine-core/.+'],
+                'engine-type': ['^@aerial-engine/.+'],
                 'vue-type': ['^vue$', '^vue-.+', '^@vue/.+'],
               },
               value: {
-                vben: ['^@aerial-engine/.+'],
-                'vben-core': ['^@aerial-engine-core/.+'],
+                engine: ['^@aerial-engine/.+'],
+                'engine-core': ['^@aerial-engine-core/.+'],
                 vue: ['^vue$', '^vue-.+', '^@vue/.+'],
               },
             },
@@ -37,14 +37,14 @@ export async function perfectionist(): Promise<Linter.Config[]> {
             groups: [
               ['external-type', 'builtin-type', 'type'],
               'vue-type',
-              'vben-type',
-              'vben-core-type',
+              'engine-type',
+              'engine-core-type',
               ['parent-type', 'sibling-type', 'index-type'],
               ['internal-type'],
               'builtin',
               'vue',
-              'vben',
-              'vben-core',
+              'engine',
+              'engine-core',
               'external',
               'internal',
               ['parent', 'sibling', 'index'],

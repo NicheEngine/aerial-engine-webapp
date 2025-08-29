@@ -30,15 +30,15 @@ async function viteLicensePlugin(
       handler: (_options: NormalizedOutputOptions, bundle: OutputBundle) => {
         const date = dateUtil().format('YYYY-MM-DD ');
         const copyrightText = `/*!
-  * Vben Admin
+  * Aerial Engine
   * Version: ${version}
-  * Author: vben
-  * Copyright (C) 2024 Vben
+  * Author: engine
+  * Copyright (C) 2024 Engine
   * License: MIT License
   * Description: ${description}
   * Date Created: ${date}
   * Homepage: ${homepage}
-  * Contact: ann.vben@gmail.com
+  * Contact: ann.engine@gmail.com
 */
               `.trim();
 
@@ -47,17 +47,16 @@ async function viteLicensePlugin(
             const chunkContent = fileContent as OutputChunk;
             // 插入版权信息
             const content = chunkContent.code;
-            const updatedContent = `${copyrightText}${EOL}${content}`;
-
             // 更新bundle
-            (fileContent as OutputChunk).code = updatedContent;
+            (fileContent as OutputChunk).code =
+              `${copyrightText}${EOL}${content}`;
           }
         }
       },
       order: 'post',
     },
     name: 'vite:license',
-  };
+  } as PluginOption;
 }
 
 export { viteLicensePlugin };

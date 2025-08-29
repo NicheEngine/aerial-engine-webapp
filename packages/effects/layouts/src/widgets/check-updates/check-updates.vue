@@ -3,7 +3,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 
 import { $t } from '@aerial-engine/locales';
 
-import { useVbenModal } from '@aerial-engine-core/popup-ui';
+import { useEngineModal } from '@aerial-engine-core/popup-ui';
 
 interface Props {
   // 轮询时间，分钟
@@ -24,7 +24,7 @@ const currentVersionTag = ref('');
 const lastVersionTag = ref('');
 const timer = ref<ReturnType<typeof setInterval>>();
 
-const [UpdateNoticeModal, modalApi] = useVbenModal({
+const [UpdateNoticeModal, modalApi] = useEngineModal({
   closable: false,
   closeOnPressEscape: false,
   closeOnClickModal: false,

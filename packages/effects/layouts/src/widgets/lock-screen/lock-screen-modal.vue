@@ -5,9 +5,9 @@ import { computed, reactive } from 'vue';
 
 import { $t } from '@aerial-engine/locales';
 
-import { useVbenForm, z } from '@aerial-engine-core/form-ui';
-import { useVbenModal } from '@aerial-engine-core/popup-ui';
-import { VbenAvatar, VbenButton } from '@aerial-engine-core/shadcn-ui';
+import { useEngineForm, z } from '@aerial-engine-core/form-ui';
+import { useEngineModal } from '@aerial-engine-core/popup-ui';
+import { EngineAvatar, EngineButton } from '@aerial-engine-core/shadcn-ui';
 
 interface Props {
   avatar?: string;
@@ -27,7 +27,7 @@ const emit = defineEmits<{
   submit: [Recordable<any>];
 }>();
 
-const [Form, { resetForm, validate, getValues }] = useVbenForm(
+const [Form, { resetForm, validate, getValues }] = useEngineForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -35,7 +35,7 @@ const [Form, { resetForm, validate, getValues }] = useVbenForm(
     },
     schema: computed(() => [
       {
-        component: 'VbenInputPassword' as const,
+        component: 'EngineInputPassword' as const,
         componentProps: {
           placeholder: $t('ui.widgets.lockScreen.placeholder'),
         },
@@ -51,7 +51,7 @@ const [Form, { resetForm, validate, getValues }] = useVbenForm(
   }),
 );
 
-const [Modal] = useVbenModal({
+const [Modal] = useEngineModal({
   onConfirm() {
     handleSubmit();
   },
@@ -83,7 +83,7 @@ async function handleSubmit() {
     >
       <div class="w-full">
         <div class="ml-2 flex w-full flex-col items-center">
-          <VbenAvatar
+          <EngineAvatar
             :src="avatar"
             class="size-20"
             dot-class="bottom-0 right-1 border-2 size-4 bg-green-500"
@@ -93,9 +93,9 @@ async function handleSubmit() {
           </div>
         </div>
         <Form />
-        <VbenButton class="mt-1 w-full" @click="handleSubmit">
+        <EngineButton class="mt-1 w-full" @click="handleSubmit">
           {{ $t('ui.widgets.lockScreen.screenButton') }}
-        </VbenButton>
+        </EngineButton>
       </div>
     </div>
   </Modal>

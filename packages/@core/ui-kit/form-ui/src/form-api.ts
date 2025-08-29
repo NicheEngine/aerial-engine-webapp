@@ -9,7 +9,7 @@ import type { ComponentPublicInstance } from 'vue';
 
 import type { Recordable } from '@aerial-engine-core/typings';
 
-import type { FormActions, FormSchema, VbenFormProps } from './types';
+import type { FormActions, FormSchema, EngineFormProps } from './types';
 
 import { isRef, toRaw } from 'vue';
 
@@ -26,7 +26,7 @@ import {
   StateHandler,
 } from '@aerial-engine-core/shared/utils';
 
-function getDefaultState(): VbenFormProps {
+function getDefaultState(): EngineFormProps {
   return {
     actionWrapperClass: '',
     collapsed: false,
@@ -50,14 +50,14 @@ function getDefaultState(): VbenFormProps {
 }
 
 export class FormApi {
-  // private api: Pick<VbenFormProps, 'handleReset' | 'handleSubmit'>;
+  // private api: Pick<EngineFormProps, 'handleReset' | 'handleSubmit'>;
   public form = {} as FormActions;
   isMounted = false;
 
-  public state: null | VbenFormProps = null;
+  public state: null | EngineFormProps = null;
   stateHandler: StateHandler;
 
-  public store: Store<VbenFormProps>;
+  public store: Store<EngineFormProps>;
 
   /**
    * 组件实例映射
@@ -67,14 +67,14 @@ export class FormApi {
   // 最后一次点击提交时的表单值
   private latestSubmissionValues: null | Recordable<any> = null;
 
-  private prevState: null | VbenFormProps = null;
+  private prevState: null | EngineFormProps = null;
 
-  constructor(options: VbenFormProps = {}) {
+  constructor(options: EngineFormProps = {}) {
     const { ...storeState } = options;
 
     const defaultState = getDefaultState();
 
-    this.store = new Store<VbenFormProps>(
+    this.store = new Store<EngineFormProps>(
       {
         ...defaultState,
         ...storeState,
@@ -300,8 +300,8 @@ export class FormApi {
 
   setState(
     stateOrFn:
-      | ((prev: VbenFormProps) => Partial<VbenFormProps>)
-      | Partial<VbenFormProps>,
+      | ((prev: EngineFormProps) => Partial<EngineFormProps>)
+      | Partial<EngineFormProps>,
   ) {
     if (isFunction(stateOrFn)) {
       this.store.setState((prev) => {
@@ -453,7 +453,7 @@ export class FormApi {
       await this.stateHandler.waitForCondition();
     }
     if (!this.form?.meta) {
-      throw new Error('<VbenForm /> is not mounted');
+      throw new Error('<EngineForm /> is not mounted');
     }
     return this.form;
   }

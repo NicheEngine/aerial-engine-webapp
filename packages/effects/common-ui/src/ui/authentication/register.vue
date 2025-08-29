@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import type { Recordable } from '@aerial-engine/types';
 
-import type { VbenFormSchema } from '@aerial-engine-core/form-ui';
+import type { EngineFormSchema } from '@aerial-engine-core/form-ui';
 
 import { computed, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 
 import { $t } from '@aerial-engine/locales';
 
-import { useVbenForm } from '@aerial-engine-core/form-ui';
-import { VbenButton } from '@aerial-engine-core/shadcn-ui';
+import { useEngineForm } from '@aerial-engine-core/form-ui';
+import { EngineButton } from '@aerial-engine-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 
 interface Props {
-  formSchema?: VbenFormSchema[];
+  formSchema?: EngineFormSchema[];
   /**
    * @zh_CN 是否处于加载处理状态
    */
@@ -54,7 +54,7 @@ const emit = defineEmits<{
   submit: [Recordable<any>];
 }>();
 
-const [Form, formApi] = useVbenForm(
+const [Form, formApi] = useEngineForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -98,7 +98,7 @@ defineExpose({
     </Title>
     <Form />
 
-    <VbenButton
+    <EngineButton
       :class="{
         'cursor-wait': loading,
       }"
@@ -110,10 +110,10 @@ defineExpose({
       <slot name="submitButtonText">
         {{ submitButtonText || $t('authentication.signUp') }}
       </slot>
-    </VbenButton>
+    </EngineButton>
     <div class="mt-4 text-center text-sm">
       {{ $t('authentication.alreadyHaveAccount') }}
-      <span class="vben-link text-sm font-normal" @click="goToLogin()">
+      <span class="engine-link text-sm font-normal" @click="goToLogin()">
         {{ $t('authentication.goToLogin') }}
       </span>
     </div>

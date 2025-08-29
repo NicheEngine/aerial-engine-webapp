@@ -7,7 +7,7 @@ import { useRouter } from 'vue-router';
 import { ArrowLeft, RotateCw } from '@aerial-engine/icons';
 import { $t } from '@aerial-engine/locales';
 
-import { VbenButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineButton } from '@aerial-engine-core/shadcn-ui';
 
 interface Props extends FallbackProps {}
 
@@ -151,14 +151,14 @@ function refresh() {
         {{ descText }}
       </p>
       <slot v-if="$slots.action" name="action"></slot>
-      <VbenButton v-else-if="showBack" size="lg" @click="back">
+      <EngineButton v-else-if="showBack" size="lg" @click="back">
         <ArrowLeft class="mr-2 size-4" />
         {{ $t('common.backToHome') }}
-      </VbenButton>
-      <VbenButton v-else-if="showRefresh" size="lg" @click="refresh">
+      </EngineButton>
+      <EngineButton v-else-if="showRefresh" size="lg" @click="refresh">
         <RotateCw class="mr-2 size-4" />
         {{ $t('common.refresh') }}
-      </VbenButton>
+      </EngineButton>
     </div>
   </div>
 </template>

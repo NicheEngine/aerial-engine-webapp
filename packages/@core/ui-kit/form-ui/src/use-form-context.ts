@@ -2,7 +2,7 @@ import type { ZodRawShape } from 'zod';
 
 import type { ComputedRef } from 'vue';
 
-import type { ExtendedFormApi, FormActions, VbenFormProps } from './types';
+import type { ExtendedFormApi, FormActions, EngineFormProps } from './types';
 
 import { computed, unref, useSlots } from 'vue';
 
@@ -17,18 +17,18 @@ import { useForm } from 'vee-validate';
 import { object, ZodIntersection, ZodNumber, ZodObject, ZodString } from 'zod';
 import { getDefaultsForSchema } from 'zod-defaults';
 
-type ExtendFormProps = VbenFormProps & { formApi: ExtendedFormApi };
+type ExtendFormProps = EngineFormProps & { formApi: ExtendedFormApi };
 
 export const [injectFormProps, provideFormProps] =
   createContext<[ComputedRef<ExtendFormProps> | ExtendFormProps, FormActions]>(
-    'VbenFormProps',
+    'EngineFormProps',
   );
 
 export const [injectComponentRefMap, provideComponentRefMap] =
   createContext<Map<string, unknown>>('ComponentRefMap');
 
 export function useFormInitial(
-  props: ComputedRef<VbenFormProps> | VbenFormProps,
+  props: ComputedRef<EngineFormProps> | EngineFormProps,
 ) {
   const slots = useSlots();
   const initialValues = generateInitialValues();

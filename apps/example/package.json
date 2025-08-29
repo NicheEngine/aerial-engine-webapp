@@ -1,6 +1,11 @@
 {
   "name": "@aerial-engine/example",
   "version": "5.5.8",
+  "author": {
+    "name": "aerial-engine",
+    "email": "aerialengine@outlook.com"
+  },
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "build": "pnpm vite build --mode production",

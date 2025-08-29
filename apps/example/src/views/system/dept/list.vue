@@ -5,19 +5,19 @@ import type {
 } from '#/adapter/vxe-table';
 import type { SystemDeptApi } from '#/api/system/dept';
 
-import { Page, useVbenModal } from '@aerial-engine/common-ui';
+import { Page, useEngineModal } from '@aerial-engine/common-ui';
 import { Plus } from '@aerial-engine/icons';
 
 import { Button, message } from 'ant-design-vue';
 
-import { useVbenVxeGrid } from '#/adapter/vxe-table';
+import { useEngineVxeGrid } from '#/adapter/vxe-table';
 import { deleteDept, getDeptList } from '#/api/system/dept';
 import { $t } from '#/locales';
 
 import { useColumns } from './data';
 import Form from './modules/form.vue';
 
-const [FormModal, formModalApi] = useVbenModal({
+const [FormModal, formModalApi] = useEngineModal({
   connectedComponent: Form,
   destroyOnClose: true,
 });
@@ -91,7 +91,7 @@ function onActionClick({
   }
 }
 
-const [Grid, gridApi] = useVbenVxeGrid({
+const [Grid, gridApi] = useEngineVxeGrid({
   gridEvents: {},
   gridOptions: {
     columns: useColumns(onActionClick),

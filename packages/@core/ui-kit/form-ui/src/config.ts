@@ -3,18 +3,18 @@ import type { Component } from 'vue';
 import type {
   BaseFormComponentType,
   FormCommonConfig,
-  VbenFormAdapterOptions,
+  EngineFormAdapterOptions,
 } from './types';
 
 import { h } from 'vue';
 
 import {
-  VbenButton,
-  VbenCheckbox,
-  Input as VbenInput,
-  VbenInputPassword,
-  VbenPinInput,
-  VbenSelect,
+  EngineButton,
+  EngineCheckbox,
+  Input as EngineInput,
+  EngineInputPassword,
+  EnginePinInput,
+  EngineSelect,
 } from '@aerial-engine-core/shadcn-ui';
 import { globalShareState } from '@aerial-engine-core/shared/global-state';
 
@@ -25,24 +25,24 @@ const DEFAULT_MODEL_PROP_NAME = 'modelValue';
 export const DEFAULT_FORM_COMMON_CONFIG: FormCommonConfig = {};
 
 export const COMPONENT_MAP: Record<BaseFormComponentType, Component> = {
-  DefaultButton: h(VbenButton, { size: 'sm', variant: 'outline' }),
-  PrimaryButton: h(VbenButton, { size: 'sm', variant: 'default' }),
-  VbenCheckbox,
-  VbenInput,
-  VbenInputPassword,
-  VbenPinInput,
-  VbenSelect,
+  DefaultButton: h(EngineButton, { size: 'sm', variant: 'outline' }),
+  PrimaryButton: h(EngineButton, { size: 'sm', variant: 'default' }),
+  EngineCheckbox,
+  EngineInput,
+  EngineInputPassword,
+  EnginePinInput,
+  EngineSelect,
 };
 
 export const COMPONENT_BIND_EVENT_MAP: Partial<
   Record<BaseFormComponentType, string>
 > = {
-  VbenCheckbox: 'checked',
+  EngineCheckbox: 'checked',
 };
 
-export function setupVbenForm<
+export function setupEngineForm<
   T extends BaseFormComponentType = BaseFormComponentType,
->(options: VbenFormAdapterOptions<T>) {
+>(options: EngineFormAdapterOptions<T>) {
   const { config, defineRules } = options;
 
   const {

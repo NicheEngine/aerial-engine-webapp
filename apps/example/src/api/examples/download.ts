@@ -1,4 +1,4 @@
-import type { RequestResponse } from '@vben/request';
+import type { RequestResponse } from '@engine/request';
 
 import { requestClient } from '../request';
 
@@ -8,7 +8,7 @@ import { requestClient } from '../request';
  */
 async function downloadFile1() {
   return requestClient.download<Blob>(
-    'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
+    'https://unpkg.com/@nicheengine/static-source@0.1.7/source/logo-v1.webp',
   );
 }
 
@@ -18,7 +18,7 @@ async function downloadFile1() {
  */
 async function downloadFile2() {
   return requestClient.download<RequestResponse<Blob>>(
-    'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
+    'https://unpkg.com/@nicheengine/static-source@0.1.7/source/logo-v1.webp',
     {
       responseReturn: 'raw',
     },

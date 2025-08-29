@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@aerial-engine/common-ui';
+import type { EngineFormSchema } from '@aerial-engine/common-ui';
 
 import { computed, ref } from 'vue';
 
@@ -10,10 +10,10 @@ defineOptions({ name: 'ForgetPassword' });
 
 const loading = ref(false);
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): EngineFormSchema[] => {
   return [
     {
-      component: 'VbenInput',
+      component: 'EngineInput',
       componentProps: {
         placeholder: 'example@example.com',
       },

@@ -15,8 +15,8 @@ import {
 import { useAccessStore } from '@aerial-engine/stores';
 import { cloneDeep, mapTree } from '@aerial-engine/utils';
 
-import { VbenAdminLayout } from '@aerial-engine-core/layout-ui';
-import { VbenBackTop, VbenLogo } from '@aerial-engine-core/shadcn-ui';
+import { AerialEngineLayout } from '@aerial-engine-core/layout-ui';
+import { EngineBackTop, EngineLogo } from '@aerial-engine-core/shadcn-ui';
 
 import { Breadcrumb, CheckUpdates, Preferences } from '../widgets';
 import { LayoutContent, LayoutContentSpinner } from './content';
@@ -177,7 +177,7 @@ const headerSlots = computed(() => {
 </script>
 
 <template>
-  <VbenAdminLayout
+  <AerialEngineLayout
     v-model:sidebar-extra-visible="sidebarExtraVisible"
     :content-compact="preferences.app.contentCompact"
     :content-compact-width="preferences.app.contentCompactWidth"
@@ -232,7 +232,7 @@ const headerSlots = computed(() => {
   >
     <!-- logo -->
     <template #logo>
-      <VbenLogo
+      <EngineLogo
         v-if="preferences.logo.enable"
         :fit="preferences.logo.fit"
         :class="logoClass"
@@ -245,7 +245,7 @@ const headerSlots = computed(() => {
         <template v-if="$slots['logo-text']" #text>
           <slot name="logo-text"></slot>
         </template>
-      </VbenLogo>
+      </EngineLogo>
     </template>
     <!-- 头部区域 -->
     <template #header>
@@ -323,7 +323,7 @@ const headerSlots = computed(() => {
       />
     </template>
     <template #side-extra-title>
-      <VbenLogo
+      <EngineLogo
         v-if="preferences.logo.enable"
         :fit="preferences.logo.fit"
         :text="preferences.app.name"
@@ -332,7 +332,7 @@ const headerSlots = computed(() => {
         <template v-if="$slots['logo-text']" #text>
           <slot name="logo-text"></slot>
         </template>
-      </VbenLogo>
+      </EngineLogo>
     </template>
 
     <template #tabbar>
@@ -379,7 +379,7 @@ const headerSlots = computed(() => {
           @clear-preferences-and-logout="clearPreferencesAndLogout"
         />
       </template>
-      <VbenBackTop />
+      <EngineBackTop />
     </template>
-  </VbenAdminLayout>
+  </AerialEngineLayout>
 </template>

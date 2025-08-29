@@ -38,7 +38,7 @@ function getResponse() {
         @click="
           downloadFileFromUrl({
             source:
-              'https://codeload.github.com/vbenjs/vue-vben-admin-doc/zip/main',
+              'https://codeload.github.com/nicheengine/aerial-engine-webapp-doc/zip/main',
             target: '_self',
           })
         "
@@ -53,8 +53,8 @@ function getResponse() {
         @click="
           downloadFileFromImageUrl({
             source:
-              'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
-            fileName: 'vben-logo.png',
+              'https://unpkg.com/@nicheengine/static-source@0.1.7/source/logo-v1.webp',
+            fileName: 'engine-logo.png',
           })
         "
       >

@@ -10,7 +10,7 @@ import {
   watchEffect,
 } from 'vue';
 
-import { VbenTooltip } from '@aerial-engine-core/shadcn-ui';
+import { EngineTooltip } from '@aerial-engine-core/shadcn-ui';
 
 import { useElementSize } from '@vueuse/core';
 
@@ -184,7 +184,7 @@ function handleExpand() {
 </script>
 <template>
   <div>
-    <VbenTooltip
+    <EngineTooltip
       :content-style="{
         ...tooltipOverlayStyle,
         maxWidth: `${defaultTooltipMaxWidth}px`,
@@ -220,7 +220,7 @@ function handleExpand() {
           <slot></slot>
         </div>
       </template>
-    </VbenTooltip>
+    </EngineTooltip>
   </div>
 </template>
 

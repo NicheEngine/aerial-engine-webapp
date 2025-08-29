@@ -23,7 +23,7 @@ export default function useDependencies(
   const formApi = formRenderProps.form!;
 
   if (!values) {
-    throw new Error('useDependencies should be used within <VbenForm>');
+    throw new Error('useDependencies should be used within <EngineForm>');
   }
 
   const isIf = ref(true);

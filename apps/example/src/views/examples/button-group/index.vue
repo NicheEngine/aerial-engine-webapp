@@ -5,15 +5,15 @@ import { reactive, ref } from 'vue';
 
 import {
   Page,
-  VbenButton,
-  VbenButtonGroup,
-  VbenCheckButtonGroup,
+  EngineButton,
+  EngineButtonGroup,
+  EngineCheckButtonGroup,
 } from '@aerial-engine/common-ui';
 import { LoaderCircle, Square, SquareCheckBig } from '@aerial-engine/icons';
 
 import { Button, Card, message } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useEngineForm } from '#/adapter/form';
 
 const radioValue = ref<string | undefined>('a');
 const checkValue = ref(['a', 'b']);
@@ -55,7 +55,7 @@ const compProps = reactive({
   allowClear: false,
 } as Recordable<any>);
 
-const [Form] = useVbenForm({
+const [Form] = useEngineForm({
   handleValuesChange(values) {
     Object.keys(values).forEach((k) => {
       if (k === 'beforeChange') {
@@ -142,8 +142,8 @@ function onBtnClick(value: any) {
 </script>
 <template>
   <Page
-    title="VbenButtonGroup 按钮组"
-    description="VbenButtonGroup是一个按钮容器，用于包裹一组按钮，协调整体样式。VbenCheckButtonGroup则可以作为一个表单组件，提供单选或多选功能"
+    title="EngineButtonGroup 按钮组"
+    description="EngineButtonGroup是一个按钮容器，用于包裹一组按钮，协调整体样式。EngineCheckButtonGroup则可以作为一个表单组件，提供单选或多选功能"
   >
     <Card title="基本用法">
       <template #extra>
@@ -151,30 +151,30 @@ function onBtnClick(value: any) {
       </template>
       <p class="mt-4">按钮组：</p>
       <div class="mt-2 flex flex-col gap-2">
-        <VbenButtonGroup v-bind="compProps" border>
-          <VbenButton
+        <EngineButtonGroup v-bind="compProps" border>
+          <EngineButton
             v-for="btn in options"
             :key="btn.value"
             variant="link"
             @click="onBtnClick(btn.value)"
           >
             {{ btn.label }}
-          </VbenButton>
-        </VbenButtonGroup>
-        <VbenButtonGroup v-bind="compProps" border>
-          <VbenButton
+          </EngineButton>
+        </EngineButtonGroup>
+        <EngineButtonGroup v-bind="compProps" border>
+          <EngineButton
             v-for="btn in options"
             :key="btn.value"
             variant="outline"
             @click="onBtnClick(btn.value)"
           >
             {{ btn.label }}
-          </VbenButton>
-        </VbenButtonGroup>
+          </EngineButton>
+        </EngineButtonGroup>
       </div>
       <p class="mt-4">单选：{{ radioValue }}</p>
       <div class="mt-2 flex flex-col gap-2">
-        <VbenCheckButtonGroup
+        <EngineCheckButtonGroup
           v-model="radioValue"
           :options="options"
           v-bind="compProps"
@@ -182,7 +182,7 @@ function onBtnClick(value: any) {
       </div>
       <p class="mt-4">单选插槽：{{ radioValue }}</p>
       <div class="mt-2 flex flex-col gap-2">
-        <VbenCheckButtonGroup
+        <EngineCheckButtonGroup
           v-model="radioValue"
           :options="options"
           v-bind="compProps"
@@ -194,11 +194,11 @@ function onBtnClick(value: any) {
               <span v-if="data.num" class="white ml-2">{{ data.num }}</span>
             </div>
           </template>
-        </VbenCheckButtonGroup>
+        </EngineCheckButtonGroup>
       </div>
       <p class="mt-4">多选{{ checkValue }}</p>
       <div class="mt-2 flex flex-col gap-2">
-        <VbenCheckButtonGroup
+        <EngineCheckButtonGroup
           v-model="checkValue"
           multiple
           :options="options"
@@ -207,7 +207,7 @@ function onBtnClick(value: any) {
       </div>
       <p class="mt-4">自定义图标{{ checkValue }}</p>
       <div class="mt-2 flex flex-col gap-2">
-        <VbenCheckButtonGroup
+        <EngineCheckButtonGroup
           v-model="checkValue"
           multiple
           :options="options"
@@ -218,7 +218,7 @@ function onBtnClick(value: any) {
             <SquareCheckBig v-else-if="checked" />
             <Square v-else />
           </template>
-        </VbenCheckButtonGroup>
+        </EngineCheckButtonGroup>
       </div>
     </Card>
 

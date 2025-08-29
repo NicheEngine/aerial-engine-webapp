@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@aerial-engine/common-ui';
+import type { EngineFormSchema } from '@aerial-engine/common-ui';
 import type { Recordable } from '@aerial-engine/types';
 
 import { computed, h, ref } from 'vue';
@@ -11,10 +11,10 @@ defineOptions({ name: 'Register' });
 
 const loading = ref(false);
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): EngineFormSchema[] => {
   return [
     {
-      component: 'VbenInput',
+      component: 'EngineInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
       },
@@ -23,7 +23,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
     },
     {
-      component: 'VbenInputPassword',
+      component: 'EngineInputPassword',
       componentProps: {
         passwordStrength: true,
         placeholder: $t('authentication.password'),
@@ -38,7 +38,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
     },
     {
-      component: 'VbenInputPassword',
+      component: 'EngineInputPassword',
       componentProps: {
         placeholder: $t('authentication.confirmPassword'),
       },
@@ -58,7 +58,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       label: $t('authentication.confirmPassword'),
     },
     {
-      component: 'VbenCheckbox',
+      component: 'EngineCheckbox',
       fieldName: 'agreePolicy',
       renderComponentContent: () => ({
         default: () =>
@@ -67,7 +67,7 @@ const formSchema = computed((): VbenFormSchema[] => {
             h(
               'a',
               {
-                class: 'vben-link ml-1 ',
+                class: 'engine-link ml-1 ',
                 href: '',
               },
               `${$t('authentication.privacyPolicy')} & ${$t('authentication.terms')}`,

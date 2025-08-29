@@ -3,7 +3,7 @@ import { useSlots } from 'vue';
 
 import { CircleHelp } from '@aerial-engine/icons';
 
-import { Switch, VbenTooltip } from '@aerial-engine-core/shadcn-ui';
+import { Switch, EngineTooltip } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceSwitchItem',
@@ -34,7 +34,7 @@ function handleClick() {
     <span class="flex items-center text-sm">
       <slot></slot>
 
-      <VbenTooltip v-if="slots.tip || tip" side="bottom">
+      <EngineTooltip v-if="slots.tip || tip" side="bottom">
         <template #trigger>
           <CircleHelp class="ml-1 size-3 cursor-help" />
         </template>
@@ -45,7 +45,7 @@ function handleClick() {
             </p>
           </template>
         </slot>
-      </VbenTooltip>
+      </EngineTooltip>
     </span>
     <span v-if="$slots.shortcut" class="ml-auto mr-2 text-xs opacity-60">
       <slot name="shortcut"></slot>

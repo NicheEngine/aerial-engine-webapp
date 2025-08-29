@@ -8,7 +8,7 @@ import {
   updatePreferences,
 } from '@aerial-engine/preferences';
 
-import { VbenIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineIconButton } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'AuthenticationColorToggle',
@@ -30,7 +30,7 @@ function handleUpdate(colorPrimary: string, type: BuiltinThemeType) {
       class="flex w-0 overflow-hidden transition-all duration-500 ease-out group-hover:w-60"
     >
       <template v-for="preset in COLOR_PRESETS" :key="preset.color">
-        <VbenIconButton
+        <EngineIconButton
           class="flex-center flex-shrink-0"
           @click="handleUpdate(preset.color, preset.type)"
         >
@@ -53,12 +53,12 @@ function handleUpdate(colorPrimary: string, type: BuiltinThemeType) {
               />
             </svg>
           </div>
-        </VbenIconButton>
+        </EngineIconButton>
       </template>
     </div>
 
-    <VbenIconButton>
+    <EngineIconButton>
       <Palette class="text-primary size-4" />
-    </VbenIconButton>
+    </EngineIconButton>
   </div>
 </template>

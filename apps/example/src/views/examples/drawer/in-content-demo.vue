@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useVbenDrawer } from '@aerial-engine/common-ui';
+import { useEngineDrawer } from '@aerial-engine/common-ui';
 
 import { Input, message } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useEngineForm } from '#/adapter/form';
 
 const value = ref('');
 
-const [Form] = useVbenForm({
+const [Form] = useEngineForm({
   schema: [
     {
       component: 'Input',
@@ -24,7 +24,7 @@ const [Form] = useVbenForm({
   showDefaultActions: false,
 });
 
-const [Drawer, drawerApi] = useVbenDrawer({
+const [Drawer, drawerApi] = useEngineDrawer({
   destroyOnClose: false,
   onCancel() {
     drawerApi.close();

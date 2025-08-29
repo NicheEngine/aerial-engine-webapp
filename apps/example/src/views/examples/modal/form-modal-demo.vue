@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { useVbenModal } from '@aerial-engine/common-ui';
+import { useEngineModal } from '@aerial-engine/common-ui';
 
 import { message } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useEngineForm } from '#/adapter/form';
 
 defineOptions({
   name: 'FormModelDemo',
 });
 
-const [Form, formApi] = useVbenForm({
+const [Form, formApi] = useEngineForm({
   handleSubmit: onSubmit,
   schema: [
     {
@@ -47,7 +47,7 @@ const [Form, formApi] = useVbenForm({
   showDefaultActions: false,
 });
 
-const [Modal, modalApi] = useVbenModal({
+const [Modal, modalApi] = useEngineModal({
   fullscreenButton: false,
   onCancel() {
     modalApi.close();

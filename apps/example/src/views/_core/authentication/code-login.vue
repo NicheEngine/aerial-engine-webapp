@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@aerial-engine/common-ui';
+import type { EngineFormSchema } from '@aerial-engine/common-ui';
 import type { Recordable } from '@aerial-engine/types';
 
 import { computed, ref, useTemplateRef } from 'vue';
@@ -32,10 +32,10 @@ function sendCodeApi(phoneNumber: string) {
     }, 3000);
   });
 }
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): EngineFormSchema[] => {
   return [
     {
-      component: 'VbenInput',
+      component: 'EngineInput',
       componentProps: {
         placeholder: $t('authentication.mobile'),
       },
@@ -49,7 +49,7 @@ const formSchema = computed((): VbenFormSchema[] => {
         }),
     },
     {
-      component: 'VbenPinInput',
+      component: 'EnginePinInput',
       componentProps: {
         codeLength: CODE_LENGTH,
         createText: (countdown: number) => {

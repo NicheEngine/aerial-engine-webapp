@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Settings } from '@aerial-engine/icons';
 
-import { VbenIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineIconButton } from '@aerial-engine-core/shadcn-ui';
 
 import Preferences from './preferences.vue';
 
@@ -13,8 +13,8 @@ function clearPreferencesAndLogout() {
 </script>
 <template>
   <Preferences @clear-preferences-and-logout="clearPreferencesAndLogout">
-    <VbenIconButton>
+    <EngineIconButton>
       <Settings class="text-foreground size-4" />
-    </VbenIconButton>
+    </EngineIconButton>
   </Preferences>
 </template>

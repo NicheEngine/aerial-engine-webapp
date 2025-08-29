@@ -7,7 +7,7 @@ export default eventHandler((event) => {
     return unAuthorizedResponse(event);
   }
   return useResponseSuccess({
-    url: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
+    url: 'https://unpkg.com/@nicheengine/static-source@0.1.7/source/logo-v1.webp',
   });
   // return useResponseError("test")
 });

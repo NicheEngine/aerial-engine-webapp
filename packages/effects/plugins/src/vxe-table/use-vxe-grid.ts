@@ -19,7 +19,7 @@ type FilteredSlots<T> = {
     : K]: VxeGridSlots<T>[K];
 };
 
-export function useVbenVxeGrid<
+export function useEngineVxeGrid<
   T extends Record<string, any> = any,
   D extends BaseFormComponentType = BaseFormComponentType,
 >(options: VxeGridProps<T, D>) {
@@ -39,7 +39,7 @@ export function useVbenVxeGrid<
       return () => h(VxeGrid, { ...props, ...attrs, api: extendedApi }, slots);
     },
     {
-      name: 'VbenVxeGrid',
+      name: 'EngineVxeGrid',
       inheritAttrs: false,
       slots: Object as SlotsType<
         {
@@ -67,4 +67,4 @@ export function useVbenVxeGrid<
   return [Grid, extendedApi] as const;
 }
 
-export type UseVbenVxeGrid = typeof useVbenVxeGrid;
+export type UseEngineVxeGrid = typeof useEngineVxeGrid;

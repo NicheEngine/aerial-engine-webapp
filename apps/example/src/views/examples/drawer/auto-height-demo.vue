@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useVbenDrawer } from '@aerial-engine/common-ui';
+import { useEngineDrawer } from '@aerial-engine/common-ui';
 
 import { Button, message } from 'ant-design-vue';
 
 const list = ref<number[]>([]);
 
-const [Drawer, drawerApi] = useVbenDrawer({
+const [Drawer, drawerApi] = useEngineDrawer({
   onCancel() {
     drawerApi.close();
   },

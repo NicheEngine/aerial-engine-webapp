@@ -1,1 +1,1 @@
-export { default as VbenAvatar } from './avatar.vue';
+export { default as EngineAvatar } from './avatar.vue';

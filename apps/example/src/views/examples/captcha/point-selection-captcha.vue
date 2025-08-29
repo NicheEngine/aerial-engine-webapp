@@ -10,10 +10,10 @@ import { Card, Input, InputNumber, message, Switch } from 'ant-design-vue';
 import { $t } from '#/locales';
 
 const DEFAULT_CAPTCHA_IMAGE =
-  'https://unpkg.com/@vbenjs/static-source@0.1.7/source/default-captcha-image.jpeg';
+  'https://unpkg.com/@nicheengine/static-source@0.1.7/source/default-captcha-image.jpeg';
 
 const DEFAULT_HINT_IMAGE =
-  'https://unpkg.com/@vbenjs/static-source@0.1.7/source/default-hint-image.png';
+  'https://unpkg.com/@nicheengine/static-source@0.1.7/source/default-hint-image.png';
 
 const selectedPoints = ref<CaptchaPoint[]>([]);
 const params = reactive({

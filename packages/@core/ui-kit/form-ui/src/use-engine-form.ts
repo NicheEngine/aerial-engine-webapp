@@ -1,7 +1,7 @@
 import type {
   BaseFormComponentType,
   ExtendedFormApi,
-  VbenFormProps,
+  EngineFormProps,
 } from './types';
 
 import { defineComponent, h, isReactive, onBeforeUnmount, watch } from 'vue';
@@ -9,11 +9,11 @@ import { defineComponent, h, isReactive, onBeforeUnmount, watch } from 'vue';
 import { useStore } from '@aerial-engine-core/shared/store';
 
 import { FormApi } from './form-api';
-import VbenUseForm from './vben-use-form.vue';
+import EngineUseForm from './engine-use-form.vue';
 
-export function useVbenForm<
+export function useEngineForm<
   T extends BaseFormComponentType = BaseFormComponentType,
->(options: VbenFormProps<T>) {
+>(options: EngineFormProps<T>) {
   const IS_REACTIVE = isReactive(options);
   const api = new FormApi(options);
   const extendedApi: ExtendedFormApi = api as never;
@@ -22,16 +22,16 @@ export function useVbenForm<
   };
 
   const Form = defineComponent(
-    (props: VbenFormProps, { attrs, slots }) => {
+    (props: EngineFormProps, { attrs, slots }) => {
       onBeforeUnmount(() => {
         api.unmount();
       });
       api.setState({ ...props, ...attrs });
       return () =>
-        h(VbenUseForm, { ...props, ...attrs, formApi: extendedApi }, slots);
+        h(EngineUseForm, { ...props, ...attrs, formApi: extendedApi }, slots);
     },
     {
-      name: 'VbenUseForm',
+      name: 'EngineUseForm',
       inheritAttrs: false,
     },
   );

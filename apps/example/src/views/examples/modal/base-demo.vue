@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { useVbenModal } from '@aerial-engine/common-ui';
+import { useEngineModal } from '@aerial-engine/common-ui';
 
 import { Button, message } from 'ant-design-vue';
 
-const [Modal, modalApi] = useVbenModal({
+const [Modal, modalApi] = useEngineModal({
   onCancel() {
     modalApi.close();
   },

@@ -10,7 +10,7 @@ import type {
 
 import type { SetupContext } from 'vue';
 
-import type { VbenFormProps } from '@aerial-engine-core/form-ui';
+import type { EngineFormProps } from '@aerial-engine-core/form-ui';
 
 import type { ExtendedVxeGridApi, VxeGridProps } from './types';
 
@@ -37,7 +37,7 @@ import {
   mergeWithArrayOverride,
 } from '@aerial-engine/utils';
 
-import { VbenHelpTooltip, VbenLoading } from '@aerial-engine-core/shadcn-ui';
+import { EngineHelpTooltip, EngineLoading } from '@aerial-engine-core/shadcn-ui';
 
 import { VxeButton } from 'vxe-pc-ui';
 import { VxeGrid, VxeUI } from 'vxe-table';
@@ -306,17 +306,17 @@ async function init() {
     // props.api.reload(formApi.form?.values ?? {});
   }
 
-  // form 由 vben-form代替，所以不适配formConfig，这里给出警告
+  // form 由 engine-form代替，所以不适配formConfig，这里给出警告
   const formConfig = gridOptions.value?.formConfig;
   // 处理某个页面加载多个Table时，第2个之后的Table初始化报出警告
   // 因为第一次初始化之后会把defaultGridOptions和gridOptions合并后缓存进State
   if (formConfig && formConfig.enabled) {
     console.warn(
-      '[Vben Vxe Table]: The formConfig in the grid is not supported, please use the `formOptions` props',
+      '[Engine Vxe Table]: The formConfig in the grid is not supported, please use the `formOptions` props',
     );
   }
   props.api?.setState?.({ gridOptions: defaultGridOptions });
-  // form 由 vben-form 代替，所以需要保证query相关事件可以拿到参数
+  // form 由 engine-form 代替，所以需要保证query相关事件可以拿到参数
   extendProxyOptions(props.api, defaultGridOptions, () =>
     formApi.getLatestSubmissionValues(),
   );
@@ -327,7 +327,7 @@ watch(
   formOptions,
   () => {
     formApi.setState((prev) => {
-      const finalFormOptions: VbenFormProps = mergeWithArrayOverride(
+      const finalFormOptions: EngineFormProps = mergeWithArrayOverride(
         {},
         formOptions.value,
         prev,
@@ -379,9 +379,9 @@ onUnmounted(() => {
         <slot v-if="showTableTitle" name="table-title">
           <div class="mr-1 pl-1 text-[1rem]">
             {{ tableTitle }}
-            <VbenHelpTooltip v-if="tableTitleHelp" trigger-class="pb-1">
+            <EngineHelpTooltip v-if="tableTitleHelp" trigger-class="pb-1">
               {{ tableTitleHelp }}
-            </VbenHelpTooltip>
+            </EngineHelpTooltip>
           </div>
         </slot>
         <slot name="toolbar-actions" v-bind="slotProps"> </slot>
@@ -464,7 +464,7 @@ onUnmounted(() => {
       <!-- loading -->
       <template #loading>
         <slot name="loading">
-          <VbenLoading :spinning="true" />
+          <EngineLoading :spinning="true" />
         </slot>
       </template>
       <!-- 统一控状态 -->

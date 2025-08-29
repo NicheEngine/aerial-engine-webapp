@@ -7,12 +7,12 @@ import type { SystemRoleApi } from '#/api/system/role';
 
 import { computed, ref } from 'vue';
 
-import { useVbenDrawer, VbenTree } from '@aerial-engine/common-ui';
+import { useEngineDrawer, EngineTree } from '@aerial-engine/common-ui';
 import { IconifyIcon } from '@aerial-engine/icons';
 
 import { Spin } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useEngineForm } from '#/adapter/form';
 import { getMenuList } from '#/api/system/menu';
 import { createRole, updateRole } from '#/api/system/role';
 import { $t } from '#/locales';
@@ -23,7 +23,7 @@ const emits = defineEmits(['success']);
 
 const formData = ref<SystemRoleApi.SystemRole>();
 
-const [Form, formApi] = useVbenForm({
+const [Form, formApi] = useEngineForm({
   schema: useFormSchema(),
   showDefaultActions: false,
 });
@@ -32,7 +32,7 @@ const permissions = ref<DataNode[]>([]);
 const loadingPermissions = ref(false);
 
 const id = ref();
-const [Drawer, drawerApi] = useVbenDrawer({
+const [Drawer, drawerApi] = useEngineDrawer({
   async onConfirm() {
     const { valid } = await formApi.validate();
     if (!valid) return;
@@ -99,7 +99,7 @@ function getNodeClass(node: Recordable<any>) {
     <Form>
       <template #permissions="slotProps">
         <Spin :spinning="loadingPermissions" wrapper-class-name="w-full">
-          <VbenTree
+          <EngineTree
             :tree-data="permissions"
             multiple
             bordered
@@ -114,7 +114,7 @@ function getNodeClass(node: Recordable<any>) {
               <IconifyIcon v-if="value.meta.icon" :icon="value.meta.icon" />
               {{ $t(value.meta.title) }}
             </template>
-          </VbenTree>
+          </EngineTree>
         </Spin>
       </template>
     </Form>

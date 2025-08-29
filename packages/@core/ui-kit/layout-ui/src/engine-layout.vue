@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
 
-import type { VbenLayoutProps } from './vben-layout';
+import type { EngineLayoutProps } from './engine-layout';
 
 import { computed, ref, watch } from 'vue';
 
@@ -11,7 +11,7 @@ import {
   useLayoutHeaderStyle,
 } from '@aerial-engine-core/composables';
 import { Menu } from '@aerial-engine-core/icons';
-import { VbenIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineIconButton } from '@aerial-engine-core/shadcn-ui';
 import { ELEMENT_ID_MAIN_CONTENT } from '@aerial-engine-core/shared/constants';
 
 import { useMouse, useScroll, useThrottleFn } from '@vueuse/core';
@@ -25,10 +25,10 @@ import {
 } from './components';
 import { useLayout } from './hooks/use-layout';
 
-interface Props extends VbenLayoutProps {}
+interface Props extends EngineLayoutProps {}
 
 defineOptions({
-  name: 'VbenLayout',
+  name: 'EngineLayout',
 });
 
 const props = withDefaults(defineProps<Props>(), {
@@ -554,13 +554,13 @@ const idMainContent = ELEMENT_ID_MAIN_CONTENT;
           </template>
 
           <template #toggle-button>
-            <VbenIconButton
+            <EngineIconButton
               v-if="showHeaderToggleButton"
               class="my-0 mr-1 rounded-md"
               @click="handleHeaderToggle"
             >
               <Menu class="size-4" />
-            </VbenIconButton>
+            </EngineIconButton>
           </template>
           <slot name="header"></slot>
         </LayoutHeader>

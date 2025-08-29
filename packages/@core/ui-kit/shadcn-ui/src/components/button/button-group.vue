@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { cn } from '@aerial-engine-core/shared/utils';
 
-defineOptions({ name: 'VbenButtonGroup' });
+defineOptions({ name: 'EngineButtonGroup' });
 
 withDefaults(
   defineProps<{
@@ -16,7 +16,7 @@ withDefaults(
   <div
     :class="
       cn(
-        'vben-button-group rounded-md',
+        'engine-button-group rounded-md',
         `size-${size}`,
         gap ? 'with-gap' : 'no-gap',
         $attrs.class as string,
@@ -29,7 +29,7 @@ withDefaults(
 </template>
 
 <style lang="scss" scoped>
-.vben-button-group {
+.engine-button-group {
   display: inline-flex;
 
   &.size-large :deep(button) {

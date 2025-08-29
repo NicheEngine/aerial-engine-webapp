@@ -6,7 +6,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-  VbenIcon,
+  EngineIcon,
 } from '@aerial-engine-core/shadcn-ui';
 
 interface Props {
@@ -36,7 +36,7 @@ withDefaults(defineProps<Props>(), {
           class="flex justify-between gap-x-6 py-5"
         >
           <div class="flex min-w-0 items-center gap-x-4">
-            <VbenIcon
+            <EngineIcon
               :icon="item.avatar"
               alt=""
               class="size-10 flex-none rounded-full"

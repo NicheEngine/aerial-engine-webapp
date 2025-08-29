@@ -7,7 +7,7 @@ import {
   confirm,
   Page,
   prompt,
-  useVbenModal,
+  useEngineModal,
 } from '@aerial-engine/common-ui';
 
 import { Button, Card, Flex, message } from 'ant-design-vue';
@@ -25,41 +25,41 @@ import SharedDataDemo from './shared-data-demo.vue';
 
 defineOptions({ name: 'ModalExample' });
 
-const [BaseModal, baseModalApi] = useVbenModal({
+const [BaseModal, baseModalApi] = useEngineModal({
   // 连接抽离的组件
   connectedComponent: BaseDemo,
 });
 
-const [InContentModal, inContentModalApi] = useVbenModal({
+const [InContentModal, inContentModalApi] = useEngineModal({
   // 连接抽离的组件
   connectedComponent: InContentModalDemo,
 });
 
-const [AutoHeightModal, autoHeightModalApi] = useVbenModal({
+const [AutoHeightModal, autoHeightModalApi] = useEngineModal({
   connectedComponent: AutoHeightDemo,
 });
 
-const [DragModal, dragModalApi] = useVbenModal({
+const [DragModal, dragModalApi] = useEngineModal({
   connectedComponent: DragDemo,
 });
 
-const [DynamicModal, dynamicModalApi] = useVbenModal({
+const [DynamicModal, dynamicModalApi] = useEngineModal({
   connectedComponent: DynamicDemo,
 });
 
-const [SharedDataModal, sharedModalApi] = useVbenModal({
+const [SharedDataModal, sharedModalApi] = useEngineModal({
   connectedComponent: SharedDataDemo,
 });
 
-const [FormModal, formModalApi] = useVbenModal({
+const [FormModal, formModalApi] = useEngineModal({
   connectedComponent: FormModalDemo,
 });
 
-const [NestedModal, nestedModalApi] = useVbenModal({
+const [NestedModal, nestedModalApi] = useEngineModal({
   connectedComponent: NestedDemo,
 });
 
-const [BlurModal, blurModalApi] = useVbenModal({
+const [BlurModal, blurModalApi] = useEngineModal({
   connectedComponent: BlurDemo,
 });
 
@@ -179,7 +179,7 @@ async function openPrompt() {
     title="弹窗组件示例"
   >
     <template #extra>
-      <DocButton path="/components/common-ui/vben-modal" />
+      <DocButton path="/components/common-ui/engine-modal" />
     </template>
     <BaseModal />
     <InContentModal />
@@ -264,7 +264,7 @@ async function openPrompt() {
       </Card>
       <Card class="w-[300px]" title="轻量提示弹窗">
         <template #extra>
-          <DocButton path="/components/common-ui/vben-alert" />
+          <DocButton path="/components/common-ui/engine-alert" />
         </template>
         <p>通过快捷方法创建动态提示弹窗，适合一些轻量的提示和确认、输入等</p>
         <template #actions>

@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import type { ButtonVariants } from '../../ui';
-import type { VbenButtonProps } from './button';
+import type { EngineButtonProps } from './button';
 
 import { computed, useSlots } from 'vue';
 
 import { cn } from '@aerial-engine-core/shared/utils';
 
-import { VbenTooltip } from '../tooltip';
-import VbenButton from './button.vue';
+import { EngineTooltip } from '../tooltip';
+import EngineButton from './button.vue';
 
-interface Props extends VbenButtonProps {
+interface Props extends EngineButtonProps {
   class?: any;
   disabled?: boolean;
   onClick?: () => void;
@@ -33,7 +33,7 @@ const showTooltip = computed(() => !!slots.tooltip || !!props.tooltip);
 </script>
 
 <template>
-  <VbenButton
+  <EngineButton
     v-if="!showTooltip"
     :class="cn('rounded-full', props.class)"
     :disabled="disabled"
@@ -42,15 +42,15 @@ const showTooltip = computed(() => !!slots.tooltip || !!props.tooltip);
     @click="onClick"
   >
     <slot></slot>
-  </VbenButton>
+  </EngineButton>
 
-  <VbenTooltip
+  <EngineTooltip
     v-else
     :delay-duration="tooltipDelayDuration"
     :side="tooltipSide"
   >
     <template #trigger>
-      <VbenButton
+      <EngineButton
         :class="cn('rounded-full', props.class)"
         :disabled="disabled"
         :variant="variant"
@@ -58,11 +58,11 @@ const showTooltip = computed(() => !!slots.tooltip || !!props.tooltip);
         @click="onClick"
       >
         <slot></slot>
-      </VbenButton>
+      </EngineButton>
     </template>
     <slot v-if="slots.tooltip" name="tooltip"> </slot>
     <template v-else>
       {{ tooltip }}
     </template>
-  </VbenTooltip>
+  </EngineTooltip>
 </template>

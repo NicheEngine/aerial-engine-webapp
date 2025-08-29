@@ -8,7 +8,7 @@ import { computed } from 'vue';
 import { CircleHelp } from '@aerial-engine/icons';
 import { $t } from '@aerial-engine/locales';
 
-import { VbenTooltip } from '@aerial-engine-core/shadcn-ui';
+import { EngineTooltip } from '@aerial-engine-core/shadcn-ui';
 
 import {
   FullContent,
@@ -99,12 +99,12 @@ function activeClass(theme: string): string[] {
           class="text-muted-foreground flex-center hover:text-foreground mt-2 text-center text-xs"
         >
           {{ theme.name }}
-          <VbenTooltip v-if="theme.tip" side="bottom">
+          <EngineTooltip v-if="theme.tip" side="bottom">
             <template #trigger>
               <CircleHelp class="ml-1 size-3 cursor-help" />
             </template>
             {{ theme.tip }}
-          </VbenTooltip>
+          </EngineTooltip>
         </div>
       </div>
     </template>

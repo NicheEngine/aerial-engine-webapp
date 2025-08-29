@@ -1,12 +1,12 @@
-export { setupVbenForm } from './config';
+export { setupEngineForm } from './config';
 
 export type {
   BaseFormComponentType,
   ExtendedFormApi,
-  VbenFormProps,
-  FormSchema as VbenFormSchema,
+  EngineFormProps,
+  FormSchema as EngineFormSchema,
 } from './types';
 
-export * from './use-vben-form';
-// export { default as VbenForm } from './vben-form.vue';
+export * from './use-engine-form';
+// export { default as EngineForm } from './engine-form.vue';
 export * as z from 'zod';

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { VbenFormProps } from './types';
+import type { EngineFormProps } from './types';
 
 import { ref, watchEffect } from 'vue';
 
@@ -15,7 +15,7 @@ import { Form } from './form-render';
 import { provideFormProps, useFormInitial } from './use-form-context';
 
 // 通过 extends 会导致热更新卡死
-interface Props extends VbenFormProps {}
+interface Props extends EngineFormProps {}
 const props = withDefaults(defineProps<Props>(), {
   actionWrapperClass: '',
   collapsed: false,

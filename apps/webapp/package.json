@@ -2,6 +2,11 @@
   "name": "@aerial-engine/webapp",
   "version": "5.5.8",
   "type": "module",
+  "author": {
+    "name": "aerial-engine",
+    "email": "aerialengine@outlook.com"
+  },
+  "license": "Apache-2.0",
   "scripts": {
     "build": "pnpm vite build --mode production",
     "build:analyze": "pnpm vite build --mode analyze",

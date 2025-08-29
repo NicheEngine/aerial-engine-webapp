@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { AuthPageLayoutType } from '@aerial-engine/types';
 
-import type { VbenDropdownMenuItem } from '@aerial-engine-core/shadcn-ui';
+import type { EngineDropdownMenuItem } from '@aerial-engine-core/shadcn-ui';
 
 import { computed } from 'vue';
 
@@ -14,15 +14,15 @@ import {
 } from '@aerial-engine/preferences';
 
 import {
-  VbenDropdownRadioMenu,
-  VbenIconButton,
+  EngineDropdownRadioMenu,
+  EngineIconButton,
 } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'AuthenticationLayoutToggle',
 });
 
-const menus = computed((): VbenDropdownMenuItem[] => [
+const menus = computed((): EngineDropdownMenuItem[] => [
   {
     icon: PanelLeft,
     label: $t('authentication.layout.alignLeft'),
@@ -53,15 +53,15 @@ function handleUpdate(value: string | undefined) {
 </script>
 
 <template>
-  <VbenDropdownRadioMenu
+  <EngineDropdownRadioMenu
     :menus="menus"
     :model-value="preferences.app.authPageLayout"
     @update:model-value="handleUpdate"
   >
-    <VbenIconButton>
+    <EngineIconButton>
       <PanelRight v-if="authPanelRight" class="size-4" />
       <PanelLeft v-if="authPanelLeft" class="size-4" />
       <InspectionPanel v-if="authPanelCenter" class="size-4" />
-    </VbenIconButton>
-  </VbenDropdownRadioMenu>
+    </EngineIconButton>
+  </EngineDropdownRadioMenu>
 </template>

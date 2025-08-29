@@ -14,20 +14,20 @@ export * from '@aerial-engine-core/popup-ui';
 
 // 给文档用
 export {
-  VbenAvatar,
-  VbenButton,
-  VbenButtonGroup,
-  VbenCheckbox,
-  VbenCheckButtonGroup,
-  VbenCountToAnimator,
-  VbenFullScreen,
-  VbenInputPassword,
-  VbenLoading,
-  VbenLogo,
-  VbenPinInput,
-  VbenSelect,
-  VbenSpinner,
-  VbenTree,
+  EngineAvatar,
+  EngineButton,
+  EngineButtonGroup,
+  EngineCheckbox,
+  EngineCheckButtonGroup,
+  EngineCountToAnimator,
+  EngineFullScreen,
+  EngineInputPassword,
+  EngineLoading,
+  EngineLogo,
+  EnginePinInput,
+  EngineSelect,
+  EngineSpinner,
+  EngineTree,
 } from '@aerial-engine-core/shadcn-ui';
 
 export type { FlattenedItem } from '@aerial-engine-core/shadcn-ui';

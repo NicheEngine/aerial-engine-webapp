@@ -4,7 +4,7 @@ import type { CaptchaPoint, PointSelectionCaptchaProps } from '../types';
 import { RotateCw } from '@aerial-engine/icons';
 import { $t } from '@aerial-engine/locales';
 
-import { VbenButton, VbenIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineButton, EngineIconButton } from '@aerial-engine-core/shadcn-ui';
 
 import { useCaptchaPoints } from '../hooks/useCaptchaPoints';
 import CaptchaCard from './point-selection-captcha-card.vue';
@@ -126,14 +126,14 @@ function handleConfirm() {
     </template>
 
     <template #extra>
-      <VbenIconButton
+      <EngineIconButton
         :aria-label="$t('ui.captcha.refreshAriaLabel')"
         class="ml-1"
         @click="handleRefresh"
       >
         <RotateCw class="size-5" />
-      </VbenIconButton>
-      <VbenButton
+      </EngineIconButton>
+      <EngineButton
         v-if="showConfirm"
         :aria-label="$t('ui.captcha.confirmAriaLabel')"
         class="ml-2"
@@ -141,7 +141,7 @@ function handleConfirm() {
         @click="handleConfirm"
       >
         {{ $t('ui.captcha.confirm') }}
-      </VbenButton>
+      </EngineButton>
     </template>
 
     <div

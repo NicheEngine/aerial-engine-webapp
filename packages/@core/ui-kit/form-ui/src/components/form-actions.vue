@@ -2,7 +2,7 @@
 import { computed, toRaw, unref, watch } from 'vue';
 
 import { useSimpleLocale } from '@aerial-engine-core/composables';
-import { VbenExpandableArrow } from '@aerial-engine-core/shadcn-ui';
+import { EngineExpandableArrow } from '@aerial-engine-core/shadcn-ui';
 import {
   cn,
   isFunction,
@@ -155,13 +155,13 @@ defineExpose({
     <!-- 展开按钮前 -->
     <slot name="expand-before"></slot>
 
-    <VbenExpandableArrow
+    <EngineExpandableArrow
       v-if="rootProps.showCollapseButton"
       v-model:model-value="collapsed"
       class="ml-2"
     >
       <span>{{ collapsed ? $t('expand') : $t('collapse') }}</span>
-    </VbenExpandableArrow>
+    </EngineExpandableArrow>
 
     <!-- 展开按钮后 -->
     <slot name="expand-after"></slot>

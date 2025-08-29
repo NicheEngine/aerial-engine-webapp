@@ -5,7 +5,7 @@ import { Page } from '@aerial-engine/common-ui';
 
 import { Button, Card, message, Step, Steps, Switch } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useEngineForm } from '#/adapter/form';
 
 const currentTab = ref(0);
 function onFirstSubmit(values: Record<string, any>) {
@@ -23,7 +23,7 @@ function onSecondSubmit(values: Record<string, any>) {
   });
 }
 
-const [FirstForm, firstFormApi] = useVbenForm({
+const [FirstForm, firstFormApi] = useEngineForm({
   commonConfig: {
     componentProps: {
       class: 'w-full',
@@ -50,7 +50,7 @@ const [FirstForm, firstFormApi] = useVbenForm({
   },
   wrapperClass: 'grid-cols-1 md:grid-cols-1 lg:grid-cols-1',
 });
-const [SecondForm, secondFormApi] = useVbenForm({
+const [SecondForm, secondFormApi] = useEngineForm({
   commonConfig: {
     componentProps: {
       class: 'w-full',

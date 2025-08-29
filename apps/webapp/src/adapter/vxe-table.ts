@@ -3,15 +3,15 @@ import type { VxeTableGridOptions } from '@aerial-engine/plugins/vxe-table';
 import { h } from 'vue';
 
 import {
-  setupVbenVxeTable,
-  useVbenVxeGrid,
+  setupEngineVxeTable,
+  useEngineVxeGrid,
 } from '@aerial-engine/plugins/vxe-table';
 
 import { Button, Image } from 'ant-design-vue';
 
-import { useVbenForm } from './form';
+import { useEngineForm } from './form';
 
-setupVbenVxeTable({
+setupEngineVxeTable({
   configVxeTable: (vxeUI) => {
     vxeUI.setConfig({
       grid: {
@@ -64,9 +64,9 @@ setupVbenVxeTable({
     // 这里可以自行扩展 vxe-table 的全局配置，比如自定义格式化
     // vxeUI.formats.add
   },
-  useVbenForm,
+  useEngineForm,
 });
 
-export { useVbenVxeGrid };
+export { useEngineVxeGrid };
 
 export type * from '@aerial-engine/plugins/vxe-table';

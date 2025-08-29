@@ -25,11 +25,11 @@ import {
   usePreferences,
 } from '@aerial-engine/preferences';
 
-import { useVbenDrawer } from '@aerial-engine-core/popup-ui';
+import { useEngineDrawer } from '@aerial-engine-core/popup-ui';
 import {
-  VbenButton,
-  VbenIconButton,
-  VbenSegmented,
+  EngineButton,
+  EngineIconButton,
+  EngineSegmented,
 } from '@aerial-engine-core/shadcn-ui';
 import { globalShareState } from '@aerial-engine-core/shared/global-state';
 
@@ -177,7 +177,7 @@ const {
 } = usePreferences();
 const { copy } = useClipboard({ legacy: true });
 
-const [Drawer] = useVbenDrawer();
+const [Drawer] = useEngineDrawer();
 
 const activeTab = ref('appearance');
 
@@ -244,7 +244,7 @@ async function handleReset() {
     >
       <template #extra>
         <div class="flex items-center">
-          <VbenIconButton
+          <EngineIconButton
             :disabled="!diffPreference"
             :tooltip="$t('preferences.resetTip')"
             class="relative"
@@ -254,12 +254,12 @@ async function handleReset() {
               class="bg-primary absolute right-0.5 top-0.5 h-2 w-2 rounded"
             ></span>
             <RotateCw class="size-4" @click="handleReset" />
-          </VbenIconButton>
+          </EngineIconButton>
         </div>
       </template>
 
       <div class="p-1">
-        <VbenSegmented v-model="activeTab" :tabs="tabs">
+        <EngineSegmented v-model="activeTab" :tabs="tabs">
           <template #general>
             <Block :title="$t('preferences.general')">
               <General
@@ -420,11 +420,11 @@ async function handleReset() {
               />
             </Block>
           </template>
-        </VbenSegmented>
+        </EngineSegmented>
       </div>
 
       <template #footer>
-        <VbenButton
+        <EngineButton
           :disabled="!diffPreference"
           class="mx-4 w-full"
           size="sm"
@@ -433,8 +433,8 @@ async function handleReset() {
         >
           <Copy class="mr-2 size-3" />
           {{ $t('preferences.copyPreferences') }}
-        </VbenButton>
-        <VbenButton
+        </EngineButton>
+        <EngineButton
           :disabled="!diffPreference"
           class="mr-4 w-full"
           size="sm"
@@ -442,7 +442,7 @@ async function handleReset() {
           @click="handleClearCache"
         >
           {{ $t('preferences.clearAndLogout') }}
-        </VbenButton>
+        </EngineButton>
       </template>
     </Drawer>
   </div>

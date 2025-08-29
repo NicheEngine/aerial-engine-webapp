@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Fallback, VbenButton } from '@aerial-engine/common-ui';
+import { Fallback, EngineButton } from '@aerial-engine/common-ui';
 import { useTabs } from '@aerial-engine/hooks';
 import { X } from '@aerial-engine/icons';
 
@@ -14,10 +14,10 @@ const { closeCurrentTab } = useTabs();
     show-back
   >
     <template #action>
-      <VbenButton size="lg" @click="closeCurrentTab()">
+      <EngineButton size="lg" @click="closeCurrentTab()">
         <X class="mr-2 size-4" />
         关闭当前标签页
-      </VbenButton>
+      </EngineButton>
     </template>
   </Fallback>
 </template>

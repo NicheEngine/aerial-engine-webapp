@@ -7,11 +7,11 @@ import { Page } from '@aerial-engine/common-ui';
 
 import { Button, Card, message, Space } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useEngineForm } from '#/adapter/form';
 
 const isReverseActionButtons = ref(false);
 
-const [BaseForm, formApi] = useVbenForm({
+const [BaseForm, formApi] = useEngineForm({
   // 翻转操作按钮的位置
   actionButtonsReverse: isReverseActionButtons.value,
   // 所有表单项共用，可单独在表单内覆盖

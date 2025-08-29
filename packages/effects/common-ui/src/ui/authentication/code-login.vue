@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import type { Recordable } from '@aerial-engine/types';
 
-import type { VbenFormSchema } from '@aerial-engine-core/form-ui';
+import type { EngineFormSchema } from '@aerial-engine-core/form-ui';
 
 import { computed, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 
 import { $t } from '@aerial-engine/locales';
 
-import { useVbenForm } from '@aerial-engine-core/form-ui';
-import { VbenButton } from '@aerial-engine-core/shadcn-ui';
+import { useEngineForm } from '@aerial-engine-core/form-ui';
+import { EngineButton } from '@aerial-engine-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 
 interface Props {
-  formSchema: VbenFormSchema[];
+  formSchema: EngineFormSchema[];
   /**
    * @zh_CN 是否处于加载处理状态
    */
@@ -55,7 +55,7 @@ const emit = defineEmits<{
 
 const router = useRouter();
 
-const [Form, formApi] = useVbenForm(
+const [Form, formApi] = useEngineForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -98,7 +98,7 @@ defineExpose({
       </template>
     </Title>
     <Form />
-    <VbenButton
+    <EngineButton
       :class="{
         'cursor-wait': loading,
       }"
@@ -109,9 +109,9 @@ defineExpose({
       <slot name="submitButtonText">
         {{ submitButtonText || $t('common.login') }}
       </slot>
-    </VbenButton>
-    <VbenButton class="mt-4 w-full" variant="outline" @click="goToLogin()">
+    </EngineButton>
+    <EngineButton class="mt-4 w-full" variant="outline" @click="goToLogin()">
       {{ $t('common.back') }}
-    </VbenButton>
+    </EngineButton>
   </div>
 </template>

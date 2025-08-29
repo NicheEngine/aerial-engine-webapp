@@ -3,7 +3,7 @@ import type { Recordable } from '@aerial-engine/types';
 
 import { useQuery } from '@tanstack/vue-query';
 
-import { useVbenForm } from '#/adapter/form';
+import { useEngineForm } from '#/adapter/form';
 import { getMenuList } from '#/api';
 
 const queryKey = ['demo', 'api', 'options'];
@@ -45,7 +45,7 @@ for (let i = 0; i < count; i++) {
   });
 }
 
-const [Form] = useVbenForm({
+const [Form] = useEngineForm({
   schema,
   showDefaultActions: false,
 });

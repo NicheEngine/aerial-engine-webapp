@@ -7,7 +7,7 @@ import { useRoute } from 'vue-router';
 import { preferences } from '@aerial-engine/preferences';
 import { useTabbarStore } from '@aerial-engine/stores';
 
-import { VbenSpinner } from '@aerial-engine-core/shadcn-ui';
+import { EngineSpinner } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({ name: 'IFrameRouterView' });
 
@@ -74,7 +74,7 @@ function showSpinning(index: number) {
         v-show="routeShow(item)"
         class="relative size-full"
       >
-        <VbenSpinner :spinning="showSpinning(index)" />
+        <EngineSpinner :spinning="showSpinning(index)" />
         <iframe
           :src="item.meta.iframeSrc as string"
           class="size-full"

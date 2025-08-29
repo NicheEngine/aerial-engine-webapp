@@ -11,7 +11,7 @@ import {
   NumberFieldDecrement,
   NumberFieldIncrement,
   NumberFieldInput,
-  VbenTooltip,
+  EngineTooltip,
 } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
@@ -49,7 +49,7 @@ const slots = useSlots();
     <span class="flex items-center text-sm">
       <slot></slot>
 
-      <VbenTooltip v-if="slots.tip || tip" side="bottom">
+      <EngineTooltip v-if="slots.tip || tip" side="bottom">
         <template #trigger>
           <CircleHelp class="ml-1 size-3 cursor-help" />
         </template>
@@ -60,7 +60,7 @@ const slots = useSlots();
             </p>
           </template>
         </slot>
-      </VbenTooltip>
+      </EngineTooltip>
     </span>
 
     <NumberField v-model="inputValue" v-bind="$attrs" class="w-[165px]">

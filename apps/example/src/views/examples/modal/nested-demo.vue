@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { useVbenModal } from '@aerial-engine/common-ui';
+import { useEngineModal } from '@aerial-engine/common-ui';
 
 import { Button } from 'ant-design-vue';
 
 import DragDemo from './drag-demo.vue';
 
-const [Modal] = useVbenModal({
+const [Modal] = useEngineModal({
   destroyOnClose: true,
 });
-const [BaseModal, baseModalApi] = useVbenModal({
+const [BaseModal, baseModalApi] = useEngineModal({
   connectedComponent: DragDemo,
 });
 

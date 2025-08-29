@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { VbenAvatar } from '@aerial-engine-core/shadcn-ui';
+import { EngineAvatar } from '@aerial-engine-core/shadcn-ui';
 
 interface Props {
   avatar?: string;
@@ -15,7 +15,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 <template>
   <div class="card-box p-4 py-6 lg:flex">
-    <VbenAvatar :src="avatar" class="size-20" />
+    <EngineAvatar :src="avatar" class="size-20" />
     <div
       v-if="$slots.title || $slots.description"
       class="flex flex-col justify-center md:ml-6 md:mt-0"

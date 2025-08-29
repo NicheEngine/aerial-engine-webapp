@@ -24,7 +24,7 @@ const {
 
 function openTab() {
   // 这里就是路由跳转，也可以用path
-  router.push({ name: 'VbenAbout' });
+  router.push({ name: 'EngineAbout' });
 }
 
 function openTabWithParams(id: number) {
@@ -46,7 +46,7 @@ function reset() {
       </div>
       <div class="flex flex-wrap gap-3">
         <Button type="primary" @click="openTab"> 打开 "关于" 标签页 </Button>
-        <Button type="primary" @click="closeTabByKey('/vben-admin/about')">
+        <Button type="primary" @click="closeTabByKey('/aerial-engine/about')">
           关闭 "关于" 标签页
         </Button>
       </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VbenAvatar } from '../avatar';
+import { EngineAvatar } from '../avatar';
 
 interface Props {
   /**
@@ -33,7 +33,7 @@ interface Props {
 }
 
 defineOptions({
-  name: 'VbenLogo',
+  name: 'EngineLogo',
 });
 
 withDefaults(defineProps<Props>(), {
@@ -53,7 +53,7 @@ withDefaults(defineProps<Props>(), {
       :href="href"
       class="flex h-full items-center gap-2 overflow-hidden px-3 text-lg leading-normal transition-all duration-500"
     >
-      <VbenAvatar
+      <EngineAvatar
         v-if="src"
         :alt="text"
         :src="src"

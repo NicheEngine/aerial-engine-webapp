@@ -7,8 +7,8 @@ import { loadLocaleMessages } from '@aerial-engine/locales';
 import { preferences, updatePreferences } from '@aerial-engine/preferences';
 
 import {
-  VbenDropdownRadioMenu,
-  VbenIconButton,
+  EngineDropdownRadioMenu,
+  EngineIconButton,
 } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
@@ -29,14 +29,14 @@ async function handleUpdate(value: string | undefined) {
 
 <template>
   <div>
-    <VbenDropdownRadioMenu
+    <EngineDropdownRadioMenu
       :menus="SUPPORT_LANGUAGES"
       :model-value="preferences.app.locale"
       @update:model-value="handleUpdate"
     >
-      <VbenIconButton>
+      <EngineIconButton>
         <Languages class="text-foreground size-4" />
-      </VbenIconButton>
-    </VbenDropdownRadioMenu>
+      </EngineIconButton>
+    </EngineDropdownRadioMenu>
   </div>
 </template>

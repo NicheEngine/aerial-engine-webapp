@@ -11,7 +11,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-  VbenTooltip,
+  EngineTooltip,
 } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
@@ -47,12 +47,12 @@ const slots = useSlots();
     <span class="flex items-center text-sm">
       <slot></slot>
 
-      <VbenTooltip v-if="slots.tip" side="bottom">
+      <EngineTooltip v-if="slots.tip" side="bottom">
         <template #trigger>
           <CircleHelp class="ml-1 size-3 cursor-help" />
         </template>
         <slot name="tip"></slot>
-      </VbenTooltip>
+      </EngineTooltip>
     </span>
     <Select v-model="selectValue">
       <SelectTrigger class="h-8 w-[165px]">

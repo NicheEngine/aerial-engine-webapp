@@ -12,7 +12,7 @@ import { preferences, usePreferences } from '@aerial-engine/preferences';
 import { useAccessStore } from '@aerial-engine/stores';
 import { isWindowsOs } from '@aerial-engine/utils';
 
-import { useVbenModal } from '@aerial-engine-core/popup-ui';
+import { useEngineModal } from '@aerial-engine-core/popup-ui';
 import {
   Badge,
   DropdownMenu,
@@ -22,8 +22,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-  VbenAvatar,
-  VbenIcon,
+  EngineAvatar,
+  EngineIcon,
 } from '@aerial-engine-core/shadcn-ui';
 
 import { useMagicKeys, whenever } from '@vueuse/core';
@@ -87,10 +87,10 @@ const emit = defineEmits<{ logout: [] }>();
 const { globalLockScreenShortcutKey, globalLogoutShortcutKey } =
   usePreferences();
 const accessStore = useAccessStore();
-const [LockModal, lockModalApi] = useVbenModal({
+const [LockModal, lockModalApi] = useEngineModal({
   connectedComponent: LockScreenModal,
 });
-const [LogoutModal, logoutModalApi] = useVbenModal({
+const [LogoutModal, logoutModalApi] = useEngineModal({
   onConfirm() {
     handleSubmitLogout();
   },
@@ -192,14 +192,14 @@ if (enableShortcutKey.value) {
     <DropdownMenuTrigger ref="refTrigger" :disabled="props.trigger === 'hover'">
       <div class="hover:bg-accent ml-1 mr-2 cursor-pointer rounded-full p-1.5">
         <div class="hover:text-accent-foreground flex-center">
-          <VbenAvatar :alt="text" :src="avatar" class="size-8" dot />
+          <EngineAvatar :alt="text" :src="avatar" class="size-8" dot />
         </div>
       </div>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="mr-2 min-w-[240px] p-0 pb-1">
       <div ref="refContent">
         <DropdownMenuLabel class="flex items-center p-3">
-          <VbenAvatar
+          <EngineAvatar
             :alt="text"
             :src="avatar"
             class="size-12"
@@ -230,7 +230,7 @@ if (enableShortcutKey.value) {
           class="mx-1 flex cursor-pointer items-center rounded-sm py-1 leading-8"
           @click="menu.handler"
         >
-          <VbenIcon :icon="menu.icon" class="mr-2 size-4" />
+          <EngineIcon :icon="menu.icon" class="mr-2 size-4" />
           {{ menu.text }}
         </DropdownMenuItem>
         <DropdownMenuSeparator />

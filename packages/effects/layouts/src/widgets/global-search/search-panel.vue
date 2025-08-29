@@ -12,7 +12,7 @@ import {
   uniqueByField,
 } from '@aerial-engine/utils';
 
-import { VbenIcon, VbenScrollbar } from '@aerial-engine-core/shadcn-ui';
+import { EngineIcon, EngineScrollbar } from '@aerial-engine-core/shadcn-ui';
 import { isHttpUrl } from '@aerial-engine-core/shared/utils';
 
 import { onKeyStroke, useLocalStorage, useThrottleFn } from '@vueuse/core';
@@ -226,7 +226,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <VbenScrollbar>
+  <EngineScrollbar>
     <div class="!flex h-full justify-center px-2 sm:max-h-[450px]">
       <!-- 无搜索结果 -->
       <div
@@ -272,7 +272,7 @@ onMounted(() => {
           @click="handleEnter"
           @mouseenter="handleMouseenter"
         >
-          <VbenIcon
+          <EngineIcon
             :icon="item.icon"
             class="mr-2 size-5 flex-shrink-0"
             fallback
@@ -288,5 +288,5 @@ onMounted(() => {
         </li>
       </ul>
     </div>
-  </VbenScrollbar>
+  </EngineScrollbar>
 </template>

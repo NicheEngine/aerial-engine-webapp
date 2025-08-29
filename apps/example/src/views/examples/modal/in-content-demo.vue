@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useVbenModal } from '@aerial-engine/common-ui';
+import { useEngineModal } from '@aerial-engine/common-ui';
 
 import { Input, message } from 'ant-design-vue';
 
-const [Modal, modalApi] = useVbenModal({
+const [Modal, modalApi] = useEngineModal({
   destroyOnClose: false,
   onCancel() {
     modalApi.close();

@@ -12,7 +12,7 @@ import {
 import {
   ToggleGroup,
   ToggleGroupItem,
-  VbenTooltip,
+  EngineTooltip,
 } from '@aerial-engine-core/shadcn-ui';
 
 import ThemeButton from './theme-button.vue';
@@ -53,7 +53,7 @@ const PRESETS = [
 </script>
 <template>
   <div>
-    <VbenTooltip :disabled="!shouldOnHover" side="bottom">
+    <EngineTooltip :disabled="!shouldOnHover" side="bottom">
       <template #trigger>
         <ThemeButton
           :model-value="isDark"
@@ -78,6 +78,6 @@ const PRESETS = [
           <component :is="item.icon" class="size-5" />
         </ToggleGroupItem>
       </ToggleGroup>
-    </VbenTooltip>
+    </EngineTooltip>
   </div>
 </template>

@@ -6,12 +6,12 @@ import { $t, loadLocaleMessages } from '@aerial-engine/locales';
 import { preferences, updatePreferences } from '@aerial-engine/preferences';
 import { capitalizeFirstLetter } from '@aerial-engine/utils';
 
-import { useVbenDrawer } from '@aerial-engine-core/popup-ui';
-import { VbenButton } from '@aerial-engine-core/shadcn-ui';
+import { useEngineDrawer } from '@aerial-engine-core/popup-ui';
+import { EngineButton } from '@aerial-engine-core/shadcn-ui';
 
 import PreferencesDrawer from './preferences-drawer.vue';
 
-const [Drawer, drawerApi] = useVbenDrawer({
+const [Drawer, drawerApi] = useEngineDrawer({
   connectedComponent: PreferencesDrawer,
 });
 
@@ -60,12 +60,12 @@ const listen = computed(() => {
 
     <div @click="() => drawerApi.open()">
       <slot>
-        <VbenButton
+        <EngineButton
           :title="$t('preferences.title')"
           class="bg-primary flex-col-center size-10 cursor-pointer rounded-l-lg rounded-r-none border-none"
         >
           <Settings class="size-5" />
-        </VbenButton>
+        </EngineButton>
       </slot>
     </div>
   </div>

@@ -45,7 +45,7 @@ async function resolveMonorepoDependencies() {
       resultDependencies[key] = resolvePackageVersion(
         pkgsMeta,
         key,
-        value,
+        value as string,
         catalog,
       );
     }
@@ -53,7 +53,7 @@ async function resolveMonorepoDependencies() {
       resultDevDependencies[key] = resolvePackageVersion(
         pkgsMeta,
         key,
-        value,
+        value as string,
         catalog,
       );
     }
@@ -87,7 +87,7 @@ async function viteMetadataPlugin(
 
       return {
         define: {
-          __VBEN_ADMIN_METADATA__: JSON.stringify({
+          __ENGINE_METADATA__: JSON.stringify({
             authorEmail,
             authorName,
             authorUrl,

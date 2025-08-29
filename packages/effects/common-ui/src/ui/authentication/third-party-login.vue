@@ -7,7 +7,7 @@ import {
 } from '@aerial-engine/icons';
 import { $t } from '@aerial-engine/locales';
 
-import { VbenIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineIconButton } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'ThirdPartyLogin',
@@ -25,18 +25,18 @@ defineOptions({
     </div>
 
     <div class="mt-4 flex flex-wrap justify-center">
-      <VbenIconButton class="mb-3">
+      <EngineIconButton class="mb-3">
         <MdiWechat />
-      </VbenIconButton>
-      <VbenIconButton class="mb-3">
+      </EngineIconButton>
+      <EngineIconButton class="mb-3">
         <MdiQqchat />
-      </VbenIconButton>
-      <VbenIconButton class="mb-3">
+      </EngineIconButton>
+      <EngineIconButton class="mb-3">
         <MdiGithub />
-      </VbenIconButton>
-      <VbenIconButton class="mb-3">
+      </EngineIconButton>
+      <EngineIconButton class="mb-3">
         <MdiGoogle />
-      </VbenIconButton>
+      </EngineIconButton>
     </div>
   </div>
 </template>

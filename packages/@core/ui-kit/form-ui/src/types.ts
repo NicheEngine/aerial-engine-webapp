@@ -3,7 +3,7 @@ import type { ZodTypeAny } from 'zod';
 
 import type { Component, HtmlHTMLAttributes, Ref } from 'vue';
 
-import type { VbenButtonProps } from '@aerial-engine-core/shadcn-ui';
+import type { EngineButtonProps } from '@aerial-engine-core/shadcn-ui';
 import type { ClassType, MaybeComputedRef } from '@aerial-engine-core/typings';
 
 import type { FormApi } from './form-api';
@@ -13,11 +13,11 @@ export type FormLayout = 'horizontal' | 'vertical';
 export type BaseFormComponentType =
   | 'DefaultButton'
   | 'PrimaryButton'
-  | 'VbenCheckbox'
-  | 'VbenInput'
-  | 'VbenInputPassword'
-  | 'VbenPinInput'
-  | 'VbenSelect'
+  | 'EngineCheckbox'
+  | 'EngineInput'
+  | 'EngineInputPassword'
+  | 'EnginePinInput'
+  | 'EngineSelect'
   | (Record<never, never> & string);
 
 type Breakpoints = '2xl:' | '3xl:' | '' | 'lg:' | 'md:' | 'sm:' | 'xl:';
@@ -338,13 +338,13 @@ export interface FormRenderProps<
   wrapperClass?: WrapperClassType;
 }
 
-export interface ActionButtonOptions extends VbenButtonProps {
+export interface ActionButtonOptions extends EngineButtonProps {
   [key: string]: any;
   content?: MaybeComputedRef<string>;
   show?: boolean;
 }
 
-export interface VbenFormProps<
+export interface EngineFormProps<
   T extends BaseFormComponentType = BaseFormComponentType,
 > extends Omit<
     FormRenderProps<T>,
@@ -418,12 +418,12 @@ export interface VbenFormProps<
 }
 
 export type ExtendedFormApi = FormApi & {
-  useStore: <T = NoInfer<VbenFormProps>>(
-    selector?: (state: NoInfer<VbenFormProps>) => T,
+  useStore: <T = NoInfer<EngineFormProps>>(
+    selector?: (state: NoInfer<EngineFormProps>) => T,
   ) => Readonly<Ref<T>>;
 };
 
-export interface VbenFormAdapterOptions<
+export interface EngineFormAdapterOptions<
   T extends BaseFormComponentType = BaseFormComponentType,
 > {
   config?: {

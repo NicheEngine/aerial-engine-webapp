@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { VbenButtonProps } from './button';
+import type { EngineButtonProps } from './button';
 
 import { computed } from 'vue';
 
@@ -10,7 +10,7 @@ import { Primitive } from 'radix-vue';
 
 import { buttonVariants } from '../../ui';
 
-interface Props extends VbenButtonProps {}
+interface Props extends EngineButtonProps {}
 
 const props = withDefaults(defineProps<Props>(), {
   as: 'button',

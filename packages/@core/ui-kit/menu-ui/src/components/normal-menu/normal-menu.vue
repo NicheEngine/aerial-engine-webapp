@@ -4,7 +4,7 @@ import type { MenuRecordRaw } from '@aerial-engine-core/typings';
 import type { NormalMenuProps } from './normal-menu';
 
 import { useNamespace } from '@aerial-engine-core/composables';
-import { VbenIcon } from '@aerial-engine-core/shadcn-ui';
+import { EngineIcon } from '@aerial-engine-core/shadcn-ui';
 
 interface Props extends NormalMenuProps {}
 
@@ -50,7 +50,7 @@ function menuIcon(menu: MenuRecordRaw) {
         @click="() => emit('select', menu)"
         @mouseenter="() => emit('enter', menu)"
       >
-        <VbenIcon :class="e('icon')" :icon="menuIcon(menu)" fallback />
+        <EngineIcon :class="e('icon')" :icon="menuIcon(menu)" fallback />
 
         <span :class="e('name')" class="truncate"> {{ menu.name }}</span>
       </li>
@@ -58,7 +58,7 @@ function menuIcon(menu: MenuRecordRaw) {
   </ul>
 </template>
 <style lang="scss" scoped>
-$namespace: vben;
+$namespace: engine;
 
 .#{$namespace}-normal-menu {
   --menu-item-margin-y: 4px;

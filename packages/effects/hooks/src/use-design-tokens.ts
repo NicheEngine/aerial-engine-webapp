@@ -314,7 +314,7 @@ export function useElementPlusDesignTokens() {
         '--el-text-color-regular': getCssVariableValue('--foreground'),
       };
 
-      updateCSSVariables(variables, `__vben_design_styles__`);
+      updateCSSVariables(variables, `__engine_design_styles__`);
     },
     { immediate: true },
   );

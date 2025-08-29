@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router';
 
 import { $t } from '@aerial-engine/locales';
 
-import { VbenButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineButton } from '@aerial-engine-core/shadcn-ui';
 
 import { useQRCode } from '@vueuse/integrations/useQRCode';
 
@@ -52,7 +52,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const router = useRouter();
 
-const text = ref('https://vben.vvbin.cn');
+const text = ref('https://engine.vvbin.cn');
 
 const qrcode = useQRCode(text, {
   errorCorrectionLevel: 'H',
@@ -88,8 +88,8 @@ function goToLogin() {
       </p>
     </div>
 
-    <VbenButton class="mt-4 w-full" variant="outline" @click="goToLogin()">
+    <EngineButton class="mt-4 w-full" variant="outline" @click="goToLogin()">
       {{ $t('common.back') }}
-    </VbenButton>
+    </EngineButton>
   </div>
 </template>

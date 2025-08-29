@@ -7,8 +7,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-  VbenCountToAnimator,
-  VbenIcon,
+  EngineCountToAnimator,
+  EngineIcon,
 } from '@aerial-engine-core/shadcn-ui';
 
 interface Props {
@@ -33,17 +33,17 @@ withDefaults(defineProps<Props>(), {
         </CardHeader>
 
         <CardContent class="flex items-center justify-between">
-          <VbenCountToAnimator
+          <EngineCountToAnimator
             :end-val="item.value"
             :start-val="1"
             class="text-xl"
             prefix=""
           />
-          <VbenIcon :icon="item.icon" class="size-8 flex-shrink-0" />
+          <EngineIcon :icon="item.icon" class="size-8 flex-shrink-0" />
         </CardContent>
         <CardFooter class="justify-between">
           <span>{{ item.totalTitle }}</span>
-          <VbenCountToAnimator
+          <EngineCountToAnimator
             :end-val="item.totalValue"
             :start-val="1"
             prefix=""

@@ -4,7 +4,7 @@ import type { MenuItemProps, MenuItemRegistered } from '../types';
 import { computed, onBeforeUnmount, onMounted, reactive, useSlots } from 'vue';
 
 import { useNamespace } from '@aerial-engine-core/composables';
-import { VbenIcon, VbenTooltip } from '@aerial-engine-core/shadcn-ui';
+import { EngineIcon, EngineTooltip } from '@aerial-engine-core/shadcn-ui';
 
 import { MenuBadge } from '../components';
 import { useMenu, useMenuContext, useSubMenuContext } from '../hooks';
@@ -92,14 +92,14 @@ onBeforeUnmount(() => {
     role="menuitem"
     @click.stop="handleClick"
   >
-    <VbenTooltip
+    <EngineTooltip
       v-if="showTooltip"
       :content-class="[rootMenu.theme]"
       side="right"
     >
       <template #trigger>
         <div :class="[nsMenu.be('tooltip', 'trigger')]">
-          <VbenIcon :class="nsMenu.e('icon')" :icon="menuIcon" fallback />
+          <EngineIcon :class="nsMenu.e('icon')" :icon="menuIcon" fallback />
           <slot></slot>
           <span v-if="collapseShowTitle" :class="nsMenu.e('name')">
             <slot name="title"></slot>
@@ -107,14 +107,14 @@ onBeforeUnmount(() => {
         </div>
       </template>
       <slot name="title"></slot>
-    </VbenTooltip>
+    </EngineTooltip>
     <div v-show="!showTooltip" :class="[e('content')]">
       <MenuBadge
         v-if="rootMenu.props.mode !== 'horizontal'"
         class="right-2"
         v-bind="props"
       />
-      <VbenIcon :class="nsMenu.e('icon')" :icon="menuIcon" />
+      <EngineIcon :class="nsMenu.e('icon')" :icon="menuIcon" />
       <slot></slot>
       <slot name="title"></slot>
     </div>

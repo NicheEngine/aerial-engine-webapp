@@ -5,7 +5,7 @@ import { computed } from 'vue';
 
 import { useNamespace } from '@aerial-engine-core/composables';
 import { ChevronDown, ChevronRight } from '@aerial-engine-core/icons';
-import { VbenIcon } from '@aerial-engine-core/shadcn-ui';
+import { EngineIcon } from '@aerial-engine-core/shadcn-ui';
 
 import { useMenuContext } from '../hooks';
 
@@ -82,7 +82,7 @@ const iconArrowStyle = computed(() => {
   >
     <slot></slot>
 
-    <VbenIcon
+    <EngineIcon
       v-if="!isMenuMore"
       :class="nsMenu.e('icon')"
       :icon="icon"

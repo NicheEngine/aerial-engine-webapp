@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { useVbenDrawer } from '@aerial-engine/common-ui';
+import { useEngineDrawer } from '@aerial-engine/common-ui';
 
-import { useVbenForm } from '#/adapter/form';
+import { useEngineForm } from '#/adapter/form';
 
 defineOptions({
   name: 'FormDrawerDemo',
 });
 
-const [Form, formApi] = useVbenForm({
+const [Form, formApi] = useEngineForm({
   schema: [
     {
       component: 'Input',
@@ -30,7 +30,7 @@ const [Form, formApi] = useVbenForm({
   ],
   showDefaultActions: false,
 });
-const [Drawer, drawerApi] = useVbenDrawer({
+const [Drawer, drawerApi] = useEngineDrawer({
   onCancel() {
     drawerApi.close();
   },

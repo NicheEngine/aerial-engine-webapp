@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useVbenModal } from '@aerial-engine/common-ui';
+import { useEngineModal } from '@aerial-engine/common-ui';
 
 import { Button, message } from 'ant-design-vue';
 
 const list = ref<number[]>([]);
 
-const [Modal, modalApi] = useVbenModal({
+const [Modal, modalApi] = useEngineModal({
   onCancel() {
     modalApi.close();
   },

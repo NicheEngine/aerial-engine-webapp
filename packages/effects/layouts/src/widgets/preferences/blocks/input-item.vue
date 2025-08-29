@@ -5,7 +5,7 @@ import { useSlots } from 'vue';
 
 import { CircleHelp } from '@aerial-engine/icons';
 
-import { Input, VbenTooltip } from '@aerial-engine-core/shadcn-ui';
+import { Input, EngineTooltip } from '@aerial-engine-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceSelectItem',
@@ -40,12 +40,12 @@ const slots = useSlots();
     <span class="flex items-center text-sm">
       <slot></slot>
 
-      <VbenTooltip v-if="slots.tip" side="bottom">
+      <EngineTooltip v-if="slots.tip" side="bottom">
         <template #trigger>
           <CircleHelp class="ml-1 size-3 cursor-help" />
         </template>
         <slot name="tip"></slot>
-      </VbenTooltip>
+      </EngineTooltip>
     </span>
     <Input v-model="inputValue" class="h-8 w-[165px]" />
   </div>

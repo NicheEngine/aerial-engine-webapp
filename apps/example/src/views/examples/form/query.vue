@@ -3,9 +3,9 @@ import { Page } from '@aerial-engine/common-ui';
 
 import { Card, message } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useEngineForm } from '#/adapter/form';
 
-const [QueryForm] = useVbenForm({
+const [QueryForm] = useEngineForm({
   // 默认展开
   collapsed: false,
   // 所有表单项共用，可单独在表单内覆盖
@@ -86,7 +86,7 @@ const [QueryForm] = useVbenForm({
   wrapperClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
 });
 
-const [QueryForm1] = useVbenForm({
+const [QueryForm1] = useEngineForm({
   // 默认展开
   collapsed: true,
   collapsedRows: 2,

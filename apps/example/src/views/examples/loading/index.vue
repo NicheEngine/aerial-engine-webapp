@@ -13,7 +13,7 @@ const loadingV = refAutoReset(false, 3000);
 </script>
 <template>
   <Page
-    title="Vben Loading"
+    title="Engine Loading"
     description="加载中状态组件。这个组件可以为其它作为容器的组件添加一个加载中的遮罩层。使用它们时，容器需要relative定位。"
   >
     <Card title="Antd Spin">
@@ -23,7 +23,7 @@ const loadingV = refAutoReset(false, 3000);
       </Spin>
     </Card>
 
-    <Card title="Vben Loading" v-loading="loadingV" class="mt-4">
+    <Card title="Engine Loading" v-loading="loadingV" class="mt-4">
       <template #extra>
         <Button type="primary" @click="loadingV = true">
           v-loading 指令
@@ -74,7 +74,7 @@ const loadingV = refAutoReset(false, 3000);
     </Card>
 
     <Card
-      title="Vben Spinner"
+      title="Engine Spinner"
       v-spinning="spinningV"
       class="mt-4 overflow-hidden"
       :body-style="{

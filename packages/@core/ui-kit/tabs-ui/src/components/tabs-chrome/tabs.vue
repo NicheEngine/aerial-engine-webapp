@@ -6,17 +6,17 @@ import type { TabConfig, TabsProps } from '../../types';
 import { computed, ref } from 'vue';
 
 import { Pin, X } from '@aerial-engine-core/icons';
-import { VbenContextMenu, VbenIcon } from '@aerial-engine-core/shadcn-ui';
+import { EngineContextMenu, EngineIcon } from '@aerial-engine-core/shadcn-ui';
 
 interface Props extends TabsProps {}
 
 defineOptions({
-  name: 'VbenTabsChrome',
+  name: 'EngineTabsChrome',
   inheritAttrs: false,
 });
 
 const props = withDefaults(defineProps<Props>(), {
-  contentClass: 'vben-tabs-content',
+  contentClass: 'engine-tabs-content',
   contextMenus: () => [],
   gap: 7,
   tabs: () => [],
@@ -97,7 +97,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
         @click="active = tab.key"
         @mousedown="onMouseDown($event, tab)"
       >
-        <VbenContextMenu
+        <EngineContextMenu
           :handler-data="tab"
           :menus="contextMenus"
           :modal="false"
@@ -153,7 +153,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
             <div
               class="tabs-chrome__item-main group-[.is-active]:text-primary dark:group-[.is-active]:text-accent-foreground text-accent-foreground z-[2] mx-[calc(var(--gap)*2)] my-0 flex h-full items-center overflow-hidden rounded-tl-[5px] rounded-tr-[5px] pl-2 pr-4 duration-150"
             >
-              <VbenIcon
+              <EngineIcon
                 v-if="showIcon"
                 :icon="tab.icon"
                 class="mr-1 flex size-4 items-center overflow-hidden"
@@ -164,7 +164,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
               </span>
             </div>
           </div>
-        </VbenContextMenu>
+        </EngineContextMenu>
       </div>
     </TransitionGroup>
   </div>

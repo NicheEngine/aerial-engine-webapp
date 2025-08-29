@@ -12,7 +12,7 @@ import { useTitle } from '@vueuse/core';
 import { $t, setupI18n } from '#/locales';
 
 import { initComponentAdapter } from './adapter/component';
-import { initSetupVbenForm } from './adapter/form';
+import { initSetupEngineForm } from './adapter/form';
 import App from './app.vue';
 import { router } from './router';
 
@@ -21,7 +21,7 @@ async function bootstrap(namespace: string) {
   await initComponentAdapter();
 
   // 初始化表单组件
-  await initSetupVbenForm();
+  await initSetupEngineForm();
 
   // // 设置弹窗的默认配置
   // setDefaultModalProps({

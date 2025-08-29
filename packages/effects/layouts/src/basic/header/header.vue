@@ -6,7 +6,7 @@ import { RotateCw } from '@aerial-engine/icons';
 import { preferences, usePreferences } from '@aerial-engine/preferences';
 import { useAccessStore } from '@aerial-engine/stores';
 
-import { VbenFullScreen, VbenIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineFullScreen, EngineIconButton } from '@aerial-engine-core/shadcn-ui';
 
 import {
   GlobalSearch,
@@ -119,9 +119,9 @@ function clearPreferencesAndLogout() {
   >
     <slot :name="slot.name">
       <template v-if="slot.name === 'refresh'">
-        <VbenIconButton class="my-0 mr-1 rounded-md" @click="refresh">
+        <EngineIconButton class="my-0 mr-1 rounded-md" @click="refresh">
           <RotateCw class="size-4" />
-        </VbenIconButton>
+        </EngineIconButton>
       </template>
     </slot>
   </template>
@@ -164,7 +164,7 @@ function clearPreferencesAndLogout() {
           <LanguageToggle class="mr-1" />
         </template>
         <template v-else-if="slot.name === 'fullscreen'">
-          <VbenFullScreen class="mr-1" />
+          <EngineFullScreen class="mr-1" />
         </template>
       </slot>
     </template>

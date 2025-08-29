@@ -3,7 +3,7 @@ import type { VxeGridProps } from '#/adapter/vxe-table';
 
 import { Page } from '@aerial-engine/common-ui';
 
-import { useVbenVxeGrid } from '#/adapter/vxe-table';
+import { useEngineVxeGrid } from '#/adapter/vxe-table';
 import { getExampleTableApi } from '#/api';
 
 interface RowType {
@@ -47,7 +47,7 @@ const gridOptions: VxeGridProps<RowType> = {
   showOverflow: true,
 };
 
-const [Grid] = useVbenVxeGrid({ gridOptions });
+const [Grid] = useEngineVxeGrid({ gridOptions });
 </script>
 
 <template>

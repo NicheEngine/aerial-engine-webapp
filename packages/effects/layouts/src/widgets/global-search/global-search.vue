@@ -13,7 +13,7 @@ import {
 import { $t } from '@aerial-engine/locales';
 import { isWindowsOs } from '@aerial-engine/utils';
 
-import { useVbenModal } from '@aerial-engine-core/popup-ui';
+import { useEngineModal } from '@aerial-engine-core/popup-ui';
 
 import { useMagicKeys, whenever } from '@vueuse/core';
 
@@ -34,7 +34,7 @@ const props = withDefaults(
 const keyword = ref('');
 const searchInputRef = ref<HTMLInputElement>();
 
-const [Modal, modalApi] = useVbenModal({
+const [Modal, modalApi] = useEngineModal({
   onCancel() {
     modalApi.close();
   },

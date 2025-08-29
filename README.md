@@ -1,24 +1,9 @@
-<div align="center">
-  <a href="https://github.com/anncwb/vue-vben-admin">
-    <img alt="VbenAdmin Logo" width="215" src="https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp">
-  </a>
-  <br>
-  <br>
 
-[![license](https://img.shields.io/github/license/anncwb/vue-vben-admin.svg)](LICENSE)
-
-  <h1>Vue Vben Admin</h1>
-</div>
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vbenjs_vue-vben-admin&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=vbenjs_vue-vben-admin) ![codeql](https://github.com/vbenjs/vue-vben-admin/actions/workflows/codeql.yml/badge.svg) ![build](https://github.com/vbenjs/vue-vben-admin/actions/workflows/build.yml/badge.svg) ![ci](https://github.com/vbenjs/vue-vben-admin/actions/workflows/ci.yml/badge.svg) ![deploy](https://github.com/vbenjs/vue-vben-admin/actions/workflows/deploy.yml/badge.svg)
+# Aerial Engine Webapp
 
 ## 简介
 
-Vue Vben Admin 是 Vue Vben Admin 的升级版本。作为一个免费开源的中后台模板，它采用了最新的 Vue 3、Vite、TypeScript 等主流技术开发，开箱即用，可用于中后台前端开发，也适合学习参考。
-
-## 升级提示
-
-该版本为最新版本 `5.0`，与其他版本不兼容，如果你是新项目，建议使用最新版本。如果你想查看旧版本，请使用 [v2 分支](https://github.com/vbenjs/vue-vben-admin/tree/v2)
+Aerial Engine 是基于 Vue Vben Admin 改造的中后台前端。它采用了最新的 Vue 3、Vite、TypeScript 等主流技术开发，开箱即用，可用于中后台前端开发，也适合学习参考。
 
 ## 特性
 
@@ -30,38 +15,28 @@ Vue Vben Admin 是 Vue Vben Admin 的升级版本。作为一个免费开源的�
 
 ## 预览
 
-- [Vben Admin](https://vben.pro/) - 完整版中文站点
-
 测试账号：vben/123456
-
-<div align="center">
-  <img alt="VbenAdmin Logo" width="100%" src="https://anncwb.github.io/anncwb/images/preview1.png">
-  <img alt="VbenAdmin Logo" width="100%" src="https://anncwb.github.io/anncwb/images/preview2.png">
-  <img alt="VbenAdmin Logo" width="100%" src="https://anncwb.github.io/anncwb/images/preview3.png">
-</div>
 
 ### 使用 Gitpod
 
 在 Gitpod（适用于 GitHub 的免费在线开发环境）中打开项目，并立即开始编码。
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/vbenjs/vue-vben-admin)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/nicheengine/aerial-engine-webapp)
 
 ## 文档
-
-[文档地址](https://doc.vben.pro/)
 
 ## 安装使用
 
 1. 获取项目代码
 
 ```bash
-git clone https://github.com/vbenjs/vue-vben-admin.git
+git clone https://github.com/nicheengine/aerial-engine-webapp.git
 ```
 
 2. 安装依赖
 
 ```bash
-cd vue-vben-admin
+cd aerial-engine-webapp
 npm i -g corepack
 pnpm install
 ```
@@ -80,11 +55,11 @@ pnpm build
 
 ## 更新日志
 
-[CHANGELOG](https://github.com/vbenjs/vue-vben-admin/releases)
+[CHANGELOG](https://github.com/nicheengine/aerial-engine-webapp/releases)
 
 ## 如何贡献
 
-非常欢迎你的加入！[提一个 Issue](https://github.com/anncwb/vue-vben-admin/issues/new/choose) 或者提交一个 Pull Request。
+非常欢迎你的加入！[提一个 Issue](https://github.com/anncwb/vue-aerial-engine/issues/new/choose) 或者提交一个 Pull Request。
 
 **Pull Request 流程：**
 
@@ -120,32 +95,6 @@ pnpm build
 | :-: | :-: | :-: | :-: |
 | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
-## 维护者
-
-[@Vben](https://github.com/anncwb)
-
-## Star 历史
-
-[![Star History Chart](https://api.star-history.com/svg?repos=vbenjs/vue-vben-admin&type=Date)](https://star-history.com/#vbenjs/vue-vben-admin&Date)
-
-## 捐赠
-
-如果你觉得这个项目对你有帮助，你可以帮作者买一杯咖啡表示支持！
-
-![donate](https://unpkg.com/@vbenjs/static-source@0.1.7/source/sponsor.png)
-
-<a style="display: block;width: 100px;height: 50px;line-height: 50px; color: #fff;text-align: center; background: #408aed;border-radius: 4px;" href="https://www.paypal.com/paypalme/cvvben">Paypal Me</a>
-
-## 贡献者
-
-<a href="https://github.com/vbenjs/vue-vben-admin/graphs/contributors">
-  <img alt="Contributors" src="https://opencollective.com/vbenjs/contributors.svg?button=false" />
-</a>
-
-## Discord
-
-- [Github Discussions](https://github.com/anncwb/vue-vben-admin/discussions)
-
 ## 许可证
 
-[MIT © Vben-2020](./LICENSE)
+[MIT © Engine-2020](./LICENSE)

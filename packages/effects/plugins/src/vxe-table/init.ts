@@ -4,7 +4,7 @@ import { defineComponent, watch } from 'vue';
 
 import { usePreferences } from '@aerial-engine/preferences';
 
-import { useVbenForm } from '@aerial-engine-core/form-ui';
+import { useEngineForm } from '@aerial-engine-core/form-ui';
 
 import {
   VxeButton,
@@ -51,7 +51,7 @@ import { extendsDefaultFormatter } from './extends';
 let isInit = false;
 
 // eslint-disable-next-line import/no-mutable-exports
-export let useTableForm: typeof useVbenForm;
+export let useTableForm: typeof useEngineForm;
 
 // 部分组件，如果没注册，vxe-table 会报错，这里实际没用组件，只是为了不报错，同时可以减少打包体积
 const createVirtualComponent = (name = '') => {
@@ -100,11 +100,11 @@ export function initVxeTable() {
   isInit = true;
 }
 
-export function setupVbenVxeTable(setupOptions: SetupVxeTable) {
-  const { configVxeTable, useVbenForm } = setupOptions;
+export function setupEngineVxeTable(setupOptions: SetupVxeTable) {
+  const { configVxeTable, useEngineForm } = setupOptions;
 
   initVxeTable();
-  useTableForm = useVbenForm;
+  useTableForm = useEngineForm;
 
   const { isDark, locale } = usePreferences();
 

@@ -7,7 +7,7 @@ import type { AlertProps, BeforeCloseScope, PromptProps } from './alert';
 import { h, nextTick, ref, render } from 'vue';
 
 import { useSimpleLocale } from '@aerial-engine-core/composables';
-import { Input, VbenRenderContent } from '@aerial-engine-core/shadcn-ui';
+import { Input, EngineRenderContent } from '@aerial-engine-core/shadcn-ui';
 import { isFunction, isString } from '@aerial-engine-core/shared/utils';
 
 import Alert from './alert.vue';
@@ -16,18 +16,18 @@ const alerts = ref<Array<{ container: HTMLElement; instance: Component }>>([]);
 
 const { $t } = useSimpleLocale();
 
-export function vbenAlert(options: AlertProps): Promise<void>;
-export function vbenAlert(
+export function engineAlert(options: AlertProps): Promise<void>;
+export function engineAlert(
   message: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
-export function vbenAlert(
+export function engineAlert(
   message: string,
   title?: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
 
-export function vbenAlert(
+export function engineAlert(
   arg0: AlertProps | string,
   arg1?: Partial<AlertProps> | string,
   arg2?: Partial<AlertProps>,
@@ -95,18 +95,18 @@ export function vbenAlert(
   });
 }
 
-export function vbenConfirm(options: AlertProps): Promise<void>;
-export function vbenConfirm(
+export function engineConfirm(options: AlertProps): Promise<void>;
+export function engineConfirm(
   message: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
-export function vbenConfirm(
+export function engineConfirm(
   message: string,
   title?: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
 
-export function vbenConfirm(
+export function engineConfirm(
   arg0: AlertProps | string,
   arg1?: Partial<AlertProps> | string,
   arg2?: Partial<AlertProps>,
@@ -116,20 +116,20 @@ export function vbenConfirm(
   };
   if (!arg1) {
     return isString(arg0)
-      ? vbenAlert(arg0, defaultProps)
-      : vbenAlert({ ...defaultProps, ...arg0 });
+      ? engineAlert(arg0, defaultProps)
+      : engineAlert({ ...defaultProps, ...arg0 });
   } else if (!arg2) {
     return isString(arg1)
-      ? vbenAlert(arg0 as string, arg1, defaultProps)
-      : vbenAlert(arg0 as string, { ...defaultProps, ...arg1 });
+      ? engineAlert(arg0 as string, arg1, defaultProps)
+      : engineAlert(arg0 as string, { ...defaultProps, ...arg1 });
   }
-  return vbenAlert(arg0 as string, arg1 as string, {
+  return engineAlert(arg0 as string, arg1 as string, {
     ...defaultProps,
     ...arg2,
   });
 }
 
-export async function vbenPrompt<T = any>(
+export async function enginePrompt<T = any>(
   options: PromptProps<T>,
 ): Promise<T | undefined> {
   const {
@@ -146,7 +146,7 @@ export async function vbenPrompt<T = any>(
   const inputComponentRef = ref<null | VNode>(null);
   const staticContents: Component[] = [];
 
-  staticContents.push(h(VbenRenderContent, { content, renderBr: true }));
+  staticContents.push(h(EngineRenderContent, { content, renderBr: true }));
 
   const modelPropName = _modelPropName || 'modelValue';
   const componentProps = { ..._componentProps };
@@ -228,7 +228,7 @@ export async function vbenPrompt<T = any>(
     },
   };
 
-  await vbenConfirm(props);
+  await engineConfirm(props);
   return modelValue.value;
 }
 

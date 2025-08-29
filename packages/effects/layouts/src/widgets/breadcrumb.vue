@@ -8,7 +8,7 @@ import { useRoute, useRouter } from 'vue-router';
 
 import { $t } from '@aerial-engine/locales';
 
-import { VbenBreadcrumbView } from '@aerial-engine-core/shadcn-ui';
+import { EngineBreadcrumbView } from '@aerial-engine-core/shadcn-ui';
 
 interface Props {
   hideWhenOnlyOne?: boolean;
@@ -64,7 +64,7 @@ function handleSelect(path: string) {
 }
 </script>
 <template>
-  <VbenBreadcrumbView
+  <EngineBreadcrumbView
     :breadcrumbs="breadcrumbs"
     :show-icon="showIcon"
     :style-type="type"

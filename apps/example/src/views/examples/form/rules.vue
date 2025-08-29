@@ -3,9 +3,9 @@ import { Page } from '@aerial-engine/common-ui';
 
 import { Button, Card, message } from 'ant-design-vue';
 
-import { useVbenForm, z } from '#/adapter/form';
+import { useEngineForm, z } from '#/adapter/form';
 
-const [Form, formApi] = useVbenForm({
+const [Form, formApi] = useEngineForm({
   // 所有表单项共用，可单独在表单内覆盖
   commonConfig: {
     // 所有表单项

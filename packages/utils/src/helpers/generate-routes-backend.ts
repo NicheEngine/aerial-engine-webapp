@@ -80,7 +80,7 @@ function normalizeViewPath(path: string): string {
     ? normalizedPath
     : `/${normalizedPath}`;
 
-  // 这里耦合了vben-admin的目录结构
+  // 这里耦合了aerial-engine的目录结构
   return viewPath.replace(/^\/views/, '');
 }
 export { generateRoutesByBackend };

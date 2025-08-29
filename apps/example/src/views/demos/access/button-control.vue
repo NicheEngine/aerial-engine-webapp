@@ -18,7 +18,7 @@ const accounts: Record<string, Recordable<any>> = {
   },
   super: {
     password: '123456',
-    username: 'vben',
+    username: 'engine',
   },
   user: {
     password: '123456',

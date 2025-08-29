@@ -4,7 +4,7 @@ import type { NotificationItem } from '@aerial-engine/layouts';
 import { computed, onBeforeMount, ref, watch } from 'vue';
 
 import { AuthenticationLoginExpiredModal } from '@aerial-engine/common-ui';
-import { VBEN_DOC_URL, VBEN_GITHUB_URL } from '@aerial-engine/constants';
+import { ENGINE_DOC_URL, ENGINE_GITHUB_URL } from '@aerial-engine/constants';
 import { useWatermark } from '@aerial-engine/hooks';
 import { BookOpenText, CircleHelp, MdiGithub } from '@aerial-engine/icons';
 import {
@@ -80,7 +80,7 @@ const showDot = computed(() =>
 const menus = computed(() => [
   {
     handler: () => {
-      openWindow(VBEN_DOC_URL, {
+      openWindow(ENGINE_DOC_URL, {
         target: '_blank',
       });
     },
@@ -89,7 +89,7 @@ const menus = computed(() => [
   },
   {
     handler: () => {
-      openWindow(VBEN_GITHUB_URL, {
+      openWindow(ENGINE_GITHUB_URL, {
         target: '_blank',
       });
     },
@@ -98,7 +98,7 @@ const menus = computed(() => [
   },
   {
     handler: () => {
-      openWindow(`${VBEN_GITHUB_URL}/issues`, {
+      openWindow(`${ENGINE_GITHUB_URL}/issues`, {
         target: '_blank',
       });
     },
@@ -158,7 +158,7 @@ onBeforeMount(() => {
         :avatar
         :menus
         :text="userStore.userInfo?.realName"
-        description="ann.vben@gmail.com"
+        description="ann.engine@gmail.com"
         tag-text="Pro"
         trigger="both"
         @logout="handleLogout"

@@ -5,7 +5,7 @@ import { Page } from '@aerial-engine/common-ui';
 
 import { Button, message } from 'ant-design-vue';
 
-import { useVbenVxeGrid } from '#/adapter/vxe-table';
+import { useEngineVxeGrid } from '#/adapter/vxe-table';
 
 import DocButton from '../doc-button.vue';
 import { MOCK_TABLE_DATA } from './table-data';
@@ -43,7 +43,7 @@ const gridEvents: VxeGridListeners<RowType> = {
   },
 };
 
-const [Grid, gridApi] = useVbenVxeGrid<RowType>({
+const [Grid, gridApi] = useEngineVxeGrid<RowType>({
   // 放开注释查看表单组件的类型
   // formOptions: {
   //   schema: [
@@ -89,7 +89,7 @@ function changeLoading() {
     title="表格基础示例"
   >
     <template #extra>
-      <DocButton path="/components/common-ui/vben-vxe-table" />
+      <DocButton path="/components/common-ui/engine-vxe-table" />
     </template>
     <Grid table-title="基础列表" table-title-help="提示">
       <!-- <template #toolbar-actions>
