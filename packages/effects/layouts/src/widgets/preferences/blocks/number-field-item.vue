@@ -6,12 +6,12 @@ import { useSlots } from 'vue';
 import { CircleHelp } from '@engine/icons';
 
 import {
+  EngineTooltip,
   NumberField,
   NumberFieldContent,
   NumberFieldDecrement,
   NumberFieldIncrement,
   NumberFieldInput,
-  EngineTooltip,
 } from '@engine-core/shadcn-ui';
 
 defineOptions({

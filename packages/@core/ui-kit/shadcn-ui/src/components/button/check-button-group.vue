@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { Arrayable } from '@vueuse/core';
 
-import type { ValueType, EngineButtonGroupProps } from './button';
+import type { EngineButtonGroupProps, ValueType } from './button';
 
 import { computed, ref, watch } from 'vue';
 

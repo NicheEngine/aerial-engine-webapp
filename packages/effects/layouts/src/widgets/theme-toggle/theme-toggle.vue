@@ -10,9 +10,9 @@ import {
 } from '@engine/preferences';
 
 import {
+  EngineTooltip,
   ToggleGroup,
   ToggleGroupItem,
-  EngineTooltip,
 } from '@engine-core/shadcn-ui';
 
 import ThemeButton from './theme-button.vue';

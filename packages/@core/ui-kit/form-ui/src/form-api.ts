@@ -9,7 +9,7 @@ import type { ComponentPublicInstance } from 'vue';
 
 import type { Recordable } from '@engine-core/typings';
 
-import type { FormActions, FormSchema, EngineFormProps } from './types';
+import type { EngineFormProps, FormActions, FormSchema } from './types';
 
 import { isRef, toRaw } from 'vue';
 
@@ -54,7 +54,7 @@ export class FormApi {
   public form = {} as FormActions;
   isMounted = false;
 
-  public state: null | EngineFormProps = null;
+  public state: EngineFormProps | null = null;
   stateHandler: StateHandler;
 
   public store: Store<EngineFormProps>;
@@ -67,7 +67,7 @@ export class FormApi {
   // 最后一次点击提交时的表单值
   private latestSubmissionValues: null | Recordable<any> = null;
 
-  private prevState: null | EngineFormProps = null;
+  private prevState: EngineFormProps | null = null;
 
   constructor(options: EngineFormProps = {}) {
     const { ...storeState } = options;

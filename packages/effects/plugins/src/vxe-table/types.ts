@@ -9,7 +9,10 @@ import type { Ref } from 'vue';
 
 import type { ClassType, DeepPartial } from '@engine/types';
 
-import type { BaseFormComponentType, EngineFormProps } from '@engine-core/form-ui';
+import type {
+  BaseFormComponentType,
+  EngineFormProps,
+} from '@engine-core/form-ui';
 
 import type { VxeGridApi } from './api';
 

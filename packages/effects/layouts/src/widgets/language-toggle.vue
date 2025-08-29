@@ -6,7 +6,10 @@ import { Languages } from '@engine/icons';
 import { loadLocaleMessages } from '@engine/locales';
 import { preferences, updatePreferences } from '@engine/preferences';
 
-import { EngineDropdownRadioMenu, EngineIconButton } from '@engine-core/shadcn-ui';
+import {
+  EngineDropdownRadioMenu,
+  EngineIconButton,
+} from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'LanguageToggle',

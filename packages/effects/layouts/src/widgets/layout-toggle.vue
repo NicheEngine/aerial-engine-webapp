@@ -13,7 +13,10 @@ import {
   usePreferences,
 } from '@engine/preferences';
 
-import { EngineDropdownRadioMenu, EngineIconButton } from '@engine-core/shadcn-ui';
+import {
+  EngineDropdownRadioMenu,
+  EngineIconButton,
+} from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'AuthenticationLayoutToggle',

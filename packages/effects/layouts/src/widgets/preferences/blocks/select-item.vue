@@ -6,12 +6,12 @@ import { useSlots } from 'vue';
 import { CircleHelp } from '@engine/icons';
 
 import {
+  EngineTooltip,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-  EngineTooltip,
 } from '@engine-core/shadcn-ui';
 
 defineOptions({

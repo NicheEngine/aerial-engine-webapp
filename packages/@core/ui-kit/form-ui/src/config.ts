@@ -2,8 +2,8 @@ import type { Component } from 'vue';
 
 import type {
   BaseFormComponentType,
-  FormCommonConfig,
   EngineFormAdapterOptions,
+  FormCommonConfig,
 } from './types';
 
 import { h } from 'vue';

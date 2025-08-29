@@ -7,7 +7,7 @@ import type { AlertProps, BeforeCloseScope, PromptProps } from './alert';
 import { h, nextTick, ref, render } from 'vue';
 
 import { useSimpleLocale } from '@engine-core/composables';
-import { Input, EngineRenderContent } from '@engine-core/shadcn-ui';
+import { EngineRenderContent, Input } from '@engine-core/shadcn-ui';
 import { isFunction, isString } from '@engine-core/shared/utils';
 
 import Alert from './alert.vue';

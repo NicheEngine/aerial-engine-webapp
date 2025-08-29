@@ -7,13 +7,13 @@ import { computed, nextTick, onUnmounted, useTemplateRef, watch } from 'vue';
 
 import { CircleAlert } from '@engine-core/icons';
 import {
+  EngineRenderContent,
+  EngineTooltip,
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormMessage,
-  EngineRenderContent,
-  EngineTooltip,
 } from '@engine-core/shadcn-ui';
 import { cn, isFunction, isObject, isString } from '@engine-core/shared/utils';
 

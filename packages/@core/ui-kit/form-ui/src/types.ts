@@ -12,12 +12,12 @@ export type FormLayout = 'horizontal' | 'vertical';
 
 export type BaseFormComponentType =
   | 'DefaultButton'
-  | 'PrimaryButton'
   | 'EngineCheckbox'
   | 'EngineInput'
   | 'EngineInputPassword'
   | 'EnginePinInput'
   | 'EngineSelect'
+  | 'PrimaryButton'
   | (Record<never, never> & string);
 
 type Breakpoints = '2xl:' | '3xl:' | '' | 'lg:' | 'md:' | 'sm:' | 'xl:';

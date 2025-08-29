@@ -6,7 +6,7 @@ import { computed, watch } from 'vue';
 import { $t } from '@engine/locales';
 
 import { useEngineModal } from '@engine-core/popup-ui';
-import { Slot, EngineAvatar } from '@engine-core/shadcn-ui';
+import { EngineAvatar, Slot } from '@engine-core/shadcn-ui';
 
 interface Props extends AuthenticationProps {
   avatar?: string;

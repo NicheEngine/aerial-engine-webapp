@@ -3,7 +3,7 @@ import { useSlots } from 'vue';
 
 import { CircleHelp } from '@engine/icons';
 
-import { Switch, EngineTooltip } from '@engine-core/shadcn-ui';
+import { EngineTooltip, Switch } from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceSwitchItem',
