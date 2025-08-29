@@ -3,7 +3,7 @@ import type { DialogDescriptionProps } from 'radix-vue';
 
 import { computed } from 'vue';
 
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import { DialogDescription, useForwardProps } from 'radix-vue';
 

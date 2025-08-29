@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
 
-import type { ThemeModeType } from '@aerial-engine/types';
+import type { ThemeModeType } from '@engine/types';
 
-import { MoonStar, Sun, SunMoon } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { MoonStar, Sun, SunMoon } from '@engine/icons';
+import { $t } from '@engine/locales';
 
 import SwitchItem from '../switch-item.vue';
 

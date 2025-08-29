@@ -1,4 +1,4 @@
-import { colors, consola } from '@aerial-engine/node-utils';
+import { colors, consola } from '@engine/node-utils';
 
 import { cac } from 'cac';
 

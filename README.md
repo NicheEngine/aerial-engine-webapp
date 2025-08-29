@@ -1,9 +1,9 @@
 
-# Aerial Engine Webapp
+# Template Engine Webapp
 
 ## 简介
 
-Aerial Engine 是基于 Vue Vben Admin 改造的中后台前端。它采用了最新的 Vue 3、Vite、TypeScript 等主流技术开发，开箱即用，可用于中后台前端开发，也适合学习参考。
+Template Engine 是基于 Vue Engine webapp 改造的中后台前端。它采用了最新的 Vue 3、Vite、TypeScript 等主流技术开发，开箱即用，可用于中后台前端开发，也适合学习参考。
 
 ## 特性
 
@@ -15,7 +15,7 @@ Aerial Engine 是基于 Vue Vben Admin 改造的中后台前端。它采用了�
 
 ## 预览
 
-测试账号：vben/123456
+测试账号：engine/123456
 
 ### 使用 Gitpod
 
@@ -59,7 +59,7 @@ pnpm build
 
 ## 如何贡献
 
-非常欢迎你的加入！[提一个 Issue](https://github.com/anncwb/vue-aerial-engine/issues/new/choose) 或者提交一个 Pull Request。
+非常欢迎你的加入！[提一个 Issue](https://github.com/nicheengine/aerial-engine-webapp/issues/new/choose) 或者提交一个 Pull Request。
 
 **Pull Request 流程：**
 

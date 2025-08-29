@@ -2,7 +2,7 @@ import type { TabsProps } from './types';
 
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
-import { EngineScrollbar } from '@aerial-engine-core/shadcn-ui';
+import { EngineScrollbar } from '@engine-core/shadcn-ui';
 
 import { useDebounceFn } from '@vueuse/core';
 

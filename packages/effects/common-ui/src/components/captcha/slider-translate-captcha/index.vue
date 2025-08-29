@@ -16,7 +16,7 @@ import {
   watch,
 } from 'vue';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
 import SliderCaptcha from '../slider-captcha/index.vue';
 

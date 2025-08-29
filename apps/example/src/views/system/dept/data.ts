@@ -1,4 +1,4 @@
-import type { VxeTableGridOptions } from '@aerial-engine/plugins/vxe-table';
+import type { VxeTableGridOptions } from '@engine/plugins/vxe-table';
 
 import type { EngineFormSchema } from '#/adapter/form';
 import type { OnActionClickFn } from '#/adapter/vxe-table';

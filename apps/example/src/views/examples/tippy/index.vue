@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { TippyProps } from '@aerial-engine/common-ui';
+import type { TippyProps } from '@engine/common-ui';
 
 import { reactive } from 'vue';
 
-import { Page, Tippy } from '@aerial-engine/common-ui';
+import { Page, Tippy } from '@engine/common-ui';
 
 import { Button, Card, Flex } from 'ant-design-vue';
 

@@ -1,11 +1,13 @@
 import type { PluginOption } from 'vite';
 
+import process from 'node:process';
+
 import {
   dateUtil,
   findMonorepoRoot,
   getPackages,
   readPackageJSON,
-} from '@aerial-engine/node-utils';
+} from '@engine/node-utils';
 
 import { readWorkspaceManifest } from '@pnpm/workspace.read-manifest';
 

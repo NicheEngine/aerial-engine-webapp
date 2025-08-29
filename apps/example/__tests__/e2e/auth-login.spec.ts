@@ -8,9 +8,9 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Auth Login Page Tests', () => {
   test('check title and page elements', async ({ page }) => {
-    // 获取页面标题并断言标题包含 'Aerial Engine'
+    // 获取页面标题并断言标题包含 'Engine'
     const title = await page.title();
-    expect(title).toContain('Aerial Engineine');
+    expect(title).toContain('Engine');
   });
 
   // 测试用例: 成功登录

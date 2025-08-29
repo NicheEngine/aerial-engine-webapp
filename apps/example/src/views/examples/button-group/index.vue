@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 import { reactive, ref } from 'vue';
 
 import {
-  Page,
   EngineButton,
   EngineButtonGroup,
   EngineCheckButtonGroup,
-} from '@aerial-engine/common-ui';
-import { LoaderCircle, Square, SquareCheckBig } from '@aerial-engine/icons';
+  Page,
+} from '@engine/common-ui';
+import { LoaderCircle, Square, SquareCheckBig } from '@engine/icons';
 
 import { Button, Card, message } from 'ant-design-vue';
 

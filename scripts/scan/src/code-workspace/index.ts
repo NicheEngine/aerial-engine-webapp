@@ -11,9 +11,9 @@ import {
   outputJSON,
   prettierFormat,
   toPosixPath,
-} from '@aerial-engine/node-utils';
+} from '@engine/node-utils';
 
-const CODE_WORKSPACE_FILE = join('aerial-engine-workspace.json');
+const CODE_WORKSPACE_FILE = join('engine.code-workspace');
 
 interface CodeWorkspaceCommandOptions {
   autoCommit?: boolean;

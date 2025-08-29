@@ -15,8 +15,8 @@ import {
   EngineInputPassword,
   EnginePinInput,
   EngineSelect,
-} from '@aerial-engine-core/shadcn-ui';
-import { globalShareState } from '@aerial-engine-core/shared/global-state';
+} from '@engine-core/shadcn-ui';
+import { globalShareState } from '@engine-core/shared/global-state';
 
 import { defineRule } from 'vee-validate';
 

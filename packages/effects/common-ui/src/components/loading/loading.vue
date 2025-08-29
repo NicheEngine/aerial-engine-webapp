@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { EngineLoading } from '@aerial-engine-core/shadcn-ui';
-import { cn } from '@aerial-engine-core/shared/utils';
+import { EngineLoading } from '@engine-core/shadcn-ui';
+import { cn } from '@engine-core/shared/utils';
 
 interface LoadingProps {
   class?: string;

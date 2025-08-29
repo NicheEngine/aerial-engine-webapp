@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
 
-import { ColPage } from '@aerial-engine/common-ui';
-import { IconifyIcon } from '@aerial-engine/icons';
+import { ColPage } from '@engine/common-ui';
+import { IconifyIcon } from '@engine/icons';
 
 import {
   Alert,

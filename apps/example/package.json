@@ -1,11 +1,19 @@
 {
-  "name": "@aerial-engine/example",
+  "name": "@engine/example",
   "version": "5.5.8",
-  "author": {
-    "name": "aerial-engine",
-    "email": "aerialengine@outlook.com"
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "example"
   },
-  "license": "Apache-2.0",
+  "license": "MIT",
+  "author": {
+    "name": "nicheengine",
+    "email": "nicheengine@outlook.com",
+    "url": "https://github.com/NicheEngine"
+  },
   "type": "module",
   "scripts": {
     "build": "pnpm vite build --mode production",
@@ -21,22 +29,22 @@
     "#/*": "./src/*"
   },
   "dependencies": {
-    "@aerial-engine-core/menu-ui": "workspace:*",
-    "@aerial-engine/access": "workspace:*",
-    "@aerial-engine/common-ui": "workspace:*",
-    "@aerial-engine/constants": "workspace:*",
-    "@aerial-engine/hooks": "workspace:*",
-    "@aerial-engine/icons": "workspace:*",
-    "@aerial-engine/layouts": "workspace:*",
-    "@aerial-engine/locales": "workspace:*",
-    "@aerial-engine/plugins": "workspace:*",
-    "@aerial-engine/preferences": "workspace:*",
-    "@aerial-engine/request": "workspace:*",
-    "@aerial-engine/stores": "workspace:*",
-    "@aerial-engine/styles": "workspace:*",
-    "@aerial-engine/types": "workspace:*",
-    "@aerial-engine/utils": "workspace:*",
     "@tanstack/vue-query": "catalog:",
+    "@engine-core/menu-ui": "workspace:*",
+    "@engine/access": "workspace:*",
+    "@engine/common-ui": "workspace:*",
+    "@engine/constants": "workspace:*",
+    "@engine/hooks": "workspace:*",
+    "@engine/icons": "workspace:*",
+    "@engine/layouts": "workspace:*",
+    "@engine/locales": "workspace:*",
+    "@engine/plugins": "workspace:*",
+    "@engine/preferences": "workspace:*",
+    "@engine/request": "workspace:*",
+    "@engine/stores": "workspace:*",
+    "@engine/styles": "workspace:*",
+    "@engine/types": "workspace:*",
+    "@engine/utils": "workspace:*",
     "@vueuse/core": "catalog:",
     "ant-design-vue": "catalog:",
     "dayjs": "catalog:",

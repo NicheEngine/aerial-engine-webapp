@@ -5,17 +5,13 @@
 
 import type { Component } from 'vue';
 
-import type { BaseFormComponentType } from '@aerial-engine/common-ui';
-import type { Recordable } from '@aerial-engine/types';
+import type { BaseFormComponentType } from '@engine/common-ui';
+import type { Recordable } from '@engine/types';
 
 import { defineAsyncComponent, defineComponent, h, ref } from 'vue';
 
-import {
-  ApiComponent,
-  globalShareState,
-  IconPicker,
-} from '@aerial-engine/common-ui';
-import { $t } from '@aerial-engine/locales';
+import { ApiComponent, globalShareState, IconPicker } from '@engine/common-ui';
+import { $t } from '@engine/locales';
 
 import { notification } from 'ant-design-vue';
 

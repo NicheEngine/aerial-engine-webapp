@@ -3,8 +3,8 @@ import type { MenuItemProps, MenuItemRegistered } from '../types';
 
 import { computed, onBeforeUnmount, onMounted, reactive, useSlots } from 'vue';
 
-import { useNamespace } from '@aerial-engine-core/composables';
-import { EngineIcon, EngineTooltip } from '@aerial-engine-core/shadcn-ui';
+import { useNamespace } from '@engine-core/composables';
+import { EngineIcon, EngineTooltip } from '@engine-core/shadcn-ui';
 
 import { MenuBadge } from '../components';
 import { useMenu, useMenuContext, useSubMenuContext } from '../hooks';

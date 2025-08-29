@@ -2,12 +2,12 @@
 import type {
   CaptchaVerifyPassingData,
   SliderCaptchaActionType,
-} from '@aerial-engine/common-ui';
+} from '@engine/common-ui';
 
 import { ref } from 'vue';
 
-import { Page, SliderCaptcha } from '@aerial-engine/common-ui';
-import { Bell, Sun } from '@aerial-engine/icons';
+import { Page, SliderCaptcha } from '@engine/common-ui';
+import { Bell, Sun } from '@engine/icons';
 
 import { Button, Card, message } from 'ant-design-vue';
 

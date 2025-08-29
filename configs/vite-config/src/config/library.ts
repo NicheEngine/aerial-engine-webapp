@@ -2,7 +2,9 @@ import type { ConfigEnv, UserConfig } from 'vite';
 
 import type { DefineLibraryOptions } from '../typing';
 
-import { readPackageJSON } from '@aerial-engine/node-utils';
+import process from 'node:process';
+
+import { readPackageJSON } from '@engine/node-utils';
 
 import { defineConfig, mergeConfig } from 'vite';
 

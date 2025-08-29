@@ -6,8 +6,9 @@ import type {
 import type { PluginOption } from 'vite';
 
 import { EOL } from 'node:os';
+import process from 'node:process';
 
-import { dateUtil, readPackageJSON } from '@aerial-engine/node-utils';
+import { dateUtil, readPackageJSON } from '@engine/node-utils';
 
 /**
  * 用于注入版权信息
@@ -30,7 +31,7 @@ async function viteLicensePlugin(
       handler: (_options: NormalizedOutputOptions, bundle: OutputBundle) => {
         const date = dateUtil().format('YYYY-MM-DD ');
         const copyrightText = `/*!
-  * Aerial Engine
+  * Engine
   * Version: ${version}
   * Author: engine
   * Copyright (C) 2024 Engine
@@ -38,7 +39,7 @@ async function viteLicensePlugin(
   * Description: ${description}
   * Date Created: ${date}
   * Homepage: ${homepage}
-  * Contact: ann.engine@gmail.com
+  * Contact: nicheengine@outlook.com
 */
               `.trim();
 
@@ -47,16 +48,17 @@ async function viteLicensePlugin(
             const chunkContent = fileContent as OutputChunk;
             // 插入版权信息
             const content = chunkContent.code;
+            const updatedContent = `${copyrightText}${EOL}${content}`;
+
             // 更新bundle
-            (fileContent as OutputChunk).code =
-              `${copyrightText}${EOL}${content}`;
+            (fileContent as OutputChunk).code = updatedContent;
           }
         }
       },
       order: 'post',
     },
     name: 'vite:license',
-  } as PluginOption;
+  };
 }
 
 export { viteLicensePlugin };

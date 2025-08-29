@@ -15,8 +15,8 @@ import {
   useIsMobile,
   usePriorityValues,
   useSimpleLocale,
-} from '@aerial-engine-core/composables';
-import { X } from '@aerial-engine-core/icons';
+} from '@engine-core/composables';
+import { X } from '@engine-core/icons';
 import {
   Separator,
   Sheet,
@@ -31,10 +31,10 @@ import {
   EngineIconButton,
   EngineLoading,
   VisuallyHidden,
-} from '@aerial-engine-core/shadcn-ui';
-import { ELEMENT_ID_MAIN_CONTENT } from '@aerial-engine-core/shared/constants';
-import { globalShareState } from '@aerial-engine-core/shared/global-state';
-import { cn } from '@aerial-engine-core/shared/utils';
+} from '@engine-core/shadcn-ui';
+import { ELEMENT_ID_MAIN_CONTENT } from '@engine-core/shared/constants';
+import { globalShareState } from '@engine-core/shared/global-state';
+import { cn } from '@engine-core/shared/utils';
 
 interface Props extends DrawerProps {
   drawerApi?: ExtendedDrawerApi;

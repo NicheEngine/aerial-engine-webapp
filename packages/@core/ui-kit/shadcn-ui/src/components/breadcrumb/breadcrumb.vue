@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { BreadcrumbProps } from './types';
 
-import { ChevronDown } from '@aerial-engine-core/icons';
+import { ChevronDown } from '@engine-core/icons';
 
 import {
   Breadcrumb,

@@ -33,7 +33,7 @@ export async function unicorn(): Promise<Linter.Config[]> {
       },
     },
     {
-      files: ['scripts/**/*.?([cm])[jt]s?(x)', 'configs/**/*.?([cm])[jt]s?(x)'],
+      files: ['scripts/**/*.?([cm])[jt]s?(x)', 'configs**/*.?([cm])[jt]s?(x)'],
       rules: {
         'unicorn/no-process-exit': 'off',
       },

@@ -13,7 +13,7 @@ import {
   outputJSON,
   readJSON,
   UNICODE,
-} from '@aerial-engine/node-utils';
+} from '@engine/node-utils';
 
 import { publint } from 'publint';
 import { formatMessage } from 'publint/utils';

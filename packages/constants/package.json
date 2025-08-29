@@ -1,6 +1,14 @@
 {
-  "name": "@aerial-engine/constants",
+  "name": "@engine/constants",
   "version": "5.5.8",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/constants"
+  },
+  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -12,6 +20,6 @@
     }
   },
   "dependencies": {
-    "@aerial-engine-core/shared": "workspace:*"
+    "@engine-core/shared": "workspace:*"
   }
 }

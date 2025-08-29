@@ -3,9 +3,9 @@ import type { CSSProperties } from 'vue';
 
 import { computed, ref, useTemplateRef } from 'vue';
 
-import { Check, ChevronsRight } from '@aerial-engine/icons';
+import { Check, ChevronsRight } from '@engine/icons';
 
-import { Slot } from '@aerial-engine-core/shadcn-ui';
+import { Slot } from '@engine-core/shadcn-ui';
 
 const props = defineProps<{
   actionStyle: CSSProperties;

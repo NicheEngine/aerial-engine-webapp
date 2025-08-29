@@ -5,7 +5,7 @@ import type {
   ContextMenuRootProps,
 } from 'radix-vue';
 
-import type { ClassType } from '@aerial-engine-core/typings';
+import type { ClassType } from '@engine-core/typings';
 
 import type { IContextMenuItem } from './interface';
 

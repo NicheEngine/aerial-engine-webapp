@@ -14,7 +14,7 @@ import type {
   PreferencesButtonPositionType,
   TabsStyleType,
   ThemeModeType,
-} from '@aerial-engine-core/typings';
+} from '@engine-core/typings';
 
 type SupportedLanguagesType = 'en-US' | 'zh-CN';
 

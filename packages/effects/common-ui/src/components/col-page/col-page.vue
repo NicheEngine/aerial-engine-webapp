@@ -7,7 +7,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from '@aerial-engine-core/shadcn-ui';
+} from '@engine-core/shadcn-ui';
 
 import Page from '../page/page.vue';
 

@@ -1,7 +1,4 @@
-import {
-  getScrollbarWidth,
-  needsScrollbar,
-} from '@aerial-engine-core/shared/utils';
+import { getScrollbarWidth, needsScrollbar } from '@engine-core/shared/utils';
 
 import {
   useScrollLock as _useScrollLock,

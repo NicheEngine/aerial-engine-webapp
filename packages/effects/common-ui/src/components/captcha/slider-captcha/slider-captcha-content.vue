@@ -3,7 +3,7 @@ import type { CSSProperties } from 'vue';
 
 import { computed, useTemplateRef } from 'vue';
 
-import { EngineSpineText } from '@aerial-engine-core/shadcn-ui';
+import { EngineSpineText } from '@engine-core/shadcn-ui';
 
 const props = defineProps<{
   contentStyle: CSSProperties;

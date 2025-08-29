@@ -1,4 +1,4 @@
-import { DEFAULT_NAMESPACE } from '@aerial-engine-core/shared/constants';
+import { DEFAULT_NAMESPACE } from '@engine-core/shared/constants';
 
 /**
  * @see copy https://github.com/element-plus/element-plus/blob/dev/packages/hooks/use-namespace/index.ts

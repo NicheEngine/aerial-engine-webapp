@@ -4,10 +4,10 @@ import type { RouteLocationNormalized } from 'vue-router';
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { preferences } from '@aerial-engine/preferences';
-import { useTabbarStore } from '@aerial-engine/stores';
+import { preferences } from '@engine/preferences';
+import { useTabbarStore } from '@engine/stores';
 
-import { EngineSpinner } from '@aerial-engine-core/shadcn-ui';
+import { EngineSpinner } from '@engine-core/shadcn-ui';
 
 defineOptions({ name: 'IFrameRouterView' });
 

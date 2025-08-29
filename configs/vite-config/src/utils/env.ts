@@ -2,8 +2,9 @@ import type { ApplicationPluginOptions } from '../typing';
 
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+import process from 'node:process';
 
-import { fs } from '@aerial-engine/node-utils';
+import { fs } from '@engine/node-utils';
 
 import dotenv from 'dotenv';
 
@@ -93,7 +94,7 @@ async function loadAndConvertEnv(
     .filter((item) => item === 'brotli' || item === 'gzip');
 
   return {
-    appTitle: getString(VITE_APP_TITLE, 'Aerial Engine'),
+    appTitle: getString(VITE_APP_TITLE, 'Engine'),
     archiver: getBoolean(VITE_ARCHIVER),
     base: getString(VITE_BASE, '/'),
     compress: compressTypes.length > 0,

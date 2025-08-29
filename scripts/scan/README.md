@@ -1,6 +1,6 @@
-# @aerial-engine/scan
+# @engine/scan
 
-一个 Shell 脚本工具集合，用于 aerial-engine 项目的开发和管理。
+一个 Shell 脚本工具集合，用于 Vue Engine 项目的开发和管理。
 
 ## 功能特性
 
@@ -14,13 +14,13 @@
 
 ```bash
 # 使用 pnpm 安装
-pnpm add -D @aerial-engine/scan
+pnpm add -D @engine/scan
 
 # 或者使用 npm
-npm install -D @aerial-engine/scan
+npm install -D @engine/scan
 
 # 或者使用 yarn
-yarn add -D @aerial-engine/scan
+yarn add -D @engine/scan
 ```
 
 ## 使用方法
@@ -29,7 +29,7 @@ yarn add -D @aerial-engine/scan
 
 ```bash
 # 全局安装
-pnpm add -g @aerial-engine/scan
+pnpm add -g @engine/scan
 
 # 使用 scan 命令
 scan [command]

@@ -1,15 +1,11 @@
-import type { Recordable, UserInfo } from '@aerial-engine/types';
+import type { Recordable, UserInfo } from '@engine/types';
 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { LOGIN_PATH } from '@aerial-engine/constants';
-import { preferences } from '@aerial-engine/preferences';
-import {
-  resetAllStores,
-  useAccessStore,
-  useUserStore,
-} from '@aerial-engine/stores';
+import { LOGIN_PATH } from '@engine/constants';
+import { preferences } from '@engine/preferences';
+import { resetAllStores, useAccessStore, useUserStore } from '@engine/stores';
 
 import { notification } from 'ant-design-vue';
 import { defineStore } from 'pinia';

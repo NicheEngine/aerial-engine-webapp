@@ -1,6 +1,15 @@
 {
-  "name": "@aerial-engine/prettier-config",
+  "name": "@engine/prettier-config",
   "version": "5.0.0",
+  "private": true,
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "configs/lint-configs/prettier-config"
+  },
+  "license": "MIT",
   "type": "module",
   "files": [
     "dist"

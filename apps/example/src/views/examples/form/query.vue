@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 
 import { Card, message } from 'ant-design-vue';
 

@@ -2,8 +2,8 @@ import type { App, Directive, DirectiveBinding } from 'vue';
 
 import { h, render } from 'vue';
 
-import { EngineLoading, EngineSpinner } from '@aerial-engine-core/shadcn-ui';
-import { isString } from '@aerial-engine-core/shared/utils';
+import { EngineLoading, EngineSpinner } from '@engine-core/shadcn-ui';
+import { isString } from '@engine-core/shared/utils';
 
 const LOADING_INSTANCE_KEY = Symbol('loading');
 const SPINNER_INSTANCE_KEY = Symbol('spinner');

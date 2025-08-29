@@ -1,4 +1,4 @@
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 import { requestClient } from '#/api/request';
 

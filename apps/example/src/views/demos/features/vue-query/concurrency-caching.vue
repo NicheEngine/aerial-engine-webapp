@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 import { useQuery } from '@tanstack/vue-query';
 

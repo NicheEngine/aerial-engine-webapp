@@ -1,6 +1,15 @@
 {
-  "name": "@aerial-engine/tsconfig",
+  "name": "@engine/tsconfig",
   "version": "5.5.8",
+  "private": true,
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "configs/tsconfig"
+  },
+  "license": "MIT",
   "type": "module",
   "files": [
     "base.json",
@@ -10,7 +19,7 @@
     "web.json"
   ],
   "dependencies": {
-    "@aerial-engine/types": "workspace:*",
+    "@engine/types": "workspace:*",
     "vite": "catalog:"
   }
 }

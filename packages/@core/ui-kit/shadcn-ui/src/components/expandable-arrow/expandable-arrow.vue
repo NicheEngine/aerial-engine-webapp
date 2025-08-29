@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ChevronDown } from '@aerial-engine-core/icons';
-import { cn } from '@aerial-engine-core/shared/utils';
+import { ChevronDown } from '@engine-core/icons';
+import { cn } from '@engine-core/shared/utils';
 
 const props = defineProps<{
   class?: string;

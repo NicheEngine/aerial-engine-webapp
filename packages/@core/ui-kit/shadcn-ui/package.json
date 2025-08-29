@@ -1,8 +1,16 @@
 {
-  "name": "@aerial-engine-core/shadcn-ui",
+  "name": "@engine-core/shadcn-ui",
   "version": "5.5.8",
   "#main": "./dist/index.mjs",
   "#module": "./dist/index.mjs",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/@engine-core/uikit/shadcn-ui"
+  },
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "#build": "pnpm unbuild",
@@ -32,10 +40,10 @@
     }
   },
   "dependencies": {
-    "@aerial-engine-core/composables": "workspace:*",
-    "@aerial-engine-core/icons": "workspace:*",
-    "@aerial-engine-core/shared": "workspace:*",
-    "@aerial-engine-core/typings": "workspace:*",
+    "@engine-core/composables": "workspace:*",
+    "@engine-core/icons": "workspace:*",
+    "@engine-core/shared": "workspace:*",
+    "@engine-core/typings": "workspace:*",
     "@vueuse/core": "catalog:",
     "class-variance-authority": "catalog:",
     "lucide-vue-next": "catalog:",

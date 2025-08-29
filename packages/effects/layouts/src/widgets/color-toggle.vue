@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { BuiltinThemeType } from '@aerial-engine/types';
+import type { BuiltinThemeType } from '@engine/types';
 
-import { Palette } from '@aerial-engine/icons';
+import { Palette } from '@engine/icons';
 import {
   COLOR_PRESETS,
   preferences,
   updatePreferences,
-} from '@aerial-engine/preferences';
+} from '@engine/preferences';
 
-import { EngineIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineIconButton } from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'AuthenticationColorToggle',

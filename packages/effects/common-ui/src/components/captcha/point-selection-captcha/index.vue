@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { CaptchaPoint, PointSelectionCaptchaProps } from '../types';
 
-import { RotateCw } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { RotateCw } from '@engine/icons';
+import { $t } from '@engine/locales';
 
-import { EngineButton, EngineIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineButton, EngineIconButton } from '@engine-core/shadcn-ui';
 
 import { useCaptchaPoints } from '../hooks/useCaptchaPoints';
 import CaptchaCard from './point-selection-captcha-card.vue';

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { LabelProps } from 'radix-vue';
 
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import { Label } from '../label';
 import { useFormField } from './useFormField';

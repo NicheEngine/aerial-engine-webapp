@@ -1,0 +1,168 @@
+{
+  "folders": [
+    {
+      "name": "@engine/mock-server",
+      "path": "apps/mock-server"
+    },
+    {
+      "name": "@engine/webapp",
+      "path": "apps/webapp"
+    },
+    {
+      "name": "@engine/webapp-ele",
+      "path": "apps/webapp-ele"
+    },
+    {
+      "name": "@engine/webapp-native",
+      "path": "apps/webapp-native"
+    },
+    {
+      "name": "@engine/commitlint-config",
+      "path": "configs/lint-configs/commitlint-config"
+    },
+    {
+      "name": "@engine/eslint-config",
+      "path": "configs/lint-configs/eslint-config"
+    },
+    {
+      "name": "@engine/prettier-config",
+      "path": "configs/lint-configs/prettier-config"
+    },
+    {
+      "name": "@engine/stylelint-config",
+      "path": "configs/lint-configs/stylelint-config"
+    },
+    {
+      "name": "@engine/node-utils",
+      "path": "configs/node-utils"
+    },
+    {
+      "name": "@engine/tailwind-config",
+      "path": "configs/tailwind-config"
+    },
+    {
+      "name": "@engine/tsconfig",
+      "path": "configs/tsconfig"
+    },
+    {
+      "name": "@engine/vite-config",
+      "path": "configs/vite-config"
+    },
+    {
+      "name": "@engine-core/design",
+      "path": "packages/@core/base/design"
+    },
+    {
+      "name": "@engine-core/icons",
+      "path": "packages/@core/base/icons"
+    },
+    {
+      "name": "@engine-core/shared",
+      "path": "packages/@core/base/shared"
+    },
+    {
+      "name": "@engine-core/typings",
+      "path": "packages/@core/base/typings"
+    },
+    {
+      "name": "@engine-core/composables",
+      "path": "packages/@core/composables"
+    },
+    {
+      "name": "@engine-core/preferences",
+      "path": "packages/@core/preferences"
+    },
+    {
+      "name": "@engine-core/form-ui",
+      "path": "packages/@core/ui-kit/form-ui"
+    },
+    {
+      "name": "@engine-core/layout-ui",
+      "path": "packages/@core/ui-kit/layout-ui"
+    },
+    {
+      "name": "@engine-core/menu-ui",
+      "path": "packages/@core/ui-kit/menu-ui"
+    },
+    {
+      "name": "@engine-core/popup-ui",
+      "path": "packages/@core/ui-kit/popup-ui"
+    },
+    {
+      "name": "@engine-core/shadcn-ui",
+      "path": "packages/@core/ui-kit/shadcn-ui"
+    },
+    {
+      "name": "@engine-core/tabs-ui",
+      "path": "packages/@core/ui-kit/tabs-ui"
+    },
+    {
+      "name": "@engine/constants",
+      "path": "packages/constants"
+    },
+    {
+      "name": "@engine/access",
+      "path": "packages/effects/access"
+    },
+    {
+      "name": "@engine/common-ui",
+      "path": "packages/effects/common-ui"
+    },
+    {
+      "name": "@engine/hooks",
+      "path": "packages/effects/hooks"
+    },
+    {
+      "name": "@engine/layouts",
+      "path": "packages/effects/layouts"
+    },
+    {
+      "name": "@engine/plugins",
+      "path": "packages/effects/plugins"
+    },
+    {
+      "name": "@engine/request",
+      "path": "packages/effects/request"
+    },
+    {
+      "name": "@engine/icons",
+      "path": "packages/icons"
+    },
+    {
+      "name": "@engine/locales",
+      "path": "packages/locales"
+    },
+    {
+      "name": "@engine/preferences",
+      "path": "packages/preferences"
+    },
+    {
+      "name": "@engine/stores",
+      "path": "packages/stores"
+    },
+    {
+      "name": "@engine/styles",
+      "path": "packages/styles"
+    },
+    {
+      "name": "@engine/types",
+      "path": "packages/types"
+    },
+    {
+      "name": "@engine/utils",
+      "path": "packages/utils"
+    },
+    {
+      "name": "@engine/example",
+      "path": "example"
+    },
+    {
+      "name": "@engine/turbo",
+      "path": "scripts/turbo"
+    },
+    {
+      "name": "@engine/scan",
+      "path": "scripts/scan"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import type { UserInfo } from '@aerial-engine/types';
+import type { UserInfo } from '@engine/types';
 
 import { requestClient } from '#/api/request';
 

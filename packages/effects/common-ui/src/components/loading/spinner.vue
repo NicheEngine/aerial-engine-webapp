@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { EngineSpinner } from '@aerial-engine-core/shadcn-ui';
-import { cn } from '@aerial-engine-core/shared/utils';
+import { EngineSpinner } from '@engine-core/shadcn-ui';
+import { cn } from '@engine-core/shared/utils';
 
 interface SpinnerProps {
   class?: string;

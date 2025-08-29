@@ -1,13 +1,9 @@
 <script setup lang="ts">
 import { computed, toRaw, unref, watch } from 'vue';
 
-import { useSimpleLocale } from '@aerial-engine-core/composables';
-import { EngineExpandableArrow } from '@aerial-engine-core/shadcn-ui';
-import {
-  cn,
-  isFunction,
-  triggerWindowResize,
-} from '@aerial-engine-core/shared/utils';
+import { useSimpleLocale } from '@engine-core/composables';
+import { EngineExpandableArrow } from '@engine-core/shadcn-ui';
+import { cn, isFunction, triggerWindowResize } from '@engine-core/shared/utils';
 
 import { COMPONENT_MAP } from '../config';
 import { injectFormProps } from '../use-form-context';

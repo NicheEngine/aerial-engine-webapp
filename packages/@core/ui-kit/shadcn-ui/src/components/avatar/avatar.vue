@@ -7,7 +7,7 @@ import type {
 
 import type { CSSProperties } from 'vue';
 
-import type { ClassType } from '@aerial-engine-core/typings';
+import type { ClassType } from '@engine-core/typings';
 
 import { computed } from 'vue';
 

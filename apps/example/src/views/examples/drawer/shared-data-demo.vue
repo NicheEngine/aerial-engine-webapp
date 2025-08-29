@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useEngineDrawer } from '@aerial-engine/common-ui';
+import { useEngineDrawer } from '@engine/common-ui';
 
 import { message } from 'ant-design-vue';
 

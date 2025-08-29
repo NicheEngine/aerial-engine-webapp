@@ -1,7 +1,7 @@
 import type {
   ApplicationConfig,
-  EngineAppConfigRaw,
-} from '@aerial-engine/types/global';
+  EngineProAppConfigRaw,
+} from '@engine/types/global';
 
 /**
  * 由 vite-inject-app-config 注入的全局配置
@@ -13,7 +13,7 @@ export function useAppConfig(
   // 生产环境下，直接使用 window._ENGINE_APP_CONF_ 全局变量
   const config = isProduction
     ? window._ENGINE_APP_CONF_
-    : (env as EngineAppConfigRaw);
+    : (env as EngineProAppConfigRaw);
 
   const { VITE_GLOB_API_URL } = config;
 

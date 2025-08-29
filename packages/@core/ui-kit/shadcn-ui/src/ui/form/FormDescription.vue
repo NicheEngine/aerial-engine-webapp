@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import { useFormField } from './useFormField';
 

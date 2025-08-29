@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { SelectOption } from '@aerial-engine/types';
+import type { SelectOption } from '@engine/types';
 
-import { ToggleGroup, ToggleGroupItem } from '@aerial-engine-core/shadcn-ui';
+import { ToggleGroup, ToggleGroupItem } from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceToggleItem',

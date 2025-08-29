@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 import { computed, reactive } from 'vue';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
-import { useEngineForm, z } from '@aerial-engine-core/form-ui';
-import { useEngineModal } from '@aerial-engine-core/popup-ui';
-import { EngineAvatar, EngineButton } from '@aerial-engine-core/shadcn-ui';
+import { useEngineForm, z } from '@engine-core/form-ui';
+import { useEngineModal } from '@engine-core/popup-ui';
+import { EngineAvatar, EngineButton } from '@engine-core/shadcn-ui';
 
 interface Props {
   avatar?: string;

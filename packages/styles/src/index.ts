@@ -1,1 +1,1 @@
-import '@aerial-engine-core/design';
+import '@engine-core/design';

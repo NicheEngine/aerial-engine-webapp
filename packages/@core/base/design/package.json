@@ -1,6 +1,14 @@
 {
-  "name": "@aerial-engine-core/design",
+  "name": "@engine-core/design",
   "version": "5.5.8",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/@engine-core/base/design"
+  },
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "pnpm vite build",

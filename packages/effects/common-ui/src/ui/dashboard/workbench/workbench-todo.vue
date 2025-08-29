@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
   EngineCheckbox,
-} from '@aerial-engine-core/shadcn-ui';
+} from '@engine-core/shadcn-ui';
 
 interface Props {
   items?: WorkbenchTodoItem[];

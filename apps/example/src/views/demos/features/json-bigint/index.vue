@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 
 import { Alert, Button, Card } from 'ant-design-vue';
 
@@ -17,7 +17,7 @@ function fetchData() {
 <template>
   <Page
     title="JSON BigInt Support"
-    description="解析后端返回的长整数（long/bigInt）。代码位置：playground/src/api/request.ts中的transformResponse"
+    description="解析后端返回的长整数（long/bigInt）。代码位置：example/src/api/request.ts中的transformResponse"
   >
     <Card>
       <Alert>

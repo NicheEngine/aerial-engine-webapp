@@ -3,8 +3,9 @@ import type { CSSOptions, UserConfig } from 'vite';
 import type { DefineApplicationOptions } from '../typing';
 
 import path, { relative } from 'node:path';
+import process from 'node:process';
 
-import { findMonorepoRoot } from '@aerial-engine/node-utils';
+import { findMonorepoRoot } from '@engine/node-utils';
 
 import { NodePackageImporter } from 'sass';
 import { defineConfig, loadEnv, mergeConfig } from 'vite';
@@ -44,7 +45,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       nitroMockOptions: {},
       print: !isBuild,
       printInfoMap: {
-        // 'Aerial Engine Docs': 'https://doc.engine.pro',
+        // 'Engine Docs': 'https://doc.engine.pro',
       },
       pwa: true,
       pwaOptions: getDefaultPwaOptions(appTitle),
@@ -110,7 +111,7 @@ function createCssOptions(injectGlobalScss = true): CSSOptions {
               const relativePath = relative(root, filepath);
               // apps下的包注入全局样式
               if (relativePath.startsWith(`apps${path.sep}`)) {
-                return `@use "@aerial-engine/styles/global" as *;\n${content}`;
+                return `@use "@engine/styles/global" as *;\n${content}`;
               }
               return content;
             },

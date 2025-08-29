@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { SelectOption } from '@aerial-engine/types';
+import type { SelectOption } from '@engine/types';
 
 import { computed } from 'vue';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
 import NumberFieldItem from '../number-field-item.vue';
 import SelectItem from '../select-item.vue';

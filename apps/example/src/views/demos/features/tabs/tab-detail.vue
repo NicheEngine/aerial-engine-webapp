@@ -2,8 +2,8 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { Page } from '@aerial-engine/common-ui';
-import { useTabs } from '@aerial-engine/hooks';
+import { Page } from '@engine/common-ui';
+import { useTabs } from '@engine/hooks';
 
 const route = useRoute();
 

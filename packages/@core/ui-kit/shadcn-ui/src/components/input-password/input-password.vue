@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, useSlots } from 'vue';
 
-import { Eye, EyeOff } from '@aerial-engine-core/icons';
-import { cn } from '@aerial-engine-core/shared/utils';
+import { Eye, EyeOff } from '@engine-core/icons';
+import { cn } from '@engine-core/shared/utils';
 
 import { Input } from '../../ui';
 import PasswordStrength from './password-strength.vue';

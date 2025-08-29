@@ -1,4 +1,4 @@
-import type { BasicUserInfo } from '@aerial-engine-core/typings';
+import type { BasicUserInfo } from '@engine-core/typings';
 
 /** 用户信息 */
 interface UserInfo extends BasicUserInfo {

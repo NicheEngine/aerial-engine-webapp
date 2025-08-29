@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'vue';
 
-import type { ClassType } from '@aerial-engine/types';
+import type { ClassType } from '@engine/types';
 
 export interface CaptchaData {
   /**

@@ -1,6 +1,14 @@
 {
-  "name": "@aerial-engine/request",
+  "name": "@engine/request",
   "version": "5.5.8",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/effects/request"
+  },
+  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -12,8 +20,8 @@
     }
   },
   "dependencies": {
-    "@aerial-engine/locales": "workspace:*",
-    "@aerial-engine/utils": "workspace:*",
+    "@engine/locales": "workspace:*",
+    "@engine/utils": "workspace:*",
     "axios": "catalog:",
     "qs": "catalog:"
   },

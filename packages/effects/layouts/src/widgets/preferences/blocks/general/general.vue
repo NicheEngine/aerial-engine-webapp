@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { SUPPORT_LANGUAGES } from '@aerial-engine/constants';
-import { $t } from '@aerial-engine/locales';
+import { SUPPORT_LANGUAGES } from '@engine/constants';
+import { $t } from '@engine/locales';
 
 import SelectItem from '../select-item.vue';
 import SwitchItem from '../switch-item.vue';

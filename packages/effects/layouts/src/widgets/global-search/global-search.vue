@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@aerial-engine/types';
+import type { MenuRecordRaw } from '@engine/types';
 
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
@@ -9,11 +9,11 @@ import {
   CornerDownLeft,
   MdiKeyboardEsc,
   Search,
-} from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
-import { isWindowsOs } from '@aerial-engine/utils';
+} from '@engine/icons';
+import { $t } from '@engine/locales';
+import { isWindowsOs } from '@engine/utils';
 
-import { useEngineModal } from '@aerial-engine-core/popup-ui';
+import { useEngineModal } from '@engine-core/popup-ui';
 
 import { useMagicKeys, whenever } from '@vueuse/core';
 

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue';
 
-import { LockKeyhole } from '@aerial-engine/icons';
-import { $t, useI18n } from '@aerial-engine/locales';
-import { storeToRefs, useAccessStore } from '@aerial-engine/stores';
+import { LockKeyhole } from '@engine/icons';
+import { $t, useI18n } from '@engine/locales';
+import { storeToRefs, useAccessStore } from '@engine/stores';
 
-import { useScrollLock } from '@aerial-engine-core/composables';
-import { useEngineForm, z } from '@aerial-engine-core/form-ui';
-import { EngineAvatar, EngineButton } from '@aerial-engine-core/shadcn-ui';
+import { useScrollLock } from '@engine-core/composables';
+import { useEngineForm, z } from '@engine-core/form-ui';
+import { EngineAvatar, EngineButton } from '@engine-core/shadcn-ui';
 
 import { useDateFormat, useNow } from '@vueuse/core';
 

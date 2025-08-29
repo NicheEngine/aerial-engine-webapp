@@ -1,7 +1,7 @@
 import type { RequestClient } from '../request-client';
 import type { RequestClientConfig } from '../types';
 
-import { isUndefined } from '@aerial-engine/utils';
+import { isUndefined } from '@engine/utils';
 
 class FileUploader {
   private client: RequestClient;

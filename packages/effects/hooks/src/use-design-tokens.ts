@@ -1,7 +1,7 @@
 import { reactive, watch } from 'vue';
 
-import { preferences, usePreferences } from '@aerial-engine/preferences';
-import { convertToRgb, updateCSSVariables } from '@aerial-engine/utils';
+import { preferences, usePreferences } from '@engine/preferences';
+import { convertToRgb, updateCSSVariables } from '@engine/utils';
 
 /**
  * 用于适配各个框架的设计系统

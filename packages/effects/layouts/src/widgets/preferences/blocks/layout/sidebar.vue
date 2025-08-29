@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { LayoutType } from '@aerial-engine/types';
+import type { LayoutType } from '@engine/types';
 
 import { onMounted } from 'vue';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
 import CheckboxItem from '../checkbox-item.vue';
 import NumberFieldItem from '../number-field-item.vue';

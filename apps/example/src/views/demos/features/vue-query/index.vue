@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 
 import { refAutoReset } from '@vueuse/core';
 import { Button, Card, Empty } from 'ant-design-vue';

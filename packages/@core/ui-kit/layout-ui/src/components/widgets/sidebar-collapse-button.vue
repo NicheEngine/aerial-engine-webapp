@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChevronsLeft, ChevronsRight } from '@aerial-engine-core/icons';
+import { ChevronsLeft, ChevronsRight } from '@engine-core/icons';
 
 const collapsed = defineModel<boolean>('collapsed');
 

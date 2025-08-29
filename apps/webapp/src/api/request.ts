@@ -1,17 +1,17 @@
 /**
  * 该文件可自行根据业务逻辑进行调整
  */
-import type { RequestClientOptions } from '@aerial-engine/request';
+import type { RequestClientOptions } from '@engine/request';
 
-import { useAppConfig } from '@aerial-engine/hooks';
-import { preferences } from '@aerial-engine/preferences';
+import { useAppConfig } from '@engine/hooks';
+import { preferences } from '@engine/preferences';
 import {
   authenticateResponseInterceptor,
   defaultResponseInterceptor,
   errorMessageResponseInterceptor,
   RequestClient,
-} from '@aerial-engine/request';
-import { useAccessStore } from '@aerial-engine/stores';
+} from '@engine/request';
+import { useAccessStore } from '@engine/stores';
 
 import { message } from 'ant-design-vue';
 

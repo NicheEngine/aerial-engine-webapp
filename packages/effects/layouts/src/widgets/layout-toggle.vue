@@ -1,22 +1,19 @@
 <script setup lang="ts">
-import type { AuthPageLayoutType } from '@aerial-engine/types';
+import type { AuthPageLayoutType } from '@engine/types';
 
-import type { EngineDropdownMenuItem } from '@aerial-engine-core/shadcn-ui';
+import type { EngineDropdownMenuItem } from '@engine-core/shadcn-ui';
 
 import { computed } from 'vue';
 
-import { InspectionPanel, PanelLeft, PanelRight } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { InspectionPanel, PanelLeft, PanelRight } from '@engine/icons';
+import { $t } from '@engine/locales';
 import {
   preferences,
   updatePreferences,
   usePreferences,
-} from '@aerial-engine/preferences';
+} from '@engine/preferences';
 
-import {
-  EngineDropdownRadioMenu,
-  EngineIconButton,
-} from '@aerial-engine-core/shadcn-ui';
+import { EngineDropdownRadioMenu, EngineIconButton } from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'AuthenticationLayoutToggle',

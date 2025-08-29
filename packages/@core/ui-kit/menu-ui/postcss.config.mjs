@@ -1,1 +1,1 @@
-export { default } from '@aerial-engine/tailwind-config/postcss';
+export { default } from '@engine/tailwind-config/postcss';

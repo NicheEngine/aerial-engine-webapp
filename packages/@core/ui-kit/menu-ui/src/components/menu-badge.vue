@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { MenuRecordBadgeRaw } from '@aerial-engine-core/typings';
+import type { MenuRecordBadgeRaw } from '@engine-core/typings';
 
 import { computed } from 'vue';
 
-import { isValidColor } from '@aerial-engine-core/shared/color';
+import { isValidColor } from '@engine-core/shared/color';
 
 import BadgeDot from './menu-badge-dot.vue';
 

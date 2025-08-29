@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ToggleGroup, ToggleGroupItem } from '@aerial-engine-core/shadcn-ui';
+import { ToggleGroup, ToggleGroupItem } from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceColorMode',

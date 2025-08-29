@@ -5,12 +5,8 @@ import type { ValueType, EngineButtonGroupProps } from './button';
 
 import { computed, ref, watch } from 'vue';
 
-import {
-  Circle,
-  CircleCheckBig,
-  LoaderCircle,
-} from '@aerial-engine-core/icons';
-import { cn, isFunction } from '@aerial-engine-core/shared/utils';
+import { Circle, CircleCheckBig, LoaderCircle } from '@engine-core/icons';
+import { cn, isFunction } from '@engine-core/shared/utils';
 
 import { objectOmit } from '@vueuse/core';
 

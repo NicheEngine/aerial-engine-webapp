@@ -3,7 +3,7 @@ import type { TooltipContentProps } from 'radix-vue';
 
 import type { StyleValue } from 'vue';
 
-import type { ClassType } from '@aerial-engine-core/typings';
+import type { ClassType } from '@engine-core/typings';
 
 import {
   Tooltip,

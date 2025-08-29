@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import type { HoverCardContentProps } from '@aerial-engine-core/shadcn-ui';
+import type { HoverCardContentProps } from '@engine-core/shadcn-ui';
 
 import type { MenuItemRegistered, MenuProvider, SubMenuProps } from '../types';
 
 import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 
-import { useNamespace } from '@aerial-engine-core/composables';
-import { EngineHoverCard } from '@aerial-engine-core/shadcn-ui';
+import { useNamespace } from '@engine-core/composables';
+import { EngineHoverCard } from '@engine-core/shadcn-ui';
 
 import {
   createSubMenuContext,

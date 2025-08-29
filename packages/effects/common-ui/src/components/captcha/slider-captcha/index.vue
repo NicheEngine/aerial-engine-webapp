@@ -7,9 +7,9 @@ import type {
 
 import { reactive, unref, useTemplateRef, watch, watchEffect } from 'vue';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import { useTimeoutFn } from '@vueuse/core';
 

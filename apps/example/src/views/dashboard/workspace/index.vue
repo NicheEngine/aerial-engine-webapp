@@ -4,7 +4,7 @@ import type {
   WorkbenchQuickNavItem,
   WorkbenchTodoItem,
   WorkbenchTrendItem,
-} from '@aerial-engine/common-ui';
+} from '@engine/common-ui';
 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
@@ -16,10 +16,10 @@ import {
   WorkbenchQuickNav,
   WorkbenchTodo,
   WorkbenchTrends,
-} from '@aerial-engine/common-ui';
-import { preferences } from '@aerial-engine/preferences';
-import { useUserStore } from '@aerial-engine/stores';
-import { openWindow } from '@aerial-engine/utils';
+} from '@engine/common-ui';
+import { preferences } from '@engine/preferences';
+import { useUserStore } from '@engine/stores';
+import { openWindow } from '@engine/utils';
 
 import AnalyticsVisitsSource from '../analytics/analytics-visits-source.vue';
 

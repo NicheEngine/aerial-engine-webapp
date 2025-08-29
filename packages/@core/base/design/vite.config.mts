@@ -1,4 +1,4 @@
-import { defineConfig } from '@aerial-engine/vite-config';
+import { defineConfig } from '@engine/vite-config';
 
 export default defineConfig(async () => {
   return {

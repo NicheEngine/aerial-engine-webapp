@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import type { NotificationItem } from './types';
 
-import { Bell, MailCheck } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { Bell, MailCheck } from '@engine/icons';
+import { $t } from '@engine/locales';
 
 import {
   EngineButton,
   EngineIconButton,
   EnginePopover,
   EngineScrollbar,
-} from '@aerial-engine-core/shadcn-ui';
+} from '@engine-core/shadcn-ui';
 
 import { useToggle } from '@vueuse/core';
 

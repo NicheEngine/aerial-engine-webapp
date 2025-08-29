@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { DrawerPlacement, DrawerState } from '@aerial-engine/common-ui';
+import type { DrawerPlacement, DrawerState } from '@engine/common-ui';
 
-import { Page, useEngineDrawer } from '@aerial-engine/common-ui';
+import { Page, useEngineDrawer } from '@engine/common-ui';
 
 import { Button, Card } from 'ant-design-vue';
 

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@aerial-engine/tsconfig/web-app.json",
+  "extends": "@engine/tsconfig/web-app.json",
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "#/*": ["./src/*"]
     }

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
 
-import { Fallback } from '@aerial-engine/common-ui';
+import { Fallback } from '@engine/common-ui';
 
 import { Button } from 'ant-design-vue';
 

@@ -1,7 +1,8 @@
 {
-  "name": "@aerial-engine/scan",
+  "name": "@engine/scan",
   "version": "5.5.8",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "stub": "pnpm unbuild --stub"
@@ -21,7 +22,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@aerial-engine/node-utils": "workspace:*",
+    "@engine/node-utils": "workspace:*",
     "cac": "catalog:",
     "circular-dependency-scanner": "catalog:",
     "depcheck": "catalog:",

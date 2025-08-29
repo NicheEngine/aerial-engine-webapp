@@ -2,9 +2,9 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
-import { EngineButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineButton } from '@engine-core/shadcn-ui';
 
 import { useQRCode } from '@vueuse/integrations/useQRCode';
 

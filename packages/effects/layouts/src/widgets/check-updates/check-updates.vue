@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
-import { useEngineModal } from '@aerial-engine-core/popup-ui';
+import { useEngineModal } from '@engine-core/popup-ui';
 
 interface Props {
   // 轮询时间，分钟

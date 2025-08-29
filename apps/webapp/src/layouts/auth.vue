@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
-import { AuthPageLayout } from '@aerial-engine/layouts';
-import { preferences } from '@aerial-engine/preferences';
+import { AuthPageLayout } from '@engine/layouts';
+import { preferences } from '@engine/preferences';
 
 import { $t } from '#/locales';
 

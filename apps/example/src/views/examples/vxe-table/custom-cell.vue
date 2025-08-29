@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { VxeGridProps } from '#/adapter/vxe-table';
 
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 
 import { Button, Image, Switch, Tag } from 'ant-design-vue';
 

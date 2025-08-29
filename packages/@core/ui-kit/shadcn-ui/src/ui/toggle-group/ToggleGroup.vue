@@ -6,7 +6,7 @@ import type { toggleVariants } from '../toggle';
 
 import { computed, provide } from 'vue';
 
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import { ToggleGroupRoot, useForwardPropsEmits } from 'radix-vue';
 

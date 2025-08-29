@@ -14,7 +14,7 @@ import {
   ref,
 } from 'vue';
 
-import { useStore } from '@aerial-engine-core/shared/store';
+import { useStore } from '@engine-core/shared/store';
 
 import { DrawerApi } from './drawer-api';
 import EngineDrawer from './drawer.vue';

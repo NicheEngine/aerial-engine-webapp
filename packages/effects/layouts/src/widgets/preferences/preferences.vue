@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
-import { Settings } from '@aerial-engine/icons';
-import { $t, loadLocaleMessages } from '@aerial-engine/locales';
-import { preferences, updatePreferences } from '@aerial-engine/preferences';
-import { capitalizeFirstLetter } from '@aerial-engine/utils';
+import { Settings } from '@engine/icons';
+import { $t, loadLocaleMessages } from '@engine/locales';
+import { preferences, updatePreferences } from '@engine/preferences';
+import { capitalizeFirstLetter } from '@engine/utils';
 
-import { useEngineDrawer } from '@aerial-engine-core/popup-ui';
-import { EngineButton } from '@aerial-engine-core/shadcn-ui';
+import { useEngineDrawer } from '@engine-core/popup-ui';
+import { EngineButton } from '@engine-core/shadcn-ui';
 
 import PreferencesDrawer from './preferences-drawer.vue';
 

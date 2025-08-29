@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 
 import { useFullscreen } from '@vueuse/core';
 import { Button, Card } from 'ant-design-vue';

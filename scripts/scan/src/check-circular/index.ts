@@ -1,8 +1,9 @@
 import type { CAC } from 'cac';
 
 import { extname } from 'node:path';
+import process from 'node:process';
 
-import { getStagedFiles } from '@aerial-engine/node-utils';
+import { getStagedFiles } from '@engine/node-utils';
 
 import { circularDepsDetect } from 'circular-dependency-scanner';
 

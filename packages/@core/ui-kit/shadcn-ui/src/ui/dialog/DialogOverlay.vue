@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 
-import { useScrollLock } from '@aerial-engine-core/composables';
+import { useScrollLock } from '@engine-core/composables';
 
 useScrollLock();
 const id = inject('DISMISSABLE_MODAL_ID');

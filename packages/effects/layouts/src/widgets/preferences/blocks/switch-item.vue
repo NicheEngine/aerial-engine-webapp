@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useSlots } from 'vue';
 
-import { CircleHelp } from '@aerial-engine/icons';
+import { CircleHelp } from '@engine/icons';
 
-import { Switch, EngineTooltip } from '@aerial-engine-core/shadcn-ui';
+import { Switch, EngineTooltip } from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceSwitchItem',

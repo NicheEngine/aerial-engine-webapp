@@ -1,9 +1,9 @@
 import type { Router } from 'vue-router';
 
-import { LOGIN_PATH } from '@aerial-engine/constants';
-import { preferences } from '@aerial-engine/preferences';
-import { useAccessStore, useUserStore } from '@aerial-engine/stores';
-import { startProgress, stopProgress } from '@aerial-engine/utils';
+import { LOGIN_PATH } from '@engine/constants';
+import { preferences } from '@engine/preferences';
+import { useAccessStore, useUserStore } from '@engine/stores';
+import { startProgress, stopProgress } from '@engine/utils';
 
 import { accessRoutes, coreRouteNames } from '#/router/routes';
 import { useAuthStore } from '#/store';

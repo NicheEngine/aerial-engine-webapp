@@ -2,6 +2,7 @@ import type { DefineConfig } from '../typing';
 
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+import process from 'node:process';
 
 import { defineApplicationConfig } from './application';
 import { defineLibraryConfig } from './library';

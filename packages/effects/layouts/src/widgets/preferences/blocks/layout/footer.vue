@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
 import SwitchItem from '../switch-item.vue';
 

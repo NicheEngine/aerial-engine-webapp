@@ -55,7 +55,7 @@ interface PrintPluginOptions {
 interface NitroMockPluginOptions {
   /**
    * Mock 服务器包名
-   * @default '@nicheengine/nitro-mock'
+   * @default '@vbenjs/nitro-mock'
    */
   mockServerPackage?: string;
 

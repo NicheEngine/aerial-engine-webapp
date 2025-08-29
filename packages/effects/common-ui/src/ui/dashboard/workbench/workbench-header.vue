@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { EngineAvatar } from '@aerial-engine-core/shadcn-ui';
+import { EngineAvatar } from '@engine-core/shadcn-ui';
 
 interface Props {
   avatar?: string;

@@ -1,7 +1,14 @@
 {
-  "name": "@aerial-engine/vite-config",
+  "name": "@engine/vite-config",
   "version": "5.5.8",
   "private": true,
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "configs/vite-config"
+  },
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -32,10 +39,10 @@
     "vite-plugin-vue-devtools": "catalog:"
   },
   "devDependencies": {
-    "@aerial-engine/node-utils": "workspace:*",
     "@pnpm/workspace.read-manifest": "catalog:",
     "@types/archiver": "catalog:",
     "@types/html-minifier-terser": "catalog:",
+    "@engine/node-utils": "workspace:*",
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
     "dayjs": "catalog:",

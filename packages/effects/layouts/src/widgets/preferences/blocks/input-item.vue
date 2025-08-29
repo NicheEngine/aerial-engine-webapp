@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { SelectOption } from '@aerial-engine/types';
+import type { SelectOption } from '@engine/types';
 
 import { useSlots } from 'vue';
 
-import { CircleHelp } from '@aerial-engine/icons';
+import { CircleHelp } from '@engine/icons';
 
-import { Input, EngineTooltip } from '@aerial-engine-core/shadcn-ui';
+import { Input, EngineTooltip } from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceSelectItem',

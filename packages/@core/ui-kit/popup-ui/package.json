@@ -1,12 +1,12 @@
 {
-  "name": "@aerial-engine-core/popup-ui",
+  "name": "@engine-core/popup-ui",
   "version": "5.2.1",
   "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
   "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
-    "directory": "packages/@aerial-engine-core/uikit/popup-ui"
+    "directory": "packages/@engine-core/uikit/popup-ui"
   },
   "license": "MIT",
   "type": "module",
@@ -37,11 +37,11 @@
     }
   },
   "dependencies": {
-    "@aerial-engine-core/composables": "workspace:*",
-    "@aerial-engine-core/icons": "workspace:*",
-    "@aerial-engine-core/shadcn-ui": "workspace:*",
-    "@aerial-engine-core/shared": "workspace:*",
-    "@aerial-engine-core/typings": "workspace:*",
+    "@engine-core/composables": "workspace:*",
+    "@engine-core/icons": "workspace:*",
+    "@engine-core/shadcn-ui": "workspace:*",
+    "@engine-core/shared": "workspace:*",
+    "@engine-core/typings": "workspace:*",
     "@vueuse/core": "catalog:",
     "vue": "catalog:"
   }

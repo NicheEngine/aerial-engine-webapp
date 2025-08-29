@@ -4,7 +4,7 @@ import type {
   AccessModeType,
   GenerateMenuAndRoutesOptions,
   RouteRecordRaw,
-} from '@aerial-engine/types';
+} from '@engine/types';
 
 import { defineComponent, h } from 'vue';
 
@@ -16,7 +16,7 @@ import {
   isFunction,
   isString,
   mapTree,
-} from '@aerial-engine/utils';
+} from '@engine/utils';
 
 async function generateAccessible(
   mode: AccessModeType,

@@ -1,4 +1,5 @@
 import { dirname } from 'node:path';
+import process from 'node:process';
 
 import {
   getPackages as getPackagesFunc,

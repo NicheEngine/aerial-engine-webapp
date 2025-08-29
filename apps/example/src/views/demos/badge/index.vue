@@ -2,10 +2,10 @@
 import { reactive } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { Page } from '@aerial-engine/common-ui';
-import { useAccessStore } from '@aerial-engine/stores';
+import { Page } from '@engine/common-ui';
+import { useAccessStore } from '@engine/stores';
 
-import { MenuBadge } from '@aerial-engine-core/menu-ui';
+import { MenuBadge } from '@engine-core/menu-ui';
 
 import { Button, Card, Radio, RadioGroup } from 'ant-design-vue';
 

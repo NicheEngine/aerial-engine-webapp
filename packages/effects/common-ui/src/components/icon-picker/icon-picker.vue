@@ -3,9 +3,9 @@ import type { VNode } from 'vue';
 
 import { computed, ref, useAttrs, watch, watchEffect } from 'vue';
 
-import { usePagination } from '@aerial-engine/hooks';
-import { EmptyIcon, Grip, listIcons } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { usePagination } from '@engine/hooks';
+import { EmptyIcon, Grip, listIcons } from '@engine/icons';
+import { $t } from '@engine/locales';
 
 import {
   Button,
@@ -21,8 +21,8 @@ import {
   EngineIcon,
   EngineIconButton,
   EnginePopover,
-} from '@aerial-engine-core/shadcn-ui';
-import { isFunction } from '@aerial-engine-core/shared/utils';
+} from '@engine-core/shadcn-ui';
+import { isFunction } from '@engine-core/shared/utils';
 
 import { objectOmit, refDebounced, watchDebounced } from '@vueuse/core';
 

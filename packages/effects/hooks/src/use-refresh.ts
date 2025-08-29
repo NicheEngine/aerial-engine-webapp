@@ -1,6 +1,6 @@
 import { useRouter } from 'vue-router';
 
-import { useTabbarStore } from '@aerial-engine/stores';
+import { useTabbarStore } from '@engine/stores';
 
 export function useRefresh() {
   const router = useRouter();

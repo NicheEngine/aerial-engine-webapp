@@ -3,8 +3,8 @@ import type { EngineButtonProps } from './button';
 
 import { computed } from 'vue';
 
-import { LoaderCircle } from '@aerial-engine-core/icons';
-import { cn } from '@aerial-engine-core/shared/utils';
+import { LoaderCircle } from '@engine-core/icons';
+import { cn } from '@engine-core/shared/utils';
 
 import { Primitive } from 'radix-vue';
 

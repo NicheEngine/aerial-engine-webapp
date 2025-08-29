@@ -3,7 +3,7 @@ import type { BacktopProps } from './backtop';
 
 import { computed } from 'vue';
 
-import { ArrowUpToLine } from '@aerial-engine-core/icons';
+import { ArrowUpToLine } from '@engine-core/icons';
 
 import { EngineButton } from '../button';
 import { useBackTop } from './use-backtop';

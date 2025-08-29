@@ -1,11 +1,11 @@
-import type { DeepPartial } from '@aerial-engine-core/typings';
+import type { DeepPartial } from '@engine-core/typings';
 
 import type { InitialOptions, Preferences } from './types';
 
 import { markRaw, reactive, readonly, watch } from 'vue';
 
-import { StorageManager } from '@aerial-engine-core/shared/cache';
-import { isMacOs, merge } from '@aerial-engine-core/shared/utils';
+import { StorageManager } from '@engine-core/shared/cache';
+import { isMacOs, merge } from '@engine-core/shared/utils';
 
 import {
   breakpointsTailwind,

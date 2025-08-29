@@ -1,7 +1,7 @@
 import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { preferences } from '@aerial-engine/preferences';
+import { preferences } from '@engine/preferences';
 
 function useContentSpinner() {
   const spinning = ref(false);

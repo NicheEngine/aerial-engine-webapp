@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { EngineFormSchema } from '@aerial-engine/common-ui';
-import type { Recordable } from '@aerial-engine/types';
+import type { EngineFormSchema } from '@engine/common-ui';
+import type { Recordable } from '@engine/types';
 
 import { computed, ref } from 'vue';
 
-import { AuthenticationForgetPassword, z } from '@aerial-engine/common-ui';
-import { $t } from '@aerial-engine/locales';
+import { AuthenticationForgetPassword, z } from '@engine/common-ui';
+import { $t } from '@engine/locales';
 
 defineOptions({ name: 'ForgetPassword' });
 

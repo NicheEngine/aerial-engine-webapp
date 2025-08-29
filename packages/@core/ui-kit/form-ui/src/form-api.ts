@@ -7,13 +7,13 @@ import type {
 
 import type { ComponentPublicInstance } from 'vue';
 
-import type { Recordable } from '@aerial-engine-core/typings';
+import type { Recordable } from '@engine-core/typings';
 
 import type { FormActions, FormSchema, EngineFormProps } from './types';
 
 import { isRef, toRaw } from 'vue';
 
-import { Store } from '@aerial-engine-core/shared/store';
+import { Store } from '@engine-core/shared/store';
 import {
   bindMethods,
   createMerge,
@@ -24,7 +24,7 @@ import {
   isObject,
   mergeWithArrayOverride,
   StateHandler,
-} from '@aerial-engine-core/shared/utils';
+} from '@engine-core/shared/utils';
 
 function getDefaultState(): EngineFormProps {
   return {

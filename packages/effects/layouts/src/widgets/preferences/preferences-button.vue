@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { Settings } from '@aerial-engine/icons';
+import { Settings } from '@engine/icons';
 
-import { EngineIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineIconButton } from '@engine-core/shadcn-ui';
 
 import Preferences from './preferences.vue';
 

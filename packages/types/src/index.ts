@@ -1,2 +1,2 @@
 export type * from './user';
-export type * from '@aerial-engine-core/typings';
+export type * from '@engine-core/typings';

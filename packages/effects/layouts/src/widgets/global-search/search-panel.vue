@@ -1,19 +1,15 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@aerial-engine/types';
+import type { MenuRecordRaw } from '@engine/types';
 
 import { nextTick, onMounted, ref, shallowRef, watch } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { SearchX, X } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
-import {
-  mapTree,
-  traverseTreeValues,
-  uniqueByField,
-} from '@aerial-engine/utils';
+import { SearchX, X } from '@engine/icons';
+import { $t } from '@engine/locales';
+import { mapTree, traverseTreeValues, uniqueByField } from '@engine/utils';
 
-import { EngineIcon, EngineScrollbar } from '@aerial-engine-core/shadcn-ui';
-import { isHttpUrl } from '@aerial-engine-core/shared/utils';
+import { EngineIcon, EngineScrollbar } from '@engine-core/shadcn-ui';
+import { isHttpUrl } from '@engine-core/shared/utils';
 
 import { onKeyStroke, useLocalStorage, useThrottleFn } from '@vueuse/core';
 

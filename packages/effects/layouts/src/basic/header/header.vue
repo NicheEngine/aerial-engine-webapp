@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { computed, useSlots } from 'vue';
 
-import { useRefresh } from '@aerial-engine/hooks';
-import { RotateCw } from '@aerial-engine/icons';
-import { preferences, usePreferences } from '@aerial-engine/preferences';
-import { useAccessStore } from '@aerial-engine/stores';
+import { useRefresh } from '@engine/hooks';
+import { RotateCw } from '@engine/icons';
+import { preferences, usePreferences } from '@engine/preferences';
+import { useAccessStore } from '@engine/stores';
 
-import { EngineFullScreen, EngineIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineFullScreen, EngineIconButton } from '@engine-core/shadcn-ui';
 
 import {
   GlobalSearch,

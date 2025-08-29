@@ -11,13 +11,13 @@ import type {
 
 import { computed } from 'vue';
 
-import { Form } from '@aerial-engine-core/shadcn-ui';
+import { Form } from '@engine-core/shadcn-ui';
 import {
   cn,
   isFunction,
   isString,
   mergeWithArrayOverride,
-} from '@aerial-engine-core/shared/utils';
+} from '@engine-core/shared/utils';
 
 import { provideFormRenderProps } from './context';
 import { useExpandable } from './expandable';

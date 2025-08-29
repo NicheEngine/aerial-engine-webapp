@@ -1,5 +1,3 @@
-import { defineProject } from 'vitest/config';
+import { defineWorkspace } from 'vitest/config';
 
-import projectConfig from './vitest.config';
-
-export default defineProject(projectConfig);
+export default defineWorkspace(['vitest.config.ts']);

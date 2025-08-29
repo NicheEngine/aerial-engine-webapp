@@ -1,13 +1,8 @@
 <script setup lang="ts">
-import {
-  MdiGithub,
-  MdiGoogle,
-  MdiQqchat,
-  MdiWechat,
-} from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { MdiGithub, MdiGoogle, MdiQqchat, MdiWechat } from '@engine/icons';
+import { $t } from '@engine/locales';
 
-import { EngineIconButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineIconButton } from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'ThirdPartyLogin',

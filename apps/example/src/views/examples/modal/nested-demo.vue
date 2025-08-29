@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useEngineModal } from '@aerial-engine/common-ui';
+import { useEngineModal } from '@engine/common-ui';
 
 import { Button } from 'ant-design-vue';
 

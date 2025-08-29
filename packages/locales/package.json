@@ -1,6 +1,14 @@
 {
-  "name": "@aerial-engine/locales",
+  "name": "@engine/locales",
   "version": "5.5.8",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/locales"
+  },
+  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -12,8 +20,8 @@
     }
   },
   "dependencies": {
-    "@aerial-engine-core/composables": "workspace:*",
     "@intlify/core-base": "catalog:",
+    "@engine-core/composables": "workspace:*",
     "vue": "catalog:",
     "vue-i18n": "catalog:"
   }

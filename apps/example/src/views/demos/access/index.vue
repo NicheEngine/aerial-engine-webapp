@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 import { useRouter } from 'vue-router';
 
-import { useAccess } from '@aerial-engine/access';
-import { Page } from '@aerial-engine/common-ui';
-import { resetAllStores, useUserStore } from '@aerial-engine/stores';
+import { useAccess } from '@engine/access';
+import { Page } from '@engine/common-ui';
+import { resetAllStores, useUserStore } from '@engine/stores';
 
 import { Button, Card } from 'ant-design-vue';
 

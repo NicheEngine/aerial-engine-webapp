@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import type { ThemeModeType } from '@aerial-engine/types';
+import type { ThemeModeType } from '@engine/types';
 
-import { MoonStar, Sun, SunMoon } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { MoonStar, Sun, SunMoon } from '@engine/icons';
+import { $t } from '@engine/locales';
 import {
   preferences,
   updatePreferences,
   usePreferences,
-} from '@aerial-engine/preferences';
+} from '@engine/preferences';
 
 import {
   ToggleGroup,
   ToggleGroupItem,
   EngineTooltip,
-} from '@aerial-engine-core/shadcn-ui';
+} from '@engine-core/shadcn-ui';
 
 import ThemeButton from './theme-button.vue';
 

@@ -2,13 +2,13 @@ import type { EChartsOption } from 'echarts';
 
 import type { Ref } from 'vue';
 
-import type { Nullable } from '@aerial-engine/types';
+import type { Nullable } from '@engine/types';
 
 import type EchartsUI from './echarts-ui.vue';
 
 import { computed, nextTick, watch } from 'vue';
 
-import { usePreferences } from '@aerial-engine/preferences';
+import { usePreferences } from '@engine/preferences';
 
 import {
   tryOnUnmounted,
@@ -83,14 +83,12 @@ function useEcharts(chartRef: Ref<EchartsUIType>) {
   };
 
   function resize() {
-    if (chartInstance) {
-      chartInstance?.resize({
-        animation: {
-          duration: 300,
-          easing: 'quadraticIn',
-        },
-      });
-    }
+    chartInstance?.resize({
+      animation: {
+        duration: 300,
+        easing: 'quadraticIn',
+      },
+    });
   }
 
   watch([width, height], () => {

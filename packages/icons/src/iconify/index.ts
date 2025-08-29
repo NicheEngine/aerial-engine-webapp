@@ -1,6 +1,6 @@
-import { createIconifyIcon } from '@aerial-engine-core/icons';
+import { createIconifyIcon } from '@engine-core/icons';
 
-export * from '@aerial-engine-core/icons';
+export * from '@engine-core/icons';
 
 export const MdiKeyboardEsc = createIconifyIcon('mdi:keyboard-esc');
 

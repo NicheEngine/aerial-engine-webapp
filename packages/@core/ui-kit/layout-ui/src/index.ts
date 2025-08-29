@@ -1,2 +1,2 @@
 export type * from './engine-layout';
-export { default as AerialEngineLayout } from './engine-layout.vue';
+export { default as EngineLayout } from './engine-layout.vue';

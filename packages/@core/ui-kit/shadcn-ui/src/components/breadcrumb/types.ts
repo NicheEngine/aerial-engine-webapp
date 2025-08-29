@@ -1,6 +1,6 @@
 import type { Component } from 'vue';
 
-import type { BreadcrumbStyleType } from '@aerial-engine-core/typings';
+import type { BreadcrumbStyleType } from '@engine-core/typings';
 
 export interface IBreadcrumb {
   icon?: Component | string;

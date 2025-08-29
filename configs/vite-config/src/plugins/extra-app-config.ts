@@ -4,7 +4,7 @@ import {
   colors,
   generatorContentHash,
   readPackageJSON,
-} from '@aerial-engine/node-utils';
+} from '@engine/node-utils';
 
 import { loadEnv } from '../utils/env';
 

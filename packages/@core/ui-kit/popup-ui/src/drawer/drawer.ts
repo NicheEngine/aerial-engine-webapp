@@ -1,6 +1,6 @@
 import type { Component, Ref } from 'vue';
 
-import type { ClassType, MaybePromise } from '@aerial-engine-core/typings';
+import type { ClassType, MaybePromise } from '@engine-core/typings';
 
 import type { DrawerApi } from './drawer-api';
 

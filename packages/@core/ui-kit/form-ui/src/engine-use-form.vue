@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { Recordable } from '@aerial-engine-core/typings';
+import type { Recordable } from '@engine-core/typings';
 
 import type { ExtendedFormApi, EngineFormProps } from './types';
 
 // import { toRaw, watch } from 'vue';
 import { nextTick, onMounted, watch } from 'vue';
 
-import { useForwardPriorityValues } from '@aerial-engine-core/composables';
-import { cloneDeep, get, isEqual, set } from '@aerial-engine-core/shared/utils';
+import { useForwardPriorityValues } from '@engine-core/composables';
+import { cloneDeep, get, isEqual, set } from '@engine-core/shared/utils';
 
 import { useDebounceFn } from '@vueuse/core';
 

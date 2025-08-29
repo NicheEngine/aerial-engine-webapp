@@ -1,6 +1,14 @@
 {
-  "name": "@aerial-engine/plugins",
+  "name": "@engine/plugins",
   "version": "5.5.8",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/effects/plugins"
+  },
+  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -20,15 +28,15 @@
     }
   },
   "dependencies": {
-    "@aerial-engine-core/form-ui": "workspace:*",
-    "@aerial-engine-core/shadcn-ui": "workspace:*",
-    "@aerial-engine-core/shared": "workspace:*",
-    "@aerial-engine/hooks": "workspace:*",
-    "@aerial-engine/icons": "workspace:*",
-    "@aerial-engine/locales": "workspace:*",
-    "@aerial-engine/preferences": "workspace:*",
-    "@aerial-engine/types": "workspace:*",
-    "@aerial-engine/utils": "workspace:*",
+    "@engine-core/form-ui": "workspace:*",
+    "@engine-core/shadcn-ui": "workspace:*",
+    "@engine-core/shared": "workspace:*",
+    "@engine/hooks": "workspace:*",
+    "@engine/icons": "workspace:*",
+    "@engine/locales": "workspace:*",
+    "@engine/preferences": "workspace:*",
+    "@engine/types": "workspace:*",
+    "@engine/utils": "workspace:*",
     "@vueuse/core": "catalog:",
     "@vueuse/motion": "catalog:",
     "echarts": "catalog:",

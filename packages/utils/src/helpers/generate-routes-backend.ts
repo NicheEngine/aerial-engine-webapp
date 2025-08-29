@@ -4,9 +4,9 @@ import type {
   ComponentRecordType,
   GenerateMenuAndRoutesOptions,
   RouteRecordStringComponent,
-} from '@aerial-engine-core/typings';
+} from '@engine-core/typings';
 
-import { mapTree } from '@aerial-engine-core/shared/utils';
+import { mapTree } from '@engine-core/shared/utils';
 
 /**
  * 动态生成路由 - 后端方式
@@ -80,7 +80,7 @@ function normalizeViewPath(path: string): string {
     ? normalizedPath
     : `/${normalizedPath}`;
 
-  // 这里耦合了aerial-engine的目录结构
+  // 这里耦合了engine的目录结构
   return viewPath.replace(/^\/views/, '');
 }
 export { generateRoutesByBackend };

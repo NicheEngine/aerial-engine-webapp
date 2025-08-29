@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { SelectOption } from '@aerial-engine/types';
+import type { SelectOption } from '@engine/types';
 
 import { computed } from 'vue';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
 import SwitchItem from '../switch-item.vue';
 import ToggleItem from '../toggle-item.vue';

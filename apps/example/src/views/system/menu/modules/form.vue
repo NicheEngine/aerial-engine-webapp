@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 import type { ChangeEvent } from 'ant-design-vue/es/_util/EventInterface';
 
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 import type { EngineFormSchema } from '#/adapter/form';
 
 import { computed, h, ref } from 'vue';
 
-import { useEngineDrawer } from '@aerial-engine/common-ui';
-import { IconifyIcon } from '@aerial-engine/icons';
-import { $te } from '@aerial-engine/locales';
-import { getPopupContainer } from '@aerial-engine/utils';
+import { useEngineDrawer } from '@engine/common-ui';
+import { IconifyIcon } from '@engine/icons';
+import { $te } from '@engine/locales';
+import { getPopupContainer } from '@engine/utils';
 
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 

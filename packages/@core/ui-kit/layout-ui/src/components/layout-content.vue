@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
 
-import type { ContentCompactType } from '@aerial-engine-core/typings';
+import type { ContentCompactType } from '@engine-core/typings';
 
 import { computed } from 'vue';
 
-import { useLayoutContentStyle } from '@aerial-engine-core/composables';
-import { Slot } from '@aerial-engine-core/shadcn-ui';
+import { useLayoutContentStyle } from '@engine-core/composables';
+import { Slot } from '@engine-core/shadcn-ui';
 
 interface Props {
   /**

@@ -5,6 +5,7 @@ import type { ArchiverPluginOptions } from '../typing';
 import fs from 'node:fs';
 import fsp from 'node:fs/promises';
 import { join } from 'node:path';
+import process from 'node:process';
 
 import archiver from 'archiver';
 

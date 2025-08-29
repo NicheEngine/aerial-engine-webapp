@@ -1,14 +1,14 @@
 import type { Component, VNode } from 'vue';
 
-import type { Recordable } from '@aerial-engine-core/typings';
+import type { Recordable } from '@engine-core/typings';
 
 import type { AlertProps, BeforeCloseScope, PromptProps } from './alert';
 
 import { h, nextTick, ref, render } from 'vue';
 
-import { useSimpleLocale } from '@aerial-engine-core/composables';
-import { Input, EngineRenderContent } from '@aerial-engine-core/shadcn-ui';
-import { isFunction, isString } from '@aerial-engine-core/shared/utils';
+import { useSimpleLocale } from '@engine-core/composables';
+import { Input, EngineRenderContent } from '@engine-core/shadcn-ui';
+import { isFunction, isString } from '@engine-core/shared/utils';
 
 import Alert from './alert.vue';
 

@@ -4,7 +4,7 @@ import type { EngineButtonProps } from './button';
 
 import { computed, useSlots } from 'vue';
 
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import { EngineTooltip } from '../tooltip';
 import EngineButton from './button.vue';

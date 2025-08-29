@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
 
-import type { AnyFunction } from '@aerial-engine/types';
+import type { AnyFunction } from '@engine/types';
 
 import { computed, useTemplateRef, watch } from 'vue';
 
-import { useHoverToggle } from '@aerial-engine/hooks';
-import { LockKeyhole, LogOut } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
-import { preferences, usePreferences } from '@aerial-engine/preferences';
-import { useAccessStore } from '@aerial-engine/stores';
-import { isWindowsOs } from '@aerial-engine/utils';
+import { useHoverToggle } from '@engine/hooks';
+import { LockKeyhole, LogOut } from '@engine/icons';
+import { $t } from '@engine/locales';
+import { preferences, usePreferences } from '@engine/preferences';
+import { useAccessStore } from '@engine/stores';
+import { isWindowsOs } from '@engine/utils';
 
-import { useEngineModal } from '@aerial-engine-core/popup-ui';
+import { useEngineModal } from '@engine-core/popup-ui';
 import {
   Badge,
   DropdownMenu,
@@ -24,7 +24,7 @@ import {
   DropdownMenuTrigger,
   EngineAvatar,
   EngineIcon,
-} from '@aerial-engine-core/shadcn-ui';
+} from '@engine-core/shadcn-ui';
 
 import { useMagicKeys, whenever } from '@vueuse/core';
 

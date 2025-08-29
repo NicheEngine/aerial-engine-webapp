@@ -3,10 +3,10 @@ import type { AuthenticationProps } from './types';
 
 import { computed, watch } from 'vue';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
-import { useEngineModal } from '@aerial-engine-core/popup-ui';
-import { Slot, EngineAvatar } from '@aerial-engine-core/shadcn-ui';
+import { useEngineModal } from '@engine-core/popup-ui';
+import { Slot, EngineAvatar } from '@engine-core/shadcn-ui';
 
 interface Props extends AuthenticationProps {
   avatar?: string;

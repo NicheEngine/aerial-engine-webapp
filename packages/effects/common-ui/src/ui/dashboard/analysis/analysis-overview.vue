@@ -9,7 +9,7 @@ import {
   CardTitle,
   EngineCountToAnimator,
   EngineIcon,
-} from '@aerial-engine-core/shadcn-ui';
+} from '@engine-core/shadcn-ui';
 
 interface Props {
   items?: AnalysisOverviewItem[];

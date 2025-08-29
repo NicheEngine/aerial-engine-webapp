@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 
-import { useEngineModal } from '@aerial-engine/common-ui';
+import { useEngineModal } from '@engine/common-ui';
 
 import { Slider } from 'ant-design-vue';
 

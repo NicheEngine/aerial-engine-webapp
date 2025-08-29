@@ -1,7 +1,7 @@
 import type {
-  EngineFormSchema as FormSchema,
   EngineFormProps,
-} from '@aerial-engine/common-ui';
+  EngineFormSchema as FormSchema,
+} from '@engine/common-ui';
 
 import type { ComponentType } from './component';
 
@@ -9,8 +9,8 @@ import {
   setupEngineForm,
   useEngineForm as useForm,
   z,
-} from '@aerial-engine/common-ui';
-import { $t } from '@aerial-engine/locales';
+} from '@engine/common-ui';
+import { $t } from '@engine/locales';
 
 async function initSetupEngineForm() {
   setupEngineForm<ComponentType>({

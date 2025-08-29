@@ -1,8 +1,8 @@
 import type { RequestClient } from './request-client';
 import type { MakeErrorMessageFn, ResponseInterceptorConfig } from './types';
 
-import { $t } from '@aerial-engine/locales';
-import { isFunction } from '@aerial-engine/utils';
+import { $t } from '@engine/locales';
+import { isFunction } from '@engine/utils';
 
 import axios from 'axios';
 

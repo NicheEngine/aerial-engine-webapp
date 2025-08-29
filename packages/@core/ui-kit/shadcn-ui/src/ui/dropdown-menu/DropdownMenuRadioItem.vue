@@ -6,7 +6,7 @@ import type {
 
 import { computed } from 'vue';
 
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import { Circle } from 'lucide-vue-next';
 import {

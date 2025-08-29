@@ -2,8 +2,8 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { Page } from '@aerial-engine/common-ui';
-import { useTabs } from '@aerial-engine/hooks';
+import { Page } from '@engine/common-ui';
+import { useTabs } from '@engine/hooks';
 
 import { Button, Card, Input } from 'ant-design-vue';
 
@@ -46,7 +46,7 @@ function reset() {
       </div>
       <div class="flex flex-wrap gap-3">
         <Button type="primary" @click="openTab"> 打开 "关于" 标签页 </Button>
-        <Button type="primary" @click="closeTabByKey('/aerial-engine/about')">
+        <Button type="primary" @click="closeTabByKey('/engine/about')">
           关闭 "关于" 标签页
         </Button>
       </div>

@@ -1,7 +1,7 @@
 import type { Preferences } from './types';
 
-import { generatorColorVariables } from '@aerial-engine-core/shared/color';
-import { updateCSSVariables as executeUpdateCSSVariables } from '@aerial-engine-core/shared/utils';
+import { generatorColorVariables } from '@engine-core/shared/color';
+import { updateCSSVariables as executeUpdateCSSVariables } from '@engine-core/shared/utils';
 
 import { BUILT_IN_THEME_PRESETS } from './constants';
 

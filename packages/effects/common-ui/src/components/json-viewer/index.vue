@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { SetupContext } from 'vue';
 
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 import type {
   JsonViewerAction,
@@ -14,9 +14,9 @@ import { computed, useAttrs } from 'vue';
 // @ts-ignore
 import VueJsonViewer from 'vue-json-viewer';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
-import { isBoolean } from '@aerial-engine-core/shared/utils';
+import { isBoolean } from '@engine-core/shared/utils';
 
 // @ts-ignore
 import JsonBigint from 'json-bigint';

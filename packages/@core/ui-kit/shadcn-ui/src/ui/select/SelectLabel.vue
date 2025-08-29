@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SelectLabelProps } from 'radix-vue';
 
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import { SelectLabel } from 'radix-vue';
 

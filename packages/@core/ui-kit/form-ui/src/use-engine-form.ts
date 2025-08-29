@@ -6,7 +6,7 @@ import type {
 
 import { defineComponent, h, isReactive, onBeforeUnmount, watch } from 'vue';
 
-import { useStore } from '@aerial-engine-core/shared/store';
+import { useStore } from '@engine-core/shared/store';
 
 import { FormApi } from './form-api';
 import EngineUseForm from './engine-use-form.vue';

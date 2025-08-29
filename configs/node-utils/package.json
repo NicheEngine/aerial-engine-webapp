@@ -1,6 +1,15 @@
 {
-  "name": "@aerial-engine/node-utils",
+  "name": "@engine/node-utils",
   "version": "5.5.8",
+  "private": true,
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "configs/node-utils"
+  },
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "stub": "pnpm unbuild --stub"
@@ -29,6 +38,8 @@
     "ora": "catalog:",
     "pkg-types": "catalog:",
     "prettier": "catalog:",
-    "rimraf": "catalog:"
+    "rimraf": "catalog:",
+    "@types/fs-extra": "catalog:",
+    "path": "catalog:"
   }
 }

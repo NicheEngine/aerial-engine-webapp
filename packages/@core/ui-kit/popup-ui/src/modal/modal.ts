@@ -1,6 +1,6 @@
 import type { Component, Ref } from 'vue';
 
-import type { MaybePromise } from '@aerial-engine-core/typings';
+import type { MaybePromise } from '@engine-core/typings';
 
 import type { ModalApi } from './modal-api';
 

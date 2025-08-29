@@ -5,7 +5,7 @@ import { computed, getCurrentInstance, unref, useAttrs, useSlots } from 'vue';
 import {
   getFirstNonNullOrUndefined,
   kebabToCamelCase,
-} from '@aerial-engine-core/shared/utils';
+} from '@engine-core/shared/utils';
 
 /**
  * 依次从插槽、attrs、props、state 中获取值

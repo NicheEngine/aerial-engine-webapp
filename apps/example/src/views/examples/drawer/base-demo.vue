@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useEngineDrawer } from '@aerial-engine/common-ui';
+import { useEngineDrawer } from '@engine/common-ui';
 
 import { Button, message } from 'ant-design-vue';
 

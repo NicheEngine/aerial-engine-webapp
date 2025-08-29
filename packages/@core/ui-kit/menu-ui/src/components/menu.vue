@@ -21,8 +21,8 @@ import {
   watchEffect,
 } from 'vue';
 
-import { useNamespace } from '@aerial-engine-core/composables';
-import { Ellipsis } from '@aerial-engine-core/icons';
+import { useNamespace } from '@engine-core/composables';
+import { Ellipsis } from '@engine-core/icons';
 
 import { useResizeObserver } from '@vueuse/core';
 

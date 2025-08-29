@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 import {
   downloadFileFromBase64,
   downloadFileFromBlobPart,
   downloadFileFromImageUrl,
   downloadFileFromUrl,
-} from '@aerial-engine/utils';
+} from '@engine/utils';
 
 import { Button, Card } from 'ant-design-vue';
 
@@ -53,7 +53,7 @@ function getResponse() {
         @click="
           downloadFileFromImageUrl({
             source:
-              'https://unpkg.com/@nicheengine/static-source@0.1.7/source/logo-v1.webp',
+              'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
             fileName: 'engine-logo.png',
           })
         "

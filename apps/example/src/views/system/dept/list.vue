@@ -5,8 +5,8 @@ import type {
 } from '#/adapter/vxe-table';
 import type { SystemDeptApi } from '#/api/system/dept';
 
-import { Page, useEngineModal } from '@aerial-engine/common-ui';
-import { Plus } from '@aerial-engine/icons';
+import { Page, useEngineModal } from '@engine/common-ui';
+import { Plus } from '@engine/icons';
 
 import { Button, message } from 'ant-design-vue';
 

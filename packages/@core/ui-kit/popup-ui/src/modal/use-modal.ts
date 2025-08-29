@@ -10,7 +10,7 @@ import {
   ref,
 } from 'vue';
 
-import { useStore } from '@aerial-engine-core/shared/store';
+import { useStore } from '@engine-core/shared/store';
 
 import { ModalApi } from './modal-api';
 import EngineModal from './modal.vue';

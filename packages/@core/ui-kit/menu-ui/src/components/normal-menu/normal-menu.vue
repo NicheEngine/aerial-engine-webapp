@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@aerial-engine-core/typings';
+import type { MenuRecordRaw } from '@engine-core/typings';
 
 import type { NormalMenuProps } from './normal-menu';
 
-import { useNamespace } from '@aerial-engine-core/composables';
-import { EngineIcon } from '@aerial-engine-core/shadcn-ui';
+import { useNamespace } from '@engine-core/composables';
+import { EngineIcon } from '@engine-core/shadcn-ui';
 
 interface Props extends NormalMenuProps {}
 

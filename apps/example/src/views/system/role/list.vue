@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 import type {
   OnActionClickParams,
@@ -7,8 +7,8 @@ import type {
 } from '#/adapter/vxe-table';
 import type { SystemRoleApi } from '#/api';
 
-import { Page, useEngineDrawer } from '@aerial-engine/common-ui';
-import { Plus } from '@aerial-engine/icons';
+import { Page, useEngineDrawer } from '@engine/common-ui';
+import { Plus } from '@engine/icons';
 
 import { Button, message, Modal } from 'ant-design-vue';
 

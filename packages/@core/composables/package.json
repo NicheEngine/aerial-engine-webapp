@@ -1,6 +1,14 @@
 {
-  "name": "@aerial-engine-core/composables",
+  "name": "@engine-core/composables",
   "version": "5.5.8",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/@core/composables"
+  },
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "pnpm unbuild"
@@ -27,7 +35,7 @@
     }
   },
   "dependencies": {
-    "@aerial-engine-core/shared": "workspace:*",
+    "@engine-core/shared": "workspace:*",
     "@vueuse/core": "catalog:",
     "radix-vue": "catalog:",
     "sortablejs": "catalog:",

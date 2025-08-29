@@ -23,13 +23,13 @@ export async function perfectionist(): Promise<Linter.Config[]> {
           {
             customGroups: {
               type: {
-                'engine-core-type': ['^@aerial-engine-core/.+'],
-                'engine-type': ['^@aerial-engine/.+'],
+                'engine-core-type': ['^@engine-core/.+'],
+                'engine-type': ['^@engine/.+'],
                 'vue-type': ['^vue$', '^vue-.+', '^@vue/.+'],
               },
               value: {
-                engine: ['^@aerial-engine/.+'],
-                'engine-core': ['^@aerial-engine-core/.+'],
+                engine: ['^@engine/.+'],
+                'engine-core': ['^@engine-core/.+'],
                 vue: ['^vue$', '^vue-.+', '^@vue/.+'],
               },
             },

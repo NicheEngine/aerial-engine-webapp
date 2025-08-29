@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
-import type { EngineFormSchema } from '@aerial-engine-core/form-ui';
+import type { EngineFormSchema } from '@engine-core/form-ui';
 
 import { computed, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
-import { useEngineForm } from '@aerial-engine-core/form-ui';
-import { EngineButton } from '@aerial-engine-core/shadcn-ui';
+import { useEngineForm } from '@engine-core/form-ui';
+import { EngineButton } from '@engine-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 

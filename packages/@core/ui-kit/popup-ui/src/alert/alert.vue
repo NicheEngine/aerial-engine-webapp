@@ -5,7 +5,7 @@ import type { AlertProps } from './alert';
 
 import { computed, h, nextTick, ref } from 'vue';
 
-import { useSimpleLocale } from '@aerial-engine-core/composables';
+import { useSimpleLocale } from '@engine-core/composables';
 import {
   CircleAlert,
   CircleCheckBig,
@@ -13,7 +13,7 @@ import {
   CircleX,
   Info,
   X,
-} from '@aerial-engine-core/icons';
+} from '@engine-core/icons';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -24,9 +24,9 @@ import {
   EngineButton,
   EngineLoading,
   EngineRenderContent,
-} from '@aerial-engine-core/shadcn-ui';
-import { globalShareState } from '@aerial-engine-core/shared/global-state';
-import { cn } from '@aerial-engine-core/shared/utils';
+} from '@engine-core/shadcn-ui';
+import { globalShareState } from '@engine-core/shared/global-state';
+import { cn } from '@engine-core/shared/utils';
 
 import { provideAlertContext } from './alert';
 

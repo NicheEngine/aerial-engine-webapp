@@ -7,16 +7,13 @@ import type {
 
 import type { Ref } from 'vue';
 
-import type { ClassType, DeepPartial } from '@aerial-engine/types';
+import type { ClassType, DeepPartial } from '@engine/types';
 
-import type {
-  BaseFormComponentType,
-  EngineFormProps,
-} from '@aerial-engine-core/form-ui';
+import type { BaseFormComponentType, EngineFormProps } from '@engine-core/form-ui';
 
 import type { VxeGridApi } from './api';
 
-import { useEngineForm } from '@aerial-engine-core/form-ui';
+import { useEngineForm } from '@engine-core/form-ui';
 
 export interface VxePaginationInfo {
   currentPage: number;

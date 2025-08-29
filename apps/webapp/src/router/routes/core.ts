@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router';
 
-import { LOGIN_PATH } from '@aerial-engine/constants';
-import { preferences } from '@aerial-engine/preferences';
+import { LOGIN_PATH } from '@engine/constants';
+import { preferences } from '@engine/preferences';
 
 import { $t } from '#/locales';
 

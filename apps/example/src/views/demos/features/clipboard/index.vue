@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 
 import { useClipboard } from '@vueuse/core';
 import { Button, Card, Input } from 'ant-design-vue';

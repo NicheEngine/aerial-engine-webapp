@@ -3,9 +3,9 @@ import type {
   LayoutHeaderMenuAlignType,
   LayoutHeaderModeType,
   SelectOption,
-} from '@aerial-engine/types';
+} from '@engine/types';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
 import SelectItem from '../select-item.vue';
 import SwitchItem from '../switch-item.vue';

@@ -1,10 +1,10 @@
 import type {
   ComponentRecordType,
   GenerateMenuAndRoutesOptions,
-} from '@aerial-engine/types';
+} from '@engine/types';
 
-import { generateAccessible } from '@aerial-engine/access';
-import { preferences } from '@aerial-engine/preferences';
+import { generateAccessible } from '@engine/access';
+import { preferences } from '@engine/preferences';
 
 import { message } from 'ant-design-vue';
 

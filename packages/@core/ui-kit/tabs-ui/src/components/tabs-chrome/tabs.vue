@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { TabDefinition } from '@aerial-engine-core/typings';
+import type { TabDefinition } from '@engine-core/typings';
 
 import type { TabConfig, TabsProps } from '../../types';
 
 import { computed, ref } from 'vue';
 
-import { Pin, X } from '@aerial-engine-core/icons';
-import { EngineContextMenu, EngineIcon } from '@aerial-engine-core/shadcn-ui';
+import { Pin, X } from '@engine-core/icons';
+import { EngineContextMenu, EngineIcon } from '@engine-core/shadcn-ui';
 
 interface Props extends TabsProps {}
 

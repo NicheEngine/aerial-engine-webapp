@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 
-import { diff } from '@aerial-engine-core/shared/utils';
+import { diff } from '@engine-core/shared/utils';
 
 import { preferencesManager } from './preferences';
 import { isDarkTheme } from './update-css-variables';

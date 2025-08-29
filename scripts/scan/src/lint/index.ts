@@ -1,6 +1,6 @@
 import type { CAC } from 'cac';
 
-import { execaCommand } from '@aerial-engine/node-utils';
+import { execaCommand } from '@engine/node-utils';
 
 interface LintCommandOptions {
   /**

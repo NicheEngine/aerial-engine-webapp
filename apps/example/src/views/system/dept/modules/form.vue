@@ -3,7 +3,7 @@ import type { SystemDeptApi } from '#/api/system/dept';
 
 import { computed, ref } from 'vue';
 
-import { useEngineModal } from '@aerial-engine/common-ui';
+import { useEngineModal } from '@engine/common-ui';
 
 import { Button } from 'ant-design-vue';
 

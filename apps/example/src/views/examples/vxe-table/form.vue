@@ -2,7 +2,7 @@
 import type { EngineFormProps } from '#/adapter/form';
 import type { VxeTableGridOptions } from '#/adapter/vxe-table';
 
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 
 import { message } from 'ant-design-vue';
 import dayjs from 'dayjs';

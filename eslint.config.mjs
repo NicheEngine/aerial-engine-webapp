@@ -1,5 +1,5 @@
 // @ts-check
 
-import { defineConfig } from '@aerial-engine/eslint-config';
+import { defineConfig } from '@engine/eslint-config';
 
 export default defineConfig();

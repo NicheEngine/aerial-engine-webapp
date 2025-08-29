@@ -1,6 +1,14 @@
 {
-  "name": "@aerial-engine/icons",
+  "name": "@engine/icons",
   "version": "5.5.8",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/icons"
+  },
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
@@ -9,6 +17,6 @@
     }
   },
   "dependencies": {
-    "@aerial-engine-core/icons": "workspace:*"
+    "@engine-core/icons": "workspace:*"
   }
 }

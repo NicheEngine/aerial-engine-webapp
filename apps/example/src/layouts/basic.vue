@@ -1,25 +1,21 @@
 <script lang="ts" setup>
-import type { NotificationItem } from '@aerial-engine/layouts';
+import type { NotificationItem } from '@engine/layouts';
 
 import { computed, onBeforeMount, ref, watch } from 'vue';
 
-import { AuthenticationLoginExpiredModal } from '@aerial-engine/common-ui';
-import { ENGINE_DOC_URL, ENGINE_GITHUB_URL } from '@aerial-engine/constants';
-import { useWatermark } from '@aerial-engine/hooks';
-import { BookOpenText, CircleHelp, MdiGithub } from '@aerial-engine/icons';
+import { AuthenticationLoginExpiredModal } from '@engine/common-ui';
+import { ENGINE_DOC_URL, ENGINE_GITHUB_URL } from '@engine/constants';
+import { useWatermark } from '@engine/hooks';
+import { BookOpenText, CircleHelp, MdiGithub } from '@engine/icons';
 import {
   BasicLayout,
   LockScreen,
   Notification,
   UserDropdown,
-} from '@aerial-engine/layouts';
-import { preferences } from '@aerial-engine/preferences';
-import {
-  useAccessStore,
-  useTabbarStore,
-  useUserStore,
-} from '@aerial-engine/stores';
-import { openWindow } from '@aerial-engine/utils';
+} from '@engine/layouts';
+import { preferences } from '@engine/preferences';
+import { useAccessStore, useTabbarStore, useUserStore } from '@engine/stores';
+import { openWindow } from '@engine/utils';
 
 import { $t } from '#/locales';
 import { useAuthStore } from '#/store';
@@ -158,7 +154,7 @@ onBeforeMount(() => {
         :avatar
         :menus
         :text="userStore.userInfo?.realName"
-        description="ann.engine@gmail.com"
+        description="nicheengine@outlook.com"
         tag-text="Pro"
         trigger="both"
         @logout="handleLogout"

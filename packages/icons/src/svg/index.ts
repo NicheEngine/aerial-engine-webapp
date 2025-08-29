@@ -1,4 +1,4 @@
-import { createIconifyIcon } from '@aerial-engine-core/icons';
+import { createIconifyIcon } from '@engine-core/icons';
 
 import './load.js';
 

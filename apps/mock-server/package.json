@@ -1,7 +1,9 @@
 {
-  "name": "@aerial-engine/mock-server",
+  "name": "@engine/mock-server",
   "version": "0.0.1",
   "description": "",
+  "private": true,
+  "license": "MIT",
   "author": "",
   "scripts": {
     "build": "nitro build",

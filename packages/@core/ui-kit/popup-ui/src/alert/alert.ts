@@ -1,8 +1,8 @@
 import type { Component, VNode, VNodeArrayChildren } from 'vue';
 
-import type { Recordable } from '@aerial-engine-core/typings';
+import type { Recordable } from '@engine-core/typings';
 
-import { createContext } from '@aerial-engine-core/shadcn-ui';
+import { createContext } from '@engine-core/shadcn-ui';
 
 export type IconType = 'error' | 'info' | 'question' | 'success' | 'warning';
 

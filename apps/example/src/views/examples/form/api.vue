@@ -3,7 +3,7 @@ import type { RefSelectProps } from 'ant-design-vue/es/select';
 
 import { ref } from 'vue';
 
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 
 import { Button, Card, message, Space } from 'ant-design-vue';
 

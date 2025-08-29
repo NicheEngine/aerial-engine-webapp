@@ -1,4 +1,4 @@
-import { updatePreferences, usePreferences } from '@aerial-engine/preferences';
+import { updatePreferences, usePreferences } from '@engine/preferences';
 /**
  * 主体区域最大化
  */

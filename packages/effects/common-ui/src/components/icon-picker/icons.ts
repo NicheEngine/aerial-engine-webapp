@@ -1,4 +1,4 @@
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 /**
  * 一个缓存对象，在不刷新页面时，无需重复请求远程接口

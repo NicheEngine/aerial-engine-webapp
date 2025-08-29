@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@aerial-engine-core/typings';
+import type { MenuRecordRaw } from '@engine-core/typings';
 
 import type { MenuProps } from './types';
 
-import { useForwardProps } from '@aerial-engine-core/composables';
+import { useForwardProps } from '@engine-core/composables';
 
 import { Menu } from './components';
 import SubMenu from './sub-menu.vue';

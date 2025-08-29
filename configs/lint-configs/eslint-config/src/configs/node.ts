@@ -19,11 +19,11 @@ export async function node(): Promise<Linter.Config[]> {
           {
             allowModules: [
               'unbuild',
-              '@aerial-engine/vite-config',
+              '@engine/vite-config',
               'vitest',
               'vite',
               '@vue/test-utils',
-              '@aerial-engine/tailwind-config',
+              '@engine/tailwind-config',
               '@playwright/test',
             ],
           },
@@ -45,7 +45,7 @@ export async function node(): Promise<Linter.Config[]> {
       },
     },
     {
-      files: ['scripts/**/*.?([cm])[jt]s?(x)', 'configs/**/*.?([cm])[jt]s?(x)'],
+      files: ['scripts/**/*.?([cm])[jt]s?(x)', 'configs**/*.?([cm])[jt]s?(x)'],
       rules: {
         'n/prefer-global/process': 'off',
       },

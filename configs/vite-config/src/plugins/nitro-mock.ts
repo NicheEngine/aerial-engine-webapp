@@ -2,7 +2,7 @@ import type { PluginOption } from 'vite';
 
 import type { NitroMockPluginOptions } from '../typing';
 
-import { colors, consola, getPackage } from '@aerial-engine/node-utils';
+import { colors, consola, getPackage } from '@engine/node-utils';
 
 import getPort from 'get-port';
 import { build, createDevServer, createNitro, prepare } from 'nitropack';
@@ -10,7 +10,7 @@ import { build, createDevServer, createNitro, prepare } from 'nitropack';
 const hmrKeyRe = /^runtimeConfig\.|routeRules\./;
 
 export const viteNitroMockPlugin = ({
-  mockServerPackage = '@aerial-engine/mock-server',
+  mockServerPackage = '@engine/mock-server',
   port = 5320,
   verbose = true,
 }: NitroMockPluginOptions = {}): PluginOption => {

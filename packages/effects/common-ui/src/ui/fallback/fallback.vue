@@ -4,10 +4,10 @@ import type { FallbackProps } from './fallback';
 import { computed, defineAsyncComponent } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { ArrowLeft, RotateCw } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { ArrowLeft, RotateCw } from '@engine/icons';
+import { $t } from '@engine/locales';
 
-import { EngineButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineButton } from '@engine-core/shadcn-ui';
 
 interface Props extends FallbackProps {}
 

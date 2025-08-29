@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ENGINE_DOC_URL } from '@aerial-engine/constants';
-import { openWindow } from '@aerial-engine/utils';
+import { ENGINE_DOC_URL } from '@engine/constants';
+import { openWindow } from '@engine/utils';
 
 import { Button } from 'ant-design-vue';
 

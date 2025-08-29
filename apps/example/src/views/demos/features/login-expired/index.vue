@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { LoginExpiredModeType } from '@aerial-engine/types';
+import type { LoginExpiredModeType } from '@engine/types';
 
-import { Page } from '@aerial-engine/common-ui';
-import { preferences, updatePreferences } from '@aerial-engine/preferences';
+import { Page } from '@engine/common-ui';
+import { preferences, updatePreferences } from '@engine/preferences';
 
 import { Button, Card } from 'ant-design-vue';
 

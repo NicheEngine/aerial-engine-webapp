@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { EchartsUIType } from '@aerial-engine/plugins/echarts';
+import type { EchartsUIType } from '@engine/plugins/echarts';
 
 import { onMounted, ref } from 'vue';
 
-import { EchartsUI, useEcharts } from '@aerial-engine/plugins/echarts';
+import { EchartsUI, useEcharts } from '@engine/plugins/echarts';
 
 const chartRef = ref<EchartsUIType>();
 const { renderEcharts } = useEcharts(chartRef);

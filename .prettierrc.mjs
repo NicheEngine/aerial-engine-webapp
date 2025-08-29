@@ -1,1 +1,1 @@
-export { default } from '@aerial-engine/prettier-config';
+export { default } from '@engine/prettier-config';

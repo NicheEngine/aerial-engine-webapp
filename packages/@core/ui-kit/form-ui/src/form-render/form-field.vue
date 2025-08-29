@@ -5,7 +5,7 @@ import type { FormSchema, MaybeComponentProps } from '../types';
 
 import { computed, nextTick, onUnmounted, useTemplateRef, watch } from 'vue';
 
-import { CircleAlert } from '@aerial-engine-core/icons';
+import { CircleAlert } from '@engine-core/icons';
 import {
   FormControl,
   FormDescription,
@@ -14,13 +14,8 @@ import {
   FormMessage,
   EngineRenderContent,
   EngineTooltip,
-} from '@aerial-engine-core/shadcn-ui';
-import {
-  cn,
-  isFunction,
-  isObject,
-  isString,
-} from '@aerial-engine-core/shared/utils';
+} from '@engine-core/shadcn-ui';
+import { cn, isFunction, isObject, isString } from '@engine-core/shared/utils';
 
 import { toTypedSchema } from '@vee-validate/zod';
 import { useFieldError, useFormValues } from 'vee-validate';

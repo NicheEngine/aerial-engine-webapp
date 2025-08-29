@@ -1,7 +1,7 @@
 import type { DrawerApiOptions, DrawerState } from './drawer';
 
-import { Store } from '@aerial-engine-core/shared/store';
-import { bindMethods, isFunction } from '@aerial-engine-core/shared/utils';
+import { Store } from '@engine-core/shared/store';
+import { bindMethods, isFunction } from '@engine-core/shared/utils';
 
 export class DrawerApi {
   // 共享数据

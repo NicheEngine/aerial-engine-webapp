@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import type { SupportedLanguagesType } from '@aerial-engine/locales';
+import type { SupportedLanguagesType } from '@engine/locales';
 
-import { SUPPORT_LANGUAGES } from '@aerial-engine/constants';
-import { Languages } from '@aerial-engine/icons';
-import { loadLocaleMessages } from '@aerial-engine/locales';
-import { preferences, updatePreferences } from '@aerial-engine/preferences';
+import { SUPPORT_LANGUAGES } from '@engine/constants';
+import { Languages } from '@engine/icons';
+import { loadLocaleMessages } from '@engine/locales';
+import { preferences, updatePreferences } from '@engine/preferences';
 
-import {
-  EngineDropdownRadioMenu,
-  EngineIconButton,
-} from '@aerial-engine-core/shadcn-ui';
+import { EngineDropdownRadioMenu, EngineIconButton } from '@engine-core/shadcn-ui';
 
 defineOptions({
   name: 'LanguageToggle',

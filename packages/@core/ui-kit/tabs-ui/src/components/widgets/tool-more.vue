@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { DropdownMenuProps } from '@aerial-engine-core/shadcn-ui';
+import type { DropdownMenuProps } from '@engine-core/shadcn-ui';
 
-import { ChevronDown } from '@aerial-engine-core/icons';
-import { EngineDropdownMenu } from '@aerial-engine-core/shadcn-ui';
+import { ChevronDown } from '@engine-core/icons';
+import { EngineDropdownMenu } from '@engine-core/shadcn-ui';
 
 defineProps<DropdownMenuProps>();
 </script>

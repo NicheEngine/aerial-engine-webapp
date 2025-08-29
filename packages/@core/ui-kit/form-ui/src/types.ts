@@ -3,8 +3,8 @@ import type { ZodTypeAny } from 'zod';
 
 import type { Component, HtmlHTMLAttributes, Ref } from 'vue';
 
-import type { EngineButtonProps } from '@aerial-engine-core/shadcn-ui';
-import type { ClassType, MaybeComputedRef } from '@aerial-engine-core/typings';
+import type { EngineButtonProps } from '@engine-core/shadcn-ui';
+import type { ClassType, MaybeComputedRef } from '@engine-core/typings';
 
 import type { FormApi } from './form-api';
 

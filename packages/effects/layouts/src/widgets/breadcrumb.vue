@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import type { BreadcrumbStyleType } from '@aerial-engine/types';
+import type { BreadcrumbStyleType } from '@engine/types';
 
-import type { IBreadcrumb } from '@aerial-engine-core/shadcn-ui';
+import type { IBreadcrumb } from '@engine-core/shadcn-ui';
 
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-import { $t } from '@aerial-engine/locales';
+import { $t } from '@engine/locales';
 
-import { EngineBreadcrumbView } from '@aerial-engine-core/shadcn-ui';
+import { EngineBreadcrumbView } from '@engine-core/shadcn-ui';
 
 interface Props {
   hideWhenOnlyOne?: boolean;

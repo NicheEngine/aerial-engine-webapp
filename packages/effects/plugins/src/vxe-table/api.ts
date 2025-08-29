@@ -1,19 +1,19 @@
 import type { VxeGridInstance } from 'vxe-table';
 
-import type { ExtendedFormApi } from '@aerial-engine-core/form-ui';
+import type { ExtendedFormApi } from '@engine-core/form-ui';
 
 import type { VxeGridProps } from './types';
 
 import { toRaw } from 'vue';
 
-import { Store } from '@aerial-engine-core/shared/store';
+import { Store } from '@engine-core/shared/store';
 import {
   bindMethods,
   isBoolean,
   isFunction,
   mergeWithArrayOverride,
   StateHandler,
-} from '@aerial-engine-core/shared/utils';
+} from '@engine-core/shared/utils';
 
 function getDefaultState(): VxeGridProps {
   return {

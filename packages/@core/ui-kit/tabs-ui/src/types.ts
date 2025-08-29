@@ -1,5 +1,5 @@
-import type { IContextMenuItem } from '@aerial-engine-core/shadcn-ui';
-import type { TabDefinition, TabsStyleType } from '@aerial-engine-core/typings';
+import type { IContextMenuItem } from '@engine-core/shadcn-ui';
+import type { TabDefinition, TabsStyleType } from '@engine-core/typings';
 
 export type TabsEmits = {
   close: [string];

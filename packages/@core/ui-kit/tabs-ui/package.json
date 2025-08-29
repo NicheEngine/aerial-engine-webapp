@@ -1,6 +1,14 @@
 {
-  "name": "@aerial-engine-core/tabs-ui",
+  "name": "@engine-core/tabs-ui",
   "version": "5.5.8",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/@engine-core/uikit/tabs-ui"
+  },
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "pnpm unbuild",
@@ -29,10 +37,10 @@
     }
   },
   "dependencies": {
-    "@aerial-engine-core/composables": "workspace:*",
-    "@aerial-engine-core/icons": "workspace:*",
-    "@aerial-engine-core/shadcn-ui": "workspace:*",
-    "@aerial-engine-core/typings": "workspace:*",
+    "@engine-core/composables": "workspace:*",
+    "@engine-core/icons": "workspace:*",
+    "@engine-core/shadcn-ui": "workspace:*",
+    "@engine-core/typings": "workspace:*",
     "@vueuse/core": "catalog:",
     "vue": "catalog:"
   }

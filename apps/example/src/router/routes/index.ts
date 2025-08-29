@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router';
 
-import { mergeRouteModules, traverseTreeValues } from '@aerial-engine/utils';
+import { mergeRouteModules, traverseTreeValues } from '@engine/utils';
 
 import { coreRoutes, fallbackNotFoundRoute } from './core';
 

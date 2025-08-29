@@ -1,5 +1,5 @@
 {
-  "name": "@aerial-engine/utils",
+  "name": "@engine/utils",
   "version": "5.5.8",
   "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
   "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
@@ -20,8 +20,8 @@
     }
   },
   "dependencies": {
-    "@aerial-engine-core/shared": "workspace:*",
-    "@aerial-engine-core/typings": "workspace:*",
+    "@engine-core/shared": "workspace:*",
+    "@engine-core/typings": "workspace:*",
     "vue-router": "catalog:"
   }
 }

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
 
-import type { LayoutType } from '@aerial-engine/types';
+import type { LayoutType } from '@engine/types';
 
 import { computed } from 'vue';
 
-import { CircleHelp } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { CircleHelp } from '@engine/icons';
+import { $t } from '@engine/locales';
 
-import { EngineTooltip } from '@aerial-engine-core/shadcn-ui';
+import { EngineTooltip } from '@engine-core/shadcn-ui';
 
 import {
   FullContent,

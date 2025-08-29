@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Fullscreen, Minimize2 } from '@aerial-engine-core/icons';
+import { Fullscreen, Minimize2 } from '@engine-core/icons';
 
 const screen = defineModel<boolean>('screen');
 

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { EngineSpinner } from '@aerial-engine-core/shadcn-ui';
+import { EngineSpinner } from '@engine-core/shadcn-ui';
 
 import { useContentSpinner } from './use-content-spinner';
 

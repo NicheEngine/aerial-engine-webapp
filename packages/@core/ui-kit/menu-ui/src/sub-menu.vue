@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@aerial-engine-core/typings';
+import type { MenuRecordRaw } from '@engine-core/typings';
 
 import { computed } from 'vue';
 

@@ -1,6 +1,14 @@
 {
-  "name": "@aerial-engine/access",
+  "name": "@engine/access",
   "version": "5.5.8",
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "packages/effects/permissions"
+  },
+  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -12,10 +20,10 @@
     }
   },
   "dependencies": {
-    "@aerial-engine/preferences": "workspace:*",
-    "@aerial-engine/stores": "workspace:*",
-    "@aerial-engine/types": "workspace:*",
-    "@aerial-engine/utils": "workspace:*",
+    "@engine/preferences": "workspace:*",
+    "@engine/stores": "workspace:*",
+    "@engine/types": "workspace:*",
+    "@engine/utils": "workspace:*",
     "vue": "catalog:"
   }
 }

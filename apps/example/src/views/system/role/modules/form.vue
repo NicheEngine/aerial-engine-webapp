@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import type { DataNode } from 'ant-design-vue/es/tree';
 
-import type { Recordable } from '@aerial-engine/types';
+import type { Recordable } from '@engine/types';
 
 import type { SystemRoleApi } from '#/api/system/role';
 
 import { computed, ref } from 'vue';
 
-import { useEngineDrawer, EngineTree } from '@aerial-engine/common-ui';
-import { IconifyIcon } from '@aerial-engine/icons';
+import { EngineTree, useEngineDrawer } from '@engine/common-ui';
+import { IconifyIcon } from '@engine/icons';
 
 import { Spin } from 'ant-design-vue';
 

@@ -1,5 +1,5 @@
-import { initPreferences } from '@aerial-engine/preferences';
-import { unmountGlobalLoading } from '@aerial-engine/utils';
+import { initPreferences } from '@engine/preferences';
+import { unmountGlobalLoading } from '@engine/utils';
 
 import { overridesPreferences } from './preferences';
 

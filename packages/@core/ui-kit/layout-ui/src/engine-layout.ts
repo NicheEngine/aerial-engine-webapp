@@ -3,7 +3,7 @@ import type {
   LayoutHeaderModeType,
   LayoutType,
   ThemeModeType,
-} from '@aerial-engine-core/typings';
+} from '@engine-core/typings';
 
 interface EngineLayoutProps {
   /**

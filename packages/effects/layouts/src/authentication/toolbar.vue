@@ -3,7 +3,7 @@ import type { ToolbarType } from './types';
 
 import { computed } from 'vue';
 
-import { preferences } from '@aerial-engine/preferences';
+import { preferences } from '@engine/preferences';
 
 import {
   AuthenticationColorToggle,

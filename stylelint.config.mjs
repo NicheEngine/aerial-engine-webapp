@@ -1,4 +1,4 @@
 export default {
-  extends: ['@aerial-engine/stylelint-config'],
+  extends: ['@engine/stylelint-config'],
   root: true,
 };

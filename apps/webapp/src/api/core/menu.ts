@@ -1,4 +1,4 @@
-import type { RouteRecordStringComponent } from '@aerial-engine/types';
+import type { RouteRecordStringComponent } from '@engine/types';
 
 import { requestClient } from '#/api/request';
 

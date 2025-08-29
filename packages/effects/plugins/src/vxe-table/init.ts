@@ -2,9 +2,9 @@ import type { SetupVxeTable } from './types';
 
 import { defineComponent, watch } from 'vue';
 
-import { usePreferences } from '@aerial-engine/preferences';
+import { usePreferences } from '@engine/preferences';
 
-import { useEngineForm } from '@aerial-engine-core/form-ui';
+import { useEngineForm } from '@engine-core/form-ui';
 
 import {
   VxeButton,

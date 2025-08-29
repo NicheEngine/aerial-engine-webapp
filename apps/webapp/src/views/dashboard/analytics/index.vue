@@ -1,18 +1,18 @@
 <script lang="ts" setup>
-import type { AnalysisOverviewItem } from '@aerial-engine/common-ui';
-import type { TabOption } from '@aerial-engine/types';
+import type { AnalysisOverviewItem } from '@engine/common-ui';
+import type { TabOption } from '@engine/types';
 
 import {
   AnalysisChartCard,
   AnalysisChartsTabs,
   AnalysisOverview,
-} from '@aerial-engine/common-ui';
+} from '@engine/common-ui';
 import {
   SvgBellIcon,
   SvgCakeIcon,
   SvgCardIcon,
   SvgDownloadIcon,
-} from '@aerial-engine/icons';
+} from '@engine/icons';
 
 import AnalyticsTrends from './analytics-trends.vue';
 import AnalyticsVisitsData from './analytics-visits-data.vue';

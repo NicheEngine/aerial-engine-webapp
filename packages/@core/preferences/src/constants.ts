@@ -1,4 +1,4 @@
-import type { BuiltinThemeType } from '@aerial-engine-core/typings';
+import type { BuiltinThemeType } from '@engine-core/typings';
 
 interface BuiltinThemePreset {
   color: string;

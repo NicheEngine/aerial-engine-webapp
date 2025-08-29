@@ -4,11 +4,11 @@ import type {
   AlertDialogContentProps,
 } from 'radix-vue';
 
-import type { ClassType } from '@aerial-engine-core/typings';
+import type { ClassType } from '@engine-core/typings';
 
 import { computed, ref } from 'vue';
 
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import {
   AlertDialogContent,

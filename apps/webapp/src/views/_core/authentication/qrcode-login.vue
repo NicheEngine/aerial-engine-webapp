@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { AuthenticationQrCodeLogin } from '@aerial-engine/common-ui';
-import { LOGIN_PATH } from '@aerial-engine/constants';
+import { AuthenticationQrCodeLogin } from '@engine/common-ui';
+import { LOGIN_PATH } from '@engine/constants';
 
 defineOptions({ name: 'QrCodeLogin' });
 </script>

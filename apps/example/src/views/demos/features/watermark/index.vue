@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Page } from '@aerial-engine/common-ui';
-import { useWatermark } from '@aerial-engine/hooks';
+import { Page } from '@engine/common-ui';
+import { useWatermark } from '@engine/hooks';
 
 import { Button, Card } from 'ant-design-vue';
 

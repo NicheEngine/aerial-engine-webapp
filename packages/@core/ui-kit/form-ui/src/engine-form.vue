@@ -3,7 +3,7 @@ import type { EngineFormProps } from './types';
 
 import { ref, watchEffect } from 'vue';
 
-import { useForwardPropsEmits } from '@aerial-engine-core/composables';
+import { useForwardPropsEmits } from '@engine-core/composables';
 
 import FormActions from './components/form-actions.vue';
 import {

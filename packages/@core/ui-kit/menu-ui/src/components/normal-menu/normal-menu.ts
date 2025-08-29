@@ -1,4 +1,4 @@
-import type { MenuRecordRaw } from '@aerial-engine-core/typings';
+import type { MenuRecordRaw } from '@engine-core/typings';
 
 interface NormalMenuProps {
   /**

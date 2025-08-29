@@ -4,9 +4,9 @@ import type {
   ExRouteRecordRaw,
   MenuRecordRaw,
   RouteMeta,
-} from '@aerial-engine-core/typings';
+} from '@engine-core/typings';
 
-import { filterTree, mapTree } from '@aerial-engine-core/shared/utils';
+import { filterTree, mapTree } from '@engine-core/shared/utils';
 
 /**
  * 根据 routes 生成菜单列表

@@ -1,17 +1,17 @@
-import type { VxeTableGridOptions } from '@aerial-engine/plugins/vxe-table';
-import type { Recordable } from '@aerial-engine/types';
+import type { VxeTableGridOptions } from '@engine/plugins/vxe-table';
+import type { Recordable } from '@engine/types';
 
 import type { ComponentType } from './component';
 
 import { h } from 'vue';
 
-import { IconifyIcon } from '@aerial-engine/icons';
-import { $te } from '@aerial-engine/locales';
+import { IconifyIcon } from '@engine/icons';
+import { $te } from '@engine/locales';
 import {
   setupEngineVxeTable,
   useEngineVxeGrid as useGrid,
-} from '@aerial-engine/plugins/vxe-table';
-import { get, isFunction, isString } from '@aerial-engine/utils';
+} from '@engine/plugins/vxe-table';
+import { get, isFunction, isString } from '@engine/utils';
 
 import { objectOmit } from '@vueuse/core';
 import { Button, Image, Popconfirm, Switch, Tag } from 'ant-design-vue';
@@ -294,4 +294,4 @@ export type OnActionClickParams<T = Recordable<any>> = {
 export type OnActionClickFn<T = Recordable<any>> = (
   params: OnActionClickParams<T>,
 ) => void;
-export type * from '@aerial-engine/plugins/vxe-table';
+export type * from '@engine/plugins/vxe-table';

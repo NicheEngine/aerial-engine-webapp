@@ -7,8 +7,8 @@ import {
   ENGINE_GITHUB_URL,
   ENGINE_LOGO_URL,
   ENGINE_NAIVE_PREVIEW_URL,
-} from '@aerial-engine/constants';
-import { SvgAntdvLogoIcon } from '@aerial-engine/icons';
+} from '@engine/constants';
+import { SvgAntdvLogoIcon } from '@engine/icons';
 
 import { IFrameView } from '#/layouts';
 import { $t } from '#/locales';
@@ -22,11 +22,11 @@ const routes: RouteRecordRaw[] = [
       title: $t('demos.engine.title'),
     },
     name: 'EngineProject',
-    path: '/aerial-engine',
+    path: '/engine',
     children: [
       {
         name: 'EngineDocument',
-        path: '/aerial-engine/document',
+        path: '/engine/document',
         component: IFrameView,
         meta: {
           icon: 'lucide:book-open-text',
@@ -36,7 +36,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: 'EngineGithub',
-        path: '/aerial-engine/github',
+        path: '/engine/github',
         component: IFrameView,
         meta: {
           icon: 'mdi:github',
@@ -46,7 +46,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: 'EngineAntdv',
-        path: '/aerial-engine/antdv',
+        path: '/engine/antdv',
         component: IFrameView,
         meta: {
           badgeType: 'dot',
@@ -57,7 +57,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: 'EngineNaive',
-        path: '/aerial-engine/naive',
+        path: '/engine/naive',
         component: IFrameView,
         meta: {
           badgeType: 'dot',
@@ -68,7 +68,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: 'EngineElementPlus',
-        path: '/aerial-engine/ele',
+        path: '/engine/ele',
         component: IFrameView,
         meta: {
           badgeType: 'dot',
@@ -87,7 +87,7 @@ const routes: RouteRecordRaw[] = [
       title: $t('demos.engine.about'),
     },
     name: 'EngineAbout',
-    path: '/aerial-engine/about',
+    path: '/engine/about',
   },
 ];
 

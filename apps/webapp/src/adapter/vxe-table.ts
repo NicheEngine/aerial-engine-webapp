@@ -1,11 +1,11 @@
-import type { VxeTableGridOptions } from '@aerial-engine/plugins/vxe-table';
+import type { VxeTableGridOptions } from '@engine/plugins/vxe-table';
 
 import { h } from 'vue';
 
 import {
   setupEngineVxeTable,
   useEngineVxeGrid,
-} from '@aerial-engine/plugins/vxe-table';
+} from '@engine/plugins/vxe-table';
 
 import { Button, Image } from 'ant-design-vue';
 
@@ -69,4 +69,4 @@ setupEngineVxeTable({
 
 export { useEngineVxeGrid };
 
-export type * from '@aerial-engine/plugins/vxe-table';
+export type * from '@engine/plugins/vxe-table';

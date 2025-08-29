@@ -10,7 +10,7 @@ import {
   watchEffect,
 } from 'vue';
 
-import { EngineTooltip } from '@aerial-engine-core/shadcn-ui';
+import { EngineTooltip } from '@engine-core/shadcn-ui';
 
 import { useElementSize } from '@vueuse/core';
 

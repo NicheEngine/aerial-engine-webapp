@@ -1,15 +1,11 @@
 <script lang="ts" setup>
-import type { EngineFormSchema } from '@aerial-engine/common-ui';
-import type { BasicOption, Recordable } from '@aerial-engine/types';
+import type { EngineFormSchema } from '@engine/common-ui';
+import type { BasicOption, Recordable } from '@engine/types';
 
 import { computed, markRaw, useTemplateRef } from 'vue';
 
-import {
-  AuthenticationLogin,
-  SliderCaptcha,
-  z,
-} from '@aerial-engine/common-ui';
-import { $t } from '@aerial-engine/locales';
+import { AuthenticationLogin, SliderCaptcha, z } from '@engine/common-ui';
+import { $t } from '@engine/locales';
 
 import { useAuthStore } from '#/store';
 

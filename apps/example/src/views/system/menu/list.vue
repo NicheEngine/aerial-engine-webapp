@@ -4,11 +4,11 @@ import type {
   VxeTableGridOptions,
 } from '#/adapter/vxe-table';
 
-import { Page, useEngineDrawer } from '@aerial-engine/common-ui';
-import { IconifyIcon, Plus } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
+import { Page, useEngineDrawer } from '@engine/common-ui';
+import { IconifyIcon, Plus } from '@engine/icons';
+import { $t } from '@engine/locales';
 
-import { MenuBadge } from '@aerial-engine-core/menu-ui';
+import { MenuBadge } from '@engine-core/menu-ui';
 
 import { Button, message } from 'ant-design-vue';
 

@@ -7,6 +7,8 @@ import type {
   LibraryPluginOptions,
 } from '../typing';
 
+import process from 'node:process';
+
 import viteVueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import viteVue from '@vitejs/plugin-vue';
 import viteVueJsx from '@vitejs/plugin-vue-jsx';

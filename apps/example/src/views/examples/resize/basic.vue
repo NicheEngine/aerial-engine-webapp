@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { Page, VResize } from '@aerial-engine/common-ui';
+import { Page, VResize } from '@engine/common-ui';
 
 const colorMap = ['red', 'green', 'yellow', 'gray'];
 

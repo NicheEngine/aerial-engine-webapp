@@ -1,5 +1,5 @@
 {
-  "tailwindCSS.experimental.configFile": "internal/tailwind-config/src/index.ts",
+  "tailwindCSS.experimental.configFile": "configs/tailwind-config/src/index.ts",
   // workbench
   "workbench.list.smoothScrolling": true,
   "workbench.startupEditor": "newUntitledFile",
@@ -198,6 +198,7 @@
 
   "i18n-ally.localesPaths": [
     "packages/locales/src/langs",
+    "example/src/locales/langs",
     "apps/*/src/locales/langs"
   ],
   "i18n-ally.pathMatcher": "{locale}/{namespace}.{ext}",

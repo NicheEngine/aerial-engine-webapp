@@ -1,6 +1,6 @@
 import type { CAC } from 'cac';
 
-import { getPackages } from '@aerial-engine/node-utils';
+import { getPackages } from '@engine/node-utils';
 
 import depcheck from 'depcheck';
 
@@ -11,23 +11,24 @@ const DEFAULT_CONFIG = {
     'vite',
     'vitest',
     'unbuild',
-    '@aerial-engine/tsconfig',
-    '@aerial-engine/vite-config',
-    '@aerial-engine/tailwind-config',
+    '@engine/tsconfig',
+    '@engine/vite-config',
+    '@engine/tailwind-config',
     '@types/*',
-    '@aerial-engine-core/design',
+    '@engine-core/design',
   ],
   // 需要忽略的包
   ignorePackages: [
-    '@aerial-engine/mock-server',
-    '@aerial-engine/eslint-config',
-    '@aerial-engine/node-utils',
-    '@aerial-engine/prettier-config',
-    '@aerial-engine/stylelint-config',
-    '@aerial-engine/tailwind-config',
-    '@aerial-engine/tsconfig',
-    '@aerial-engine/vite-config',
-    '@aerial-engine/scan',
+    '@engine/mock-server',
+    '@engine/commitlint-config',
+    '@engine/eslint-config',
+    '@engine/node-utils',
+    '@engine/prettier-config',
+    '@engine/stylelint-config',
+    '@engine/tailwind-config',
+    '@engine/tsconfig',
+    '@engine/vite-config',
+    '@engine/scan',
   ],
   // 需要忽略的文件模式
   ignorePatterns: ['dist', 'node_modules', 'public'],

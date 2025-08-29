@@ -4,16 +4,16 @@
   "configurations": [
     {
       "type": "chrome",
-      "name": "aerial engine playground dev",
+      "name": "engine webapp example dev",
       "request": "launch",
       "url": "http://localhost:5555",
       "env": { "NODE_ENV": "development" },
       "sourceMaps": true,
-      "webRoot": "${workspaceFolder}/playground"
+      "webRoot": "${workspaceFolder}/example"
     },
     {
       "type": "chrome",
-      "name": "aerial engine dev",
+      "name": "engine webapp antd dev",
       "request": "launch",
       "url": "http://localhost:5666",
       "env": { "NODE_ENV": "development" },
@@ -22,21 +22,21 @@
     },
     {
       "type": "chrome",
-      "name": "aerial engineine ele dev",
+      "name": "engine webapp ele dev",
       "request": "launch",
       "url": "http://localhost:5777",
       "env": { "NODE_ENV": "development" },
       "sourceMaps": true,
-      "webRoot": "${workspaceFolder}/apps/web-ele"
+      "webRoot": "${workspaceFolder}/apps/webapp-ele"
     },
     {
       "type": "chrome",
-      "name": "aerial engineine naive dev",
+      "name": "engine webapp naive dev",
       "request": "launch",
       "url": "http://localhost:5888",
       "env": { "NODE_ENV": "development" },
       "sourceMaps": true,
-      "webRoot": "${workspaceFolder}/apps/web-naive"
+      "webRoot": "${workspaceFolder}/apps/webapp-native"
     }
   ]
 }

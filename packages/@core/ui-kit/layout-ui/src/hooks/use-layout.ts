@@ -1,4 +1,4 @@
-import type { LayoutType } from '@aerial-engine-core/typings';
+import type { LayoutType } from '@engine-core/typings';
 
 import type { EngineLayoutProps } from '../engine-layout';
 

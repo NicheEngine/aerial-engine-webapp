@@ -4,6 +4,7 @@ export async function ignores(): Promise<Linter.Config[]> {
   return [
     {
       ignores: [
+        '**/libraries',
         '**/node_modules',
         '**/dist',
         '**/dist-*',
@@ -32,7 +33,6 @@ export async function ignores(): Promise<Linter.Config[]> {
         '**/.cache',
         '**/.output',
         '**/.vite-inspect',
-
         '**/CHANGELOG*.md',
         '**/*.min.*',
         '**/LICENSE*',

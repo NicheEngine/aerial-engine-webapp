@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cn } from '@aerial-engine-core/shared/utils';
+import { cn } from '@engine-core/shared/utils';
 
 import { NumberFieldInput } from 'radix-vue';
 </script>

@@ -9,10 +9,10 @@ import {
   SCROLL_FIXED_CLASS,
   useLayoutFooterStyle,
   useLayoutHeaderStyle,
-} from '@aerial-engine-core/composables';
-import { Menu } from '@aerial-engine-core/icons';
-import { EngineIconButton } from '@aerial-engine-core/shadcn-ui';
-import { ELEMENT_ID_MAIN_CONTENT } from '@aerial-engine-core/shared/constants';
+} from '@engine-core/composables';
+import { Menu } from '@engine-core/icons';
+import { EngineIconButton } from '@engine-core/shadcn-ui';
+import { ELEMENT_ID_MAIN_CONTENT } from '@engine-core/shared/constants';
 
 import { useMouse, useScroll, useThrottleFn } from '@vueuse/core';
 

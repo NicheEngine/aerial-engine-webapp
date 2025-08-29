@@ -2,7 +2,7 @@ import type { PluginOption } from 'vite';
 
 import type { PrintPluginOptions } from '../typing';
 
-import { colors } from '@aerial-engine/node-utils';
+import { colors } from '@engine/node-utils';
 
 export const vitePrintPlugin = (
   options: PrintPluginOptions = {},

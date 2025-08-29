@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, nextTick } from 'vue';
 
-import { EngineButton } from '@aerial-engine-core/shadcn-ui';
+import { EngineButton } from '@engine-core/shadcn-ui';
 
 interface Props {
   /**

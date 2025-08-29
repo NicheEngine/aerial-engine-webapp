@@ -12,7 +12,7 @@ defineOptions({
 });
 
 withDefaults(defineProps<Props>(), {
-  companyName: 'Aerial Engine',
+  companyName: 'Engine',
   companySiteLink: '',
   date: '2024',
   icp: '',

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { MenuRecordRaw } from '@aerial-engine/types';
+import type { MenuRecordRaw } from '@engine/types';
 
-import type { MenuProps } from '@aerial-engine-core/menu-ui';
+import type { MenuProps } from '@engine-core/menu-ui';
 
-import { Menu } from '@aerial-engine-core/menu-ui';
+import { Menu } from '@engine-core/menu-ui';
 
 interface Props extends MenuProps {
   menus?: MenuRecordRaw[];

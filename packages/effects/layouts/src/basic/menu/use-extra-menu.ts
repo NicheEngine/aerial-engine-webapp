@@ -1,13 +1,13 @@
 import type { ComputedRef } from 'vue';
 
-import type { MenuRecordRaw } from '@aerial-engine/types';
+import type { MenuRecordRaw } from '@engine/types';
 
 import { computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { preferences } from '@aerial-engine/preferences';
-import { useAccessStore } from '@aerial-engine/stores';
-import { findRootMenuByPath } from '@aerial-engine/utils';
+import { preferences } from '@engine/preferences';
+import { useAccessStore } from '@engine/stores';
+import { findRootMenuByPath } from '@engine/utils';
 
 import { useNavigation } from './use-navigation';
 

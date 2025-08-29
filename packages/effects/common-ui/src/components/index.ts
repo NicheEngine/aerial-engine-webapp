@@ -9,8 +9,8 @@ export * from './loading';
 export * from './page';
 export * from './resize';
 export * from './tippy';
-export * from '@aerial-engine-core/form-ui';
-export * from '@aerial-engine-core/popup-ui';
+export * from '@engine-core/form-ui';
+export * from '@engine-core/popup-ui';
 
 // 给文档用
 export {
@@ -28,7 +28,7 @@ export {
   EngineSelect,
   EngineSpinner,
   EngineTree,
-} from '@aerial-engine-core/shadcn-ui';
+} from '@engine-core/shadcn-ui';
 
-export type { FlattenedItem } from '@aerial-engine-core/shadcn-ui';
-export { globalShareState } from '@aerial-engine-core/shared/global-state';
+export type { FlattenedItem } from '@engine-core/shadcn-ui';
+export { globalShareState } from '@engine-core/shared/global-state';

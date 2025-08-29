@@ -4,7 +4,7 @@ import type { Ref } from 'vue';
 
 import { computed, effectScope, onUnmounted, ref, unref, watch } from 'vue';
 
-import { isFunction } from '@aerial-engine/utils';
+import { isFunction } from '@engine/utils';
 
 import { useElementHover } from '@vueuse/core';
 

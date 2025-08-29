@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useScrollLock } from '@aerial-engine-core/composables';
+import { useScrollLock } from '@engine-core/composables';
 
 useScrollLock();
 </script>

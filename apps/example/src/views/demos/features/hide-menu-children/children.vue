@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { Fallback, EngineButton } from '@aerial-engine/common-ui';
-import { useTabs } from '@aerial-engine/hooks';
-import { X } from '@aerial-engine/icons';
+import { EngineButton, Fallback } from '@engine/common-ui';
+import { useTabs } from '@engine/hooks';
+import { X } from '@engine/icons';
 
 const { closeCurrentTab } = useTabs();
 </script>

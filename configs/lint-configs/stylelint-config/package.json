@@ -1,7 +1,15 @@
 {
-  "name": "@aerial-engine/stylelint-config",
+  "name": "@engine/stylelint-config",
   "version": "5.5.8",
   "private": true,
+  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
+  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "directory": "configs/lint-configs/stylelint-config"
+  },
+  "license": "MIT",
   "type": "module",
   "files": [
     "dist"

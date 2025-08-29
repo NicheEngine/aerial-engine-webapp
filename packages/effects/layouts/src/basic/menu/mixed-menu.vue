@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import type { MenuRecordRaw } from '@aerial-engine/types';
+import type { MenuRecordRaw } from '@engine/types';
 
-import type { NormalMenuProps } from '@aerial-engine-core/menu-ui';
+import type { NormalMenuProps } from '@engine-core/menu-ui';
 
 import { onBeforeMount } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { findMenuByPath } from '@aerial-engine/utils';
+import { findMenuByPath } from '@engine/utils';
 
-import { NormalMenu } from '@aerial-engine-core/menu-ui';
+import { NormalMenu } from '@engine-core/menu-ui';
 
 interface Props extends NormalMenuProps {}
 

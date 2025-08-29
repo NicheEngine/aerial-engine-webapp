@@ -3,7 +3,7 @@ import type { CSSProperties } from 'vue';
 
 import { computed, shallowRef, useSlots, watchEffect } from 'vue';
 
-import { EngineScrollbar } from '@aerial-engine-core/shadcn-ui';
+import { EngineScrollbar } from '@engine-core/shadcn-ui';
 
 import { useScrollLock } from '@vueuse/core';
 

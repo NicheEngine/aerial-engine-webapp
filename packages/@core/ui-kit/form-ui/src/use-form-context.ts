@@ -6,12 +6,8 @@ import type { ExtendedFormApi, FormActions, EngineFormProps } from './types';
 
 import { computed, unref, useSlots } from 'vue';
 
-import { createContext } from '@aerial-engine-core/shadcn-ui';
-import {
-  isString,
-  mergeWithArrayOverride,
-  set,
-} from '@aerial-engine-core/shared/utils';
+import { createContext } from '@engine-core/shadcn-ui';
+import { isString, mergeWithArrayOverride, set } from '@engine-core/shared/utils';
 
 import { useForm } from 'vee-validate';
 import { object, ZodIntersection, ZodNumber, ZodObject, ZodString } from 'zod';

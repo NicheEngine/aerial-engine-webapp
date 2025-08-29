@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SupportedLanguagesType } from '@aerial-engine/locales';
+import type { SupportedLanguagesType } from '@engine/locales';
 import type {
   BreadcrumbStyleType,
   BuiltinThemeType,
@@ -10,28 +10,28 @@ import type {
   NavigationStyleType,
   PreferencesButtonPositionType,
   ThemeModeType,
-} from '@aerial-engine/types';
+} from '@engine/types';
 
-import type { SegmentedItem } from '@aerial-engine-core/shadcn-ui';
+import type { SegmentedItem } from '@engine-core/shadcn-ui';
 
 import { computed, ref } from 'vue';
 
-import { Copy, RotateCw } from '@aerial-engine/icons';
-import { $t, loadLocaleMessages } from '@aerial-engine/locales';
+import { Copy, RotateCw } from '@engine/icons';
+import { $t, loadLocaleMessages } from '@engine/locales';
 import {
   clearPreferencesCache,
   preferences,
   resetPreferences,
   usePreferences,
-} from '@aerial-engine/preferences';
+} from '@engine/preferences';
 
-import { useEngineDrawer } from '@aerial-engine-core/popup-ui';
+import { useEngineDrawer } from '@engine-core/popup-ui';
 import {
   EngineButton,
   EngineIconButton,
   EngineSegmented,
-} from '@aerial-engine-core/shadcn-ui';
-import { globalShareState } from '@aerial-engine-core/shared/global-state';
+} from '@engine-core/shadcn-ui';
+import { globalShareState } from '@engine-core/shared/global-state';
 
 import { useClipboard } from '@vueuse/core';
 

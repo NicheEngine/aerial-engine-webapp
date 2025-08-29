@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import type { CaptchaPoint } from '@aerial-engine/common-ui';
+import type { CaptchaPoint } from '@engine/common-ui';
 
 import { reactive, ref } from 'vue';
 
-import { Page, PointSelectionCaptcha } from '@aerial-engine/common-ui';
+import { Page, PointSelectionCaptcha } from '@engine/common-ui';
 
 import { Card, Input, InputNumber, message, Switch } from 'ant-design-vue';
 
 import { $t } from '#/locales';
 
 const DEFAULT_CAPTCHA_IMAGE =
-  'https://unpkg.com/@nicheengine/static-source@0.1.7/source/default-captcha-image.jpeg';
+  'https://unpkg.com/@vbenjs/static-source@0.1.7/source/default-captcha-image.jpeg';
 
 const DEFAULT_HINT_IMAGE =
-  'https://unpkg.com/@nicheengine/static-source@0.1.7/source/default-hint-image.png';
+  'https://unpkg.com/@vbenjs/static-source@0.1.7/source/default-hint-image.png';
 
 const selectedPoints = ref<CaptchaPoint[]>([]);
 const params = reactive({

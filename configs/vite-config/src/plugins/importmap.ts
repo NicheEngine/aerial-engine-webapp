@@ -4,6 +4,8 @@
 import type { GeneratorOptions } from '@jspm/generator';
 import type { Plugin } from 'vite';
 
+import process from 'node:process';
+
 import { Generator } from '@jspm/generator';
 import { load } from 'cheerio';
 import { minify } from 'html-minifier-terser';

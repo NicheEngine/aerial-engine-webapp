@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { h, markRaw } from 'vue';
 
-import { Page } from '@aerial-engine/common-ui';
+import { Page } from '@engine/common-ui';
 
 import { Card, Input, message } from 'ant-design-vue';
 

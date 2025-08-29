@@ -1,2 +1,2 @@
 export * from './core';
-export * from '@aerial-engine-core/shared/constants';
+export * from '@engine-core/shared/constants';

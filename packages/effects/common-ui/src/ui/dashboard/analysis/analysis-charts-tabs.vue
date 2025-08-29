@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import type { TabOption } from '@aerial-engine/types';
+import type { TabOption } from '@engine/types';
 
 import { computed } from 'vue';
 
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '@aerial-engine-core/shadcn-ui';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@engine-core/shadcn-ui';
 
 interface Props {
   tabs?: TabOption[];

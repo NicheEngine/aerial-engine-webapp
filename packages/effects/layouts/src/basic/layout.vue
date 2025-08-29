@@ -1,22 +1,22 @@
 <script lang="ts" setup>
 import type { SetupContext } from 'vue';
 
-import type { MenuRecordRaw } from '@aerial-engine/types';
+import type { MenuRecordRaw } from '@engine/types';
 
 import { computed, useSlots, watch } from 'vue';
 
-import { useRefresh } from '@aerial-engine/hooks';
-import { $t, i18n } from '@aerial-engine/locales';
+import { useRefresh } from '@engine/hooks';
+import { $t, i18n } from '@engine/locales';
 import {
   preferences,
   updatePreferences,
   usePreferences,
-} from '@aerial-engine/preferences';
-import { useAccessStore } from '@aerial-engine/stores';
-import { cloneDeep, mapTree } from '@aerial-engine/utils';
+} from '@engine/preferences';
+import { useAccessStore } from '@engine/stores';
+import { cloneDeep, mapTree } from '@engine/utils';
 
-import { AerialEngineLayout } from '@aerial-engine-core/layout-ui';
-import { EngineBackTop, EngineLogo } from '@aerial-engine-core/shadcn-ui';
+import { EngineLayout } from '@engine-core/layout-ui';
+import { EngineBackTop, EngineLogo } from '@engine-core/shadcn-ui';
 
 import { Breadcrumb, CheckUpdates, Preferences } from '../widgets';
 import { LayoutContent, LayoutContentSpinner } from './content';
@@ -177,7 +177,7 @@ const headerSlots = computed(() => {
 </script>
 
 <template>
-  <AerialEngineLayout
+  <EngineLayout
     v-model:sidebar-extra-visible="sidebarExtraVisible"
     :content-compact="preferences.app.contentCompact"
     :content-compact-width="preferences.app.contentCompactWidth"
@@ -381,5 +381,5 @@ const headerSlots = computed(() => {
       </template>
       <EngineBackTop />
     </template>
-  </AerialEngineLayout>
+  </EngineLayout>
 </template>

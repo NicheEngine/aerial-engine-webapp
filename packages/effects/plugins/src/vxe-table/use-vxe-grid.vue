@@ -10,7 +10,7 @@ import type {
 
 import type { SetupContext } from 'vue';
 
-import type { EngineFormProps } from '@aerial-engine-core/form-ui';
+import type { EngineFormProps } from '@engine-core/form-ui';
 
 import type { ExtendedVxeGridApi, VxeGridProps } from './types';
 
@@ -25,19 +25,19 @@ import {
   watch,
 } from 'vue';
 
-import { usePriorityValues } from '@aerial-engine/hooks';
-import { EmptyIcon } from '@aerial-engine/icons';
-import { $t } from '@aerial-engine/locales';
-import { usePreferences } from '@aerial-engine/preferences';
+import { usePriorityValues } from '@engine/hooks';
+import { EmptyIcon } from '@engine/icons';
+import { $t } from '@engine/locales';
+import { usePreferences } from '@engine/preferences';
 import {
   cloneDeep,
   cn,
   isBoolean,
   isEqual,
   mergeWithArrayOverride,
-} from '@aerial-engine/utils';
+} from '@engine/utils';
 
-import { EngineHelpTooltip, EngineLoading } from '@aerial-engine-core/shadcn-ui';
+import { EngineHelpTooltip, EngineLoading } from '@engine-core/shadcn-ui';
 
 import { VxeButton } from 'vxe-pc-ui';
 import { VxeGrid, VxeUI } from 'vxe-table';
