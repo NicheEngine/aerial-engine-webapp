@@ -90,6 +90,29 @@ interface ArchiverPluginOptions {
 }
 
 /**
+ * 归档插件配置选项
+ * @description 用于配置构建产物的压缩归档
+ */
+interface DependPluginOptions {
+  /**
+   * cesium 库
+   * @default false
+   */
+  cesium?: boolean;
+  /**
+   * easyplayer 播放器
+   * @default false
+   */
+  easyplayer?: boolean;
+
+  /**
+   * 天地图库
+   * @default false
+   */
+  tianditu?: boolean;
+}
+
+/**
  * ImportMap 插件配置
  * @description 用于配置模块的 CDN 导入
  */
@@ -203,11 +226,28 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
    */
   compressTypes?: ('brotli' | 'gzip')[];
   /**
+   * 是否拷贝依赖库
+   * @default false
+   * @description 在构建时拷贝依赖库
+   */
+  dependBuild?: boolean;
+  /**
+   * 压缩归档插件配置
+   * @description 配置压缩归档的行为
+   */
+  dependPluginOptions?: DependPluginOptions;
+  /**
+   * 是否拷贝依赖库
+   * @default false
+   * @description 在构建时拷贝依赖库
+   */
+  dependServer?: boolean;
+  /**
    * 是否抽离配置文件
    * @default false
    * @description 在构建时抽离配置文件
    */
-  extraAppConfig?: boolean;
+  extra?: boolean;
   /**
    * 是否开启 HTML 插件
    * @default true

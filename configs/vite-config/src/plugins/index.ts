@@ -9,6 +9,8 @@ import type {
 
 import process from 'node:process';
 
+import viteDepends from '@engine/depend-config';
+
 import viteVueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import viteVue from '@vitejs/plugin-vue';
 import viteVueJsx from '@vitejs/plugin-vue-jsx';
@@ -20,7 +22,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 import viteVueDevTools from 'vite-plugin-vue-devtools';
 
 import { viteArchiverPlugin } from './archiver';
-import { viteExtraAppConfigPlugin } from './extra-app-config';
+import { viteAppDependConfigPlugin } from './depend';
+import { viteAppExtraConfigPlugin } from './extra';
 import { viteImportMapPlugin } from './importmap';
 import { viteInjectAppLoadingPlugin } from './inject-app-loading';
 import { viteMetadataPlugin } from './inject-metadata';
@@ -99,7 +102,9 @@ async function loadApplicationPlugins(
     archiverPluginOptions,
     compress,
     compressTypes,
-    extraAppConfig,
+    extra,
+    dependBuild,
+    dependPluginOptions,
     html,
     i18n,
     importmap,
@@ -117,6 +122,17 @@ async function loadApplicationPlugins(
   } = options;
 
   const commonPlugins = await loadCommonPlugins(commonOptions);
+
+  const dependScripts = {} as Record<string, () => void>;
+  if (dependPluginOptions?.cesium) {
+    dependScripts.cesium = viteDepends.cesium;
+  }
+  if (dependPluginOptions?.tianditu) {
+    dependScripts.tianditu = viteDepends.tianditu;
+  }
+  if (dependPluginOptions?.easyplayer) {
+    dependScripts.easyplayer = viteDepends.easyplayer;
+  }
 
   return await loadConditionPlugins([
     ...commonPlugins,
@@ -204,9 +220,18 @@ async function loadApplicationPlugins(
       },
     },
     {
-      condition: isBuild && extraAppConfig,
+      condition: isBuild && extra,
       plugins: async () => [
-        await viteExtraAppConfigPlugin({ isBuild: true, root: process.cwd() }),
+        await viteAppExtraConfigPlugin({ isBuild: true, root: process.cwd() }),
+      ],
+    },
+    {
+      condition: isBuild && dependBuild,
+      plugins: async () => [
+        await viteAppDependConfigPlugin({
+          depends: dependScripts,
+          root: process.cwd(),
+        }),
       ],
     },
     {
