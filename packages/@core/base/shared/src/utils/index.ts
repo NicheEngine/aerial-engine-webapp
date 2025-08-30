@@ -14,4 +14,7 @@ export * from './unique';
 export * from './update-css-variables';
 export * from './util';
 export * from './window';
-export * from 'lodash-es';
+export { default as cloneDeep } from 'lodash.clonedeep';
+export { default as get } from 'lodash.get';
+export { default as isEqual } from 'lodash.isequal';
+export { default as set } from 'lodash.set';
