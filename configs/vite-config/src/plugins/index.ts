@@ -147,11 +147,11 @@ async function loadApplicationPlugins(
   }
 
   function dependInject(): InjectDependPluginOptions {
-    const scripts = [];
+    const headScripts = [];
     const links = [];
 
     if (depend && dependOptions?.depends?.cesium) {
-      scripts.push({
+      headScripts.push({
         type: 'text/javascript',
         cesium: 'true',
         src: '/cesium/Cesium.js',
@@ -163,7 +163,7 @@ async function loadApplicationPlugins(
       });
     }
     if (depend && dependOptions?.depends?.tianditu) {
-      scripts.push([
+      headScripts.push([
         {
           type: 'text/javascript',
           cesium: 'true',
@@ -188,7 +188,7 @@ async function loadApplicationPlugins(
     }
 
     if (depend && dependOptions?.depends?.easyplayer) {
-      scripts.push({
+      headScripts.push({
         type: 'text/javascript',
         easyplayer: 'true',
         src: `/easyplayer/EasyPlayer-element.min.js`,
@@ -199,7 +199,7 @@ async function loadApplicationPlugins(
       build: isBuild,
       pages: {
         index: {
-          scripts,
+          headScripts,
           links,
         },
       },
