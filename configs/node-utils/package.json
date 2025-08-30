@@ -37,9 +37,9 @@
     "execa": "catalog:",
     "find-up": "catalog:",
     "ora": "catalog:",
+    "path": "catalog:",
     "pkg-types": "catalog:",
     "prettier": "catalog:",
-    "rimraf": "catalog:",
-    "path": "catalog:"
+    "rimraf": "catalog:"
   }
 }
