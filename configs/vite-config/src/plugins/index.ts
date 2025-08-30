@@ -34,7 +34,6 @@ import { viteInjectMetadataPlugin } from './inject-metadata';
 import { viteLicensePlugin } from './license';
 import { viteNitroMockPlugin } from './nitro-mock';
 import { vitePrintPlugin } from './print';
-import { viteSvgIconsPlugin } from './svgicon';
 import { viteVxeTableImportsPlugin } from './vxe-table';
 
 /**
@@ -128,7 +127,6 @@ async function loadApplicationPlugins(
     pwa,
     pwaOptions,
     vxeTableLazyImport,
-    svgIcons,
     ...commonOptions
   } = options;
 
@@ -325,12 +323,6 @@ async function loadApplicationPlugins(
       plugins: async () => {
         return [await viteArchiverPlugin(archiverOptions)];
       },
-    },
-    {
-      condition: isBuild && svgIcons,
-      plugins: async () => [
-        await viteSvgIconsPlugin({ isBuild: true, root: process.cwd() }),
-      ],
     },
   ]);
 }
