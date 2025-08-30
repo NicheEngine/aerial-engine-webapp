@@ -21,7 +21,7 @@ const ENGINE_APP_CONF = '_ENGINE_APP_CONF_';
  * @returns
  */
 
-async function viteAppExtraConfigPlugin({
+async function viteExtraAppConfigPlugin({
   isBuild,
   root,
 }: PluginOptions): Promise<PluginOption | undefined> {
@@ -56,7 +56,7 @@ async function viteAppExtraConfigPlugin({
         );
       }
     },
-    name: 'vite:app-extra-config-plugin',
+    name: 'vite:extra-app-config',
     async transformIndexHtml(html) {
       const hash = `v=${version}-${generatorContentHash(source, 8)}`;
 
@@ -89,4 +89,4 @@ function ensureTrailingSlash(path: string) {
   return path.endsWith('/') ? path : `${path}/`;
 }
 
-export { viteAppExtraConfigPlugin };
+export { viteExtraAppConfigPlugin };

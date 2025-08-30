@@ -32,7 +32,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       compressTypes: ['brotli', 'gzip'],
       devtools: true,
       env,
-      extra: true,
+      extraAppConfig: true,
       html: true,
       i18n: true,
       importmapOptions: defaultImportmapOptions,
