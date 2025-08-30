@@ -7,6 +7,7 @@ import type {
   IndexHtmlTransformContext,
   PluginOption,
 } from 'vite';
+
 import { colors } from '@engine/node-utils';
 
 export interface IHTMLTag {
