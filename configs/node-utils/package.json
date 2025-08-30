@@ -30,6 +30,7 @@
   "dependencies": {
     "@changesets/git": "catalog:",
     "@manypkg/get-packages": "catalog:",
+    "@types/fs-extra": "catalog:",
     "chalk": "catalog:",
     "consola": "catalog:",
     "dayjs": "catalog:",
@@ -39,7 +40,6 @@
     "pkg-types": "catalog:",
     "prettier": "catalog:",
     "rimraf": "catalog:",
-    "@types/fs-extra": "catalog:",
     "path": "catalog:"
   }
 }

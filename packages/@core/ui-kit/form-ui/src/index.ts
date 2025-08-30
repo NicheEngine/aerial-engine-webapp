@@ -2,9 +2,9 @@ export { setupEngineForm } from './config';
 
 export type {
   BaseFormComponentType,
-  ExtendedFormApi,
   EngineFormProps,
   FormSchema as EngineFormSchema,
+  ExtendedFormApi,
 } from './types';
 
 export * from './use-engine-form';

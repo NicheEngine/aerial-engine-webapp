@@ -29,7 +29,7 @@
     "#/*": "./src/*"
   },
   "dependencies": {
-    "@tanstack/vue-query": "catalog:",
+
     "@engine-core/menu-ui": "workspace:*",
     "@engine/access": "workspace:*",
     "@engine/common-ui": "workspace:*",
@@ -46,6 +46,7 @@
     "@engine/types": "workspace:*",
     "@engine/utils": "workspace:*",
     "@vueuse/core": "catalog:",
+    "@tanstack/vue-query": "catalog:",
     "ant-design-vue": "catalog:",
     "dayjs": "catalog:",
     "json-bigint": "catalog:",

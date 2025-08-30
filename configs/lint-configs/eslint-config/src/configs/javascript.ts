@@ -32,6 +32,7 @@ export async function javascript(): Promise<Linter.Config[]> {
       plugins: {
         'unused-imports': pluginUnusedImports,
       },
+      ignores: ['**/libraries/*.js'],
       rules: {
         ...js.configs.recommended.rules,
         'accessor-pairs': [
