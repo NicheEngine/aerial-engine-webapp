@@ -7,6 +7,7 @@
     "lib": ["ESNext"],
     "baseUrl": "./",
     "types": ["node"],
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "moduleResolution": "bundler"
   }
 }
