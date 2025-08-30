@@ -8,6 +8,7 @@ import type {
   ConditionPlugin,
   LibraryPluginOptions,
 } from '../typing';
+import type { InjectDependPluginOptions } from './inject-depend';
 
 import process from 'node:process';
 
@@ -28,10 +29,12 @@ import { viteBuildAppConfigPlugin, viteServeAppConfigPlugin } from './depend';
 import { viteExtraAppConfigPlugin } from './extra';
 import { viteImportMapPlugin } from './importmap';
 import { viteInjectAppLoadingPlugin } from './inject-app-loading';
-import { viteMetadataPlugin } from './inject-metadata';
+import { viteInjectDependPlugin } from './inject-depend';
+import { viteInjectMetadataPlugin } from './inject-metadata';
 import { viteLicensePlugin } from './license';
 import { viteNitroMockPlugin } from './nitro-mock';
 import { vitePrintPlugin } from './print';
+import { viteSvgIconsPlugin } from './svgicon';
 import { viteVxeTableImportsPlugin } from './vxe-table';
 
 /**
@@ -55,7 +58,7 @@ async function loadConditionPlugins(conditionPlugins: ConditionPlugin[]) {
 async function loadCommonPlugins(
   options: CommonPluginOptions,
 ): Promise<ConditionPlugin[]> {
-  const { devtools, injectMetadata, isBuild, visualizer } = options;
+  const { devtools, metadata, isBuild, visualizer } = options;
   return [
     {
       condition: true,
@@ -64,6 +67,11 @@ async function loadCommonPlugins(
           script: {
             defineModel: true,
             // propsDestructure: true,
+          },
+          template: {
+            compilerOptions: {
+              isCustomElement: (tag) => tag === 'easy-player',
+            },
           },
         }),
         viteVueJsx(),
@@ -75,8 +83,8 @@ async function loadCommonPlugins(
       plugins: () => [viteVueDevTools()],
     },
     {
-      condition: injectMetadata,
-      plugins: async () => [await viteMetadataPlugin()],
+      condition: metadata,
+      plugins: async () => [await viteInjectMetadataPlugin()],
     },
     {
       condition: isBuild && !!visualizer,
@@ -101,11 +109,12 @@ async function loadApplicationPlugins(
 
   const {
     archiver,
-    archiverPluginOptions,
+    archiverOptions,
     compress,
     compressTypes,
     extra,
     depend,
+    dependOptions,
     html,
     i18n,
     importmap,
@@ -119,21 +128,82 @@ async function loadApplicationPlugins(
     pwa,
     pwaOptions,
     vxeTableLazyImport,
+    svgIcons,
     ...commonOptions
   } = options;
 
-  function dependOptions() {
+  function dependValues() {
     const depends = {} as Record<DependTypes, () => void>;
-    if (depend?.depends?.cesium) {
+    if (depend && dependOptions?.depends?.cesium) {
       depends.cesium = viteDepends.cesium;
     }
-    if (depend?.depends?.tianditu) {
+    if (depend && dependOptions?.depends?.tianditu) {
       depends.tianditu = viteDepends.tianditu;
     }
-    if (depend?.depends?.easyplayer) {
+    if (depend && dependOptions?.depends?.easyplayer) {
       depends.easyplayer = viteDepends.easyplayer;
     }
     return depends;
+  }
+
+  function dependInject(): InjectDependPluginOptions {
+    const scripts = [];
+    const links = [];
+
+    if (depend && dependOptions?.depends?.cesium) {
+      scripts.push({
+        type: 'text/javascript',
+        cesium: 'true',
+        src: '/cesium/Cesium.js',
+      });
+      links.push({
+        rel: 'stylesheet',
+        cesium: 'true',
+        href: '/cesium/Widgets/widgets.css',
+      });
+    }
+    if (depend && dependOptions?.depends?.tianditu) {
+      scripts.push([
+        {
+          type: 'text/javascript',
+          cesium: 'true',
+          src: '/tianditu/Cesium_ext_min.js',
+        },
+        {
+          type: 'text/javascript',
+          cesium: 'true',
+          src: '/tianditu/bytebuffer.min.js',
+        },
+        {
+          type: 'text/javascript',
+          cesium: 'true',
+          src: '/tianditu/long.min.js',
+        },
+        {
+          type: 'text/javascript',
+          cesium: 'true',
+          src: '/tianditu/protobuf.min.js',
+        },
+      ]);
+    }
+
+    if (depend && dependOptions?.depends?.easyplayer) {
+      scripts.push({
+        type: 'text/javascript',
+        easyplayer: 'true',
+        src: `/easyplayer/EasyPlayer-element.min.js`,
+      });
+    }
+
+    return {
+      build: isBuild,
+      pages: {
+        index: {
+          scripts,
+          links,
+        },
+      },
+    } as InjectDependPluginOptions;
   }
 
   const commonPlugins = await loadCommonPlugins(commonOptions);
@@ -229,19 +299,23 @@ async function loadApplicationPlugins(
       ],
     },
     {
-      condition: isBuild && depend?.build,
+      condition: depend,
+      plugins: async () => [await viteInjectDependPlugin(dependInject())],
+    },
+    {
+      condition: isBuild && depend && dependOptions?.build,
       plugins: async () => [
         await viteBuildAppConfigPlugin({
-          depends: dependOptions(),
+          depends: dependValues(),
           root: process.cwd(),
         }),
       ],
     },
     {
-      condition: !isBuild && depend?.serve,
+      condition: !isBuild && depend && dependOptions?.serve,
       plugins: async () => [
         await viteServeAppConfigPlugin({
-          depends: dependOptions(),
+          depends: dependValues(),
           root: process.cwd(),
         }),
       ],
@@ -249,8 +323,14 @@ async function loadApplicationPlugins(
     {
       condition: archiver,
       plugins: async () => {
-        return [await viteArchiverPlugin(archiverPluginOptions)];
+        return [await viteArchiverPlugin(archiverOptions)];
       },
+    },
+    {
+      condition: isBuild && svgIcons,
+      plugins: async () => [
+        await viteSvgIconsPlugin({ isBuild: true, root: process.cwd() }),
+      ],
     },
   ]);
 }

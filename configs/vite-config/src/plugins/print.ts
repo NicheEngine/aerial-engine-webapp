@@ -10,6 +10,8 @@ export const vitePrintPlugin = (
   const { infoMap = {} } = options;
 
   return {
+    enforce: 'pre',
+    name: 'vite:print-info-plugin',
     configureServer(server) {
       const _printUrls = server.printUrls;
       server.printUrls = () => {
@@ -22,7 +24,5 @@ export const vitePrintPlugin = (
         }
       };
     },
-    enforce: 'pre',
-    name: 'vite:print-info',
-  };
+  } as PluginOption;
 };

@@ -53,6 +53,8 @@
     "rollup-plugin-visualizer": "catalog:",
     "sass": "catalog:",
     "vite": "catalog:",
+    "vite-plugin-svg-icons": "catalog:",
+    "vite-plugin-externals": "catalog:",
     "vite-plugin-compression": "catalog:",
     "vite-plugin-dts": "catalog:",
     "vite-plugin-html": "catalog:",

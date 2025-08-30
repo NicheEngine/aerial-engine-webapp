@@ -97,7 +97,7 @@ interface ArchiverPluginOptions {
  */
 interface DependPluginOptions {
   /**
-   * build时选项
+   * 总开关
    * @default false
    */
   build?: boolean;
@@ -176,15 +176,15 @@ interface CommonPluginOptions {
    */
   env?: Record<string, any>;
   /**
-   * 是否注入元数据
-   * @default true
-   */
-  injectMetadata?: boolean;
-  /**
    * 是否为构建模式
    * @default false
    */
   isBuild?: boolean;
+  /**
+   * 是否注入元数据
+   * @default true
+   */
+  metadata?: boolean;
   /**
    * 构建模式
    * @default 'development'
@@ -213,7 +213,7 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
    * 压缩归档插件配置
    * @description 配置压缩归档的行为
    */
-  archiverPluginOptions?: ArchiverPluginOptions;
+  archiverOptions?: ArchiverPluginOptions;
   /**
    * 是否开启压缩
    * @default false
@@ -231,7 +231,12 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
    * @default false
    * @description 在构建时依赖拷贝配置文件
    */
-  depend?: DependPluginOptions;
+  depend?: boolean;
+  /**
+   * 压缩归档插件配置
+   * @description 配置压缩归档的行为
+   */
+  dependOptions?: DependPluginOptions;
   /**
    * 是否抽离配置文件
    * @default false
@@ -299,6 +304,11 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
    * PWA 插件配置
    */
   pwaOptions?: Partial<PwaPluginOptions>;
+  /**
+   * svg icons
+   * @default false
+   */
+  svgIcons?: boolean;
   /**
    * 是否开启 VXE Table 懒加载
    * @default false

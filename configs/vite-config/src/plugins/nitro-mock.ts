@@ -15,6 +15,8 @@ export const viteNitroMockPlugin = ({
   verbose = true,
 }: NitroMockPluginOptions = {}): PluginOption => {
   return {
+    enforce: 'pre',
+    name: 'vite:mock-server-plugin',
     async configureServer(server) {
       const availablePort = await getPort({ port });
       if (availablePort !== port) {
@@ -29,7 +31,7 @@ export const viteNitroMockPlugin = ({
         return;
       }
 
-      runNitroServer(pkg.dir, port, verbose);
+      await runNitroServer(pkg.dir, port, verbose);
 
       const _printUrls = server.printUrls;
       server.printUrls = () => {
@@ -40,8 +42,6 @@ export const viteNitroMockPlugin = ({
         );
       };
     },
-    enforce: 'pre',
-    name: 'vite:mock-server',
   };
 };
 

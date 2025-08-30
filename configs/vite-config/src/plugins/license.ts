@@ -27,10 +27,10 @@ async function viteLicensePlugin(
   return {
     apply: 'build',
     enforce: 'post',
-    generateBundle: {
-      handler: (_options: NormalizedOutputOptions, bundle: OutputBundle) => {
-        const date = dateUtil().format('YYYY-MM-DD ');
-        const copyrightText = `/*!
+    name: 'vite:license-plugin',
+    generateBundle(_options: NormalizedOutputOptions, bundle: OutputBundle) {
+      const date = dateUtil().format('YYYY-MM-DD ');
+      const copyrightText = `/*!
   * Engine
   * Version: ${version}
   * Author: engine
@@ -43,22 +43,18 @@ async function viteLicensePlugin(
 */
               `.trim();
 
-        for (const [, fileContent] of Object.entries(bundle)) {
-          if (fileContent.type === 'chunk' && fileContent.isEntry) {
-            const chunkContent = fileContent as OutputChunk;
-            // 插入版权信息
-            const content = chunkContent.code;
-            const updatedContent = `${copyrightText}${EOL}${content}`;
-
-            // 更新bundle
-            (fileContent as OutputChunk).code = updatedContent;
-          }
+      for (const [, fileContent] of Object.entries(bundle)) {
+        if (fileContent.type === 'chunk' && fileContent.isEntry) {
+          const chunkContent = fileContent as OutputChunk;
+          // 插入版权信息
+          const content = chunkContent.code;
+          // 更新bundle
+          (fileContent as OutputChunk).code =
+            `${copyrightText}${EOL}${content}`;
         }
-      },
-      order: 'post',
+      }
     },
-    name: 'vite:license',
-  };
+  } as PluginOption;
 }
 
 export { viteLicensePlugin };

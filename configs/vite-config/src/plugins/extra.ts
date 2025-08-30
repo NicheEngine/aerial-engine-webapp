@@ -47,7 +47,9 @@ async function viteExtraAppConfigPlugin({
           type: 'asset',
         });
 
-        console.log(colors.cyan(`✨configuration file is build successfully!`));
+        console.log(
+          colors.cyan(`✨ configuration file is build successfully!`),
+        );
       } catch (error) {
         console.log(
           colors.red(

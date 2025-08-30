@@ -69,7 +69,7 @@ async function resolveMonorepoDependencies() {
 /**
  * 用于注入项目信息
  */
-async function viteMetadataPlugin(
+async function viteInjectMetadataPlugin(
   root = process.cwd(),
 ): Promise<PluginOption | undefined> {
   const { author, description, homepage, license, version } =
@@ -78,6 +78,8 @@ async function viteMetadataPlugin(
   const buildTime = dateUtil().format('YYYY-MM-DD HH:mm:ss');
 
   return {
+    enforce: 'post',
+    name: 'vite:inject-metadata',
     async config() {
       const { dependencies, devDependencies } =
         await resolveMonorepoDependencies();
@@ -105,9 +107,7 @@ async function viteMetadataPlugin(
         },
       };
     },
-    enforce: 'post',
-    name: 'vite:inject-metadata',
   };
 }
 
-export { viteMetadataPlugin };
+export { viteInjectMetadataPlugin };

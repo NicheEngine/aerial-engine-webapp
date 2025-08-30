@@ -37,7 +37,7 @@ async function viteInjectAppLoadingPlugin(
 
   return {
     enforce: 'pre',
-    name: 'vite:inject-app-loading',
+    name: 'vite:inject-app-loading-plugin',
     transformIndexHtml: {
       handler(html) {
         const re = /<body\s*>/;

@@ -40,7 +40,7 @@ export const viteArchiverPlugin = (
       order: 'post',
     },
     enforce: 'post',
-    name: 'vite:archiver',
+    name: 'vite:archiver-plugin',
   };
 };
 

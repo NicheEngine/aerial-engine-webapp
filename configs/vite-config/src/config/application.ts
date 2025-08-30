@@ -27,13 +27,14 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 
     const plugins = await loadApplicationPlugins({
       archiver: true,
-      archiverPluginOptions: {},
+      archiverOptions: {},
       compress: false,
       compressTypes: ['brotli', 'gzip'],
       devtools: true,
       env,
       extra: true,
-      depend: {
+      depend: true,
+      dependOptions: {
         build: true,
         serve: true,
         depends: {
@@ -46,7 +47,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       i18n: true,
       importmapOptions: defaultImportmapOptions,
       injectAppLoading: true,
-      injectMetadata: true,
+      metadata: true,
       isBuild,
       license: true,
       mode,
@@ -59,6 +60,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       pwa: true,
       pwaOptions: getDefaultPwaOptions(appTitle),
       vxeTableLazyImport: true,
+      svgIcons: true,
       ...envConfig,
       ...application,
     });

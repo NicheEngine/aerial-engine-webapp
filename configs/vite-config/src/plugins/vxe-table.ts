@@ -13,7 +13,7 @@ async function viteVxeTableImportsPlugin(): Promise<PluginOption> {
           libraryName: 'vxe-pc-ui',
         }),
       ],
-    }),
+    }) as PluginOption,
   ];
 }
 
