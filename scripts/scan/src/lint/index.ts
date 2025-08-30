@@ -25,7 +25,7 @@ async function runLint({ format }: LintCommandOptions) {
     return;
   }
   await Promise.all([
-    execaCommand(`eslint . --cache`, {
+    execaCommand(`eslint . --cache --no-warn-ignored`, {
       stdio: 'inherit',
     }),
     execaCommand(`prettier . --ignore-unknown --check --cache`, {
