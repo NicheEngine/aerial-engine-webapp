@@ -69,7 +69,6 @@ post-merge:
   commands:
     install:
       run: pnpm install
-
 #commit-msg:
 #  commands:
 #    commitlint:

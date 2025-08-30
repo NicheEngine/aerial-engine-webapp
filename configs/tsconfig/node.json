@@ -6,8 +6,8 @@
     "composite": false,
     "lib": ["ESNext"],
     "baseUrl": "./",
+    "moduleResolution": "bundler",
     "types": ["node"],
-    "noImplicitAny": true,
-    "moduleResolution": "bundler"
+    "noImplicitAny": true
   }
 }
