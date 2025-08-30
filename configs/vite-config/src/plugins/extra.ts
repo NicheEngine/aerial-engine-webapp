@@ -56,7 +56,7 @@ async function viteExtraAppConfigPlugin({
         );
       }
     },
-    name: 'vite:extra-app-config',
+    name: 'vite:extra-app-config-plugin',
     async transformIndexHtml(html) {
       const hash = `v=${version}-${generatorContentHash(source, 8)}`;
 

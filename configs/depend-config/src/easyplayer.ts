@@ -1,4 +1,4 @@
-import { copyFile } from '@aerial-engine/node-utils';
+import { copyFile } from '@engine/node-utils';
 
 const basePath = `node_modules/@easydarwin/easyplayer/dist`;
 

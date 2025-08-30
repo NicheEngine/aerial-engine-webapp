@@ -1,5 +1,7 @@
 import type { PluginOption } from 'vite';
 
+import type { DependTypes } from '@engine/depend-config';
+
 import type {
   ApplicationPluginOptions,
   CommonPluginOptions,
@@ -8,6 +10,8 @@ import type {
 } from '../typing';
 
 import process from 'node:process';
+
+import viteDepends from '@engine/depend-config';
 
 import viteVueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import viteVue from '@vitejs/plugin-vue';
@@ -20,7 +24,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 import viteVueDevTools from 'vite-plugin-vue-devtools';
 
 import { viteArchiverPlugin } from './archiver';
-import { viteExtraAppConfigPlugin } from './extra-app-config';
+import { viteBuildAppConfigPlugin, viteServeAppConfigPlugin } from './depend';
+import { viteExtraAppConfigPlugin } from './extra';
 import { viteImportMapPlugin } from './importmap';
 import { viteInjectAppLoadingPlugin } from './inject-app-loading';
 import { viteMetadataPlugin } from './inject-metadata';
@@ -99,7 +104,8 @@ async function loadApplicationPlugins(
     archiverPluginOptions,
     compress,
     compressTypes,
-    extraAppConfig,
+    extra,
+    depend,
     html,
     i18n,
     importmap,
@@ -115,6 +121,20 @@ async function loadApplicationPlugins(
     vxeTableLazyImport,
     ...commonOptions
   } = options;
+
+  function dependOptions() {
+    const depends = {} as Record<DependTypes, () => void>;
+    if (depend?.depends?.cesium) {
+      depends.cesium = viteDepends.cesium;
+    }
+    if (depend?.depends?.tianditu) {
+      depends.tianditu = viteDepends.tianditu;
+    }
+    if (depend?.depends?.easyplayer) {
+      depends.easyplayer = viteDepends.easyplayer;
+    }
+    return depends;
+  }
 
   const commonPlugins = await loadCommonPlugins(commonOptions);
 
@@ -150,7 +170,6 @@ async function loadApplicationPlugins(
         return [await viteNitroMockPlugin(nitroMockOptions)];
       },
     },
-
     {
       condition: injectAppLoading,
       plugins: async () => [await viteInjectAppLoadingPlugin(!!isBuild, env)],
@@ -204,9 +223,27 @@ async function loadApplicationPlugins(
       },
     },
     {
-      condition: isBuild && extraAppConfig,
+      condition: isBuild && extra,
       plugins: async () => [
         await viteExtraAppConfigPlugin({ isBuild: true, root: process.cwd() }),
+      ],
+    },
+    {
+      condition: isBuild && depend?.build,
+      plugins: async () => [
+        await viteBuildAppConfigPlugin({
+          depends: dependOptions(),
+          root: process.cwd(),
+        }),
+      ],
+    },
+    {
+      condition: !isBuild && depend?.serve,
+      plugins: async () => [
+        await viteServeAppConfigPlugin({
+          depends: dependOptions(),
+          root: process.cwd(),
+        }),
       ],
     },
     {

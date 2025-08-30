@@ -49,3 +49,7 @@ vite.config.ts.*
 *.sln
 *.sw?
 .history
+
+**/public/cesium
+**/public/easyplayer
+**/public/tianditu

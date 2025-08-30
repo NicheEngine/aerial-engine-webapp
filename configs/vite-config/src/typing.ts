@@ -3,6 +3,8 @@ import type { ConfigEnv, PluginOption, UserConfig } from 'vite';
 import type { PluginOptions } from 'vite-plugin-dts';
 import type { Options as PwaPluginOptions } from 'vite-plugin-pwa';
 
+import type { DependOptions } from '@engine/depend-config';
+
 /**
  * ImportMap 配置接口
  * @description 用于配置模块导入映射，支持自定义导入路径和范围
@@ -87,6 +89,28 @@ interface ArchiverPluginOptions {
    * @default '.'
    */
   outputDir?: string;
+}
+
+/**
+ * 依赖拷贝插件配置选项
+ * @description 用于配置构建时的依赖拷贝
+ */
+interface DependPluginOptions {
+  /**
+   * build时选项
+   * @default false
+   */
+  build?: boolean;
+  /**
+   * 依赖拷贝运行脚本
+   * @default false
+   */
+  depends?: DependOptions;
+  /**
+   * serve时选项
+   * @default false
+   */
+  serve?: boolean;
 }
 
 /**
@@ -203,11 +227,17 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
    */
   compressTypes?: ('brotli' | 'gzip')[];
   /**
+   * 依赖拷贝配置文件
+   * @default false
+   * @description 在构建时依赖拷贝配置文件
+   */
+  depend?: DependPluginOptions;
+  /**
    * 是否抽离配置文件
    * @default false
    * @description 在构建时抽离配置文件
    */
-  extraAppConfig?: boolean;
+  extra?: boolean;
   /**
    * 是否开启 HTML 插件
    * @default true

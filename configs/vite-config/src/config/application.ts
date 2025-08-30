@@ -32,7 +32,16 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       compressTypes: ['brotli', 'gzip'],
       devtools: true,
       env,
-      extraAppConfig: true,
+      extra: true,
+      depend: {
+        build: true,
+        serve: true,
+        depends: {
+          tianditu: true,
+          easyplayer: true,
+          cesium: true,
+        },
+      },
       html: true,
       i18n: true,
       importmapOptions: defaultImportmapOptions,
@@ -115,7 +124,7 @@ function createCssOptions(injectGlobalScss = true): CSSOptions {
               }
               return content;
             },
-            api: 'modern',
+            // api: 'modern',
             importers: [new NodePackageImporter()],
           },
         }
