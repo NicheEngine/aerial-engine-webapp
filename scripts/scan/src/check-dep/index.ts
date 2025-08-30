@@ -12,6 +12,9 @@ const DEFAULT_CONFIG = {
     'vitest',
     'unbuild',
     '**/libraries/*',
+    '**/public/cesium',
+    '**/public/easyplayer',
+    '**/public/tianditu',
     '@engine/tsconfig',
     '@engine/vite-config',
     '@engine/tailwind-config',
@@ -34,7 +37,15 @@ const DEFAULT_CONFIG = {
     'cesium',
   ],
   // 需要忽略的文件模式
-  ignorePatterns: ['dist', 'node_modules', 'public', 'libraries'],
+  ignorePatterns: [
+    'dist',
+    'node_modules',
+    'public',
+    'libraries',
+    '**/public/cesium',
+    '**/public/easyplayer',
+    '**/public/tianditu',
+  ],
 };
 
 interface DepcheckResult {

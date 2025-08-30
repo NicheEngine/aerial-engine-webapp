@@ -17,3 +17,6 @@ public
 .npmrc
 *-lock.yaml
 **/libraries/*
+**/public/cesium/*
+**/public/easyplayer/*
+**/public/tianditu/*

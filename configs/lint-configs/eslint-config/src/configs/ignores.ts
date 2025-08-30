@@ -5,6 +5,9 @@ export async function ignores(): Promise<Linter.Config[]> {
     {
       ignores: [
         '**/libraries',
+        '**/public/cesium',
+        '**/public/easyplayer',
+        '**/public/tianditu',
         '**/node_modules',
         '**/dist',
         '**/dist-*',

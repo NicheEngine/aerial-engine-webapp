@@ -32,7 +32,12 @@ export async function javascript(): Promise<Linter.Config[]> {
       plugins: {
         'unused-imports': pluginUnusedImports,
       },
-      ignores: ['**/libraries/*.js'],
+      ignores: [
+        '**/libraries/*.js',
+        '**/public/cesium/*.js',
+        '**/public/easyplayer/*.js',
+        '**/public/tianditu/*.js',
+      ],
       rules: {
         ...js.configs.recommended.rules,
         'accessor-pairs': [
