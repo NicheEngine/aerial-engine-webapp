@@ -17,9 +17,11 @@ export function formatDateTime(time: number | string) {
   return formatDate(time, 'YYYY-MM-DD HH:mm:ss');
 }
 
-export function isDate(value: any): value is Date {
-  return value instanceof Date;
-}
+// lodash-es @types/lodash-es
+
+// export function isDate(value: any): value is Date {
+//   return value instanceof Date;
+// }
 
 export function isDayjsObject(value: any): value is dayjs.Dayjs {
   return dayjs.isDayjs(value);

@@ -1,5 +1,5 @@
 // eslint-disable-next-line vue/prefer-import-from-vue
-import { isFunction, isObject, isString } from '@vue/shared';
+import { isFunction, isObject } from '@vue/shared';
 
 /**
  * 检查传入的值是否为undefined。
@@ -11,13 +11,60 @@ function isUndefined(value?: unknown): value is undefined {
   return value === undefined;
 }
 
-/**
- * 检查传入的值是否为boolean
- * @param value
- * @returns 如果值是布尔值，返回true，否则返回false。
- */
-function isBoolean(value: unknown): value is boolean {
-  return typeof value === 'boolean';
+function isType(value: unknown, type: string) {
+  return Object.prototype.toString.call(value) === `[object ${type}]`;
+}
+
+function isDefined<T = unknown>(value?: T): value is T {
+  return value !== undefined;
+}
+
+function isPromise<T = any>(value: unknown): value is Promise<T> {
+  return (
+    isType(value, 'Promise') &&
+    isObject(value) &&
+    isFunction(value.then) &&
+    isFunction(value.catch)
+  );
+}
+
+function isString(value: unknown): value is string {
+  return isType(value, 'String');
+}
+
+function isArray(value: any): value is Array<any> {
+  return value && Array.isArray(value);
+}
+
+const isServer = typeof window === 'undefined';
+
+const isClient = !isServer;
+
+function isUrl(value: string): boolean {
+  const regExp: RegExp =
+    // eslint-disable-next-line regexp/no-super-linear-backtracking
+    /^(?:https?:(?:\/\/)?(?:[-;:&=+$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=+$,\w]+@)[A-Za-z0-9.-]+)(?:\/[+~%/.\w-]*)?(?:\/#\/)?(?:\/[+~%/.\w-]*)?\??[-+=&;%@.\w]*#?\w*$/;
+  return regExp.test(value);
+}
+
+function isNull(value: unknown): value is null {
+  return value === null;
+}
+
+function isNunNull(value: unknown): value is null {
+  return value !== null;
+}
+
+function isNullAndUndefined(val: unknown): val is null | undefined {
+  return isUndefined(val) && isNull(val);
+}
+
+function isNullOrUndefined(val: unknown): val is null | undefined {
+  return isUndefined(val) || isNull(val);
+}
+
+function isNotEmpty<T = unknown>(value: T): value is T {
+  return !isEmpty(value);
 }
 
 /**
@@ -34,23 +81,20 @@ function isBoolean(value: unknown): value is boolean {
  * @param {T} value 要检查的值。
  * @returns {boolean} 如果值为空，返回true，否则返回false。
  */
-function isEmpty<T = unknown>(value?: T): value is T {
-  if (value === null || value === undefined) {
-    return true;
-  }
-
-  if (Array.isArray(value) || isString(value)) {
-    return value.length === 0;
-  }
-
-  if (value instanceof Map || value instanceof Set) {
-    return value.size === 0;
-  }
-
+function isEmpty<T>(value: T): value is T {
+  if (isNull(value)) return true;
   if (isObject(value)) {
     return Object.keys(value).length === 0;
   }
-
+  if (typeof (value as any) === 'number') {
+    return Number(value) === 0;
+  }
+  if (isArray(value) || isString(value)) {
+    return (value as any).length === 0;
+  }
+  if ((value as any) instanceof Map || (value as any) instanceof Set) {
+    return (value as any).size === 0;
+  }
   return false;
 }
 
@@ -108,14 +152,6 @@ function isWindowsOs(): boolean {
 }
 
 /**
- * 检查传入的值是否为数字
- * @param value
- */
-function isNumber(value: any): value is number {
-  return typeof value === 'number' && Number.isFinite(value);
-}
-
-/**
  * Returns the first value in the provided list that is neither `null` nor `undefined`.
  *
  * This function iterates over the input values and returns the first one that is
@@ -151,15 +187,18 @@ function getFirstNonNullOrUndefined<T>(
 
 export {
   getFirstNonNullOrUndefined,
-  isBoolean,
-  isEmpty,
-  isFunction,
+  isClient,
+  isDefined,
   isHttpUrl,
   isMacOs,
-  isNumber,
-  isObject,
-  isString,
-  isUndefined,
+  isNotEmpty,
+  isNullAndUndefined,
+  isNullOrUndefined,
+  isNunNull,
+  isPromise,
+  isServer,
+  isType,
+  isUrl,
   isWindow,
   isWindowsOs,
 };
