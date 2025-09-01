@@ -8,7 +8,11 @@ import type {
   ConditionPlugin,
   LibraryPluginOptions,
 } from '../typing';
-import type { InjectDependPluginOptions } from './inject-depend';
+import type {
+  IHTMLTag,
+  InjectDependPluginOptions,
+  ScriptTag,
+} from './inject-depend';
 
 import process from 'node:process';
 
@@ -145,8 +149,8 @@ async function loadApplicationPlugins(
   }
 
   function dependInject(): InjectDependPluginOptions {
-    const headScripts = [];
-    const links = [];
+    let headScripts = [] as ScriptTag[];
+    const links = [] as IHTMLTag[];
 
     if (depend && dependOptions?.depends?.cesium) {
       headScripts.push({
@@ -161,7 +165,8 @@ async function loadApplicationPlugins(
       });
     }
     if (depend && dependOptions?.depends?.tianditu) {
-      headScripts.push([
+      headScripts = [
+        ...headScripts,
         {
           type: 'text/javascript',
           cesium: 'true',
@@ -182,7 +187,7 @@ async function loadApplicationPlugins(
           cesium: 'true',
           src: '/tianditu/protobuf.min.js',
         },
-      ]);
+      ];
     }
 
     if (depend && dependOptions?.depends?.easyplayer) {
@@ -195,11 +200,9 @@ async function loadApplicationPlugins(
 
     return {
       build: isBuild,
-      pages: {
-        index: {
-          headScripts,
-          links,
-        },
+      index: {
+        headScripts,
+        links,
       },
     } as InjectDependPluginOptions;
   }

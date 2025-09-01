@@ -141,6 +141,7 @@ const transformHtmlHandler = async (
       htmlResult.push(wrapContent(script, 'head-prepend'));
     });
   }
+  console.log('htmlResult>>>>>>>>>', htmlResult);
   return {
     html: resultHtmlStr,
     tags: htmlResult,
@@ -176,14 +177,14 @@ async function viteInjectDependPlugin(
   return {
     name: 'vite:inject-depend-plugin',
     enforce: 'pre',
-    transformIndexHtml(html: string, ctx: IndexHtmlTransformContext) {
+    async transformIndexHtml(html: string, ctx: IndexHtmlTransformContext) {
       const htmlPath: string = ctx.path;
       const htmlKey: string = matchHtmlKey(htmlPath);
       const options: InjectDependOptions = pluginOptions[htmlKey] || {};
       if (!options || Object.entries(pluginOptions).length === 0) {
         return;
       }
-      const htmlHandler = transformHtmlHandler(html, options);
+      const htmlHandler = await transformHtmlHandler(html, options);
       console.log(colors.cyan(`\n✨ depend inject successfully!`));
       return htmlHandler;
     },
