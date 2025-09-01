@@ -14,6 +14,7 @@ import { defaultImportmapOptions, getDefaultPwaOptions } from '../options';
 import { loadApplicationPlugins } from '../plugins';
 import { loadAndConvertEnv } from '../utils/env';
 import { getCommonConfig } from './common';
+import { createProxy } from './proxy';
 
 function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
   return defineConfig(async (config) => {
@@ -64,7 +65,13 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       ...application,
     });
 
-    const { injectGlobalScss = true } = application;
+    const {
+      injectGlobalScss = true,
+      serverProxies = {},
+      serverProxyOptions = {},
+    } = application;
+
+    const { host = true, open = true } = serverProxyOptions;
 
     const applicationConfig: UserConfig = {
       base,
@@ -90,8 +97,10 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       },
       plugins,
       server: {
-        host: true,
-        port,
+        host,
+        open,
+        port: port ?? 8080,
+        proxy: await createProxy(serverProxies),
         warmup: {
           // 预热文件
           clientFiles: [

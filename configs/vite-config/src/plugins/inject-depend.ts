@@ -141,7 +141,6 @@ const transformHtmlHandler = async (
       htmlResult.push(wrapContent(script, 'head-prepend'));
     });
   }
-  console.log('htmlResult>>>>>>>>>', htmlResult);
   return {
     html: resultHtmlStr,
     tags: htmlResult,
