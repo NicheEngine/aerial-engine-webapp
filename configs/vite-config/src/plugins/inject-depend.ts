@@ -8,8 +8,6 @@ import type {
   PluginOption,
 } from 'vite';
 
-import { colors } from '@engine/node-utils';
-
 export interface IHTMLTag {
   [key: string]: boolean | string;
 }
@@ -183,9 +181,7 @@ async function viteInjectDependPlugin(
       if (!options || Object.entries(pluginOptions).length === 0) {
         return;
       }
-      const htmlHandler = await transformHtmlHandler(html, options);
-      console.log(colors.cyan(`\n✨ depend inject successfully!`));
-      return htmlHandler;
+      return await transformHtmlHandler(html, options);
     },
   } as PluginOption;
 }
