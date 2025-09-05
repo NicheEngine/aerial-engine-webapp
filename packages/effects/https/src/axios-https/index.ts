@@ -68,7 +68,7 @@ function formatRequestDate(params: Record<string, any>) {
 const authTokenHandler = async (axiosObject: AxiosObject, error: any) => {
   const axiosConfig = axiosObject.axiosConfig();
   const { config } = error;
-  const { authenticate, refreshToken, isRefreshToken, formatToken } =
+  const { authenticate, refreshToken, tokenPrefix, isRefreshToken } =
     axiosConfig.authToken;
   // 判断是否启用了 refreshToken 功能
   // 如果没有启用或者已经是重试请求了，直接跳转到重新登录
@@ -79,8 +79,10 @@ const authTokenHandler = async (axiosObject: AxiosObject, error: any) => {
   // 如果正在刷新 token，则将请求加入队列，等待刷新完成
   if (axiosObject.isRefreshing) {
     return new Promise((resolve) => {
-      axiosObject.refreshTokenQueue.push((newToken: string) => {
-        config.headers.Authorization = formatToken(newToken);
+      axiosObject.refreshTokenQueue.push((currentToken: string) => {
+        config.headers.Authorization = tokenPrefix
+          ? `${tokenPrefix} ${currentToken}`
+          : currentToken;
         resolve(axiosObject.request(config));
       });
     });
@@ -208,12 +210,15 @@ const handler: AxiosHandler = {
   },
 
   doRequestHandler: (config: AxiosHttpRequestConfig) => {
-    const { tokenPrefix, accessToken } = config.authToken;
+    const { languageLocal, tokenPrefix, accessToken } = config.authToken;
     const currentToken = accessToken();
     if (currentToken && config?.options?.withToken !== false) {
       config.headers.Authorization = tokenPrefix
         ? `${tokenPrefix} ${currentToken}`
         : currentToken;
+    }
+    if (languageLocal) {
+      config.headers['Accept-Language'] = languageLocal;
     }
     return config;
   },
@@ -237,8 +242,6 @@ const handler: AxiosHandler = {
     const axiosConfig = axiosObject.axiosConfig();
     const { config, response } = error;
     const { unauthorizedStatus = [401] } = axiosConfig.authToken;
-
-    axiosConfig.authToken;
 
     const status = response?.status || 500;
     if (unauthorizedStatus.includes(status)) {
@@ -299,7 +302,7 @@ const handler: AxiosHandler = {
   },
 };
 
-function createAxios(options?: Partial<AxiosHttpRequestConfig>) {
+function createAxios(config?: Partial<AxiosHttpRequestConfig>) {
   return new AxiosObject(
     // 深度合并
     merge(
@@ -345,7 +348,7 @@ function createAxios(options?: Partial<AxiosHttpRequestConfig>) {
           withToken: true,
         } as AxiosHttpConfigOptions,
       } as AxiosHttpRequestConfig,
-      options || {},
+      config || {},
     ),
   );
 }

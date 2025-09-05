@@ -53,8 +53,8 @@ type AxiosResultOptions = {
 type AxiosAuthTokenOptions = {
   accessToken: () => string;
   authenticate: () => Promise<void>;
-  formatToken: (token: string) => null | string;
   isRefreshToken: boolean;
+  languageLocal: string;
   refreshToken: () => Promise<string>;
   tokenPrefix: string;
   unauthorizedStatus: number[];
