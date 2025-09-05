@@ -49,6 +49,8 @@
     "vue-router": "catalog:"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
     "@easydarwin/easyplayer": "catalog:",
     "cesium": "catalog:"
   }

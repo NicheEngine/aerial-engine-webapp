@@ -1,4 +1,8 @@
-import type { AxiosInstance, AxiosResponse } from 'axios';
+import type {
+  AxiosInstance,
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+} from 'axios';
 
 import type { AxiosHttpConfigOptions, AxiosHttpRequestConfig } from './types';
 
@@ -68,8 +72,12 @@ function formatRequestDate(params: Record<string, any>) {
 const authTokenHandler = async (axiosObject: AxiosObject, error: any) => {
   const axiosConfig = axiosObject.axiosConfig();
   const { config } = error;
-  const { authenticate, refreshToken, tokenPrefix, isRefreshToken } =
-    axiosConfig.authToken;
+  const {
+    authenticate = () => Promise<void>,
+    refreshToken = () => Promise<string>,
+    tokenPrefix,
+    isRefreshToken,
+  } = axiosConfig?.authToken || {};
   // 判断是否启用了 refreshToken 功能
   // 如果没有启用或者已经是重试请求了，直接跳转到重新登录
   if (!isRefreshToken || config.__isRetryRequest) {
@@ -94,9 +102,11 @@ const authTokenHandler = async (axiosObject: AxiosObject, error: any) => {
   config.__isRetryRequest = true;
 
   try {
-    const newToken = await refreshToken();
+    const newToken = (await refreshToken()) || '';
     // 处理队列中的请求
-    axiosObject.refreshTokenQueue.forEach((callback) => callback(newToken));
+    axiosObject.refreshTokenQueue.forEach((callback) =>
+      callback(newToken as string),
+    );
     axiosObject.refreshTokenQueue = [];
     return axiosObject.request({ ...config });
   } catch (refreshError) {
@@ -117,32 +127,29 @@ const handler: AxiosHandler = {
     response: AxiosResponse<any>,
   ) => {
     const { data: axiosResult, status } = response;
+
     const {
       statusField = 'status',
       dataField = 'data',
       successStatus = 200,
-      resultType = 'body',
     } = config?.result || {};
-    const isNativeResponse =
-      config.options?.isNativeResponse || resultType === 'raw';
+    const isNativeResponse = config.options?.isNativeResponse;
     if (isNativeResponse) {
       return response;
     }
-
-    if (status >= 200 && status < 400) {
-      if (config.result?.resultType === 'body') {
-        return axiosResult;
-      } else if (
-        isFunction(successStatus)
-          ? successStatus(axiosResult[statusField])
-          : axiosResult[statusField] === successStatus
-      ) {
-        return isFunction(dataField)
-          ? dataField(axiosResult)
-          : axiosResult[dataField];
-      }
+    if (status !== 200) {
+      throw Object.assign({}, { config, response });
     }
-    throw Object.assign({}, response, { response });
+    if (
+      isFunction(successStatus)
+        ? successStatus(axiosResult[statusField])
+        : axiosResult[statusField] === successStatus
+    ) {
+      return isFunction(dataField)
+        ? dataField(axiosResult)
+        : axiosResult[dataField];
+    }
+    throw Object.assign({}, { config, response });
   },
 
   beforeRequestHandler: (config: AxiosHttpRequestConfig) => {
@@ -210,17 +217,27 @@ const handler: AxiosHandler = {
   },
 
   doRequestHandler: (config: AxiosHttpRequestConfig) => {
-    const { languageLocal, tokenPrefix, accessToken } = config.authToken;
+    const {
+      languageLocal,
+      tokenPrefix,
+      accessToken = () => '',
+    } = config?.authToken || {};
     const currentToken = accessToken();
     if (currentToken && config?.options?.withToken !== false) {
+      if (!config.headers) {
+        config.headers = {};
+      }
       config.headers.Authorization = tokenPrefix
         ? `${tokenPrefix} ${currentToken}`
         : currentToken;
     }
     if (languageLocal) {
+      if (!config.headers) {
+        config.headers = {};
+      }
       config.headers['Accept-Language'] = languageLocal;
     }
-    return config;
+    return config as InternalAxiosRequestConfig;
   },
 
   doResponseHandler: (
@@ -241,7 +258,11 @@ const handler: AxiosHandler = {
   ) => {
     const axiosConfig = axiosObject.axiosConfig();
     const { config, response } = error;
-    const { unauthorizedStatus = [401] } = axiosConfig.authToken;
+    const { unauthorizedStatus = [401] } = axiosConfig?.authToken || {};
+
+    if (!config || !response) {
+      return Promise.reject(error);
+    }
 
     const status = response?.status || 500;
     if (unauthorizedStatus.includes(status)) {
@@ -249,8 +270,8 @@ const handler: AxiosHandler = {
     }
     // 添加自动重试机制 保险起见 只针对GET请求
     const axiosRetry = new AxiosRetry();
-    const { isRetry = true } = config.httpRetry || {};
-    if (config.method?.toUpperCase() === 'GET' && isRetry) {
+    const { isRetry = true } = axiosConfig.httpRetry || {};
+    if (config?.method?.toUpperCase() === 'GET' && isRetry) {
       return await axiosRetry.retry(axiosInstance, axiosConfig, error);
     }
     if (axios.isCancel(error)) {
@@ -264,7 +285,7 @@ const handler: AxiosHandler = {
       message = $t('ui.fallback.http.requestTimeout');
     }
 
-    const { messageHandler } = axiosConfig.result || {};
+    const { messageHandler = () => {} } = axiosConfig?.result || {};
     if (message && messageHandler) {
       messageHandler(message, error);
       return Promise.reject(error);

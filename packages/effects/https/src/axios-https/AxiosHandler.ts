@@ -1,4 +1,8 @@
-import type { AxiosInstance, AxiosResponse } from 'axios';
+import type {
+  AxiosInstance,
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+} from 'axios';
 
 import type { AxiosHttpRequestConfig, AxiosHttpResult } from './types';
 
@@ -29,7 +33,7 @@ abstract class AxiosHandler {
 
   doRequestHandler?: (
     config: AxiosHttpRequestConfig<any>,
-  ) => AxiosHttpRequestConfig;
+  ) => InternalAxiosRequestConfig<any>;
 
   doResponseHandler?: (
     config: AxiosHttpRequestConfig<any>,

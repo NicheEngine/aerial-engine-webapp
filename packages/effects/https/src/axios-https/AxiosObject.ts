@@ -72,11 +72,11 @@ class AxiosObject {
     this.createAxios(config);
   }
 
-  delete<T = any>(config: AxiosHttpRequestConfig<any>): Promise<T> {
+  delete<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
     return this.request({ ...config, method: 'DELETE' });
   }
 
-  download<T = any>(config: AxiosHttpRequestConfig<any>): Promise<T> {
+  download<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
     const axiosConfig = Object.assign(
       {
         serialize: {
@@ -89,7 +89,7 @@ class AxiosObject {
     return this.request({ ...axiosConfig, method: 'GET' });
   }
 
-  get<T = any>(config: AxiosHttpRequestConfig<any>): Promise<T> {
+  get<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
     return this.request({ ...config, method: 'GET' });
   }
 
@@ -97,15 +97,15 @@ class AxiosObject {
     return this.instance;
   }
 
-  post<T = any>(config: AxiosHttpRequestConfig<any>): Promise<T> {
+  post<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
     return this.request({ ...config, method: 'POST' });
   }
 
-  put<T = any>(config: AxiosHttpRequestConfig<any>): Promise<T> {
+  put<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
     return this.request({ ...config, method: 'PUT' });
   }
 
-  request<T>(config: AxiosHttpRequestConfig<any>): Promise<T> {
+  request<T>(config: AxiosHttpRequestConfig): Promise<T> {
     let axiosConfig: AxiosHttpRequestConfig = cloneDeep(config);
     const axiosHandler = this.config.handler;
 
@@ -125,6 +125,7 @@ class AxiosObject {
 
     const {
       afterRequestErrorHandler,
+      afterResponseErrorHandler,
       beforeRequestHandler,
       beforeResponseHandler,
     } = axiosHandler || {};
@@ -143,8 +144,18 @@ class AxiosObject {
             try {
               const result = beforeResponseHandler(axiosConfig, response);
               resolve(result);
-            } catch (error) {
-              reject(error || new Error('request error!'));
+            } catch (error: any) {
+              if (
+                afterResponseErrorHandler &&
+                isFunction(afterResponseErrorHandler)
+              ) {
+                afterResponseErrorHandler(this, this.instance, error);
+                return;
+              }
+              if (axios.isAxiosError(error)) {
+                throw error.response ? error.response.data : error;
+              }
+              reject(error);
             }
             return;
           }
@@ -174,7 +185,7 @@ class AxiosObject {
   }
 
   // support form-data
-  supportFormData(config: AxiosHttpRequestConfig<any>) {
+  supportFormData(config: AxiosHttpRequestConfig) {
     const headers = config.headers || this.config.headers;
     const contentType = headers?.['Content-Type'] || headers?.['content-type'];
 
@@ -192,10 +203,7 @@ class AxiosObject {
     };
   }
 
-  upload<T = any>(
-    config: AxiosHttpRequestConfig<any>,
-    params: AxiosHttpMultifile,
-  ) {
+  upload<T = any>(config: AxiosHttpRequestConfig, params: AxiosHttpMultifile) {
     const formData = new window.FormData();
     const customFilename = params.name || 'file';
 

@@ -1,6 +1,4 @@
-import type {
-  AxiosHttpRequestConfig,
-} from '@engine/https';
+import type { AxiosHttpRequestConfig } from '@engine/https';
 
 import { useAppConfig } from '@engine/hooks';
 import { createAxios } from '@engine/https';
@@ -83,7 +81,6 @@ function createHttp(config?: Partial<AxiosHttpRequestConfig>) {
     ),
   );
 }
-export default createHttp;
 
 export const defaultHttp = createHttp();
 

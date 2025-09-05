@@ -1,4 +1,4 @@
-import type { InternalAxiosRequestConfig } from 'axios';
+import type { AxiosRequestConfig } from 'axios';
 
 import AxiosHandler from './AxiosHandler';
 
@@ -8,7 +8,7 @@ type AxiosSerializeOptions<T = any> = {
     | 'comma'
     | 'indices'
     | 'repeat'
-    | InternalAxiosRequestConfig<T>['paramsSerializer'];
+    | AxiosRequestConfig<T>['paramsSerializer'];
 };
 
 type AxiosHttpRetryOptions = {
@@ -45,7 +45,6 @@ type AxiosHttpConfigOptions = {
 type AxiosResultOptions = {
   dataField: ((response: any) => any) | string;
   messageHandler?: (message: string, error: any) => void;
-  resultType: 'body' | 'data' | 'raw';
   statusField: string;
   successStatus: ((status: any) => boolean) | number | string;
 };
@@ -60,13 +59,12 @@ type AxiosAuthTokenOptions = {
   unauthorizedStatus: number[];
 };
 
-interface AxiosHttpRequestConfig<T = any>
-  extends InternalAxiosRequestConfig<T> {
+interface AxiosHttpRequestConfig<T = any> extends AxiosRequestConfig<T> {
   handler?: AxiosHandler;
   options?: AxiosHttpConfigOptions;
   serialize?: AxiosSerializeOptions;
   result?: AxiosResultOptions;
-  authToken: AxiosAuthTokenOptions;
+  authToken?: AxiosAuthTokenOptions;
   httpRetry?: AxiosHttpRetryOptions;
 }
 
