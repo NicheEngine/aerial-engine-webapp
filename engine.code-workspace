@@ -113,7 +113,7 @@
       "path": "packages/effects/hooks",
     },
     {
-      "name": "@engine/http",
+      "name": "@engine/https",
       "path": "packages/effects/https",
     },
     {

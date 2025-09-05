@@ -741,6 +741,9 @@ importers:
       '@engine/hooks':
         specifier: workspace:*
         version: link:../../packages/effects/hooks
+      '@engine/https':
+        specifier: workspace:*
+        version: link:../../packages/effects/https
       '@engine/icons':
         specifier: workspace:*
         version: link:../../packages/icons
