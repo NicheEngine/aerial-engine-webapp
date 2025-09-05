@@ -13,8 +13,8 @@
 ```json
 "exports": {
     "./echarts": {
-      "types": "./src/echarts/index.ts",
-      "default": "./src/echarts/index.ts"
+      "types": "./src/echarts/AxiosObject.ts",
+      "default": "./src/echarts/AxiosObject.ts"
     }
   }
 ```

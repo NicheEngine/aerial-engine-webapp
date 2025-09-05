@@ -31,7 +31,7 @@ const localesMap = loadLocalesMapFromDir(
 let loadMessages: LoadMessageFn;
 
 /**
- * Load locale modules
+ * Load locale tests
  * @param modules
  */
 function loadLocalesMap(modules: Record<string, () => Promise<unknown>>) {
@@ -47,9 +47,9 @@ function loadLocalesMap(modules: Record<string, () => Promise<unknown>>) {
 }
 
 /**
- * Load locale modules with directory structure
+ * Load locale tests with directory structure
  * @param regexp - Regular expression to match language and file names
- * @param modules - The modules object containing paths and import functions
+ * @param modules - The tests object containing paths and import functions
  * @returns A map of locales to their corresponding import functions
  */
 function loadLocalesMapFromDir(
@@ -59,7 +59,7 @@ function loadLocalesMapFromDir(
   const localesRaw: Record<Locale, Record<string, () => Promise<unknown>>> = {};
   const localesMap: Record<Locale, ImportLocaleFn> = {};
 
-  // Iterate over the modules to extract language and file names
+  // Iterate over the tests to extract language and file names
   for (const path in modules) {
     const match = path.match(regexp);
     if (match) {

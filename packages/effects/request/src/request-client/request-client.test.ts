@@ -9,7 +9,7 @@ describe('requestClient', () => {
   let requestClient: RequestClient;
 
   beforeEach(() => {
-    mock = new MockAdapter(axios);
+    mock = new MockAdapter(axios as any);
     requestClient = new RequestClient();
   });
 
@@ -92,7 +92,7 @@ describe('requestClient', () => {
 
     mock.onGet('/test/download').reply(200, mockFileContent);
 
-    const res = await requestClient.download('/test/download');
+    const res: any = await requestClient.download('/test/download');
 
     expect(res.data).toBeInstanceOf(Blob);
   });

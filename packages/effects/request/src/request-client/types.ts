@@ -61,8 +61,8 @@ type MakeErrorMessageFn = (message: string, error: any) => void;
 
 interface HttpResponse<T = any> {
   /**
-   * 0 表示成功 其他表示失败
-   * 0 means success, others means fail
+   * 200 表示成功 其他表示失败
+   * 200 means success, others means fail
    */
   code: number;
   data: T;

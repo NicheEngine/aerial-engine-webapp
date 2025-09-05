@@ -24,6 +24,7 @@ const customConfig: Linter.Config[] = [
     ],
     ignores: restrictedImportIgnores,
     rules: {
+      'unicorn/no-useless-promise-resolve-reject': 'off',
       'perfectionist/sort-interfaces': 'off',
       'perfectionist/sort-objects': 'off',
     },

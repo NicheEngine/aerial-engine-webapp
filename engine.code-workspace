@@ -113,6 +113,10 @@
       "path": "packages/effects/hooks",
     },
     {
+      "name": "@engine/http",
+      "path": "packages/effects/https",
+    },
+    {
       "name": "@engine/layouts",
       "path": "packages/effects/layouts",
     },

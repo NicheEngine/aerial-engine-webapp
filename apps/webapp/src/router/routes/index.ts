@@ -4,7 +4,7 @@ import { mergeRouteModules, traverseTreeValues } from '@engine/utils';
 
 import { coreRoutes, fallbackNotFoundRoute } from './core';
 
-const dynamicRouteFiles = import.meta.glob('./modules/**/*.ts', {
+const dynamicRouteFiles = import.meta.glob('./tests/**/*.ts', {
   eager: true,
 });
 

@@ -7,7 +7,7 @@ import { describe, expect, it } from 'vitest';
 import { mergeRouteModules } from '../merge-route-modules';
 
 describe('mergeRouteModules', () => {
-  it('should merge route modules correctly', () => {
+  it('should merge route tests correctly', () => {
     const routeModules: Record<string, RouteModuleType> = {
       './dynamic-routes/about.ts': {
         default: [
@@ -46,7 +46,7 @@ describe('mergeRouteModules', () => {
     expect(mergedRoutes).toEqual(expectedRoutes);
   });
 
-  it('should handle empty modules', () => {
+  it('should handle empty tests', () => {
     const routeModules: Record<string, RouteModuleType> = {};
     const expectedRoutes: RouteRecordRaw[] = [];
 
@@ -54,7 +54,7 @@ describe('mergeRouteModules', () => {
     expect(mergedRoutes).toEqual(expectedRoutes);
   });
 
-  it('should handle modules with no default export', () => {
+  it('should handle tests with no default export', () => {
     const routeModules: Record<string, RouteModuleType> = {
       './dynamic-routes/empty.ts': {
         default: [],

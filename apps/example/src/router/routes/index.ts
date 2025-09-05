@@ -4,7 +4,7 @@ import { mergeRouteModules, traverseTreeValues } from '@engine/utils';
 
 import { coreRoutes, fallbackNotFoundRoute } from './core';
 
-const dynamicRouteFiles = import.meta.glob('./modules/**/*.ts', {
+const dynamicRouteFiles = import.meta.glob('./tests/**/*.ts', {
   eager: true,
 });
 
@@ -38,7 +38,7 @@ const accessRoutes = [...dynamicRoutes, ...staticRoutes];
 const componentKeys: string[] = Object.keys(
   import.meta.glob('../../views/**/*.vue'),
 )
-  .filter((item) => !item.includes('/modules/'))
+  .filter((item) => !item.includes('/tests/'))
   .map((v) => {
     const path = v.replace('../../views/', '/');
     return path.endsWith('.vue') ? path.slice(0, -4) : path;
