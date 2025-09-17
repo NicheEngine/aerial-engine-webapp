@@ -149,15 +149,13 @@ class AxiosObject {
                 afterResponseErrorHandler &&
                 isFunction(afterResponseErrorHandler)
               ) {
-                afterResponseErrorHandler(this, this.instance, error);
-                return;
+                afterResponseErrorHandler(this, this.instance, error)
+                  .then((result: any) => {
+                    resolve(result);
+                  })
+                  .catch(() => {});
               }
-              if (axios.isAxiosError(error)) {
-                throw error.response ? error.response.data : error;
-              }
-              reject(error);
             }
-            return;
           }
           resolve(response as unknown as T);
         })

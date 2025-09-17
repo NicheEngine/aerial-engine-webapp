@@ -72,7 +72,6 @@ function createHttp(config?: Partial<AxiosHttpRequestConfig>) {
         result: {
           dataField: 'data',
           messageHandler,
-          resultType: 'data',
           statusField: 'status',
           successStatus: 200,
         },

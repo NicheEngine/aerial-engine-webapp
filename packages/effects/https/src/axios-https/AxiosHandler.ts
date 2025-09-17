@@ -18,7 +18,7 @@ abstract class AxiosHandler {
     axiosObject: AxiosObject,
     instance: AxiosInstance,
     error: Error,
-  ) => void;
+  ) => Promise<any>;
 
   beforeRequestHandler?: (
     config: AxiosHttpRequestConfig,
