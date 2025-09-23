@@ -1,7 +1,7 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { useUserStore } from './user';
+import { useUserStore } from './index';
 
 describe('useUserStore', () => {
   beforeEach(() => {
@@ -12,7 +12,7 @@ describe('useUserStore', () => {
     const store = useUserStore();
     const userInfo: any = { name: 'Jane Doe', roles: [{ value: 'user' }] };
     store.setUserInfo(userInfo);
-    expect(store.userInfo).toEqual(userInfo);
+    expect(store.context.userInfo).toEqual(userInfo);
   });
 
   // 测试重置用户信息时的行为
@@ -21,17 +21,17 @@ describe('useUserStore', () => {
     store.setUserInfo({
       roles: [{ roleName: 'User', value: 'user' }],
     } as any);
-    expect(store.userInfo).not.toBeNull();
-    expect(store.userRoles.length).toBeGreaterThan(0);
+    expect(store.context.userInfo).not.toBeNull();
+    expect(store.context.userRoles.length).toBeGreaterThan(0);
 
     store.setUserInfo(null as any);
-    expect(store.userInfo).toBeNull();
-    expect(store.userRoles).toEqual([]);
+    expect(store.context.userInfo).toBeNull();
+    expect(store.context.userRoles).toEqual([]);
   });
 
   // 测试在没有用户角色时返回空数组
   it('returns an empty array for userRoles if not set', () => {
     const store = useUserStore();
-    expect(store.userRoles).toEqual([]);
+    expect(store.context.userRoles).toEqual([]);
   });
 });

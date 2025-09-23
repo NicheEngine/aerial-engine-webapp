@@ -71,10 +71,10 @@ const routes: RouteRecordRaw[] = [
           },
           {
             name: 'FormApiExample',
-            path: '/examples/form/api',
+            path: '/examples/form/apis',
             component: () => import('#/views/examples/form/api.vue'),
             meta: {
-              title: $t('examples.form.api'),
+              title: $t('examples.form.apis'),
             },
           },
           {

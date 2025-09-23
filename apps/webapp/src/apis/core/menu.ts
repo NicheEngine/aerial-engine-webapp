@@ -1,6 +1,6 @@
 import type { RouteRecordStringComponent } from '@engine/types';
 
-import { requestClient } from '#/api/request';
+import { requestClient } from '#/apis/request';
 
 /**
  * 获取用户所有菜单

@@ -50,7 +50,7 @@ function getDefaultState(): EngineFormProps {
 }
 
 export class FormApi {
-  // private api: Pick<EngineFormProps, 'handleReset' | 'handleSubmit'>;
+  // private apis: Pick<EngineFormProps, 'handleReset' | 'handleSubmit'>;
   public form = {} as FormActions;
   isMounted = false;
 

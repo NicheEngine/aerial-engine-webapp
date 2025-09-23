@@ -42,7 +42,7 @@ export async function typescript(): Promise<Linter.Config[]> {
             'ts-nocheck': 'allow-with-description',
           },
         ],
-
+        '@typescript-eslint/prefer-literal-enum-member': 'off',
         // '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
         '@typescript-eslint/consistent-type-definitions': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',

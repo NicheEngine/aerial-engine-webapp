@@ -1,5 +1,5 @@
-import { defaultHttp } from '#/api/axios-https';
-import { baseRequestClient, requestClient } from '#/api/request';
+import { defaultHttp } from '#/apis/axios-https';
+import { baseRequestClient, requestClient } from '#/apis/request';
 
 export namespace AuthApi {
   /** 登录接口参数 */
@@ -23,9 +23,8 @@ export namespace AuthApi {
  * 登录
  */
 export async function loginApi(data: AuthApi.LoginParams) {
-  // return requestClient.post<AuthApi.LoginResult>('/auth/login', data);
   return await defaultHttp.post<AuthApi.LoginParams>({
-    url: '/aerial/v1.0.0/login/password',
+    url: '/login/password',
     data,
   });
 }

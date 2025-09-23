@@ -4,6 +4,20 @@
   "compilerOptions": {
     "types": ["@engine-core/typings/vue-router"]
   },
-  "include": ["src"],
+   "include": [
+    "src",
+    "*.ts",
+    "*.tsx",
+    "*.vue",
+    "*.d.ts",
+    "src/*.ts",
+    "src/*.tsx",
+    "src/*.vue",
+    "src/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
+  ],
   "exclude": ["node_modules"]
 }

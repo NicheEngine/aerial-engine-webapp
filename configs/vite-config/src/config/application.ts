@@ -106,7 +106,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
           clientFiles: [
             './index.html',
             './src/bootstrap.ts',
-            './src/{views,layouts,router,store,api,adapter}/*',
+            './src/{views,layouts,router,store,apis,adapter}/*',
           ],
         },
       },
@@ -134,7 +134,7 @@ function createCssOptions(injectGlobalScss = true): CSSOptions {
               }
               return content;
             },
-            // api: 'modern',
+            // apis: 'modern',
             importers: [new NodePackageImporter()],
           },
         }

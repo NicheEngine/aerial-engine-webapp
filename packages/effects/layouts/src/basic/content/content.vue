@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import type { Store } from 'pinia';
+import type { TabbarStore } from 'tabbar-store';
+
 import type { VNode } from 'vue';
 import type {
   RouteLocationNormalizedLoaded,
@@ -9,13 +12,19 @@ import { computed } from 'vue';
 import { RouterView } from 'vue-router';
 
 import { preferences, usePreferences } from '@engine/preferences';
-import { getTabKey, storeToRefs, useTabbarStore } from '@engine/stores';
+
+import { getTabKey, storeToRefs, useTabbarStore } from 'engine-store';
 
 import { IFrameRouterView } from '../../iframe';
 
 defineOptions({ name: 'LayoutContent' });
 
-const tabbarStore = useTabbarStore();
+const tabbarStore: Store<
+  string,
+  Pick<TabbarStore, never>,
+  Pick<TabbarStore, never>,
+  Pick<TabbarStore, keyof TabbarStore>
+> = useTabbarStore();
 const { keepAlive } = usePreferences();
 
 const { getCachedTabs, getExcludeCachedTabs, renderRouteView } =

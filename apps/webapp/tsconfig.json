@@ -8,5 +8,19 @@
     }
   },
   "references": [{ "path": "./tsconfig.node.json" }],
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src",
+    "*.ts",
+    "*.tsx",
+    "*.vue",
+    "*.d.ts",
+    "src/*.ts",
+    "src/*.tsx",
+    "src/*.vue",
+    "src/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
+  ]
 }

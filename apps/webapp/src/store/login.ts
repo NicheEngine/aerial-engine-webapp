@@ -10,7 +10,7 @@ import { resetAllStores, useAccessStore, useUserStore } from '@engine/stores';
 import { notification } from 'ant-design-vue';
 import { defineStore } from 'pinia';
 
-import { getAccessCodesApi, getUserInfoApi, loginApi, logoutApi } from '#/api';
+import { getAccessCodesApi, getUserInfoApi, loginApi, logoutApi } from '#/apis';
 import { $t } from '#/locales';
 
 export const useAuthStore = defineStore('auth', () => {

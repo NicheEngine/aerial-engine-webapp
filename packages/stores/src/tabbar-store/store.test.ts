@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { createPinia, setActivePinia } from 'pinia';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { useTabbarStore } from './tabbar';
+import { newTabbarStore } from './index';
 
 describe('useAccessStore', () => {
   const router = createRouter({
@@ -18,7 +18,7 @@ describe('useAccessStore', () => {
   });
 
   it('adds a new tab', () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     const tab: any = {
       fullPath: '/home',
       meta: {},
@@ -27,12 +27,12 @@ describe('useAccessStore', () => {
       path: '/home',
     };
     const addNewTab = store.addTab(tab);
-    expect(store.tabs.length).toBe(1);
-    expect(store.tabs[0]).toEqual(addNewTab);
+    expect(store.context.tabs.length).toBe(1);
+    expect(store.context.tabs[0]).toEqual(addNewTab);
   });
 
   it('adds a new tab if it does not exist', () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     const newTab: any = {
       fullPath: '/new',
       meta: {},
@@ -40,11 +40,11 @@ describe('useAccessStore', () => {
       path: '/new',
     };
     const addNewTab = store.addTab(newTab);
-    expect(store.tabs).toContainEqual(addNewTab);
+    expect(store.context.tabs).toContainEqual(addNewTab);
   });
 
   it('updates an existing tab instead of adding a new one', () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     const initialTab: any = {
       fullPath: '/existing',
       meta: {
@@ -57,12 +57,12 @@ describe('useAccessStore', () => {
     store.addTab(initialTab);
     const updatedTab = { ...initialTab, query: { id: '1' } };
     store.addTab(updatedTab);
-    expect(store.tabs.length).toBe(1);
-    expect(store.tabs[0]?.query).toEqual({ id: '1' });
+    expect(store.context.tabs.length).toBe(1);
+    expect(store.context.tabs[0]?.query).toEqual({ id: '1' });
   });
 
   it('closes all tabs', async () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     store.addTab({
       fullPath: '/home',
       meta: {},
@@ -73,44 +73,44 @@ describe('useAccessStore', () => {
 
     await store.closeAllTabs(router);
 
-    expect(store.tabs.length).toBe(1);
+    expect(store.context.tabs.length).toBe(1);
   });
 
   it('closes a non-affix tab', () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     const tab: any = {
       fullPath: '/closable',
       meta: {},
       name: 'Closable',
       path: '/closable',
     };
-    store.tabs.push(tab);
+    store.context.tabs.push(tab);
     store._close(tab);
-    expect(store.tabs.length).toBe(0);
+    expect(store.context.tabs.length).toBe(0);
   });
 
   it('does not close an affix tab', () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     const affixTab: any = {
       fullPath: '/affix',
       meta: { affixTab: true },
       name: 'Affix',
       path: '/affix',
     };
-    store.tabs.push(affixTab);
+    store.context.tabs.push(affixTab);
     store._close(affixTab);
-    expect(store.tabs.length).toBe(1); // Affix tab should not be closed
+    expect(store.context.tabs.length).toBe(1); // Affix tab should not be closed
   });
 
   it('returns all cache tabs', () => {
-    const store = useTabbarStore();
-    store.cachedTabs.add('Home');
-    store.cachedTabs.add('About');
-    expect(store.getCachedTabs).toEqual(['Home', 'About']);
+    const store = newTabbarStore();
+    store.context.cachedTabs.add('Home');
+    store.context.cachedTabs.add('About');
+    expect(store.getCachedTabs()).toEqual(['Home', 'About']);
   });
 
   it('returns all tabs, including affix tabs', () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     const normalTab: any = {
       fullPath: '/normal',
       meta: {},
@@ -123,14 +123,13 @@ describe('useAccessStore', () => {
       name: 'Affix',
       path: '/affix',
     };
-    store.tabs.push(normalTab);
-    store.affixTabs.push(affixTab);
-    expect(store.getTabs).toContainEqual(normalTab);
-    expect(store.affixTabs).toContainEqual(affixTab);
+    store.context.tabs.push(normalTab, affixTab);
+    expect(store.getTabs()).toContainEqual(normalTab);
+    expect(store.affixTabs()).toContainEqual(affixTab);
   });
 
   it('navigates to a specific tab', async () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     const tab: any = { meta: {}, name: 'Dashboard', path: '/dashboard' };
 
     await store._goToTab(tab, router);
@@ -143,7 +142,7 @@ describe('useAccessStore', () => {
   });
 
   it('closes multiple tabs by paths', async () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     store.addTab({
       fullPath: '/home',
       meta: {},
@@ -165,12 +164,12 @@ describe('useAccessStore', () => {
 
     await store._bulkCloseByKeys(['/home', '/contact']);
 
-    expect(store.tabs).toHaveLength(1);
-    expect(store.tabs[0]?.name).toBe('About');
+    expect(store.context.tabs).toHaveLength(1);
+    expect(store.context.tabs[0]?.name).toBe('About');
   });
 
   it('closes all tabs to the left of the specified tab', async () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     store.addTab({
       fullPath: '/home',
       meta: {},
@@ -192,12 +191,12 @@ describe('useAccessStore', () => {
     const addTargetTab = store.addTab(targetTab);
     await store.closeLeftTabs(addTargetTab);
 
-    expect(store.tabs).toHaveLength(1);
-    expect(store.tabs[0]?.name).toBe('Contact');
+    expect(store.context.tabs).toHaveLength(1);
+    expect(store.context.tabs[0]?.name).toBe('Contact');
   });
 
   it('closes all tabs except the specified tab', async () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     store.addTab({
       fullPath: '/home',
       meta: {},
@@ -220,12 +219,12 @@ describe('useAccessStore', () => {
 
     await store.closeOtherTabs(addTargetTab);
 
-    expect(store.tabs).toHaveLength(1);
-    expect(store.tabs[0]?.name).toBe('About');
+    expect(store.context.tabs).toHaveLength(1);
+    expect(store.context.tabs[0]?.name).toBe('About');
   });
 
   it('closes all tabs to the right of the specified tab', async () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     const targetTab: any = {
       fullPath: '/home',
       meta: {},
@@ -248,12 +247,12 @@ describe('useAccessStore', () => {
 
     await store.closeRightTabs(addTargetTab);
 
-    expect(store.tabs).toHaveLength(1);
-    expect(store.tabs[0]?.name).toBe('Home');
+    expect(store.context.tabs).toHaveLength(1);
+    expect(store.context.tabs[0]?.name).toBe('Home');
   });
 
   it('closes the tab with the specified key', async () => {
-    const store = useTabbarStore();
+    const store = newTabbarStore();
     const keyToClose = '/about';
     store.addTab({
       fullPath: '/home',
@@ -276,25 +275,24 @@ describe('useAccessStore', () => {
 
     await store.closeTabByKey(keyToClose, router);
 
-    expect(store.tabs).toHaveLength(2);
+    expect(store.context.tabs).toHaveLength(2);
     expect(
-      store.tabs.find((tab) => tab.fullPath === keyToClose),
+      store.context.tabs.find((tab) => tab.fullPath === keyToClose),
     ).toBeUndefined();
   });
 
   it('refreshes the current tab', async () => {
-    const store = useTabbarStore();
-    const currentTab: any = {
+    const store = newTabbarStore();
+    router.currentRoute.value = {
       fullPath: '/dashboard',
       meta: { name: 'Dashboard' },
       name: 'Dashboard',
       path: '/dashboard',
-    };
-    router.currentRoute.value = currentTab;
+    } as any;
 
     await store.refresh(router);
 
-    expect(store.excludeCachedTabs.has('Dashboard')).toBe(false);
-    expect(store.renderRouteView).toBe(true);
+    expect(store.context.excludeCachedTabs.has('Dashboard')).toBe(false);
+    expect(store.context.renderRouteView).toBe(true);
   });
 });
