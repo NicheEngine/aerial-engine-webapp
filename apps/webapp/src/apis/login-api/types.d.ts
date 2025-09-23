@@ -1,5 +1,4 @@
 declare module 'login-api' {
-
   export * from './api';
   export * from './index';
 
