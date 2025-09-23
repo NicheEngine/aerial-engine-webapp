@@ -24,7 +24,7 @@ export namespace AuthApi {
  */
 export async function loginApi(data: AuthApi.LoginParams) {
   return defaultHttp.post<AuthApi.LoginResult>({
-    url: '/login/password',
+    url: '/login/v1.0.0/password',
     data,
   });
 }

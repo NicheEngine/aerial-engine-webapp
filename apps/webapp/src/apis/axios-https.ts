@@ -82,7 +82,7 @@ function createHttp(config?: Partial<AxiosHttpRequestConfig>) {
 export const defaultHttp = createHttp({
   options: {
     apiUrl: '/api',
-    urlPrefix: '/aerial/v1.0.0',
+    urlPrefix: '/aerial',
   },
 });
 
@@ -90,6 +90,6 @@ export const defaultHttp = createHttp({
 export const serverHttp = createAxios({
   options: {
     apiUrl: '/server',
-    urlPrefix: '/aerial/v1.0.0',
+    urlPrefix: '/aerial',
   },
 });
