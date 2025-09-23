@@ -1,10 +1,11 @@
 import type { Store, StoreDefinition } from 'pinia';
-import type { TabbarContext, TabbarStore } from 'tabbar-store';
 
 import type { ComputedRef } from 'vue';
 import type { Router, RouteRecordNormalized } from 'vue-router';
 
 import type { TabDefinition } from '@engine-core/typings';
+
+import type { TabbarContext, TabbarStore } from './types';
 
 import { reactive, toRaw } from 'vue';
 
@@ -635,4 +636,4 @@ export function newTabbarStore(): Store<
 
 export * from './helper';
 
-export default tabbarStore;
+export * from './types';

@@ -1,5 +1,6 @@
 import type { Store, StoreDefinition } from 'pinia';
-import type { UserContext, UserInfo, UserStore } from 'user-store';
+
+import type { UserContext, UserInfo, UserStore } from './types';
 
 import { reactive } from 'vue';
 
@@ -73,7 +74,7 @@ export function useUserStore(): Store<
   return userStore(store);
 }
 
-export function createUserStore(): Store<
+export function newUserStore(): Store<
   string,
   Pick<UserStore, never>,
   Pick<UserStore, never>,
@@ -81,5 +82,7 @@ export function createUserStore(): Store<
 > {
   return userStore();
 }
+
+export * from './types';
 
 export default userStore;

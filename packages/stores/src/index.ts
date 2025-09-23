@@ -1,7 +1,8 @@
-import type { StoreOptions } from 'engine-store';
 import type { Pinia } from 'pinia';
 
 import type { App } from 'vue';
+
+import type { StoreOptions } from './types';
 
 import { createPinia } from 'pinia';
 import SecureLS from 'secure-ls';
@@ -55,5 +56,7 @@ export default store;
 
 export * from './access-store';
 export * from './tabbar-store';
+export * from './types';
 export * from './user-store';
 export { defineStore, storeToRefs } from 'pinia';
+export type { Store, StoreGeneric } from 'pinia';

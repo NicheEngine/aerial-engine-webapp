@@ -1,5 +1,4 @@
 import type {
-  AxiosError,
   AxiosInstance,
   AxiosResponse,
   InternalAxiosRequestConfig,
@@ -159,18 +158,16 @@ class AxiosObject {
           }
           resolve(response as unknown as T);
         })
-        .catch((error: AxiosError | Error) => {
+        .catch((error: any) => {
           if (
             afterRequestErrorHandler &&
             isFunction(afterRequestErrorHandler)
           ) {
-            reject(afterRequestErrorHandler(error, axiosConfig));
-            return;
+            afterRequestErrorHandler(this, error).catch(() => {});
+            resolve(error);
+          } else {
+            reject(error);
           }
-          if (axios.isAxiosError(error)) {
-            throw error.response ? error.response.data : error;
-          }
-          reject(error);
         });
     });
   }

@@ -23,7 +23,7 @@ export namespace AuthApi {
  * 登录
  */
 export async function loginApi(data: AuthApi.LoginParams) {
-  return await defaultHttp.post<AuthApi.LoginParams>({
+  return defaultHttp.post<AuthApi.LoginResult>({
     url: '/login/password',
     data,
   });

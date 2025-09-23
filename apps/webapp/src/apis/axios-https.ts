@@ -21,7 +21,7 @@ async function authenticate() {
   accessStore.setAccessToken(null);
   if (
     preferences.app.loginExpiredMode === 'modal' &&
-    accessStore.isAccessChecked
+    accessStore.context.isAccessChecked
   ) {
     accessStore.setLoginExpired(true);
   } else {
@@ -39,7 +39,7 @@ async function refreshToken() {
 
 function accessToken() {
   const accessStore = useAccessStore();
-  return accessStore.accessToken;
+  return accessStore.context.accessToken;
 }
 
 function messageHandler(resultMessage: string, error: any) {

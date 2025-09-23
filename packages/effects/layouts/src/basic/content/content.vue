@@ -1,34 +1,28 @@
 <script lang="ts" setup>
-import type { Store } from 'pinia';
-import type { TabbarStore } from 'tabbar-store';
-
 import type { VNode } from 'vue';
 import type {
   RouteLocationNormalizedLoaded,
   RouteLocationNormalizedLoadedGeneric,
 } from 'vue-router';
 
+import type { StoreGeneric } from '@engine/stores';
+
 import { computed } from 'vue';
 import { RouterView } from 'vue-router';
 
 import { preferences, usePreferences } from '@engine/preferences';
-
-import { getTabKey, storeToRefs, useTabbarStore } from 'engine-store';
+import { getTabKey, storeToRefs, useTabbarStore } from '@engine/stores';
 
 import { IFrameRouterView } from '../../iframe';
 
 defineOptions({ name: 'LayoutContent' });
 
-const tabbarStore: Store<
-  string,
-  Pick<TabbarStore, never>,
-  Pick<TabbarStore, never>,
-  Pick<TabbarStore, keyof TabbarStore>
-> = useTabbarStore();
+const tabbarStore = useTabbarStore();
 const { keepAlive } = usePreferences();
 
-const { getCachedTabs, getExcludeCachedTabs, renderRouteView } =
-  storeToRefs(tabbarStore);
+const { getCachedTabs, getExcludeCachedTabs, renderRouteView } = storeToRefs(
+  tabbarStore as StoreGeneric,
+);
 
 /**
  * 是否使用动画

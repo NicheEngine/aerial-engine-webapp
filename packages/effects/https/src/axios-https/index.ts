@@ -15,8 +15,6 @@ import {
   merge,
 } from '@engine/utils';
 
-import axios from 'axios';
-
 import AxiosHandler from './AxiosHandler';
 import AxiosObject from './AxiosObject';
 import AxiosRetry from './AxiosRetry';
@@ -251,31 +249,19 @@ const handler: AxiosHandler = {
     return response;
   },
 
-  afterResponseErrorHandler: async (
-    axiosObject: AxiosObject,
-    axiosInstance: AxiosInstance,
-    error: any,
-  ) => {
-    const axiosConfig = axiosObject.axiosConfig();
+  afterRequestErrorHandler: async (axiosObject: AxiosObject, error: any) => {
     const { config, response } = error;
-    const { unauthorizedStatus = [401] } = axiosConfig?.authToken || {};
+    const { unauthorizedStatus = [401] } = config?.authToken || {};
 
     if (!config || !response) {
       return Promise.reject(error);
     }
 
+    const { messageHandler = () => {} } = config?.result || {};
+
     const status = response?.status || 500;
     if (unauthorizedStatus.includes(status)) {
       return await authTokenHandler(axiosObject, error);
-    }
-    // 添加自动重试机制 保险起见 只针对GET请求
-    const axiosRetry = new AxiosRetry();
-    const { isRetry = true } = axiosConfig.httpRetry || {};
-    if (config?.method?.toUpperCase() === 'GET' && isRetry) {
-      return await axiosRetry.retry(axiosInstance, axiosConfig, error);
-    }
-    if (axios.isCancel(error)) {
-      return Promise.reject(error);
     }
     const messageError: string = error?.toString?.() ?? '';
     let message = '';
@@ -285,7 +271,6 @@ const handler: AxiosHandler = {
       message = $t('ui.fallback.http.requestTimeout');
     }
 
-    const { messageHandler = () => {} } = axiosConfig?.result || {};
     if (message && messageHandler) {
       messageHandler(message, error);
       return Promise.reject(error);
@@ -316,6 +301,38 @@ const handler: AxiosHandler = {
         message = $t('ui.fallback.http.internalServerError');
       }
     }
+    if (message && messageHandler) {
+      messageHandler(message, error);
+    }
+    return Promise.reject(error);
+  },
+
+  afterResponseErrorHandler: async (
+    axiosObject: AxiosObject,
+    axiosInstance: AxiosInstance,
+    error: any,
+  ) => {
+    const axiosConfig = axiosObject.axiosConfig();
+    const { config, response } = error;
+    const { unauthorizedStatus = [401] } = axiosConfig?.authToken || {};
+
+    if (!config || !response) {
+      return Promise.reject(error);
+    }
+
+    const { messageHandler = () => {} } = axiosConfig?.result || {};
+
+    const status = response?.status || 500;
+    if (unauthorizedStatus.includes(status)) {
+      return await authTokenHandler(axiosObject, error);
+    }
+    // 添加自动重试机制 保险起见 只针对GET请求
+    const axiosRetry = new AxiosRetry();
+    const { isRetry = true } = axiosConfig.httpRetry || {};
+    if (config?.method?.toUpperCase() === 'GET' && isRetry) {
+      return await axiosRetry.retry(axiosInstance, axiosConfig, error);
+    }
+    const message = response?.message || '';
     if (message && messageHandler) {
       messageHandler(message, error);
     }

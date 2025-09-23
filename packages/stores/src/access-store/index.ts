@@ -1,9 +1,10 @@
-import type { AccessContext, AccessStore, AccessToken } from 'access-store';
 import type { Store, StoreDefinition } from 'pinia';
 
 import type { RouteRecordRaw } from 'vue-router';
 
 import type { MenuRecordRaw } from '@engine-core/typings';
+
+import type { AccessContext, AccessStore, AccessToken } from './types';
 
 import { reactive } from 'vue';
 
@@ -144,7 +145,7 @@ export function useAccessStore(): Store<
   return accessStore(store);
 }
 
-export function createAccessStore(): Store<
+export function newAccessStore(): Store<
   string,
   Pick<AccessStore, never>,
   Pick<AccessStore, never>,
@@ -153,4 +154,4 @@ export function createAccessStore(): Store<
   return accessStore();
 }
 
-export default accessStore;
+export * from './types';

@@ -10,14 +10,14 @@ import AxiosObject from './AxiosObject';
 
 abstract class AxiosHandler {
   afterRequestErrorHandler?: (
-    error: Error,
-    config: AxiosHttpRequestConfig,
+    axiosObject: AxiosObject,
+    error: any,
   ) => Promise<any>;
 
   afterResponseErrorHandler?: (
     axiosObject: AxiosObject,
     instance: AxiosInstance,
-    error: Error,
+    error: any,
   ) => Promise<any>;
 
   beforeRequestHandler?: (
@@ -32,8 +32,8 @@ abstract class AxiosHandler {
   doRequestErrorHandler?: (error: Error) => void;
 
   doRequestHandler?: (
-    config: AxiosHttpRequestConfig<any>,
-  ) => InternalAxiosRequestConfig<any>;
+    config: AxiosHttpRequestConfig,
+  ) => InternalAxiosRequestConfig;
 
   doResponseHandler?: (
     config: AxiosHttpRequestConfig<any>,

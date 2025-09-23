@@ -1,15 +1,15 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { useAccessStore } from './index';
+import { newAccessStore } from './index';
 
-describe('useAccessStore', () => {
+describe('newAccessStore', () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
 
   it('updates accessMenus state', () => {
-    const store = useAccessStore();
+    const store = newAccessStore();
     expect(store.context.accessMenus).toEqual([]);
     store.setAccessMenus([{ name: 'Dashboard', path: '/dashboard' }]);
     expect(store.context.accessMenus).toEqual([
@@ -18,28 +18,28 @@ describe('useAccessStore', () => {
   });
 
   it('updates accessToken state correctly', () => {
-    const store = useAccessStore();
+    const store = newAccessStore();
     expect(store.context.accessToken).toBeNull(); // 初始状态
     store.setAccessToken('abc123');
     expect(store.context.accessToken).toBe('abc123');
   });
 
   it('returns the correct accessToken', () => {
-    const store = useAccessStore();
+    const store = newAccessStore();
     store.setAccessToken('xyz789');
     expect(store.context.accessToken).toBe('xyz789');
   });
 
   // 测试设置空的访问菜单列表
   it('handles empty accessMenus correctly', () => {
-    const store = useAccessStore();
+    const store = newAccessStore();
     store.setAccessMenus([]);
     expect(store.context.accessMenus).toEqual([]);
   });
 
   // 测试设置空的访问路由列表
   it('handles empty accessRoutes correctly', () => {
-    const store = useAccessStore();
+    const store = newAccessStore();
     store.setAccessRoutes([]);
     expect(store.context.accessRoutes).toEqual([]);
   });
