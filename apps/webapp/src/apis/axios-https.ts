@@ -57,9 +57,6 @@ function createHttp(config?: Partial<AxiosHttpRequestConfig>) {
     merge(
       {
         baseURL: apiURL,
-        options: {
-          apiUrl: apiURL,
-        },
         authToken: {
           authenticate,
           accessToken,
@@ -70,6 +67,7 @@ function createHttp(config?: Partial<AxiosHttpRequestConfig>) {
           languageLocal: preferences.app.locale,
         },
         result: {
+          errorLog: true,
           dataField: 'data',
           messageHandler,
           statusField: 'status',
@@ -83,8 +81,8 @@ function createHttp(config?: Partial<AxiosHttpRequestConfig>) {
 
 export const defaultHttp = createHttp({
   options: {
-    apiUrl: '/apis',
-    urlPrefix: '/aerial/v1.0.0/',
+    apiUrl: '/api',
+    urlPrefix: '/aerial/v1.0.0',
   },
 });
 
@@ -92,6 +90,6 @@ export const defaultHttp = createHttp({
 export const serverHttp = createAxios({
   options: {
     apiUrl: '/server',
-    urlPrefix: '',
+    urlPrefix: '/aerial/v1.0.0',
   },
 });

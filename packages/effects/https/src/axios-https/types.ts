@@ -44,6 +44,7 @@ type AxiosHttpConfigOptions = {
 
 type AxiosResultOptions = {
   dataField: ((response: any) => any) | string;
+  errorLog: boolean;
   messageHandler?: (message: string, error: any) => void;
   statusField: string;
   successStatus: ((status: any) => boolean) | number | string;

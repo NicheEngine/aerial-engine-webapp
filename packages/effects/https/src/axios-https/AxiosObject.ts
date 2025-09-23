@@ -119,7 +119,7 @@ class AxiosObject {
       ...axiosConfig,
       ...(axiosConfig.paramsSerializer
         ? { paramsSerializer: serializeParams(config.paramsSerializer) }
-        : {}),
+        : { paramsSerializer: this.config.paramsSerializer }),
     };
 
     const {
@@ -128,8 +128,9 @@ class AxiosObject {
       beforeRequestHandler,
       beforeResponseHandler,
     } = axiosHandler || {};
+
     if (beforeRequestHandler && isFunction(beforeRequestHandler)) {
-      axiosConfig = beforeRequestHandler(config);
+      axiosConfig = beforeRequestHandler(axiosConfig);
     }
     axiosConfig.options = assignOptions;
 

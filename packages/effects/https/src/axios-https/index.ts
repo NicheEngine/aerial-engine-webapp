@@ -168,6 +168,7 @@ const handler: AxiosHandler = {
     if (apiUrl && isString(apiUrl)) {
       config.url = `${apiUrl}${config.url}`;
     }
+
     const params = config.params || {};
     const data = config.data || false;
     formatDate && data && !isString(data) && formatRequestDate(data);
@@ -376,8 +377,6 @@ function createAxios(config?: Partial<AxiosHttpRequestConfig>) {
           joinParamsToUrl: false,
           // 格式化提交参数时间
           formatDate: true,
-          // 接口地址
-          apiUrl: import.meta.env.BASE_URL,
           //  是否加入时间戳
           joinTime: true,
           // 忽略重复请求
