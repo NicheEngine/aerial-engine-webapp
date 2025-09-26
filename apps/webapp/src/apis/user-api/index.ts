@@ -1,9 +1,11 @@
+import type { PageResult } from 'rest-api';
 import type { UserFilter, UserModel } from 'user-api';
 
-import { defaultHttp } from '../axios-https';
+import { defaultHttp } from '#/apis/https';
+
 import Api from './api';
 
-export const UserApi = {
+export const userApi = {
   async createUser(userModel: UserModel): Promise<UserModel> {
     return defaultHttp.post<UserModel>({
       url: Api.create,
@@ -21,8 +23,8 @@ export const UserApi = {
       url: Api.queryId(id),
     });
   },
-  async queryUserByFilter(filter: UserFilter): Promise<UserModel> {
-    return defaultHttp.post<UserModel>({
+  async queryUserByFilter(filter: UserFilter): Promise<PageResult<UserModel>> {
+    return defaultHttp.post<PageResult<UserModel>>({
       url: Api.queryFilter,
       data: filter,
     });
@@ -40,4 +42,4 @@ export const UserApi = {
   },
 };
 
-export default UserApi;
+export default userApi;

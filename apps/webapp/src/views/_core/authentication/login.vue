@@ -1,73 +1,76 @@
 <script lang="ts" setup>
 import type { EngineFormSchema } from '@engine/common-ui';
-import type { BasicOption } from '@engine/types';
 
 import { computed, markRaw } from 'vue';
 
 import { AuthenticationLogin, SliderCaptcha, z } from '@engine/common-ui';
 import { $t } from '@engine/locales';
 
-import { useAuthStore } from '#/store';
+import { useAuthHook } from '#/hooks/auth-hook';
 
 defineOptions({ name: 'Login' });
 
-const authStore = useAuthStore();
+const authHook = useAuthHook();
 
-const MOCK_USER_OPTIONS: BasicOption[] = [
-  {
-    label: 'Super',
-    value: 'engine',
-  },
-  {
-    label: 'Admin',
-    value: 'admin',
-  },
-  {
-    label: 'User',
-    value: 'jack',
-  },
-];
+// const MOCK_USER_OPTIONS: BasicOption[] = [
+//   {
+//     label: 'Super',
+//     value: 'engine',
+//   },
+//   {
+//     label: 'Admin',
+//     value: 'admin',
+//   },
+//   {
+//     label: 'User',
+//     value: 'jack',
+//   },
+// ];
 
 const formSchema = computed((): EngineFormSchema[] => {
   return [
-    {
-      component: 'EngineSelect',
-      componentProps: {
-        options: MOCK_USER_OPTIONS,
-        placeholder: $t('authentication.selectAccount'),
-      },
-      fieldName: 'selectAccount',
-      label: $t('authentication.selectAccount'),
-      rules: z
-        .string()
-        .min(1, { message: $t('authentication.selectAccount') })
-        .optional()
-        .default('engine'),
-    },
+    // {
+    //   component: 'EngineSelect',
+    //   componentProps: {
+    //     options: MOCK_USER_OPTIONS,
+    //     placeholder: $t('authentication.selectAccount'),
+    //   },
+    //   fieldName: 'selectAccount',
+    //   label: $t('authentication.selectAccount'),
+    //   rules: z
+    //     .string()
+    //     .min(1, { message: $t('authentication.selectAccount') })
+    //     .optional()
+    //     .default('engine'),
+    // },
     {
       component: 'EngineInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
       },
-      dependencies: {
-        trigger(values, form) {
-          if (values.selectAccount) {
-            const findUser = MOCK_USER_OPTIONS.find(
-              (item) => item.value === values.selectAccount,
-            );
-            if (findUser) {
-              form.setValues({
-                password: '123456',
-                username: findUser.value,
-              });
-            }
-          }
-        },
-        triggerFields: ['selectAccount'],
-      },
+      // dependencies: {
+      //   trigger(values, form) {
+      //     if (values.selectAccount) {
+      //       const findUser = MOCK_USER_OPTIONS.find(
+      //         (item) => item.value === values.selectAccount,
+      //       );
+      //       if (findUser) {
+      //         form.setValues({
+      //           password: '123456',
+      //           username: findUser.value,
+      //         });
+      //       }
+      //     }
+      //   },
+      //   triggerFields: ['selectAccount'],
+      // },
       fieldName: 'username',
       label: $t('authentication.username'),
-      rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
+      rules: z
+        .string()
+        .min(1, { message: $t('authentication.usernameTip') })
+        .optional()
+        .default('engine'),
     },
     {
       component: 'EngineInputPassword',
@@ -76,7 +79,11 @@ const formSchema = computed((): EngineFormSchema[] => {
       },
       fieldName: 'password',
       label: $t('authentication.password'),
-      rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
+      rules: z
+        .string()
+        .min(1, { message: $t('authentication.passwordTip') })
+        .optional()
+        .default('123456'),
     },
     {
       component: markRaw(SliderCaptcha),
@@ -92,7 +99,7 @@ const formSchema = computed((): EngineFormSchema[] => {
 <template>
   <AuthenticationLogin
     :form-schema="formSchema"
-    :loading="authStore.loginLoading"
-    @submit="authStore.authLogin"
+    :loading="authHook.loginLoading.value"
+    @submit="authHook.loginHook"
   />
 </template>

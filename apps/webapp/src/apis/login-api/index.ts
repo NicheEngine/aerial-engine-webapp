@@ -1,25 +1,27 @@
-import type { PasswordBody, TokenBody } from 'login-api';
+import type { LoginResult, PasswordBody, TokenBody } from 'login-api';
 import type { UserModel } from 'user-api';
 
-import { defaultHttp } from '../axios-https';
+import { defaultHttp } from '../https';
 import Api from './api';
 
-export const LoginApi = {
-  async password(account: string, password: string): Promise<UserModel> {
-    return defaultHttp.post<UserModel>({
+export const loginApi = {
+  async password(body: PasswordBody): Promise<LoginResult> {
+    return defaultHttp.post<LoginResult>({
       url: Api.password,
-      data: {
-        account,
-        password,
-      } as PasswordBody,
+      data: body,
     });
   },
-  async token(token: string): Promise<UserModel> {
-    return defaultHttp.post<UserModel>({
+  async token(token: string): Promise<LoginResult> {
+    return defaultHttp.post<LoginResult>({
       url: Api.token,
       data: {
         token,
       } as TokenBody,
+    });
+  },
+  async refresh(): Promise<LoginResult> {
+    return defaultHttp.post<LoginResult>({
+      url: Api.refresh,
     });
   },
   async logout(): Promise<void> {
@@ -34,4 +36,4 @@ export const LoginApi = {
   },
 };
 
-export default LoginApi;
+export default loginApi;

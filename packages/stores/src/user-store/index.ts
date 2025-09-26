@@ -39,11 +39,16 @@ const storeOptions = (): UserStore => {
     context.userRoles = [];
   }
 
+  function $reset() {
+    resetContext();
+  }
+
   return {
     /* 持久化 */
     persist: {
       pick: [context.userInfo, context.userRoles],
     },
+    $reset,
     context,
     getUserInfo,
     setUserInfo,

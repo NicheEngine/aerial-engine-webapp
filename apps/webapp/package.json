@@ -30,12 +30,12 @@
     "@engine/common-ui": "workspace:*",
     "@engine/constants": "workspace:*",
     "@engine/hooks": "workspace:*",
+    "@engine/https": "workspace:*",
     "@engine/icons": "workspace:*",
     "@engine/layouts": "workspace:*",
     "@engine/locales": "workspace:*",
     "@engine/plugins": "workspace:*",
     "@engine/preferences": "workspace:*",
-    "@engine/https": "workspace:*",
     "@engine/request": "workspace:*",
     "@engine/stores": "workspace:*",
     "@engine/styles": "workspace:*",
@@ -49,9 +49,9 @@
     "vue-router": "catalog:"
   },
   "devDependencies": {
+    "@easydarwin/easyplayer": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
-    "@easydarwin/easyplayer": "catalog:",
     "cesium": "catalog:"
   }
 }

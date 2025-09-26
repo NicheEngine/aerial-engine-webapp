@@ -98,6 +98,10 @@ const storeOptions = (): AccessStore => {
     context.refreshToken = null;
   }
 
+  function $reset() {
+    resetContext();
+  }
+
   return {
     /* 持久化 */
     persist: {
@@ -109,6 +113,7 @@ const storeOptions = (): AccessStore => {
         context.lockScreenPassword,
       ],
     },
+    $reset,
     context,
     getMenuByPath,
     lockScreen,

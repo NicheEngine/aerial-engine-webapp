@@ -1,7 +1,7 @@
-import { defaultHttp } from '../axios-https';
+import { defaultHttp } from '../https';
 import Api from './api';
 
-export const ServerApi = {
+export const serverApi = {
   async serverHello() {
     return defaultHttp.get<string>({ url: Api.hello });
   },
@@ -11,4 +11,4 @@ export const ServerApi = {
   },
 };
 
-export default ServerApi;
+export default serverApi;

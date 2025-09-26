@@ -5,10 +5,10 @@ import type {
 } from 'axios';
 
 import type {
-  AxiosHttpConfigOptions,
   AxiosHttpDataRecord,
   AxiosHttpMultifile,
   AxiosHttpRequestConfig,
+  AxiosHttpRequestOptions,
   AxiosHttpResult,
   AxiosSerializeOptions,
 } from './types';
@@ -51,9 +51,6 @@ class AxiosObject {
   private instance: AxiosInstance;
 
   constructor(config: AxiosHttpRequestConfig) {
-    config.paramsSerializer = serializeParams(
-      config.serialize?.paramsSerializer,
-    );
     this.config = config;
     this.instance = axios.create(config);
     bindMethods(this);
@@ -71,55 +68,46 @@ class AxiosObject {
     this.createAxios(config);
   }
 
-  delete<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
-    return this.request({ ...config, method: 'DELETE' });
+  delete<T = any>(options: AxiosHttpRequestOptions): Promise<T> {
+    return this.request({ ...options, method: 'DELETE' });
   }
 
-  download<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
-    const axiosConfig = Object.assign(
+  download<T = any>(options: AxiosHttpRequestOptions): Promise<T> {
+    const axiosOptions = Object.assign(
       {
-        serialize: {
-          resultType: 'body',
-        },
+        resultType: 'body',
         responseType: 'blob',
-      },
-      config,
+      } as AxiosHttpRequestOptions,
+      options,
     );
-    return this.request({ ...axiosConfig, method: 'GET' });
+    return this.request({ ...axiosOptions, method: 'GET' });
   }
 
-  get<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
-    return this.request({ ...config, method: 'GET' });
+  get<T = any>(options: AxiosHttpRequestOptions): Promise<T> {
+    return this.request({ ...options, method: 'GET' });
   }
 
   getAxiosInstance(): AxiosInstance {
     return this.instance;
   }
 
-  post<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
-    return this.request({ ...config, method: 'POST' });
+  post<T = any>(options: AxiosHttpRequestOptions): Promise<T> {
+    return this.request({ ...options, method: 'POST' });
   }
 
-  put<T = any>(config: AxiosHttpRequestConfig): Promise<T> {
-    return this.request({ ...config, method: 'PUT' });
+  put<T = any>(options: AxiosHttpRequestOptions): Promise<T> {
+    return this.request({ ...options, method: 'PUT' });
   }
 
-  request<T>(config: AxiosHttpRequestConfig): Promise<T> {
-    let axiosConfig: AxiosHttpRequestConfig = cloneDeep(config);
-    const axiosHandler = this.config.handler;
+  request<T>(options: AxiosHttpRequestOptions): Promise<T> {
+    let axiosOptions: AxiosHttpRequestOptions = cloneDeep(options);
+    const configHandler = this.config.handler;
 
-    const assignOptions: AxiosHttpConfigOptions = Object.assign(
-      {},
-      this.config.options,
-      config.options,
-    );
-
-    axiosConfig = {
-      options: assignOptions,
-      ...axiosConfig,
-      ...(axiosConfig.paramsSerializer
-        ? { paramsSerializer: serializeParams(config.paramsSerializer) }
-        : { paramsSerializer: this.config.paramsSerializer }),
+    axiosOptions = {
+      ...axiosOptions,
+      ...(axiosOptions.paramsSerializer
+        ? { paramsSerializer: serializeParams(axiosOptions.paramsSerializer) }
+        : { paramsSerializer: serializeParams(this.config.paramsSerializer) }),
     };
 
     const {
@@ -127,22 +115,25 @@ class AxiosObject {
       afterResponseErrorHandler,
       beforeRequestHandler,
       beforeResponseHandler,
-    } = axiosHandler || {};
+    } = configHandler || {};
 
     if (beforeRequestHandler && isFunction(beforeRequestHandler)) {
-      axiosConfig = beforeRequestHandler(axiosConfig);
+      axiosOptions = beforeRequestHandler(this.config, axiosOptions);
     }
-    axiosConfig.options = assignOptions;
 
-    axiosConfig = this.supportFormData(axiosConfig);
+    axiosOptions = this.supportFormData(axiosOptions);
 
     return new Promise<T>((resolve, reject) => {
       this.instance
-        .request<any, AxiosResponse<AxiosHttpResult>>(axiosConfig)
+        .request<any, AxiosResponse<AxiosHttpResult>>(axiosOptions)
         .then((response: AxiosResponse<AxiosHttpResult>) => {
           if (beforeResponseHandler && isFunction(beforeResponseHandler)) {
             try {
-              const result = beforeResponseHandler(axiosConfig, response);
+              const result = beforeResponseHandler(
+                this.config,
+                axiosOptions,
+                response,
+              );
               resolve(result);
             } catch (error: any) {
               if (
@@ -157,7 +148,7 @@ class AxiosObject {
               }
             }
           }
-          resolve(response as unknown as T);
+          resolve(response.data as unknown as T);
         })
         .catch((error: any) => {
           if (
@@ -181,25 +172,24 @@ class AxiosObject {
   }
 
   // support form-data
-  supportFormData(config: AxiosHttpRequestConfig) {
-    const headers = config.headers || this.config.headers;
+  supportFormData(options: AxiosHttpRequestOptions) {
+    const headers = (options?.headers || this.config?.headers) as any;
     const contentType = headers?.['Content-Type'] || headers?.['content-type'];
-
     if (
       contentType !== 'application/x-www-form-urlencoded;charset=utf-8' ||
-      !Reflect.has(config, 'data') ||
-      config.method?.toUpperCase() === 'GET'
+      !Reflect.has(options, 'data') ||
+      options.method?.toUpperCase() === 'GET'
     ) {
-      return config;
+      return options;
     }
 
     return {
-      ...config,
-      data: qs.stringify(config.data, { arrayFormat: 'brackets' }),
+      ...options,
+      data: qs.stringify(options.data, { arrayFormat: 'brackets' }),
     };
   }
 
-  upload<T = any>(config: AxiosHttpRequestConfig, params: AxiosHttpMultifile) {
+  upload<T = any>(config: AxiosHttpRequestOptions, params: AxiosHttpMultifile) {
     const formData = new window.FormData();
     const customFilename = params.name || 'file';
 
@@ -254,18 +244,19 @@ class AxiosObject {
 
     // Request interceptor configuration processing
     this.instance.interceptors.request.use(
-      (config: InternalAxiosRequestConfig<any>) => {
-        const ignoreCancelToken = this.config.options?.ignoreCancelToken;
+      (options: InternalAxiosRequestConfig<any>) => {
+        const axiosConfig = options as AxiosHttpRequestConfig;
+        const ignoreCancelToken = axiosConfig.options?.ignoreCancelToken;
         const ignoreCancel =
           ignoreCancelToken === undefined
             ? this.config.options?.ignoreCancelToken
             : ignoreCancelToken;
 
-        !ignoreCancel && axiosCanceler.cache(config);
+        !ignoreCancel && axiosCanceler.cache(options);
         if (doRequestHandler && isFunction(doRequestHandler)) {
-          config = doRequestHandler(Object.assign(this.config, config));
+          options = doRequestHandler(this.config, options);
         }
-        return config;
+        return options;
       },
       undefined,
     );

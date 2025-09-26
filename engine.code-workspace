@@ -1,14 +1,6 @@
 {
   "folders": [
     {
-      "name": "@engine/example",
-      "path": "apps/example",
-    },
-    {
-      "name": "@engine/mock-server",
-      "path": "apps/mock-server",
-    },
-    {
       "name": "@engine/webapp",
       "path": "apps/webapp",
     },

@@ -17,8 +17,8 @@ import { preferences } from '@engine/preferences';
 import { useAccessStore, useUserStore } from '@engine/stores';
 import { openWindow } from '@engine/utils';
 
+import { useAuthHook } from '#/hooks/auth-hook';
 import { $t } from '#/locales';
-import { useAuthStore } from '#/store';
 import LoginForm from '#/views/_core/authentication/login.vue';
 
 const notifications = ref<NotificationItem[]>([
@@ -53,7 +53,7 @@ const notifications = ref<NotificationItem[]>([
 ]);
 
 const userStore = useUserStore();
-const authStore = useAuthStore();
+const authHook = useAuthHook();
 const accessStore = useAccessStore();
 const { destroyWatermark, updateWatermark } = useWatermark();
 const showDot = computed(() =>
@@ -91,11 +91,11 @@ const menus = computed(() => [
 ]);
 
 const avatar = computed(() => {
-  return userStore.userInfo?.avatar ?? preferences.app.defaultAvatar;
+  return userStore.context.userInfo?.avatar ?? preferences.app.defaultAvatar;
 });
 
 async function handleLogout() {
-  await authStore.logout(false);
+  await authHook.logoutHook(false);
 }
 
 function handleNoticeClear() {
@@ -110,7 +110,7 @@ watch(
   async (enable) => {
     if (enable) {
       await updateWatermark({
-        content: `${userStore.userInfo?.username} - ${userStore.userInfo?.realName}`,
+        content: `${userStore.context.userInfo?.username} - ${userStore.context.userInfo?.nickname}`,
       });
     } else {
       destroyWatermark();
@@ -128,7 +128,7 @@ watch(
       <UserDropdown
         :avatar
         :menus
-        :text="userStore.userInfo?.realName"
+        :text="userStore.context.userInfo?.nickname"
         description="nicheengine@outlook.com"
         tag-text="Pro"
         @logout="handleLogout"
@@ -144,7 +144,7 @@ watch(
     </template>
     <template #extra>
       <AuthenticationLoginExpiredModal
-        v-model:open="accessStore.loginExpired"
+        v-model:open="accessStore.context.loginExpired"
         :avatar
       >
         <LoginForm />

@@ -5,8 +5,8 @@ import { preferences } from '@engine/preferences';
 import { useAccessStore, useUserStore } from '@engine/stores';
 import { startProgress, stopProgress } from '@engine/utils';
 
+import { useAuthHook } from '#/hooks/auth-hook';
 import { accessRoutes, coreRouteNames } from '#/router/routes';
-import { useAuthStore } from '#/store';
 
 import { generateAccess } from './access';
 
@@ -48,14 +48,14 @@ function setupAccessGuard(router: Router) {
   router.beforeEach(async (to, from) => {
     const accessStore = useAccessStore();
     const userStore = useUserStore();
-    const authStore = useAuthStore();
+    const authHook = useAuthHook();
 
     // 基本路由，这些路由不需要进入权限拦截
     if (coreRouteNames.includes(to.name as string)) {
-      if (to.path === LOGIN_PATH && accessStore.accessToken) {
+      if (to.path === LOGIN_PATH && accessStore.context.accessToken) {
         return decodeURIComponent(
           (to.query?.redirect as string) ||
-            userStore.userInfo?.homePath ||
+            userStore.context.userInfo?.home ||
             preferences.app.defaultHomePath,
         );
       }
@@ -63,7 +63,7 @@ function setupAccessGuard(router: Router) {
     }
 
     // accessToken 检查
-    if (!accessStore.accessToken) {
+    if (!accessStore.context.accessToken) {
       // 明确声明忽略权限访问权限，则可以访问
       if (to.meta.ignoreAccess) {
         return true;
@@ -86,13 +86,13 @@ function setupAccessGuard(router: Router) {
     }
 
     // 是否已经生成过动态路由
-    if (accessStore.isAccessChecked) {
+    if (accessStore.context.isAccessChecked) {
       return true;
     }
 
     // 生成路由表
     // 当前登录用户拥有的角色标识列表
-    const userInfo = userStore.userInfo || (await authStore.fetchUserInfo());
+    const userInfo = userStore.context.userInfo || (await authHook.userHook());
     const userRoles = userInfo.roles ?? [];
 
     // 生成菜单和路由

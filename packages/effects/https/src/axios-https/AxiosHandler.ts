@@ -4,7 +4,11 @@ import type {
   InternalAxiosRequestConfig,
 } from 'axios';
 
-import type { AxiosHttpRequestConfig, AxiosHttpResult } from './types';
+import type {
+  AxiosHttpRequestConfig,
+  AxiosHttpRequestOptions,
+  AxiosHttpResult,
+} from './types';
 
 import AxiosObject from './AxiosObject';
 
@@ -22,10 +26,12 @@ abstract class AxiosHandler {
 
   beforeRequestHandler?: (
     config: AxiosHttpRequestConfig,
-  ) => AxiosHttpRequestConfig;
+    options: AxiosHttpRequestOptions,
+  ) => AxiosHttpRequestOptions;
 
   beforeResponseHandler?: (
     config: AxiosHttpRequestConfig,
+    options: AxiosHttpRequestOptions,
     response: AxiosResponse<AxiosHttpResult>,
   ) => any;
 
@@ -33,6 +39,7 @@ abstract class AxiosHandler {
 
   doRequestHandler?: (
     config: AxiosHttpRequestConfig,
+    options: InternalAxiosRequestConfig,
   ) => InternalAxiosRequestConfig;
 
   doResponseHandler?: (

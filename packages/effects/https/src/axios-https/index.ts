@@ -1,10 +1,16 @@
 import type {
   AxiosInstance,
+  AxiosRequestHeaders,
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from 'axios';
 
-import type { AxiosHttpConfigOptions, AxiosHttpRequestConfig } from './types';
+import type {
+  AxiosHttpConfigOptions,
+  AxiosHttpRequestConfig,
+  AxiosHttpRequestOptions,
+  AxiosHttpResult,
+} from './types';
 
 import { $t } from '@engine/locales';
 import {
@@ -122,36 +128,31 @@ const authTokenHandler = async (axiosObject: AxiosObject, error: any) => {
 const handler: AxiosHandler = {
   beforeResponseHandler: (
     config: AxiosHttpRequestConfig,
-    response: AxiosResponse<any>,
+    options: AxiosHttpRequestOptions,
+    response: AxiosResponse<AxiosHttpResult>,
   ) => {
-    const { data: axiosResult, status } = response;
-
-    const {
-      statusField = 'status',
-      dataField = 'data',
-      successStatus = 200,
-    } = config?.result || {};
-    const isNativeResponse = config.options?.isNativeResponse;
-    if (isNativeResponse) {
+    const result = response as any;
+    const { statusField, dataField, successStatus } = config.result;
+    const isNativeResponse = config?.options?.isNativeResponse;
+    const resultType = options.resultType;
+    if (isNativeResponse || resultType === 'body') {
       return response;
-    }
-    if (status !== 200) {
-      throw Object.assign({}, { config, response });
     }
     if (
       isFunction(successStatus)
-        ? successStatus(axiosResult[statusField])
-        : axiosResult[statusField] === successStatus
+        ? successStatus(result[statusField])
+        : result[statusField] === successStatus
     ) {
-      return isFunction(dataField)
-        ? dataField(axiosResult)
-        : axiosResult[dataField];
+      return isFunction(dataField) ? dataField(result) : result[dataField];
     }
     throw Object.assign({}, { config, response });
   },
 
-  beforeRequestHandler: (config: AxiosHttpRequestConfig) => {
-    const options: AxiosHttpConfigOptions = config.options || {};
+  beforeRequestHandler: (
+    config: AxiosHttpRequestConfig,
+    options: AxiosHttpRequestOptions,
+  ) => {
+    const configOptions: AxiosHttpConfigOptions = config.options || {};
     const {
       apiUrl,
       joinPrefix,
@@ -159,27 +160,26 @@ const handler: AxiosHandler = {
       formatDate,
       joinTime = true,
       urlPrefix,
-    } = options;
+    } = configOptions;
 
     if (joinPrefix) {
-      config.url = `${urlPrefix}${config.url}`;
+      options.url = `${urlPrefix}${options.url}`;
     }
 
     if (apiUrl && isString(apiUrl)) {
-      config.url = `${apiUrl}${config.url}`;
+      options.url = `${apiUrl}${options.url}`;
     }
-
-    const params = config.params || {};
-    const data = config.data || false;
+    const params = options.params || {};
+    const data = options.data || false;
     formatDate && data && !isString(data) && formatRequestDate(data);
-    if (config.method?.toUpperCase() === 'GET') {
+    if (options.method?.toUpperCase() === 'GET') {
       if (isString(params)) {
         // 兼容restful风格
-        config.url = `${config.url + params}${joinTimestamp(joinTime, true)}`;
-        config.params = undefined;
+        options.url = `${options.url + params}${joinTimestamp(joinTime, true)}`;
+        options.params = undefined;
       } else {
         // 给 get 请求加上时间戳参数，避免从缓存中拿数据。
-        config.params = Object.assign(
+        options.params = Object.assign(
           params || {},
           joinTimestamp(joinTime, false),
         );
@@ -187,35 +187,42 @@ const handler: AxiosHandler = {
     } else {
       if (isString(params)) {
         // 兼容restful风格
-        config.url = config.url + params;
-        config.params = undefined;
+        options.url = `${options.url + params}${joinTimestamp(joinTime, true)}`;
+        options.params = undefined;
       } else {
+        options.params = Object.assign(
+          params || {},
+          joinTimestamp(joinTime, false),
+        );
         formatDate && formatRequestDate(params);
         if (
-          Reflect.has(config, 'data') &&
-          config.data &&
-          (Object.keys(config.data).length > 0 ||
-            config.data instanceof FormData)
+          Reflect.has(options, 'data') &&
+          options.data &&
+          (Object.keys(options.data).length > 0 ||
+            options.data instanceof FormData)
         ) {
-          config.data = data;
-          config.params = params;
+          options.data = data;
+          options.params = params;
         } else {
           // 非GET请求如果没有提供data，则将params视为data
-          config.data = params;
-          config.params = undefined;
+          options.data = params;
+          options.params = undefined;
         }
         if (joinParamsToUrl) {
-          config.url = urlParams(
-            config.url as string,
-            Object.assign({}, config.params, config.data),
+          options.url = urlParams(
+            options.url as string,
+            Object.assign({}, options.params, options.data),
           );
         }
       }
     }
-    return config;
+    return options;
   },
 
-  doRequestHandler: (config: AxiosHttpRequestConfig) => {
+  doRequestHandler: (
+    config: AxiosHttpRequestConfig,
+    options: InternalAxiosRequestConfig,
+  ) => {
     const {
       languageLocal,
       tokenPrefix,
@@ -223,20 +230,20 @@ const handler: AxiosHandler = {
     } = config?.authToken || {};
     const currentToken = accessToken();
     if (currentToken && config?.options?.withToken !== false) {
-      if (!config.headers) {
-        config.headers = {};
+      if (!options.headers) {
+        options.headers = {} as AxiosRequestHeaders;
       }
-      config.headers.Authorization = tokenPrefix
+      options.headers.Authorization = tokenPrefix
         ? `${tokenPrefix} ${currentToken}`
         : currentToken;
     }
     if (languageLocal) {
-      if (!config.headers) {
-        config.headers = {};
+      if (!options.headers) {
+        options.headers = {} as AxiosRequestHeaders;
       }
-      config.headers['Accept-Language'] = languageLocal;
+      options.headers['Accept-Language'] = languageLocal;
     }
-    return config as InternalAxiosRequestConfig;
+    return options as InternalAxiosRequestConfig;
   },
 
   doResponseHandler: (
@@ -365,6 +372,11 @@ function createAxios(config?: Partial<AxiosHttpRequestConfig>) {
           isRetry: true,
           count: 3,
           waitTime: 100,
+        },
+        result: {
+          dataField: 'data',
+          statusField: 'status',
+          successStatus: 200,
         },
         options: {
           // 默认将prefix 添加到url

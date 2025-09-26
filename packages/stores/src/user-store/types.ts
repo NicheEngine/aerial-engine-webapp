@@ -1,11 +1,15 @@
 import type { DefineSetupStoreOptions, StateTree } from 'pinia';
 
-export interface UserInfo {
+export interface UserCache {
+  home?: string;
+  token: string;
+}
+
+export interface UserInfo extends UserCache {
   [key: string]: any;
-  avatar: string;
-  realName: string;
-  roles?: string[];
-  userId: string;
+  avatar?: string;
+  id: string;
+  nickname: string;
   username: string;
 }
 
@@ -16,6 +20,7 @@ export interface UserContext {
 
 export interface UserStore
   extends DefineSetupStoreOptions<string, StateTree, any, any> {
+  $reset: () => void;
   context: UserContext;
   getUserInfo: () => null | UserInfo;
   getUserRoles: () => string[];

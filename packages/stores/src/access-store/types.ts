@@ -47,6 +47,7 @@ export interface AccessContext {
 
 export interface AccessStore
   extends DefineSetupStoreOptions<string, StateTree, any, any> {
+  $reset: () => void;
   context: AccessContext;
   getMenuByPath: (path: string) => MenuRecordRaw | undefined;
   lockScreen: (password: string) => void;

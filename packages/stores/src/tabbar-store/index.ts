@@ -561,6 +561,10 @@ const storeOptions = (): TabbarStore => {
     context.updateTime = Date.now();
   }
 
+  function $reset() {
+    resetContext();
+  }
+
   return {
     /* 持久化 */
     persist: [
@@ -569,6 +573,7 @@ const storeOptions = (): TabbarStore => {
         storage: sessionStorage,
       },
     ],
+    $reset,
     context,
     _bulkCloseByKeys,
     _close,

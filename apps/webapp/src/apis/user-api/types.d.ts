@@ -1,17 +1,16 @@
+
 declare module 'user-api' {
   import type { InfoModel, RestFilter } from 'rest-api';
 
-  export * from './api';
-  export * from './index';
+  import type { UserInfo } from '@engine/stores';
 
-  export interface UserModel extends InfoModel {
+  export interface UserModel extends InfoModel, UserInfo {
     workspaceId: string;
-    username: string;
     password: string;
-    roleKeys: string[];
-    purviewKeys: string[];
-    roleValue: number;
-    purviewValue: number;
+    roleKeys?: string[];
+    purviewKeys?: string[];
+    roleValue?: number;
+    purviewValue?: number;
   }
 
   export interface UserFilter extends RestFilter {

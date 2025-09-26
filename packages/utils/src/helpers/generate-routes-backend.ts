@@ -28,9 +28,7 @@ async function generateRoutesByBackend(
       normalizePageMap[normalizeViewPath(key)] = value;
     }
 
-    const routes = convertRoutes(menuRoutes, layoutMap, normalizePageMap);
-
-    return routes;
+    return convertRoutes(menuRoutes, layoutMap, normalizePageMap);
   } catch (error) {
     console.error(error);
     throw error;

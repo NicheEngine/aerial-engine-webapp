@@ -13,6 +13,17 @@ declare module 'rest-api' {
     description: string;
   }
 
+  export interface PageResult<T> {
+    totals: number;
+    pages: number;
+    pageNum: number;
+    pageSize: number;
+    itemSize: number;
+    items: T[];
+    firstPage: boolean;
+    lastPage: boolean;
+  }
+
   export interface RestFilter {
     pageNum: number;
     pageSize: number;

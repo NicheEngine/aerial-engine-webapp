@@ -1,13 +1,18 @@
 declare module 'login-api' {
-  export * from './api';
-  export * from './index';
+  import type { UserModel } from 'user-api';
 
   export interface PasswordBody {
-    account: string;
-    password: string;
+    username?: string;
+    password?: string;
   }
 
   export interface TokenBody {
     token: string;
+  }
+
+  export interface LoginResult {
+    token: string;
+    userId: string;
+    user: UserModel;
   }
 }

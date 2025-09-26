@@ -1,4 +1,4 @@
-import type { AxiosRequestConfig } from 'axios';
+import type { AxiosRequestConfig, CreateAxiosDefaults } from 'axios';
 
 import AxiosHandler from './AxiosHandler';
 
@@ -18,27 +18,16 @@ type AxiosHttpRetryOptions = {
 };
 
 type AxiosHttpConfigOptions = {
-  // Interface address, use the default apiUrl if you leave it blank
   apiUrl?: string;
-  // Format request parameter time
   formatDate?: boolean;
-  // 请求重试机制
   ignoreCancelToken?: boolean;
-  // Whether to return native response headers
-  // For example: use this attribute when you need to get the response headers
   isNativeResponse?: boolean;
-  // Whether to process the request result
   isTransformResponse?: boolean;
-  // Splicing request parameters to url
   joinParamsToUrl?: boolean;
-  // Whether to join url
   joinPrefix?: boolean;
-  // Whether to add a timestamp
   joinTime?: boolean;
   tokenPrefix?: string;
-  // 请求拼接路径
   urlPrefix?: string;
-  // Whether to send token in header
   withToken?: boolean;
 };
 
@@ -60,11 +49,15 @@ type AxiosAuthTokenOptions = {
   unauthorizedStatus: number[];
 };
 
-interface AxiosHttpRequestConfig<T = any> extends AxiosRequestConfig<T> {
+interface AxiosHttpRequestOptions<T = any> extends AxiosRequestConfig<T> {
+  resultType?: 'body' | 'raw';
+}
+
+interface AxiosHttpRequestConfig<D = any> extends CreateAxiosDefaults<D> {
   handler?: AxiosHandler;
   options?: AxiosHttpConfigOptions;
   serialize?: AxiosSerializeOptions;
-  result?: AxiosResultOptions;
+  result: AxiosResultOptions;
   authToken?: AxiosAuthTokenOptions;
   httpRetry?: AxiosHttpRetryOptions;
 }
@@ -96,6 +89,7 @@ export type {
   AxiosHttpDataRecord,
   AxiosHttpMultifile,
   AxiosHttpRequestConfig,
+  AxiosHttpRequestOptions,
   AxiosHttpResult,
   AxiosHttpRetryOptions,
   AxiosResultOptions,

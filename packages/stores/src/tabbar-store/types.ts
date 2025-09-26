@@ -38,6 +38,7 @@ export interface TabbarContext {
 
 export interface TabbarStore
   extends DefineSetupStoreOptions<string, StateTree, any, any> {
+  $reset: () => void;
   _bulkCloseByKeys: (keys: string[]) => Promise<void>;
   _close: (tab: TabDefinition) => void;
   _goToDefaultTab: (router: Router) => Promise<void>;
