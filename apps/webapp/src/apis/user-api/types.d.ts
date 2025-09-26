@@ -1,4 +1,3 @@
-
 declare module 'user-api' {
   import type { InfoModel, RestFilter } from 'rest-api';
 
