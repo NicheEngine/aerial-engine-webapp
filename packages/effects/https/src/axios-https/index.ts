@@ -12,7 +12,7 @@ import type {
   AxiosHttpResult,
 } from './types';
 
-import { $t } from '@engine/locales';
+import { $t, locale } from '@engine/locales';
 import {
   cloneDeep,
   isFunction,
@@ -223,11 +223,7 @@ const handler: AxiosHandler = {
     config: AxiosHttpRequestConfig,
     options: InternalAxiosRequestConfig,
   ) => {
-    const {
-      languageLocal,
-      tokenPrefix,
-      accessToken = () => '',
-    } = config?.authToken || {};
+    const { tokenPrefix, accessToken = () => '' } = config?.authToken || {};
     const currentToken = accessToken();
     if (currentToken && config?.options?.withToken !== false) {
       if (!options.headers) {
@@ -237,12 +233,10 @@ const handler: AxiosHandler = {
         ? `${tokenPrefix} ${currentToken}`
         : currentToken;
     }
-    if (languageLocal) {
-      if (!options.headers) {
-        options.headers = {} as AxiosRequestHeaders;
-      }
-      options.headers['Accept-Language'] = languageLocal;
+    if (!options.headers) {
+      options.headers = {} as AxiosRequestHeaders;
     }
+    options.headers['Accept-Language'] = locale.value;
     return options as InternalAxiosRequestConfig;
   },
 

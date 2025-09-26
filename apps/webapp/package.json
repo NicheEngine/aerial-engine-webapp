@@ -36,7 +36,6 @@
     "@engine/locales": "workspace:*",
     "@engine/plugins": "workspace:*",
     "@engine/preferences": "workspace:*",
-    "@engine/request": "workspace:*",
     "@engine/stores": "workspace:*",
     "@engine/styles": "workspace:*",
     "@engine/types": "workspace:*",

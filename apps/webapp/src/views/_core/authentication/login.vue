@@ -98,6 +98,12 @@ const formSchema = computed((): EngineFormSchema[] => {
 
 <template>
   <AuthenticationLogin
+    :show-code-login="false"
+    :show-forget-password="true"
+    :show-qrcode-login="false"
+    :show-register="false"
+    :show-remember-me="true"
+    :show-third-party-login="false"
     :form-schema="formSchema"
     :loading="authHook.loginLoading.value"
     @submit="authHook.loginHook"

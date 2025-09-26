@@ -44,7 +44,7 @@ export const overridesPreferences = defineOverridesPreferences({
   },
   widget: {
     globalSearch: false,
-    languageToggle: false,
+    languageToggle: true,
     themeToggle: false,
   },
 });

@@ -64,7 +64,6 @@ function createHttp(config?: Partial<AxiosHttpRequestConfig>) {
           refreshToken,
           tokenPrefix: 'Bearer',
           unauthorizedStatus: [401, 11_500, 11_501, 11_502, 11_503],
-          languageLocal: preferences.app.locale,
         },
         result: {
           errorLog: true,
