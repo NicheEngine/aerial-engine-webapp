@@ -2,12 +2,7 @@ import { copyFile } from '@engine/node-utils';
 
 const tiandituPath = `libraries/tianditu`;
 const targets = {
-  files: [
-    'Cesium_ext_min.js',
-    'protobuf.min.js',
-    'bytebuffer.min.js',
-    'long.min.js',
-  ],
+  files: ['cesiumTdt.js', 'bytebuffer.min.js'],
 };
 
 export const runTiandituScript = () => {

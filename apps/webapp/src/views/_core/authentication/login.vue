@@ -99,7 +99,7 @@ const formSchema = computed((): EngineFormSchema[] => {
 <template>
   <AuthenticationLogin
     :show-code-login="false"
-    :show-forget-password="true"
+    :show-forget-password="false"
     :show-qrcode-login="false"
     :show-register="false"
     :show-remember-me="true"

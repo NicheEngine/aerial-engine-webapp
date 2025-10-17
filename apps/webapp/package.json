@@ -51,6 +51,7 @@
     "@easydarwin/easyplayer": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
-    "cesium": "catalog:"
+    "cesium": "catalog:",
+    "jsdom": "catalog:"
   }
 }
