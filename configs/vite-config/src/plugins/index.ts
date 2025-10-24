@@ -170,12 +170,12 @@ async function loadApplicationPlugins(
         {
           type: 'text/javascript',
           cesium: 'true',
-          src: '/tianditu/cesiumTdt.js',
+          src: '/tianditu/bytebuffer.min.js',
         },
         {
           type: 'text/javascript',
           cesium: 'true',
-          src: '/tianditu/bytebuffer.min.js',
+          src: '/tianditu/cesiumTdt.js',
         },
       ];
     }
