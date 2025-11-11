@@ -69,7 +69,7 @@
       "unauthorized": "登录认证过期，请重新登录后继续。",
       "forbidden": "禁止访问, 您没有权限访问此资源。",
       "notFound": "未找到, 请求的资源不存在。",
-      "internalServerError": "内部服务器错误，请稍后再试。"
+      "internalServerError": "服务器访问错误，请稍后再试。"
     }
   },
   "widgets": {

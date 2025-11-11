@@ -8,6 +8,7 @@ import { defineOverridesPreferences } from '@engine/preferences';
 export const overridesPreferences = defineOverridesPreferences({
   // overrides
   app: {
+    accessMode: 'frontend',
     name: import.meta.env.VITE_APP_TITLE,
     authPageLayout: 'panel-right',
     layout: 'header-mixed-nav',

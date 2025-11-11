@@ -36,12 +36,12 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       extra: true,
       depend: true,
       dependOptions: {
-        build: true,
-        serve: true,
+        build: false,
+        serve: false,
         depends: {
-          tianditu: true,
-          easyplayer: true,
-          cesium: true,
+          tianditu: false,
+          easyplayer: false,
+          cesium: false,
         },
       },
       html: true,

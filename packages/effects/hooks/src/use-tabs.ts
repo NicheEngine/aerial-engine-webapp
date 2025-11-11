@@ -86,8 +86,8 @@ export function useTabs() {
    * @param tab
    */
   function getTabDisableState(tab: RouteLocationNormalized = route) {
-    const tabs = tabbarStore.getTabs;
-    const affixTabs = tabbarStore.affixTabs;
+    const tabs = tabbarStore.getTabs();
+    const affixTabs = tabbarStore.affixTabs();
     const index = tabs.findIndex((item) => item.path === tab.path);
 
     const disabled = tabs.length <= 1;

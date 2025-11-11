@@ -370,7 +370,7 @@ const headerSlots = computed(() => {
       />
 
       <Transition v-if="preferences.widget.lockScreen" name="slide-up">
-        <slot v-if="accessStore.isLockScreen" name="lock-screen"></slot>
+        <slot v-if="accessStore.context.isLockScreen" name="lock-screen"></slot>
       </Transition>
 
       <template v-if="preferencesButtonPosition.fixed">

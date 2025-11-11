@@ -55,8 +55,8 @@ export function useTabbar() {
   const currentTabs = ref<RouteLocationNormalizedGeneric[]>();
   watch(
     [
-      () => tabbarStore.getTabs,
-      () => tabbarStore.updateTime,
+      () => tabbarStore.getTabs(),
+      () => tabbarStore.context.updateTime,
       () => locale.value,
     ],
     ([tabs]) => {
@@ -96,7 +96,7 @@ export function useTabbar() {
   }
 
   watch(
-    () => accessStore.accessMenus,
+    () => accessStore.context.accessMenus,
     () => {
       initAffixTabs();
     },
@@ -214,7 +214,7 @@ export function useTabbar() {
       },
     ];
 
-    return menus.filter((item) => tabbarStore.getMenuList.includes(item.key));
+    return menus.filter((item) => tabbarStore.getMenuList().includes(item.key));
   };
 
   return {
