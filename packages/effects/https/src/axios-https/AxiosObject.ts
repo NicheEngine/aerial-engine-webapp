@@ -244,7 +244,7 @@ class AxiosObject {
 
     // Request interceptor configuration processing
     this.instance.interceptors.request.use(
-      (options: InternalAxiosRequestConfig<any>) => {
+      (options: InternalAxiosRequestConfig) => {
         const axiosConfig = options as AxiosHttpRequestConfig;
         const ignoreCancelToken = axiosConfig.options?.ignoreCancelToken;
         const ignoreCancel =
@@ -265,7 +265,7 @@ class AxiosObject {
       isFunction(doRequestErrorHandler) &&
       this.instance.interceptors.request.use(undefined, doRequestErrorHandler);
 
-    this.instance.interceptors.response.use((response: AxiosResponse<any>) => {
+    this.instance.interceptors.response.use((response: AxiosResponse) => {
       response && axiosCanceler.remove(response.config);
       if (doResponseHandler && isFunction(doResponseHandler)) {
         response = doResponseHandler(this.config, response);

@@ -1,0 +1,98 @@
+<script lang="ts" setup>
+import type { EngineFormSchema } from '@engine/common-ui';
+import type { BasicOption } from '@engine/types';
+
+import { computed, markRaw } from 'vue';
+
+import { AuthenticationLogin, SliderCaptcha, z } from '@engine/common-ui';
+import { $t } from '@engine/locales';
+
+import { useAuthStore } from '#/store';
+
+defineOptions({ name: 'Login' });
+
+const authStore = useAuthStore();
+
+const MOCK_USER_OPTIONS: BasicOption[] = [
+  {
+    label: 'Super',
+    value: 'engine',
+  },
+  {
+    label: 'Admin',
+    value: 'admin',
+  },
+  {
+    label: 'User',
+    value: 'jack',
+  },
+];
+
+const formSchema = computed((): EngineFormSchema[] => {
+  return [
+    {
+      component: 'EngineSelect',
+      componentProps: {
+        options: MOCK_USER_OPTIONS,
+        placeholder: $t('authentication.selectAccount'),
+      },
+      fieldName: 'selectAccount',
+      label: $t('authentication.selectAccount'),
+      rules: z
+        .string()
+        .min(1, { message: $t('authentication.selectAccount') })
+        .optional()
+        .default('engine'),
+    },
+    {
+      component: 'EngineInput',
+      componentProps: {
+        placeholder: $t('authentication.usernameTip'),
+      },
+      dependencies: {
+        trigger(values, form) {
+          if (values.selectAccount) {
+            const findUser = MOCK_USER_OPTIONS.find(
+              (item) => item.value === values.selectAccount,
+            );
+            if (findUser) {
+              form.setValues({
+                password: '123456',
+                username: findUser.value,
+              });
+            }
+          }
+        },
+        triggerFields: ['selectAccount'],
+      },
+      fieldName: 'username',
+      label: $t('authentication.username'),
+      rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
+    },
+    {
+      component: 'EngineInputPassword',
+      componentProps: {
+        placeholder: $t('authentication.password'),
+      },
+      fieldName: 'password',
+      label: $t('authentication.password'),
+      rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
+    },
+    {
+      component: markRaw(SliderCaptcha),
+      fieldName: 'captcha',
+      rules: z.boolean().refine((value) => value, {
+        message: $t('authentication.verifyRequiredTip'),
+      }),
+    },
+  ];
+});
+</script>
+
+<template>
+  <AuthenticationLogin
+    :form-schema="formSchema"
+    :loading="authStore.loginLoading"
+    @submit="authStore.authLogin"
+  />
+</template>

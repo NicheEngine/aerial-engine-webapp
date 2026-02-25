@@ -38,7 +38,7 @@ export const viteNitroMockPlugin = ({
         _printUrls();
 
         consola.log(
-          `  ${colors.green('➜')}  ${colors.bold('Nitro Mock Server')}: ${colors.cyan(`http://localhost:${port}/api`)}`,
+          `  ${colors.green('➜')}  ${colors.bold('Mock Server')}: ${colors.cyan(`http://localhost:${port}`)}`,
         );
       };
     },
@@ -91,7 +91,7 @@ async function runNitroServer(rootDir: string, port: number, verbose: boolean) {
 
     if (verbose) {
       console.log('');
-      consola.success(colors.bold(colors.green('Nitro Mock Server started.')));
+      consola.success(colors.bold(colors.green('Mock Server started.')));
     }
   };
   return await reload();

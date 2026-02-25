@@ -1,8 +1,24 @@
 {
   "folders": [
     {
-      "name": "@engine/webapp",
-      "path": "apps/webapp",
+      "name": "@engine/example",
+      "path": "apps/example",
+    },
+    {
+      "name": "@engine/mock-server",
+      "path": "apps/mock-server",
+    },
+    {
+      "name": "@engine/webapp-antd",
+      "path": "apps/webapp-antd",
+    },
+    {
+      "name": "@engine/webapp-ele",
+      "path": "apps/webapp-ele",
+    },
+    {
+      "name": "@engine/webapp-native",
+      "path": "apps/webapp-native",
     },
     {
       "name": "@engine/depend-config",

@@ -135,13 +135,14 @@ const handler: AxiosHandler = {
     const { statusField, dataField, successStatus } = config.result;
     const isNativeResponse = config?.options?.isNativeResponse;
     const resultType = options.resultType;
-    if (isNativeResponse || resultType === 'body') {
+    const useResponse = options.useResponse;
+    if (isNativeResponse || useResponse || resultType === 'body') {
       return response;
     }
     if (
       isFunction(successStatus)
         ? successStatus(result[statusField])
-        : result[statusField] === successStatus
+        : successStatus.includes(result[statusField])
     ) {
       return isFunction(dataField) ? dataField(result) : result[dataField];
     }
@@ -159,10 +160,10 @@ const handler: AxiosHandler = {
       joinParamsToUrl,
       formatDate,
       joinTime = true,
-      urlPrefix,
+      urlPrefix = '',
     } = configOptions;
 
-    if (joinPrefix) {
+    if (joinPrefix && urlPrefix) {
       options.url = `${urlPrefix}${options.url}`;
     }
 
@@ -241,8 +242,8 @@ const handler: AxiosHandler = {
   },
 
   doResponseHandler: (
-    config: AxiosHttpRequestConfig<any>,
-    response: AxiosResponse<any>,
+    config: AxiosHttpRequestConfig,
+    response: AxiosResponse,
   ) => {
     const isTransformResponse = config.options?.isTransformResponse || false;
     if (!isTransformResponse) {

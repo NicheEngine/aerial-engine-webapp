@@ -14,9 +14,9 @@
     "engine webapp",
     "vue3"
   ],
-  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
-  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
-  "repository": "https://github.com/nicheengine/aerial-engine-webapp.git",
+  "homepage": "https://github.com/nicheengine/template-engine-webapp",
+  "bugs": "https://github.com/nicheengine/template-engine-webapp/issues",
+  "repository": "https://github.com/nicheengine/template-engine-webapp.git",
   "license": "MIT",
   "author": {
     "name": "nicheengine",
@@ -27,8 +27,11 @@
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build",
     "build:analyze": "turbo build:analyze",
-    "build:app": "pnpm run build --filter=@engine/webapp",
+    "build:antd": "pnpm run build --filter=@engine/webapp-antd",
     "build:docker": "./scripts/deploy/build-local-docker-image.sh",
+    "build:ele": "pnpm run build --filter=@engine/webapp-ele",
+    "build:naive": "pnpm run build --filter=@engine/webapp-native",
+    "build:play": "pnpm run build --filter=@engine/example",
     "changeset": "pnpm exec changeset",
     "check": "pnpm run check:circular && pnpm run check:dep && pnpm run check:type && pnpm check:cspell",
     "check:circular": "scan check-circular",
@@ -38,7 +41,10 @@
     "clean": "node ./scripts/clean.mjs",
     "commit": "czg",
     "dev": "turbo dev",
-    "dev:app": "pnpm -F @engine/webapp run dev",
+    "dev:antd": "pnpm -F @engine/webapp-antd run dev",
+    "dev:ele": "pnpm -F @engine/webapp-ele run dev",
+    "dev:naive": "pnpm -F @engine/webapp-native run dev",
+    "dev:play": "pnpm -F @engine/example run dev",
     "format": "scan lint --format",
     "lint": "scan lint",
     "postinstall": "pnpm -r run stub --if-present",
@@ -91,7 +97,7 @@
     "node": ">=20.10.0",
     "pnpm": ">=9.12.0"
   },
-  "packageManager": "pnpm@10.21.0",
+  "packageManager": "pnpm@10.12.4",
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {

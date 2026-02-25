@@ -303,7 +303,7 @@ async function init() {
       'query',
       formOptions.value ? ((await formApi.getValues()) ?? {}) : {},
     );
-    // props.apis.reload(formApi.form?.values ?? {});
+    // props.api.reload(formApi.form?.values ?? {});
   }
 
   // form 由 engine-form代替，所以不适配formConfig，这里给出警告

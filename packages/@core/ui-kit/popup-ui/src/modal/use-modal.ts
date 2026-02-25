@@ -38,7 +38,7 @@ export function useEngineModal<
         provide(USER_MODAL_INJECT_KEY, {
           extendApi(api: ExtendedModalApi) {
             // 不能直接给 reactive 赋值，会丢失响应
-            // 不能用 Object.assign,会丢失 apis 的原型函数
+            // 不能用 Object.assign,会丢失 api 的原型函数
             Object.setPrototypeOf(extendedApi, api);
           },
           options,

@@ -21,7 +21,7 @@ const iframeRoutes = computed(() => {
   if (!enableTabbar.value) {
     return route.meta.iframeSrc ? [route] : [];
   }
-  return tabbarStore.getTabs().filter((tab) => !!tab.meta?.iframeSrc);
+  return tabbarStore.getTabs.filter((tab) => !!tab.meta?.iframeSrc);
 });
 
 const tabNames = computed(
@@ -37,7 +37,7 @@ function routeShow(tabItem: RouteLocationNormalized) {
 function canRender(tabItem: RouteLocationNormalized) {
   const { meta, name } = tabItem;
 
-  if (!name || !tabbarStore.context.renderRouteView) {
+  if (!name || !tabbarStore.renderRouteView) {
     return false;
   }
 
@@ -53,7 +53,7 @@ function canRender(tabItem: RouteLocationNormalized) {
   ) {
     return false;
   }
-  return tabbarStore.getTabs().some((tab) => tab.name === name);
+  return tabbarStore.getTabs.some((tab) => tab.name === name);
 }
 
 function hideLoading(index: number) {

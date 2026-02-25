@@ -5,8 +5,8 @@
       "path": "apps/mock-server"
     },
     {
-      "name": "@engine/webapp",
-      "path": "apps/webapp"
+      "name": "@engine/webapp-antd",
+      "path": "apps/webapp-antd"
     },
     {
       "name": "@engine/webapp-ele",
@@ -111,6 +111,10 @@
     {
       "name": "@engine/hooks",
       "path": "packages/effects/hooks"
+    },
+    {
+      "name": "@engine/https",
+      "path": "packages/effects/https"
     },
     {
       "name": "@engine/layouts",

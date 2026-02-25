@@ -6,6 +6,7 @@ import { colors } from '@engine/node-utils';
 
 export interface ServerProxy extends ProxyOptions {
   prefix?: string;
+  rewrite?: ((path: string) => string) | boolean;
   target: string;
 }
 
@@ -28,6 +29,20 @@ async function createProxy(serverProxies: ServerProxies) {
     const rewrite = (path: string) => {
       return path.replace(new RegExp(`^${prefix}`), '');
     };
+
+    function ofProxyRewrite() {
+      if (proxy?.rewrite === undefined) {
+        return (path) => path;
+      }
+      if (typeof proxy?.rewrite === 'function') {
+        return proxy?.rewrite;
+      } else if (typeof proxy?.rewrite === 'boolean') {
+        return rewrite;
+      } else {
+        return (path) => path;
+      }
+    }
+
     // https://github.com/http-party/node-http-proxy#options
     serverProxy[prefix] = {
       // exp: http://127.0.0.1:8080
@@ -36,7 +51,7 @@ async function createProxy(serverProxies: ServerProxies) {
       changeOrigin: proxy?.changeOrigin ?? true,
       ws: proxy?.ws ?? true,
       agent: proxy?.agent ?? new http.Agent(),
-      rewrite: proxy?.rewrite ?? rewrite,
+      rewrite: ofProxyRewrite(),
       // 如果是https接口，需要配置这个参数
       ...(isHttps ? { secure: false } : {}),
     };

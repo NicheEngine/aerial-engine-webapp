@@ -9,6 +9,7 @@ import { defineLibraryConfig } from './library';
 
 export * from './application';
 export * from './library';
+export * from './proxy';
 
 function defineConfig(
   userConfigPromise?: DefineConfig,

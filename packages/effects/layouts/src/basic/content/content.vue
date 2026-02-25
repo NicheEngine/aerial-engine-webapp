@@ -5,8 +5,6 @@ import type {
   RouteLocationNormalizedLoadedGeneric,
 } from 'vue-router';
 
-import type { StoreGeneric } from '@engine/stores';
-
 import { computed } from 'vue';
 import { RouterView } from 'vue-router';
 
@@ -20,9 +18,8 @@ defineOptions({ name: 'LayoutContent' });
 const tabbarStore = useTabbarStore();
 const { keepAlive } = usePreferences();
 
-const { getCachedTabs, getExcludeCachedTabs, renderRouteView } = storeToRefs(
-  tabbarStore as StoreGeneric,
-);
+const { getCachedTabs, getExcludeCachedTabs, renderRouteView } =
+  storeToRefs(tabbarStore);
 
 /**
  * 是否使用动画
@@ -61,7 +58,6 @@ function getTransitionName(_route: RouteLocationNormalizedLoaded) {
 /**
  * 转换组件，自动添加 name
  * @param component
- * @param route
  */
 function transformComponent(
   component: VNode,

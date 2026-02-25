@@ -36,7 +36,7 @@ type AxiosResultOptions = {
   errorLog: boolean;
   messageHandler?: (message: string, error: any) => void;
   statusField: string;
-  successStatus: ((status: any) => boolean) | number | string;
+  successStatus: ((status: any) => boolean) | number[] | string[];
 };
 
 type AxiosAuthTokenOptions = {
@@ -50,6 +50,7 @@ type AxiosAuthTokenOptions = {
 
 interface AxiosHttpRequestOptions<T = any> extends AxiosRequestConfig<T> {
   resultType?: 'body' | 'raw';
+  useResponse?: boolean;
 }
 
 interface AxiosHttpRequestConfig<D = any> extends CreateAxiosDefaults<D> {

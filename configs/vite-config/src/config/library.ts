@@ -38,7 +38,7 @@ function defineLibraryConfig(userConfigPromise?: DefineLibraryOptions) {
     const packageConfig: UserConfig = {
       build: {
         lib: {
-          entry: 'src/AxiosObject.ts',
+          entry: 'src/index.ts',
           fileName: () => 'index.mjs',
           formats: ['es'],
         },

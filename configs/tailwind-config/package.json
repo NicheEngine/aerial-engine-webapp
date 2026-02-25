@@ -2,11 +2,11 @@
   "name": "@engine/tailwind-config",
   "version": "5.5.8",
   "private": true,
-  "homepage": "https://github.com/nicheengine/aerial-engine-webapp",
-  "bugs": "https://github.com/nicheengine/aerial-engine-webapp/issues",
+  "homepage": "https://github.com/nicheengine/template-engine-webapp",
+  "bugs": "https://github.com/nicheengine/template-engine-webapp/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicheengine/aerial-engine-webapp.git",
+    "url": "git+https://github.com/nicheengine/template-engine-webapp.git",
     "directory": "configs/tailwind-config"
   },
   "license": "MIT",

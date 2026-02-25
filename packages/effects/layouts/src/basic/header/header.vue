@@ -146,7 +146,7 @@ function clearPreferencesAndLogout() {
         <template v-if="slot.name === 'global-search'">
           <GlobalSearch
             :enable-shortcut-key="globalSearchShortcutKey"
-            :menus="accessStore.context.accessMenus"
+            :menus="accessStore.accessMenus"
             class="mr-1 sm:mr-4"
           />
         </template>
